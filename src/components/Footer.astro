@@ -67,7 +67,9 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
 
   type Themes = "dark" | "light";
 
-  const themeButton = document?.querySelector("#toggleTheme");
+  const themeButton = document?.querySelector(
+    "#toggleTheme"
+  ) as HTMLButtonElement;
 
   function changeTheme(theme: Themes) {
     document.documentElement.setAttribute("data-theme", theme);

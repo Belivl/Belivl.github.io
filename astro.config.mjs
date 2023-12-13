@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://belivl.github.io',
+  site: 'https://belivl-vercel.vercel.app/',
   integrations: [mdx(), sitemap(), tailwind()],
   i18n: {
     defaultLocale: "en",
