@@ -1,15 +1,16 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import ThemeButton from "./ThemeButton.astro";
 ---
 
-<header>
+<header class="bg-light dark:bg-black">
   <nav>
-    <h2><a href="/en/" class="dark:text-light">{SITE_TITLE}</a></h2>
+    <h2><a href="/" class="dark:text-white text-black">{SITE_TITLE}</a></h2>
     <div class="internal-links">
-      <HeaderLink href="/en/">Home</HeaderLink>
-      <HeaderLink href="/en/blog">Blog</HeaderLink>
-      <HeaderLink href="/en/about">About</HeaderLink>
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
     </div>
     <div class="social-links">
       <a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -30,9 +31,7 @@ import { SITE_TITLE } from "../consts";
           ></path></svg
         >
       </a>
-      <li>
-        
-      </li>
+      <li></li>
     </div>
   </nav>
 </header>

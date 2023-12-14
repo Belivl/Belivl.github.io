@@ -1,4 +1,5 @@
 ---
+import ThemeButton from "./ThemeButton.astro";
 const today = new Date();
 
 const themes = ["dark", "light"];
@@ -52,67 +53,10 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
       >
     </a>
   </div>
-  <div class="theme-switcher">
-    <button
-      aria-label="theme-button"
-      id="toggleTheme"
-      class="dark:text-light rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020] border border-[#ff434]"
-      >Theme
-    </button>
-  </div>
+  <ThemeButton />
 </footer>
-<script>
-  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
 
-  type Themes = "dark" | "light";
-
-  const themeButton = document?.querySelector(
-    "#toggleTheme"
-  ) as HTMLButtonElement;
-
-  function changeTheme(theme: Themes) {
-    document.documentElement.setAttribute("data-theme", theme);
-  }
-
-  function saveTheme(theme: Themes) {
-    const d = new Date();
-    d.setTime(d.getTime() + 365 * 86400000);
-    document.cookie = `theme=${theme};expires=${d.toUTCString()}`;
-  }
-  function getSavedTheme(): Themes | null {
-    const cookies = document.cookie;
-    const match = cookies.match("theme=([^;]+)");
-    return match ? (match[1] as Themes) : null;
-  }
-  function handleThemeButtonClick() {
-    const currentTheme = document.documentElement.getAttribute(
-      "data-theme"
-    ) as Themes;
-    const newTheme = currentTheme === "dark" ? "light" : "dark"; // Toggle between system and dark themes
-    changeTheme(newTheme);
-    saveTheme(newTheme);
-  }
-
-  themeButton.addEventListener("click", handleThemeButtonClick);
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = getSavedTheme();
-    const defaultTheme = savedTheme || "dark";
-    changeTheme(defaultTheme);
-  });
-</script>
 <style lang="scss">
-  .theme-switcher {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    & label {
-      display: grid;
-    }
-  }
-
   footer {
     padding: 2em 1em 6em 1em;
     background: linear-gradient(var(--gray-gradient)) no-repeat;
