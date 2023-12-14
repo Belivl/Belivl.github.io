@@ -9,6 +9,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: 'https://belivl-vercel.vercel.app',
   integrations: [mdx(), sitemap(), tailwind()],
-  output: "hybrid",
+  output: "server",
   adapter: vercel()
 });
