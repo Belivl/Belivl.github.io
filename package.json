@@ -1,27 +1,26 @@
 {
-  "name": "vigorous-virgo",
+  "name": "i18ntest",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astro-community/astro-embed-youtube": "^0.4.3",
-    "@astrojs/check": "^0.3.2",
+    "@astrojs/alpinejs": "^0.3.1",
     "@astrojs/mdx": "^2.0.1",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
-    "@astrojs/vercel": "^6.0.2",
-    "astro": "^4.0.4",
-    "tailwindcss": "^3.3.6",
-    "typescript": "^5.3.3"
-  },
-  "devDependencies": {
-    "sass": "^1.69.5"
+    "@astrojs/vercel": "^6.1.0",
+    "@types/alpinejs": "^3.13.5",
+    "alpinejs": "^3.13.3",
+    "astro": "^4.0.5",
+    "astro-i18n-aut": "^0.6.2",
+    "astro-icon": "^0.8.2",
+    "tailwindcss": "^3.3.6"
   }
 }
