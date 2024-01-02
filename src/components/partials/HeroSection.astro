@@ -1,6 +1,18 @@
 ---
 import ButtonA from "@components/ui/ButtonA.astro";
 import GoldCTA from "@components/ui/GoldCTA.astro";
+import { Image } from "astro:assets";
+import YaoAlbumCover from "@assets/graphics/project/FrontCoverV2.png";
+import Visa2v6 from "@assets/graphics/design/Visa2v6.png";
+import NoiseSilenceV3 from "@assets/graphics/art/NoiseSilenceV3-alt2.jpg";
+import HalloweenParty2 from "@assets/graphics/design/HalloweenParty2.jpg";
+import Lu2 from "@assets/graphics/art/Lu2.png";
+import Book from "@assets/graphics/3d/Book/BookMisc4PS.png";
+
+import DNature from "@assets/graphics/3d/536941.jpg";
+import KaraokeCzwartki from "@assets/graphics/design/KaraokeCzwartki A4.jpg";
+import Ice3D from "@assets/graphics/3d/MartwaNatura2.webp";
+const heroImgW = 200;
 ---
 
 <section
@@ -43,21 +55,19 @@ import GoldCTA from "@components/ui/GoldCTA.astro";
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
         <img src="/graphics/project/FrontCoverV2.png" alt="YaoAlbumCover" />
-        <img src="/graphics/design/Visa2v6.png" alt="Visa2v6" />
-        <img src="/graphics/art/NoiseSilenceV3-alt2.jpg" alt="NoiseSilenceV3" />
+        <Image src={YaoAlbumCover} alt="YaoAlbumCover" width={heroImgW} />
+        <Image src={Visa2v6} alt="Visa2v6" width={heroImgW} />
+        <Image src={NoiseSilenceV3} alt="NoiseSilenceV3" width={heroImgW} />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <img src="/graphics/design/HalloweenParty2.jpg" alt="HalloweenBanner" />
-        <img src="/graphics/art/Lu2.png" alt="LucianaPencil" />
-        <img src="/graphics/3d/Bacardi/BookMisc4PS.png" alt="BookBacardi" />
+        <Image src={HalloweenParty2} alt="HalloweenBanner" width={heroImgW} />
+        <Image src={Lu2} alt="LucianaPencil" width={heroImgW} />
+        <Image src={Book} alt="Book" width={heroImgW} />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <img src="/graphics/3d/536941.jpg" alt="3DNature" />
-        <img
-          src="/graphics/design/KaraokeCzwartki A4.jpg"
-          alt="KaraokeCzwartki"
-        />
-        <img src="/graphics/3d/MartwaNatura2.webp" alt="Ice3D" />
+        <Image src={DNature} alt="3DNature" width={heroImgW} />
+        <Image src={KaraokeCzwartki} alt="KaraokeCzwartki" width={heroImgW} />
+        <Image src={Ice3D} alt="Ice3D" width={heroImgW} />
       </div>
     </div>
   </div>
