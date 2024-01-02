@@ -1,10 +1,8 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
-import Navbar from "@components/Navbar.astro";
 import Footer from "@components/Footer.astro";
 import { getLocale } from "astro-i18n-aut";
 import { ViewTransitions } from "astro:transitions";
-
 import bgPic from "@assets/FilmGrainS5.jpg";
 
 const locale = getLocale(Astro.url);
@@ -20,21 +18,27 @@ const locale = getLocale(Astro.url);
   <body class="bg-grey-500 relative p-0 z-0 h-full">
     <!--Background image -->
     <div class="bgColor bg-grey-500 fixed w-full h-full -z-50"></div>
-    <img src={bgPic.src} alt="BGPicture" class="mainBG" />
-    <Navbar />
-    <main id="main" class="w-full flex flex-col">
-      <slot />
-    </main>
-    <Footer />
-    <style>
+    <img src={bgPic.src} alt="X" class="mainBG" />
+    <div>
+      <main id="main" class="w-full flex flex-col items-center justify-center">
+        <slot />
+      </main>
+      <div
+        class="container w-full mx-auto absolute top-auto bottom-0 left-0 right-0"
+      >
+        <Footer />
+      </div>
+    </div>
+    <style lang="scss">
       html,
       body {
         height: 100%;
       }
       body {
+        height: 100%;
         display: grid;
-        grid-template-rows: auto 1fr auto;
-        height: 100vh;
+        margin-inline: auto;
+        padding-inline: 2rem;
       }
       main {
         padding: 24px;
