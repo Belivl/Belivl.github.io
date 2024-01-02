@@ -1,0 +1,120 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { DEFAULT_LOCALE } from "@src/consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
+import Container from "@src/components/Container.astro";
+import HeroImage from "@src/components/blog/HeroImage.astro";
+import ButtonA from "@src/components/ui/ButtonA.astro";
+import Headline from "@src/components/Headline.astro";
+import { Headlines } from "@src/consts";
+
+const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
+const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
+
+const posts = (
+  await getCollection("portfolio", (entry) =>
+    entry.slug.startsWith(`${locale}/`)
+  )
+)
+  .filter((post) => {
+    if (import.meta.env) {
+      return !post.data.draft;
+    }
+  })
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .map<CollectionEntry<"portfolio"> & { href: string }>((post) => {
+    return {
+      href:
+        localeUrlPrefix + "/portfolio" + post.slug.replace(locale, "") + "/",
+      ...post,
+    };
+  });
+---
+
+<Layout title="portfolio">
+  <Container>
+    <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
+    <div class="flex gap-3 items-center justify-left w-full">
+      <ButtonA size="sm" classes="primary px-4">Projects</ButtonA>
+      <a href="/portfolio/design/">
+        <ButtonA size="sm" classes="default px-4">Design</ButtonA>
+      </a>
+      <a href="/portfolio/art/">
+        <ButtonA size="sm" classes="default px-4">Art</ButtonA>
+      </a>
+      <a href="/portfolio/3D/">
+        <ButtonA size="sm" classes="default px-4">3D</ButtonA>
+      </a>
+    </div>
+  </Container><!--
+  <section class="mx-auto container px-0 flex flex-col gap-16">
+    
+    <Pagination
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      length={page.lastPage}
+      currentUrl={page.url.current}
+      currentPage={page.currentPage}
+      firstUrl={`/${firstPath}`}
+      lastUrl={`/${firstPath}/${page.lastPage}`}
+    />
+  </section> -->
+
+  <Container class="pt-16">
+    <ul
+      class="m-0 grid list-none grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 p-0"
+    >
+      {
+        posts.map((post: any, index: number) => (
+          <li
+            class={`${index === 0 ? "col-span-2 mb-4 w-full text-center" : ""}`}
+          >
+            <article class="card border-[#434347] relative border rounded-xl overflow-hidden ring-offset-background hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+              <a href={post.href} class="w-[720px] h-[180px] bg-gray-700">
+                <div class="absolute top-0 left-0 right-0 -z-20 h-[240px] bg-grey-200">
+                  <HeroImage
+                    class={`${
+                      index === 0 ? "w-full" : ""
+                    } mb-2 rounded-lg hover:shadow-md cover`}
+                    src={post.data.cover}
+                    alt={post.data.coverAlt}
+                    width={720}
+                    height={180}
+                  />
+                </div>
+                <div class="w-[720px] h-[180px] bg-none" />
+              </a>
+              <div class="cardContent flex justify-between items-end p-5 border-[#434347] bg-grey-500">
+                <div class="flex flex-col gap-2">
+                  <a href={post.href}>
+                    <h3 class="H5 text-xl font-semibold leading-none tracking-tight">
+                      {post.data.title}
+                    </h3>
+                  </a>
+                  <a
+                    href={`/portfolio/${post.data.type}/`}
+                    class="font-semibold uppercase text-sm text-muted-foreground"
+                  >
+                    {post.data.type}
+                  </a>
+                </div>
+                <a href={post.href}>
+                  <ButtonA size="sm" classes="primary px-4">
+                    View
+                  </ButtonA>
+                </a>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</Layout>
+<style lang="scss">
+  img {
+    border-radius: 0%;
+  }
+</style>

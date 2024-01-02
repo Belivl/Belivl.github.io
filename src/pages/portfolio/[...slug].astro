@@ -5,7 +5,7 @@ import { getLocale } from "astro-i18n-aut";
 import { DEFAULT_LOCALE } from "../../consts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", (entry) =>
+  const posts = await getCollection("portfolio", (entry) =>
     entry.slug.startsWith(DEFAULT_LOCALE + "/")
   );
   return posts.map((post) => ({
@@ -13,13 +13,13 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"portfolio">;
 
 const { slug } = Astro.params;
 const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 
 const post = await getEntry({
-  collection: "blog",
+  collection: "portfolio",
   slug: locale + "/" + slug,
 });
 if (!post) {
@@ -29,6 +29,7 @@ if (!post) {
   });
 }
 const { Content } = await post.render();
+export const prerender = true;
 ---
 
 <BlogItem {...post.data}>

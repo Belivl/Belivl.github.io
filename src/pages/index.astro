@@ -1,18 +1,131 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
 import translations from "@utils/t.ts";
 import Container from "@src/components/Container.astro";
-import Layout from "@src/layouts/Layout.astro";
-import t from "@utils/t.ts";
+import ChoiceLayout from "@src/layouts/ChoiceLayout.astro";
 const t = translations(Astro.url);
+
+import ButtonA from "@components/ui/ButtonA.astro";
+import Coin2 from "@components/ui/Coin2.astro";
+
+import logo from "@assets/logo.png";
+import profile from "@assets/profile.jpg";
 ---
 
-<Layout>
+<ChoiceLayout>
+  <div
+    id="title1"
+    class="container flex flex-col gap-4 justify-center items-center py-8 mb-8"
+  >
+    <h1 class="H1">Enter</h1>
+    <h2 class="H5 text-grey-75 uppercase">YOU CAN ALWAYS SWITCH in the nav</h2>
+  </div>
+  <div class="container flex flex-row justify-around relative">
+    <div
+      id="star"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
+      <img id="star1" src="/Star1.svg" alt="Star" class="hidden starAnim" />
+    </div>
+
+    <div id="coinDIV1" class="flex flex-col justify-center items-center gap-10">
+      <div id="coin1" class="md:scale-100 scale-75">
+        <Coin2>
+          <img src={logo.src} alt="Front" class="w-[300px]" />
+        </Coin2>
+      </div>
+      <div
+        id="coinDesc1"
+        class="flex flex-col justify-center items-center gap-3"
+      >
+        <h3 class="H1 md:scale-100 scale-75">BELIAL</h3>
+        <div class="flex justify-center items-center gap-4">
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >3D</span
+          >
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >art</span
+          >
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >UI/UX</span
+          >
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >design</span
+          >
+        </div>
+      </div>
+    </div>
+    <div id="coinDIV2" class="flex flex-col justify-center items-center gap-10">
+      <div id="coin2" class="md:scale-100 scale-75">
+        <Coin2>
+          <img src={profile.src} alt="Front" class="w-[300px]" />
+        </Coin2>
+      </div>
+      <div
+        id="coinDesc2"
+        class="flex flex-col justify-center items-center gap-3"
+      >
+        <h3 class="H1 md:scale-100 scale-75">MICHAL JELINSKI</h3>
+        <div class="flex justify-center items-center gap-4">
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >photography</span
+          >
+          <span class="font-semibold text-[18px] uppercase text-grey-75"
+            >videography</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
   <Container class="pt-16">
-    <span set:html={t.home_description} />
+    <!-- Profile Selection -->
+    <div class="flex gap-3">
+      <button
+        id="profileButton1"
+        class="p-2 bg-gray-800 rounded-md profile-button"
+        data-profile="Belial">Belial</button
+      >
+      <button
+        id="profileButton2"
+        class="p-2 bg-gray-800 rounded-md profile-button"
+        data-profile="Michal">Michal</button
+      >
+    </div>
+    <div>
+      <span id="socialLink"></span>
+    </div>
+    <!--<span set:html={t.home_description} /> -->
   </Container>
-</Layout>
+  <script src="../js/profileSelector.ts"></script>
+</ChoiceLayout>
+
+<script>
+  const star1 = document.getElementById("star1");
+  const coin1 = document.getElementById("coin1");
+  const coin2 = document.getElementById("coin2");
+  const coinDIV1 = document.getElementById("coinDIV1");
+  const coinDIV2 = document.getElementById("coinDIV2");
+  const coinDesc1 = document.getElementById("coinDesc1");
+  const coinDesc2 = document.getElementById("coinDesc2");
+  const title1 = document.getElementById("title1");
+  coin1?.addEventListener("click", () => Coin1());
+  coin2?.addEventListener("click", () => Coin2());
+
+  function hideCommon(homehref) {
+    title1?.classList.add("hidden");
+    star1?.classList.toggle("hidden");
+    setInterval(() => {
+      location.replace(homehref);
+    }, 2000);
+  }
+
+  function Coin1() {
+    hideCommon("/home/");
+    coinDIV2?.classList.add("hidden");
+    coinDesc1?.classList.add("hidden");
+  }
+  function Coin2() {
+    hideCommon("/home2/");
+    coinDIV1?.classList.add("hidden");
+    coinDesc2?.classList.add("hidden");
+  }
+</script>

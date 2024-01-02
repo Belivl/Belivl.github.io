@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@src/components/Container.astro";
+import Headline from "@src/components/Headline.astro";
+import ButtonA from "@src/components/ui/ButtonA.astro";
+import { Headlines } from "@src/consts";
+---
+
+<Layout title="portfolio">
+  <Container>
+    <Headline Heading={Headlines[1].heading} Subtitle={Headlines[1].subtitle} />
+    <div class="flex gap-3 items-center justify-left w-full">
+      <a href="/portfolio/">
+        <ButtonA size="sm" classes="default px-4">Projects</ButtonA>
+      </a>
+      <ButtonA size="sm" classes="primary px-4">Design</ButtonA>
+      <a href="/portfolio/art/">
+        <ButtonA size="sm" classes="default px-4">Art</ButtonA>
+      </a>
+      <a href="/portfolio/3D/">
+        <ButtonA size="sm" classes="default px-4">3D</ButtonA>
+      </a>
+    </div>
+  </Container>
+</Layout>

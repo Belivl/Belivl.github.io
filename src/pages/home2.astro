@@ -1,0 +1,16 @@
+---
+import translations from "@utils/t.ts";
+import Container from "@src/components/Container.astro";
+import Layout from "@src/layouts/Layout.astro";
+import GoldCTA from "@src/components/ui/GoldCTA.astro";
+import HeroSection from "@src/components/partials/HeroSectionMJ.astro";
+const t = translations(Astro.url);
+---
+
+<Layout>
+  <Container>
+    <HeroSection />
+  </Container>
+
+  <GoldCTA link="/contactMJ/" size="md" text="Contact" />
+</Layout>
