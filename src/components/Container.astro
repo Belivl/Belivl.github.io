@@ -7,8 +7,11 @@ interface ContainerProps {
 const { class: className, ...props }: ContainerProps = Astro.props;
 ---
 
-<div {...props} class:list={["mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"]}>
-  <div class:list={[className, "mx-auto max-w-3xl"]}>
+<section
+  {...props}
+  class:list={["mx-auto max-w-screen-xl px-3 sm:px-3 lg:px-3 w-full"]}
+>
+  <div class:list={[className, "mx-auto max-w-screen-xl w-full"]}>
     <slot />
   </div>
-</div>
+</section>

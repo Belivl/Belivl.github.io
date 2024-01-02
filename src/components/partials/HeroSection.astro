@@ -1,0 +1,101 @@
+---
+import ButtonA from "@components/ui/ButtonA.astro";
+import GoldCTA from "@components/ui/GoldCTA.astro";
+---
+
+<section
+  class="flex gap-24 justify-between items-center container py-32 relative rounded-2xl overflow-clip"
+>
+  <div class="flex flex-col gap-12 justify-start items-start">
+    <!-- 
+      <div
+        class="flex gap-2 items-center bg-grey-500 border border-gray-300 rounded-full px-4 py-2"
+      >
+        <div class="w-4 h-4 rounded-full bg-red-600"></div>
+        <div class="text-red-600 text-[12px] font-semibold uppercase pr-2">
+          Unavailable for work
+        </div>
+      </div>-->
+    <h1 class="H1 uppercase">
+      Hi! I’m Belial <br />an <span class="textBaseGold uppercase"
+        >artist <span class="material-icons"> color_lens</span></span
+      > at heart and soul,<br />
+      <span class="textBaseGold"
+        >designer <span class="material-symbols-outlined h-20">
+          photo_camera
+        </span></span
+      > by craft.
+    </h1>
+    <div class="flex gap-4 items-center">
+      <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
+        <span class="material-icons">arrow_forward</span>
+      </GoldCTA>
+      <a href="/about/"
+        ><ButtonA size="lg" classes="default">Read more</ButtonA></a
+      >
+    </div>
+  </div>
+  <div class="absolute right-0 top-0 bottom-0 -z-10 w-full overflow-clip">
+    <div class="gridPhotoHERO absolute right-0 bottom-0 top-0 -translate-y-1/4">
+      <div
+        class="gradientHERO absolute w-full h-full z-20 inset-0 translate-y-1/4"
+      >
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <img src="/graphics/project/FrontCoverV2.png" alt="YaoAlbumCover" />
+        <img src="/graphics/design/Visa2v6.png" alt="Visa2v6" />
+        <img src="/graphics/art/NoiseSilenceV3-alt2.jpg" alt="NoiseSilenceV3" />
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <img src="/graphics/design/HalloweenParty2.jpg" alt="HalloweenBanner" />
+        <img src="/graphics/art/Lu2.png" alt="LucianaPencil" />
+        <img src="/graphics/3d/Bacardi/BookMisc4PS.png" alt="BookBacardi" />
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <img src="/graphics/3d/536941.jpg" alt="3DNature" />
+        <img
+          src="/graphics/design/KaraokeCzwartki A4.jpg"
+          alt="KaraokeCzwartki"
+        />
+        <img src="/graphics/3d/MartwaNatura2.webp" alt="Ice3D" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .gridPhotoHERO {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    width: 50%;
+  }
+  .gridPhotoHERO img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .gradientHERO {
+    background: linear-gradient(90deg, #111114, rgba(1, 1, 1, 0));
+  }
+  .textBaseGold {
+    background: linear-gradient(90deg, orange, brown);
+    background-size: 400% 400%;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: GoldWeave 5s ease infinite;
+    animation: GoldWeave 5s ease infinite;
+  }
+
+  @keyframes GoldWeave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

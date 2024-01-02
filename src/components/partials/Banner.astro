@@ -1,0 +1,28 @@
+---
+import Container from "../Container.astro";
+import ButtonA from "../ui/ButtonA.astro";
+---
+
+<Container className="bg-red-950">
+  <div
+    class="bg-grey-400 flex flex-col md:flex-row justify-start md:justify-between items-start md:items-end px-9 pb-9 pt-32 rounded-[16px] border-gray-200 border w-full mx-0 gap-6 md:gap-0"
+  >
+    <div class="flex flex-col gap-4">
+      <h3 class="H2">Creative Solutions for Your Projects</h3>
+      <h5 class="H5 text-grey-75 font-medium">
+        Contact me today for a consultation or project inquiry
+      </h5>
+    </div>
+
+    <div class="flex gap-2 items-center">
+      <ButtonA size="md" classes="default px-4 font-semibold">
+        Learn more
+      </ButtonA>
+      <a href="/contact/">
+        <ButtonA size="md" classes="primary px-4 font-semibold">
+          Contact
+        </ButtonA>
+      </a>
+    </div>
+  </div>
+</Container>

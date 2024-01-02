@@ -1,0 +1,20 @@
+---
+const { orientation, classes, ...rest } = Astro.props;
+---
+
+<div class:list={[classes]} data-type={orientation} {...rest}></div>
+
+<style lang="scss">
+  div {
+    shrink: 0;
+    background-color: var(--grey-200);
+  }
+  [data-type="horizontal"] {
+    width: 100%;
+    height: 1px;
+  }
+  [data-type="vertical"] {
+    width: 1px;
+    height: 100%;
+  }
+</style>
