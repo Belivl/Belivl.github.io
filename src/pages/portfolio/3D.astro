@@ -4,6 +4,9 @@ import Container from "@src/components/Container.astro";
 import Headline from "@src/components/Headline.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import { Headlines } from "@src/consts";
+import { Image } from "astro:assets";
+
+import exlibris from "@assets/graphics/art/exlibrisv1.jpg";
 ---
 
 <Layout title="portfolio">
@@ -20,6 +23,9 @@ import { Headlines } from "@src/consts";
         <ButtonA size="sm" classes="default px-4">Art</ButtonA>
       </a>
       <ButtonA size="sm" classes="primary px-4">3D</ButtonA>
+    </div>
+    <div class="flex flex-row items-center w-full bg-white rounded-xl mt-16">
+      <Image src={exlibris} alt="exlibris" width={400} />
     </div>
   </Container>
 </Layout>

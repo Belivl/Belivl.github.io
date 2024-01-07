@@ -23,25 +23,34 @@ const urlWithoutLocalePrefix = getUrlWithoutLocale(Astro.url);
   });
 </script>
 
-<select
-  name="Language"
-  aria-label="Change language"
-  class="cursor-pointer uppercase focus-visible:outline-none text-light dark:text-light dark:bg-grey-400 rounded-[0.375rem] border border-grey-200 dark:hover:bg-grey-200"
-  x-data="dropdownData"
-  x-on:change="changePage($event)"
->
+<div class="flex gap-2 items-center">
   {
-    locales.map((locale) => (
-      <option
-        value={`/${locale}${urlWithoutLocalePrefix}`}
-        selected={locale === currentLocale}
-        class="uppercase"
-      >
-        {locale}
-      </option>
-    ))
+    "en" === currentLocale ? (
+      <img src="/en.svg" alt="en_icon" />
+    ) : (
+      <img src="/pl.svg" alt="en_icon" />
+    )
   }
-</select>
+  <select
+    name="Language"
+    aria-label="Change language"
+    class="cursor-pointer uppercase focus-visible:outline-none text-light dark:text-light dark:bg-grey-400 rounded-[0.375rem] border border-grey-200 dark:hover:bg-grey-200"
+    x-data="dropdownData"
+    x-on:change="changePage($event)"
+  >
+    {
+      locales.map((locale) => (
+        <option
+          value={`/${locale}${urlWithoutLocalePrefix}`}
+          selected={locale === currentLocale}
+          class="uppercase"
+        >
+          {locale}
+        </option>
+      ))
+    }
+  </select>
+</div>
 
 <style lang="scss">
   select {

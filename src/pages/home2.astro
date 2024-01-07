@@ -1,16 +1,64 @@
 ---
-import translations from "@utils/t.ts";
-import Container from "@src/components/Container.astro";
 import Layout from "@src/layouts/Layout.astro";
-import GoldCTA from "@src/components/ui/GoldCTA.astro";
+import Container from "@src/components/Container.astro";
 import HeroSection from "@src/components/partials/HeroSectionMJ.astro";
+import Banner from "@src/components/partials/Banner.astro";
+import translations from "@utils/t.ts";
+import ModalGallery from "@src/components/ui/ModalGallery.astro";
+import ButtonA from "@src/components/ui/ButtonA.astro";
+import { Icon } from "astro-icon/components";
+import Headline from "@src/components/Headline.astro";
 const t = translations(Astro.url);
 ---
 
 <Layout>
+  <!--Modal -->
+  <ModalGallery data="Portfolio" />
   <Container>
     <HeroSection />
-  </Container>
+    <section class="mt-16">
+      <Headline Heading="Featured" Subtitle="Work" />
+      <div class="relative max-h-[1080px] overflow-clip w-full">
+        <div class="masonGrid5 w-full">
+          <div id="masonCol1" class="masonCol"></div>
+          <div id="masonCol2" class="masonCol"></div>
+          <div id="masonCol3" class="masonCol"></div>
+          <div id="masonCol4" class="masonCol"></div>
+          <div id="masonCol5" class="masonCol"></div>
+        </div>
+        <div class="absolute bottom-24 right-0 left-0 z-50 flex justify-center">
+          <a href="/gallery/portfolio/">
+            <ButtonA size="lg" classes="primary">View more</ButtonA>
+          </a>
+        </div>
 
-  <GoldCTA link="/contactMJ/" size="md" text="Contact" />
+        <div class="gradientHERO absolute w-full h-full z-20 inset-0"></div>
+      </div>
+    </section>
+    <Banner />
+  </Container>
 </Layout>
+
+<script>
+  import { createImageElement } from "js/gridGallery.js";
+  import imagePathsPortfolio from "js/imagePaths/imagePathsPortfolio.js";
+  const masonGrid5 = document.querySelector(".masonGrid5");
+  let currentColumn = 0;
+  function createGrid(path, i) {
+    const img = createImageElement(path);
+    const btn = document.createElement("button");
+    btn.appendChild(img);
+    btn.classList.add("grid-item");
+    btn.id = i.toString();
+    masonGrid5?.children[currentColumn].appendChild(btn);
+    currentColumn = (currentColumn + 1) % 5;
+  }
+  imagePathsPortfolio.forEach((path, i) => {
+    createGrid(path, i);
+  });
+</script>
+<style>
+  .gradientHERO {
+    background: linear-gradient(0deg, #111114, rgba(1, 1, 1, 0));
+  }
+</style>

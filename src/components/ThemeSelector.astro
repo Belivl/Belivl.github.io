@@ -5,14 +5,14 @@
 					if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 						document.documentElement.classList.add('dark');
 					} else {
-						document.documentElement.classList.remove('dark');
+						document.documentElement.classList.add('dark');
 					}
 				},
 				switchTheme: function (newValue) {
 					if (newValue == 'dark') {
 						localStorage.theme = 'dark';
 					} else if (newValue == 'light') {
-						localStorage.theme = 'light';
+						localStorage.theme = 'dark';
 					} else {
 						localStorage.removeItem('theme');
 					}

@@ -32,13 +32,14 @@ export const PAGES: Page[] = [
 		href: "/portfolio/",
 	},
 	{
+		title: "Gallery",
+		href: "/gallery/portfolio/",
+	},
+	{
 		title: "About",
 		href: "/about/",
 	},
-	{
-		title: "Contact",
-		href: "/contact/",
-	},
+
 ];
 // Links
 type Link = {
@@ -62,30 +63,64 @@ export const LINKS: Link[] = [
 		title: "Behance",
 		href: "https://www.behance.net/michajeliski1",
 	},
+	{
+		title: "Instagram",
+		href: "https://www.instagram.com/jelinski_official/",
+	},
 ];
 
 // Headlines
 type Headlines = {
+	id: number;
 	heading: string;
 	subtitle: string;
 	children?: Headlines[];
 };
 export const Headlines: Headlines[] = [
 	{
+		id: 0,
 		heading: "Portfolio",
 		subtitle: "Projects",
 	},
 	{
+		id: 1,
 		heading: "Portfolio",
 		subtitle: "Design",
 	},
 	{
+		id: 2,
 		heading: "Portfolio",
 		subtitle: "Art",
 	},
 	{
+		id: 3,
 		heading: "Portfolio",
 		subtitle: "3D",
+	},
+	{
+		id: 4,
+		heading: "Gallery",
+		subtitle: "Portfolio",
+	},
+	{
+		id: 5,
+		heading: "Gallery",
+		subtitle: "Portraits",
+	},
+	{
+		id: 6,
+		heading: "Gallery",
+		subtitle: "Cars",
+	},
+	{
+		id: 7,
+		heading: "Gallery",
+		subtitle: "Events",
+	},
+	{
+		id: 8,
+		heading: "Gallery",
+		subtitle: "Other",
 	},
 	
 ];

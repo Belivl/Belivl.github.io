@@ -1,29 +1,92 @@
 // profileSelector.js
-
+import { getCookie,setCookie } from "./utils";
 type Profile = 'Belial' | 'Michal'; // Add more profiles as needed
 
-// Function to set a cookie with the selected profile
-function setProfileCookie(profile: Profile): void {
-    document.cookie = `selectedProfile=${profile}; expires=Thu, 20 Dec 2024 23:59:59 UTC; path=/`;
-}
 
 
-// Function to get the value of a cookie by name
-function getCookie(name: string): string | undefined {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop()?.split(';').shift();
+const footerName = document.querySelector("#footerName") as HTMLSpanElement;
+const headerName = document.querySelector("#headerName") as HTMLDivElement;
+const msgrLink = document.querySelector("#msgrLink") as HTMLLinkElement;
+const msgrLink2 = document.querySelector("#msgrLink2") as HTMLLinkElement;
+const navLinkPort = document.querySelector("#navLinkPort") as HTMLLinkElement;
+const homeIMG = document.querySelector("#homeIMG") as HTMLImageElement;
+
+const btnProfile1 = document.querySelector("#btnProfile1");
+const btnProfile2 = document.querySelector("#btnProfile2");
+btnProfile1?.addEventListener('click', function (){
+    //btnProfile1.innerHTML = "Ok";
+    setCookie("profile","Belial",1)
+    setInterval(() => {
+      location.replace("/home/");
+    }, 1000);
+})
+btnProfile2?.addEventListener('click', function (){
+    //btnProfile2.innerHTML = "Ok";
+     setCookie("profile","Michal Jelinski",1)
+     setInterval(() => {
+      location.replace("/home2/");
+    }, 1000);
+})
+
+
+function setProfile(currentProfile){
+    if(currentProfile === "Belial"){
+            if(msgrLink2){
+                msgrLink2.href = "https://m.me/BelialDesign";
+            }
+            msgrLink.href = "https://m.me/BelialDesign";
+            
+            homeIMG.src = "/logo.png";
+            navLinkPort.href = "";
+            navLinkPort.href = "/portfolio/";
+        }else {
+            if(msgrLink2){
+                msgrLink2.href = "https://m.me/michaljelinskiofficial";
+            }
+            msgrLink.href = "https://m.me/michaljelinskiofficial";
+            
+            homeIMG.src = "/profile.jpg";
+            navLinkPort.href = "";
+             navLinkPort.href = "/gallery/portfolio/";
+        }
 }
+
+function checkCookie() {
+    let currentProfile = getCookie("profile");
+    if (currentProfile != "") {
+        footerName.innerHTML = currentProfile;
+        headerName.innerHTML = currentProfile;
+        
+        setProfile(currentProfile);
+      //alert("Welcome again " + okCookies);
+    } else {
+      currentProfile = "profile";
+      if (currentProfile != "" && currentProfile != null) {
+        //alert("Set your " + okCookies);
+      }
+    }
+  }
+  document.addEventListener("DOMContentLoaded", (event) => {
+    checkCookie();
+  });
+
+
+
+
+/* 
 
 // Function to update the social link based on the selected profile
 function updateSocialLink(profile: Profile): void {
     const socialLink = document.getElementById('socialLink') as HTMLAnchorElement;
+    const footerName = document.getElementById('footerName') as HTMLAnchorElement;
     if (profile === 'Belial') {
         socialLink.href = 'https://social-link-Belial.com';
         socialLink.innerHTML = "Belial MSGR";
+        footerName.innerHTML = "Belial";
     } else if (profile === 'Michal') {
         socialLink.href = 'https://social-link-Michal.com';
         socialLink.innerHTML = "Michal MSGR";
+        footerName.innerHTML = "Michal";
     }
     // No default case, so the link remains unchanged for other profiles
 }
@@ -43,16 +106,27 @@ function switchHeaderName(profile: Profile): void {
     // No default case, so the header name remains unchanged for other profiles
 }
 
+export default function updateFooter() {
+    const selectedProfile = getCookie('selectedProfile');
+    const footerName = document.getElementById('footerName') as HTMLHeadingElement;
+    footerName.innerHTML = selectedProfile.toString();
+}
+
+ window.onload = function () {
+            updateFooter();
+        };
+
 document.addEventListener('DOMContentLoaded', function () {
     const profileButtons = document.querySelectorAll('.profile-button') as NodeListOf<HTMLButtonElement>;
-
+    getCookie("selectedProfile");
     profileButtons.forEach(function (button) {
+        //console.log("added button profile")
         button.addEventListener('click', function () {
             const selectedProfile = button.dataset.profile as Profile;
-            setProfileCookie(selectedProfile);
+            // Function to set a cookie with the selected profile
+            //setCookie("selectedProfile",selectedProfile,1)
             updateSocialLink(selectedProfile);
-            switchHeaderName(selectedProfile);
-            //alert(selectedProfile);
+           // switchHeaderName(selectedProfile);
         });
     });
-});
+});*/

@@ -11,7 +11,13 @@ interface Props extends HTMLAttributes<"button"> {
 const { type = "button", size = "md", theme, classes, ...rest } = Astro.props;
 ---
 
-<button class:list={[classes]} {type} data-size={size} {...rest}>
+<button
+  class:list={[classes]}
+  {type}
+  data-size={size}
+  {...rest}
+  class="w-full sm:w-auto text-center justify-center"
+>
   <slot />
 </button>
 

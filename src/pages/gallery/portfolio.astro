@@ -1,32 +1,31 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Container from "@src/components/Container.astro";
+import Headline from "@src/components/Headline.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import ModalGallery from "@src/components/ui/ModalGallery.astro";
+import { Headlines } from "@src/consts";
+let pageName = "Portfolio";
 ---
 
-<Layout title="portfolio">
+<Layout title={pageName}>
   <!--Modal -->
   <ModalGallery data="Portfolio" />
-  <section class="mx-auto container px-0 flex flex-col gap-16 py-8">
-    <div class="flex flex-col gap-4">
-      <h1>Portfolio</h1>
-      <h2 class="H5 uppercase">Projects</h2>
-    </div>
-    <!-- 
-    <GalleryTabs active="portfolio" />-->
-    <div class="flex gap-3">
+  <Container>
+    <Headline Heading={Headlines[4].heading} Subtitle={Headlines[4].subtitle} />
+    <div class="flex gap-3 mb-16">
       <ButtonA size="sm" classes="primary px-4">Portfolio</ButtonA>
 
-      <a href="/gallery/portraits">
+      <a href="/gallery/portraits/">
         <ButtonA size="sm" classes="default px-4">Portraits</ButtonA>
       </a>
-      <a href="/gallery/cars">
+      <a href="/gallery/cars/">
         <ButtonA size="sm" classes="default px-4">Automotive</ButtonA>
       </a>
-      <a href="/gallery/events">
+      <a href="/gallery/events/">
         <ButtonA size="sm" classes="default px-4">Events</ButtonA>
       </a>
-      <a href="/gallery/other">
+      <a href="/gallery/other/">
         <ButtonA size="sm" classes="default px-4">Other</ButtonA>
       </a>
     </div>
@@ -35,6 +34,11 @@ import ModalGallery from "@src/components/ui/ModalGallery.astro";
       <div id="masonCol2" class="masonCol"></div>
       <div id="masonCol3" class="masonCol"></div>
     </div>
+  </Container>
+  <section class="mx-auto container px-0 flex flex-col gap-16 py-8">
+    <!-- 
+    <GalleryTabs active="portfolio" />-->
+
     <!--
     <Pagination
       prevUrl={page.url.prev}
@@ -49,40 +53,15 @@ import ModalGallery from "@src/components/ui/ModalGallery.astro";
 </Layout>
 
 <script>
-  import imagePathsPortfolio from "@src/js/imagePaths/imagePathsPortfolio.js";
-  const masonGrid3 = document.querySelector(".masonGrid3");
-
-  let currentColumn = 0;
-
-  function createImageElement(src) {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = src;
-    img.classList.add("image-item3");
-    img.style.marginBottom = "16px";
-    img.style.width = "100%";
-    img.style.display = "inline-block";
-    img.style.borderRadius = "12px";
-    return img;
-  }
+  import { createGrid } from "js/gridGallery.js";
+  import imagePathsPortfolio from "js/imagePaths/imagePathsPortfolio.js";
 
   imagePathsPortfolio.forEach((path, i) => {
-    const img = createImageElement(path);
-    const btn = document.createElement("button");
-    btn.appendChild(img);
-    btn.classList.add("grid-item");
-    btn.id = i.toString();
-    masonGrid3?.children[currentColumn].appendChild(btn);
-    //console.log(currentColumn + " I:" + i);
-    currentColumn = (currentColumn + 1) % 3;
+    createGrid(path, i);
   });
 </script>
+
 <style lang="scss">
-  .masonGrid3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 16px; /* Adjust the gap between columns */
-  }
   .image-item3 {
     display: inline-block;
     width: 100%;
@@ -108,9 +87,7 @@ import ModalGallery from "@src/components/ui/ModalGallery.astro";
     width: 400px;
     margin-bottom: 1rem;
   }
-  .grid-item--width2 {
-    width: 400px;
-  }
+
   .image-item {
     flex: 1 0 28%;
     min-width: 200px;
@@ -126,25 +103,5 @@ import ModalGallery from "@src/components/ui/ModalGallery.astro";
 
   .image-item:is(:hover, :focus) img {
     transform: scale(1.03);
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .H1 {
-    color: var(--grey-light);
-    font-size: 61px;
-    font-family: var(--fontfam-primary);
-    font-weight: 700;
-    line-height: 120%;
-  }
-  .H2 {
-    color: var(--grey-100);
-    font-size: 16px;
-    font-family: var(--fontfam-secondary);
-    font-weight: 700;
   }
 </style>

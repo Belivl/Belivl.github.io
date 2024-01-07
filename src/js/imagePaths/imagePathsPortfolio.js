@@ -1,4 +1,22 @@
 const imagePathsPortfolio = [
+    
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+/*
 "/photo/portrait/JEL00245-Edit.jpg",
 "/photo/portrait/JEL-339.jpg",
 "/photo/portrait/JEL00291-Edit.jpg",
@@ -30,7 +48,7 @@ const imagePathsPortfolio = [
 "/photo/cars/JEL-8352-2.jpg",
 "/photo/cars/JEL03435-Edit-2.jpg",
 "/photo/cars/JEL-08296.jpg",
-
+*/ 
 
 ];
 //console.log(imagePathsPortfolio);

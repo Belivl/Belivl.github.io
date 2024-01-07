@@ -1,25 +1,36 @@
 ---
-import translations from "@utils/t.ts";
 import Container from "@src/components/Container.astro";
 import ChoiceLayout from "@src/layouts/ChoiceLayout.astro";
+
+import translations from "@utils/t.ts";
 const t = translations(Astro.url);
 
-import ButtonA from "@components/ui/ButtonA.astro";
 import Coin2 from "@components/ui/Coin2.astro";
 
 import logo from "@assets/logo.png";
 import profile from "@assets/profile.jpg";
+
+import { NAME1, NAME2 } from "@src/consts";
+import ButtonA from "@src/components/ui/ButtonA.astro";
 ---
 
 <ChoiceLayout>
+  <div class="flex gap-5">
+    <ButtonA id="btnProfile1" size="md" classes="default">{NAME1}</ButtonA>
+    <ButtonA id="btnProfile2" size="md" classes="default">{NAME2}</ButtonA>
+  </div>
   <div
     id="title1"
-    class="container flex flex-col gap-4 justify-center items-center py-8 mb-8"
+    class="flex flex-col gap-4 justify-center items-center py-8 mb-8"
   >
-    <h1 class="H1">Enter</h1>
-    <h2 class="H5 text-grey-75 uppercase">YOU CAN ALWAYS SWITCH in the nav</h2>
+    <h1 class="H1">{t.index_choice}</h1>
+    <h2 class="H5 text-grey-75 uppercase text-center">
+      {t.index_choiceDesc}
+    </h2>
   </div>
-  <div class="container flex flex-row justify-around relative">
+  <div
+    class="container flex flex-col md:flex-row justify-center gap-4 md:gap-16 relative"
+  >
     <div
       id="star"
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -27,20 +38,23 @@ import profile from "@assets/profile.jpg";
       <img id="star1" src="/Star1.svg" alt="Star" class="hidden starAnim" />
     </div>
 
-    <div id="coinDIV1" class="flex flex-col justify-center items-center gap-10">
+    <div
+      id="coinDIV1"
+      class="flex flex-col justify-center items-center gap-0 md:gap-10 w-full md:w-1/3"
+    >
       <div
         id="coin1"
-        class="md:scale-100 scale-75 hover:scale-80 md:hover:scale-105 transition ease-out"
+        class="profileBelial h-[180px] sm:h-auto scale-[50%] sm:scale-75 md:scale-100 hover:scale-80 md:hover:scale-105 transition ease-out"
       >
         <Coin2>
-          <img src={logo.src} alt="Front" class="w-[300px]" />
+          <img src={logo.src} alt="Front" class="w-full md:w-[300px]" />
         </Coin2>
       </div>
       <div
         id="coinDesc1"
-        class="flex flex-col justify-center items-center gap-3"
+        class="flex flex-col justify-center items-center gap-0 md:gap-3"
       >
-        <h3 class="H1 md:scale-100 scale-75">BELIAL</h3>
+        <h3 class="H1 md:scale-100 scale-75 text-center uppercase">{NAME1}</h3>
         <div class="flex justify-center items-center gap-4">
           <span class="font-semibold text-[18px] uppercase text-grey-75"
             >3D</span
@@ -57,10 +71,13 @@ import profile from "@assets/profile.jpg";
         </div>
       </div>
     </div>
-    <div id="coinDIV2" class="flex flex-col justify-center items-center gap-10">
+    <div
+      id="coinDIV2"
+      class="flex flex-col justify-center items-center gap-0 md:gap-10 w-full md:w-1/3"
+    >
       <div
         id="coin2"
-        class="md:scale-100 scale-75 hover:scale-80 md:hover:scale-105 transition ease-out"
+        class="profileMichal h-[180px] sm:h-auto scale-[50%] sm:scale-75 md:scale-100 hover:scale-80 md:hover:scale-105 transition ease-out"
       >
         <Coin2>
           <img src={profile.src} alt="Front" class="w-[300px]" />
@@ -68,21 +85,21 @@ import profile from "@assets/profile.jpg";
       </div>
       <div
         id="coinDesc2"
-        class="flex flex-col justify-center items-center gap-3"
+        class="flex flex-col justify-center items-center gap-0 md:gap-3"
       >
-        <h3 class="H1 md:scale-100 scale-75">MICHAL JELINSKI</h3>
+        <h3 class="H1 md:scale-100 scale-75 text-center uppercase">{NAME2}</h3>
         <div class="flex justify-center items-center gap-4">
           <span class="font-semibold text-[18px] uppercase text-grey-75"
-            >photography</span
+            >{t.index_photo}</span
           >
           <span class="font-semibold text-[18px] uppercase text-grey-75"
-            >videography</span
+            >{t.index_video}</span
           >
         </div>
       </div>
     </div>
   </div>
-  <Container class="pt-16">
+  <Container class="pt-16 hidden">
     <!-- Profile Selection -->
     <div class="flex gap-3">
       <button
@@ -101,37 +118,8 @@ import profile from "@assets/profile.jpg";
     </div>
     <!--<span set:html={t.home_description} /> -->
   </Container>
-  <script src="../js/profileSelector.ts"></script>
 </ChoiceLayout>
-
-<script>
-  const star1 = document.getElementById("star1");
-  const coin1 = document.getElementById("coin1");
-  const coin2 = document.getElementById("coin2");
-  const coinDIV1 = document.getElementById("coinDIV1");
-  const coinDIV2 = document.getElementById("coinDIV2");
-  const coinDesc1 = document.getElementById("coinDesc1");
-  const coinDesc2 = document.getElementById("coinDesc2");
-  const title1 = document.getElementById("title1");
-  coin1?.addEventListener("click", () => Coin1());
-  coin2?.addEventListener("click", () => Coin2());
-
-  function hideCommon(homehref) {
-    title1?.classList.add("hidden");
-    star1?.classList.toggle("hidden");
-    setInterval(() => {
-      location.replace(homehref);
-    }, 2000);
-  }
-
-  function Coin1() {
-    hideCommon("/home/");
-    coinDIV2?.classList.add("hidden");
-    coinDesc1?.classList.add("hidden");
-  }
-  function Coin2() {
-    hideCommon("/home2/");
-    coinDIV1?.classList.add("hidden");
-    coinDesc2?.classList.add("hidden");
-  }
-</script>
+<script src="js/profileSelector.ts"></script>
+<!-- 
+<script src="js/choiceNavigate.js"></script>
+-->

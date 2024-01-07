@@ -3,7 +3,6 @@ import LanguageSelector from "./LanguageSelector.astro";
 import ThemeSelector from "./ThemeSelector.astro";
 import ButtonA from "./ui/ButtonA.astro";
 import Separator from "./ui/Separator.astro";
-
 const today: Date = new Date();
 ---
 
@@ -19,7 +18,7 @@ const today: Date = new Date();
       <div class="font-medium flex items-center gap-4">
         <div>
           &copy; {today.getFullYear()}
-          <span id="footerName">Belial</span>. All rights reserved.
+          <span id="footerName"></span>. All rights reserved.
         </div>
         <a href="https://astro.build"
           ><img
@@ -31,7 +30,7 @@ const today: Date = new Date();
         >
       </div>
       <div class="grid grid-flow-col items-center gap-4">
-        <a href="https://m.me/BelialDesign" target="_blank">
+        <a id="msgrLink" href="" target="_blank">
           <ButtonA size="lg" classes="default icon">
             <span class="sr-only">Follow Belial on Instagram</span>
             <svg
@@ -92,6 +91,8 @@ const today: Date = new Date();
     </div>
   </footer>
 </div>
+
+<script src="js/profileSelector.ts"></script>
 
 <style lang="scss">
   .dividerHoz {

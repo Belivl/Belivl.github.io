@@ -1,5 +1,24 @@
 const imagePathsCars = 
-["/photo/cars/IMG20230716175424.jpg",
+[
+
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+ "https://drive.google.com/uc?export=view&id=",
+  /*
+"/photo/cars/IMG20230716175424.jpg",
 "/photo/cars/JEL-08250-2.jpg",
 "/photo/cars/JEL-05623-2.jpg",
 "/photo/cars/JEL03435-Edit-2.jpg",
@@ -15,6 +34,6 @@ const imagePathsCars =
 "/photo/cars/JEL-08471.jpg",
 "/photo/cars/JEL-08267.jpg",
 "/photo/cars/IMG_20201222_153614.jpg",
-"/photo/cars/JEL-08296.jpg"];
+"/photo/cars/JEL-08296.jpg"*/  ];
 //console.log(imagePathsCars);
 export default imagePathsCars;

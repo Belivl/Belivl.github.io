@@ -14,7 +14,10 @@ const logoAlt = "The Belial Logo";
 ---
 
 <a href={link}>
-  <button class="goldCTA" data-size={size}>
+  <button
+    class="goldCTA w-full sm:w-auto text-center justify-center"
+    data-size={size}
+  >
     <div class="flex gap-2 z-[7] justify-center items-center">
       <p class="pCTALarge">{text}</p>
       <slot />

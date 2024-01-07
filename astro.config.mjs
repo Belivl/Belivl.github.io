@@ -31,7 +31,5 @@ export default defineConfig({
     exclude: ["pages/api/**/*", "pages/rss.xml.ts", "pages/[locale]/rss.xml.ts"]
   }), alpinejs(), tailwind({
     applyBaseStyles: false
-  }), icon({
-      iconDir: "src/assets/icons",
-    })]
+  }), icon()]
 });

@@ -4,30 +4,46 @@ import Footer from "@components/Footer.astro";
 import { getLocale } from "astro-i18n-aut";
 import { ViewTransitions } from "astro:transitions";
 import bgPic from "@assets/FilmGrainS5.jpg";
-
+import CookieBanner from "@src/components/ui/CookieBanner.astro";
 const locale = getLocale(Astro.url);
 ---
 
 <!doctype html>
 <html lang={locale}>
   <head>
-    <BaseHead title="Testi18n" description="TestingI18n" image="" />
+    <BaseHead
+      title="Portfolio Choice"
+      description="Enter desired portfolio site"
+      image=""
+    />
     <ViewTransitions />
-  </head>
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <body class="bg-grey-500 relative p-0 z-0 h-full">
+      gtag("config", "G-H8G97ZVN7G");
+    </script></head
+  >
+-->
+    <!-- Google tag (gtag.js) -->
+  </head><body class="bg-grey-500 relative p-0 z-0">
+    <CookieBanner />
     <!--Background image -->
     <div class="bgColor bg-grey-500 fixed w-full h-full -z-50"></div>
     <img src={bgPic.src} alt="X" class="mainBG" />
     <div>
-      <main id="main" class="w-full flex flex-col items-center justify-center">
+      <main
+        id="main"
+        class="w-full flex flex-col items-center justify-center p-4 h-full"
+      >
         <slot />
       </main>
-      <div
-        class="container w-full mx-auto absolute top-auto bottom-0 left-0 right-0"
-      >
-        <Footer />
-      </div>
+      <Footer />
     </div>
     <style lang="scss">
       html,
@@ -38,13 +54,11 @@ const locale = getLocale(Astro.url);
         height: 100%;
         display: grid;
         margin-inline: auto;
-        padding-inline: 2rem;
-      }
-      main {
-        padding: 24px;
-        margin: auto;
-        height: 100%;
       }
     </style>
+    <script src="js/profileSelector.ts"></script>
+    <!-- <script type="module" is:inline src="src/js/choiceNavigate.js"></script>
+   
+    <script type="module" is:inline src="src/js/profile.js"></script>-->
   </body>
 </html>

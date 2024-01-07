@@ -46,14 +46,14 @@ const posts = (
 <Container className="py-16">
   <Headline Heading="Highlights" Subtitle="Portfolio" />
   <ul
-    class="m-0 grid list-none grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-9 p-0"
+    class="m-0 grid list-none grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 p-0"
   >
     {
       posts.map((post: any, index: number) => (
         <li
           class={`${index === 0 ? "col-span-2 mb-4 w-full text-center" : ""}`}
         >
-          <article class="card border-[#434347] relative border rounded-xl overflow-hidden ring-offset-background hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+          <article class="card border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
             <a href={post.href} class="w-[720px] h-[180px] bg-gray-700">
               <div class="absolute top-0 left-0 right-0 -z-20 h-[180px] bg-grey-200">
                 <HeroImage
@@ -68,7 +68,7 @@ const posts = (
               </div>
               <div class="w-[720px] h-[180px] bg-none" />
             </a>
-            <div class="cardContent flex justify-between items-end p-5 border-[#434347] bg-grey-500">
+            <div class="cardContent flex justify-between items-end p-5  bg-grey-500  border-t-[1px] border-grey-200">
               <div class="flex flex-col gap-2">
                 <a href={post.href}>
                   <h3 class="H5 text-xl font-semibold leading-none tracking-tight">

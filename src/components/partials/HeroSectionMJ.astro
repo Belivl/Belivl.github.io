@@ -1,12 +1,13 @@
 ---
 import ButtonA from "@components/ui/ButtonA.astro";
 import GoldCTA from "@components/ui/GoldCTA.astro";
+import WorkBadge from "../ui/WorkBadge.astro";
 ---
 
 <section
   class="flex gap-24 justify-between items-center container py-32 relative rounded-2xl overflow-clip"
 >
-  <div class="flex flex-col gap-12 justify-start items-start">
+  <div class="flex flex-col gap-16 justify-start items-start">
     <!-- 
       <div
         class="flex gap-2 items-center bg-grey-500 border border-gray-300 rounded-full px-4 py-2"
@@ -16,6 +17,25 @@ import GoldCTA from "@components/ui/GoldCTA.astro";
           Unavailable for work
         </div>
       </div>-->
+    <div class="flex flex-col gap-5 items-start">
+      <WorkBadge workMode="true">Available for work</WorkBadge>
+      <h1 class="H1 uppercase leading-loose" style="line-height: 120%;">
+        Hi there! I'm Michal Jelinski
+        <br />a passionate <span class="textBaseGold uppercase"
+          ><span class="material-icons mx-2">
+            photo_camera</span
+          >photographer</span
+        >
+      </h1>
+      <h2
+        class="H5 uppercase leading-tight"
+        style="line-height: 130%; font-weight: 700;"
+      >
+        pouring my heart and soul <br /> into each frame.
+      </h2>
+    </div>
+
+    <!-- 
     <h1 class="H1 uppercase">
       Hi! I’m Michal Jelinski <br />an <span class="textBaseGold uppercase"
         >artist <span class="material-icons"> color_lens</span></span
@@ -25,13 +45,13 @@ import GoldCTA from "@components/ui/GoldCTA.astro";
           photo_camera
         </span></span
       > by craft.
-    </h1>
+    </h1>-->
     <div class="flex gap-4 items-center">
       <GoldCTA link="/gallery/portfolio/" size="lg" text="View portfolio">
         <span class="material-icons">arrow_forward</span>
       </GoldCTA>
-      <a href="/about"
-        ><ButtonA size="lg" classes="default">Read more</ButtonA></a
+      <a href="/contact/"
+        ><ButtonA size="lg" classes="default">Contact</ButtonA></a
       >
     </div>
   </div>
@@ -42,28 +62,26 @@ import GoldCTA from "@components/ui/GoldCTA.astro";
       >
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <img src="/graphics/project/FrontCoverV2.png" alt="YaoAlbumCover" />
-        <img src="/graphics/design/Visa2v6.png" alt="Visa2v6" />
-        <img src="/graphics/art/NoiseSilenceV3-alt2.jpg" alt="NoiseSilenceV3" />
+        <img src="/photo/portrait/JEL-339.jpg" alt="JEL00291" />
+        <img src="/photo/portrait/JEL05953-2.jpg" alt="JEL00291" />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <img src="/graphics/design/HalloweenParty2.jpg" alt="HalloweenBanner" />
-        <img src="/graphics/art/Lu2.png" alt="LucianaPencil" />
-        <img src="/graphics/3d/BookMisc4PS.png" alt="BookBacardi" />
+        <img src="/photo/portrait/JEL00291-Edit.jpg" alt="JEL00291" />
+        <img src="/photo/more/JEL08347.jpg" alt="JEL00291" />
+        <img src="/photo/portrait/JEL00592-Edit.jpg" alt="JEL00291" />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <img src="/graphics/3d/536941.jpg" alt="3DNature" />
-        <img
-          src="/graphics/design/KaraokeCzwartki A4.jpg"
-          alt="KaraokeCzwartki"
-        />
-        <img src="/graphics/3d/MartwaNatura2.webp" alt="Ice3D" />
+        <img src="/photo/more/JEL-08296.jpg" alt="JEL00291" />
+        <img src="/photo/more/JEL-03921.jpg" alt="JEL00291" />
       </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
+  img {
+    border-radius: 6px;
+  }
   .gridPhotoHERO {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

@@ -32,7 +32,7 @@ const { data } = Astro.props;
       </div>
     </div>
     <!--StripMain -->
-    <div class="gridContainerStrip gap-9">
+    <div class="gridContainerStrip gap-9 h-[80vh]">
       <button
         class="prev bg-grey-500 grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
       >
@@ -40,19 +40,22 @@ const { data } = Astro.props;
           >keyboard_arrow_left</span
         >
       </button>
-      <!--Image asset from cdn 
-    <Image
-      src="https://cdn.sanity.io/images/46kfzxex/production/4898bb60646d58c11767f70188672c89421d17f6-1620x1080.jpg"
-      alt="08271"
-      width={48}
-      height={48}
-      class="lightboxImg rounded-lg overflow-hidden object-contain w-full h-[60vh] border border-grey-300"
-    />-->
-      <div class="w-full flex justify-center">
+
+      <div class="w-full flex justify-evenly gap-3 h-full">
         <img
           src=""
           alt="alt"
-          class="lightboxImg rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
+          class="lightboxImgPrev prev rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
+        />
+        <img
+          src=""
+          alt="alt"
+          class="lightboxImg rounded-lg overflow-hidden border border-grey-300 max-h-[80vh] object-contain"
+        />
+        <img
+          src=""
+          alt="alt"
+          class="lightboxImgNext next rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
         />
       </div>
 
@@ -67,6 +70,8 @@ const { data } = Astro.props;
     <!--StripIndex -->
     <div class="flex items-center justify-center gap-2 w-full relative">
       <div class="stripUp rotate-180">
+        <!--<div class="container2 w-full mx-8" id="rectangleContainer"></div>
+         -->
         {[...Array(40)].map((e, i) => <div class="cutout" />)}
       </div>
       <div
@@ -99,36 +104,47 @@ const { data } = Astro.props;
 
   //const gallery = document.getElementById("gallery2");
   //const totalImages2 = gallery.childElementCount;
-  let totalImages: number = 0;
+
   const lightboxImg = document.querySelector(
     ".lightboxImg"
-  ) as HTMLImageElement | null;
+  ) as HTMLImageElement;
+
+  const lightboxImgPrev = document.querySelector(
+    ".lightboxImgPrev"
+  ) as HTMLImageElement;
+  const lightboxImgNext = document.querySelector(
+    ".lightboxImgNext"
+  ) as HTMLImageElement;
+
+  lightboxImgPrev.classList.add("prevImg");
+  lightboxImgNext.classList.add("prevImg");
+
   let ArrayPhoto: string[] = [];
   import imagePathsPortrait from "@src/js/imagePaths/imagePathsPortrait.js";
   import imagePathsOther from "@src/js/imagePaths/imagePathsOther.js";
   import imagePathsCars from "@src/js/imagePaths/imagePathsCars";
   import imagePathsEvents from "@src/js/imagePaths/imagePathsEvents.js";
   import imagePathsPortfolio from "@src/js/imagePaths/imagePathsPortfolio.js";
-  //Make it so i can input the name of the photo gallery array and switch, outside the component
-  let photos1: any = modal1?.dataset.photoarray;
 
-  //console.log(photos1);
-  let currentImageIndex: number = 1;
-  /**
-   * prev.addEventListener("click", changeImage(-1));
-  next.addEventListener("click", changeImage(1));
-   
-
-  openModalBTNS.forEach((btn) => {
-    btn.addEventListener("click", openLightbox);
-  });
-*/
+  let photos1 = modal1?.dataset.photoarray;
+  let totalImages: number = 0;
+  let prevImg: number = 0;
+  let nextImg: number = 0;
+  let currentImageIndex: number = 0;
 
   document.addEventListener("DOMContentLoaded", function () {
     var openBTNS = document.querySelectorAll(".grid-item");
+    var openBTNS4 = document.querySelectorAll(".grid-item4");
     var prevBTNS = document.querySelectorAll(".prev");
     var nextBTNS = document.querySelectorAll(".next");
     openBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        //console.log("Index = " + index);
+        let btnID: number = Number(button.id);
+        openLightbox(btnID);
+      });
+    });
+    openBTNS4.forEach(function (button) {
       button.addEventListener("click", function () {
         //console.log("Index = " + index);
         let btnID: number = Number(button.id);
@@ -174,7 +190,9 @@ const { data } = Astro.props;
         break;
     }
     totalImages = ArrayPhoto.length;
-    //console.log(totalImages);
+    //total
+    //console.log("totalImages: " + totalImages);
+
     if (indexDisplay2 !== null) {
       indexDisplay2.innerHTML = totalImages.toString();
     }
@@ -185,73 +203,65 @@ const { data } = Astro.props;
       modal1?.close();
     });
   }
-
-  function openLightbox(index) {
-    //console.log(index);
-    currentImageIndex = index;
+  function updateCounter() {
     if (indexDisplay !== null) {
       indexDisplay.innerHTML = (currentImageIndex + 1).toString();
     }
+  }
+  function openLightbox(index) {
+    currentImageIndex = index;
     updateLightbox();
+    updateCounter();
     modal1?.showModal();
   }
 
   function changeImage(n) {
     currentImageIndex += n;
-    console.log("currentImageIndex = " + currentImageIndex);
-    //console.log("totalImages = " + totalImages);
-    if (currentImageIndex === totalImages) {
-      currentImageIndex = 1;
-      console.log("currentImageIndex >= totalImages " + currentImageIndex);
-    } else if (currentImageIndex < 1) {
-      currentImageIndex = totalImages;
+    if (currentImageIndex >= totalImages) {
+      currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+      currentImageIndex = totalImages - 1;
     }
     updateLightbox();
-    if (indexDisplay !== null) {
-      indexDisplay.innerHTML = (currentImageIndex + 1).toString();
-    }
+    updateCounter();
   }
+
   function updateLightbox() {
-    if (lightboxImg !== null) {
-      lightboxImg.src = ArrayPhoto[currentImageIndex];
+    if (currentImageIndex == 0) {
+      prevImg = totalImages - 1;
+      nextImg = currentImageIndex + 1;
+    } else if (currentImageIndex === totalImages - 1) {
+      prevImg = currentImageIndex - 1;
+      nextImg = 0;
+    } else {
+      prevImg = currentImageIndex - 1;
+      nextImg = currentImageIndex + 1;
     }
 
-    /* 
-    switch (currentImageIndex) {
-      case 0:
-        lightboxImg.src =
-          "https://cdn.sanity.io/images/46kfzxex/production/1ff668b051ff3b19e779505f09826be0135bb94a-2000x2666.jpg";
-        break;
-      case 1:
-        lightboxImg.src =
-          "https://cdn.sanity.io/images/46kfzxex/production/4898bb60646d58c11767f70188672c89421d17f6-1620x1080.jpg";
-        break;
-      case 2:
-        lightboxImg.src =
-          "https://cdn.sanity.io/images/46kfzxex/production/27b8db737b4eb8df1c52c5329dbbed6313234978-595x842.jpg";
-        break;
-
-      default:
-        lightboxImg.src =
-          "https://cdn.sanity.io/images/46kfzxex/production/612c9d2c31770c57afe824e65a34a14473b8446d-1000x1000.jpg";
-        break;
-    }*/
+    lightboxImgPrev.src = ArrayPhoto[prevImg];
+    lightboxImg.src = ArrayPhoto[currentImageIndex];
+    lightboxImgNext.src = ArrayPhoto[nextImg];
   }
-  /**
- * 
-
-  // Dynamically create the gallery
-  const gallery = document.querySelector(".galleryM");
-  for (let i = 1; i <= 6; i++) {
-    var imageSrc = "{image1.src}";
-    const img = document.createElement("img");
-    img.src = imageSrc;
-    img.setAttribute("onclick", `openLightbox(${i - 1})`);
-    gallery.appendChild(img);
-  } */
 </script>
 
 <style lang="scss">
+  body.modal-open {
+    overscroll-behavior: contain;
+  }
+  img {
+    border-radius: 8px;
+  }
+  .prevImg {
+    opacity: 10%;
+    max-width: 33%;
+    border: 1px solid var(--grey-200);
+    transition: opacity 250ms ease-in-out;
+  }
+  .prevImg:hover {
+    border: 1px solid var(--grey-100);
+    opacity: 20%;
+    transition: opacity 250ms ease-in-out;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -273,4 +283,73 @@ const { data } = Astro.props;
   .modal::backdrop {
     background: rgba(17, 17, 20, 0.8);
   }
+  .container2 {
+    width: 100%;
+    //max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    height: 100px;
+    display: flex;
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+  }
+  .rectangle {
+    background-color: yellowgreen;
+    height: 100px;
+    width: 50px;
+    background: yellowgreen;
+    text-align: center;
+  }
 </style>
+
+<script>
+  interface Rectangle {
+    className: string;
+  }
+  function createRectangles(containerWidth: number): void {
+    const container = document.querySelector("#rectangleContainer");
+    if (!container) return;
+    //container.innerHTML = "";
+    const rect = document.createElement("div");
+    rect.classList.add("rectangle");
+    container.appendChild(rect);
+
+    //container.innerHTML = ""; // Clear existing content
+    //const rectangleWidth = (containerWidth - 12) / 3;
+    const rectangleWidth: number = 50;
+    const rectangleCount = Math.floor(containerWidth / (rectangleWidth + 12));
+    console.log("rectangleCount:" + rectangleCount);
+    for (let i = 0; i < rectangleCount; i++) {
+      //const rectangle: Rectangle = { className: "rectangle" };
+
+      const rectangleElement = document.createElement("div");
+      rectangleElement.textContent = (i + 1).toString();
+      //rectangleElement.className = rectangle.className;
+      rectangleElement.classList.add("cutout");
+      rectangleElement.style.width = "50px";
+      rectangleElement.style.height = "100px";
+      rectangleElement.style.backgroundColor = "red";
+      //console.log(rectangleElement);
+      //rectangleElement.style.width = `${rectangleWidth}px`; // Set the width dynamically
+      container.appendChild(rectangleElement);
+    }
+  }
+
+  function handleResize(): void {
+    const containerWidth =
+      document.getElementById("rectangleContainer")?.offsetWidth || 0;
+    createRectangles(containerWidth);
+    //alert(containerWidth);
+  }
+
+  function initialize(): void {
+    handleResize(); // Initial creation
+
+    // Update on window resize
+    window.addEventListener("resize", handleResize);
+  }
+
+  document.addEventListener("DOMContentLoaded", initialize);
+</script>

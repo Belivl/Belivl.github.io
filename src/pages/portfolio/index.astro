@@ -34,6 +34,7 @@ const posts = (
 ---
 
 <Layout title="portfolio">
+  <div class="container2 w-full mx-8" id="rectangleContainer"></div>
   <Container>
     <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
     <div class="flex gap-3 items-center justify-left w-full">
@@ -117,4 +118,72 @@ const posts = (
   img {
     border-radius: 0%;
   }
+  .container2 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rebeccapurple;
+    height: 100px;
+    display: flex;
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+  }
+  .rectangle {
+    background-color: yellowgreen;
+    height: 100px;
+    width: 50px;
+    background: yellowgreen;
+    text-align: center;
+  }
 </style>
+<script>
+  interface Rectangle {
+    className: string;
+  }
+  function createRectangles(containerWidth: number): void {
+    const container = document.querySelector("#rectangleContainer");
+    if (!container) return;
+    //container.innerHTML = "";
+    const rect = document.createElement("div");
+    rect.classList.add("rectangle");
+    container.appendChild(rect);
+
+    //container.innerHTML = ""; // Clear existing content
+    //const rectangleWidth = (containerWidth - 12) / 3;
+    const rectangleWidth: number = 50;
+    const rectangleCount = Math.floor(containerWidth / (rectangleWidth + 12));
+    console.log("rectangleCount:" + rectangleCount);
+    for (let i = 0; i < rectangleCount; i++) {
+      //const rectangle: Rectangle = { className: "rectangle" };
+
+      const rectangleElement = document.createElement("div");
+      rectangleElement.textContent = (i + 1).toString();
+      //rectangleElement.className = rectangle.className;
+      //rectangleElement.classList.add("rectangle");
+      rectangleElement.style.width = "50px";
+      rectangleElement.style.height = "100px";
+      rectangleElement.style.backgroundColor = "red";
+      //console.log(rectangleElement);
+      //rectangleElement.style.width = `${rectangleWidth}px`; // Set the width dynamically
+      container.appendChild(rectangleElement);
+    }
+  }
+
+  function handleResize(): void {
+    const containerWidth =
+      document.getElementById("rectangleContainer")?.offsetWidth || 0;
+    createRectangles(containerWidth);
+    //alert(containerWidth);
+  }
+
+  function initialize(): void {
+    handleResize(); // Initial creation
+
+    // Update on window resize
+    window.addEventListener("resize", handleResize);
+  }
+
+  document.addEventListener("DOMContentLoaded", initialize);
+</script>

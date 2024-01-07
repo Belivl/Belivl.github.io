@@ -1,43 +1,27 @@
 ---
-import translations from "@utils/t.ts";
 import Layout from "@layouts/Layout.astro";
 import Container from "@src/components/Container.astro";
 import Separator from "@src/components/ui/Separator.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import Headline from "@src/components/Headline.astro";
-
+import translations from "@utils/t.ts";
+import AboutBanner from "@src/components/partials/AboutBanner.astro";
+import Banner from "@src/components/partials/Banner.astro";
 const t = translations(Astro.url);
 ---
 
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-</script>
 <Layout title="About Me" description="Lorem ipsum dolor sit amet">
-  <Container class="pt-16">
-    <p set:html={t.about_description} />
-  </Container>
-
   <Container>
-    <Headline Heading="Experience" Subtitle="Work" />
+    <AboutBanner />
+  </Container>
+  <Container>
+    <Headline Heading={t.about_h2desc} Subtitle={t.about_h2} />
     <div class="flex flex-col gap-4">
       <!--FastTony -->
       <div class="expBTN">
         <button class="accordion gap-16"
           ><div class="flex items-center gap-6 shrink-0">
-            <span class="font-bold shrink-0">UI/UX Designer</span>
+            <span class="font-bold shrink-0">{t.about_uiux}</span>
             <span class="font-medium shrink-0">@FastTony</span>
           </div>
           <Separator data-type="horizontal" />
@@ -104,7 +88,7 @@ const t = translations(Astro.url);
       <div class="expBTN">
         <button class="accordion gap-16"
           ><div class="flex items-center gap-6 shrink-0">
-            <span class="font-bold shrink-0">Graphic Designer</span>
+            <span class="font-bold shrink-0">{t.about_graphic}</span>
             <span class="font-medium shrink-0">@Bukszpryt Pub&Club</span>
           </div>
           <Separator data-type="horizontal" />
@@ -149,7 +133,7 @@ const t = translations(Astro.url);
       <div class="expBTN">
         <button class="accordion gap-16"
           ><div class="flex items-center gap-6 shrink-0">
-            <span class="font-bold shrink-0">Graphic Designer</span>
+            <span class="font-bold shrink-0">{t.about_graphic}</span>
             <span class="font-medium shrink-0">@UMG</span>
           </div>
           <Separator data-type="horizontal" />
@@ -197,7 +181,7 @@ const t = translations(Astro.url);
       <div class="expBTN">
         <button class="accordion gap-16"
           ><div class="flex items-center gap-6 shrink-0">
-            <span class="font-bold shrink-0">Kitchen Help</span>
+            <span class="font-bold shrink-0">{t.about_kitchen}</span>
             <span class="font-medium shrink-0">@Focus Hotels</span>
           </div>
           <Separator data-type="horizontal" />
@@ -247,8 +231,27 @@ const t = translations(Astro.url);
         </div>
       </div>
     </div>
+    <Banner />
   </Container>
 </Layout>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
 <style lang="scss">
   /* Style the buttons that are used to open and close the accordion panel */
   .accordion {

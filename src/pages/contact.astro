@@ -1,46 +1,51 @@
 ---
-import translations from "@utils/t.ts";
 import Layout from "@layouts/Layout.astro";
 import Container from "@src/components/Container.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import Headline from "@src/components/Headline.astro";
 import GoldCTA from "@src/components/ui/GoldCTA.astro";
 import SocialButton from "@src/components/ui/SocialButton.astro";
-
+import Form from "@src/components/ui/Form.astro";
 import { LINKS } from "@src/consts";
 
+import translations from "@utils/t.ts";
 const t = translations(Astro.url);
 ---
 
 <Layout>
-  <Container className="w-full">
-    <Headline Heading="Let’s talk!/Get in touch" Subtitle="Contact" />
-    <div>
-      <p class="w-1/2 text-[18px] font-medium text-grey-75">
-        Write me an email if you want to work with me on a project commission.
-        State your company name for which you want the commission to be for or a
-        as individual. If it is a simple question, use messenger or whatsapp for
-        the fastest reponse. <br />
-        <br /> Feel free to reach me if you have a project, idea, suggestion or
-        just to chat :D
-      </p>
-      <div class="flex gap-4 items-center">
-        <div id="copyBtn">
-          <!--<ToastWithTitle client:load />-->
-          <GoldCTA text="copy email" size="lg" link="#">
-            <span class="material-symbols-outlined"> mail</span>
-          </GoldCTA>
+  <Container>
+    <div
+      class="flex lg:flex-row flex-col gap-16 md:gap-8 justify-between w-full mb-16"
+    >
+      <div class="w-full lg:mb-12">
+        <Headline Heading={t.contact_h1desc} Subtitle={t.contact_h1} />
+        <p class="w-full text-[18px] font-medium text-grey-75">
+          {t.contact_h1text}
+          <br />
+          <br />
+          {t.contact_h1text2}
+        </p>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:items-center md:justify-start mt-12"
+        >
+          <div id="copyBtn">
+            <!--<ToastWithTitle client:load />-->
+            <GoldCTA text="copy email" size="lg" link="#">
+              <span class="material-symbols-outlined"> mail</span>
+            </GoldCTA>
+          </div>
+          <a id="msgrLink2" href="https://m.me/BelialDesign" target="_blank">
+            <ButtonA size="lg" classes="secondary font-semibold ">
+              Messenger
+            </ButtonA>
+          </a>
         </div>
-        <a href="https://m.me/BelialDesign" target="_blank">
-          <ButtonA size="lg" classes="secondary font-semibold ">
-            Messenger
-          </ButtonA>
-        </a>
       </div>
+      <Form />
     </div>
   </Container>
 
-  <Container className="w-full">
+  <Container>
     <Headline Heading="Social hub" Subtitle="Links" />
     <!--Social links buttons -->
     <div class="flex flex-col md:flex-row gap-4 w-full">
