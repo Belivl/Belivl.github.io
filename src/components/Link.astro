@@ -1,6 +1,7 @@
 ---
 import { getLocaleUrlPrefix } from "astro-i18n-aut";
 import ButtonA from "./ui/ButtonA.astro";
+import { Button } from "./ui/button";
 
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
 
@@ -15,9 +16,9 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-  <ButtonA size="md" classes="ghost px-4 font-semibold " tabindex={-1}>
-    <slot />
-  </ButtonA>
+  <Button size="lg" variant="link"><slot /></Button>
+  <!-- 
+  <ButtonA size="md" classes="ghost px-4 font-semibold " tabindex={-1} />-->
 </a>
 
 <style>

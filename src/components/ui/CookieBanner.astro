@@ -1,15 +1,30 @@
 ---
 import ButtonA from "./ButtonA.astro";
+import { Button } from "./button";
 ---
 
 <dialog id="cookieModal" class="modal bg-transparent bottom-[5%] top-auto">
   <div
-    class="banner flex gap-12 bg-grey-400 border border-grey-300 rounded-xl p-3 items-center justify-center"
+    class="banner flex flex-col md:flex-row gap-5 md:gap-12 bg-grey-400 border border-grey-300 rounded-xl p-3 items-center justify-center"
   >
     <span class="ml-3 text-white"
-      >This website uses cookies to improve your web experience.</span
+      >This website uses cookies to improve your web experience. By using the
+      site you agree to our use of cookies. <a href="/privacy-policy/"
+        ><Button size="lg" variant="link" className="p-0 ml-3">
+          Privacy policy
+        </Button></a
+      ><a href="/terms/"
+        ><Button size="lg" variant="link" className="p-0 ml-3">ToS</Button></a
+      >
+    </span>
+    <Button
+      size="lg"
+      variant="default"
+      id="btnModal2"
+      className="md:w-auto w-full"
     >
-    <ButtonA size="md" classes="primary" id="btnModal2">Accept</ButtonA>
+      Accept
+    </Button>
   </div>
 </dialog>
 

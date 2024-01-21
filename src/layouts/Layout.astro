@@ -12,7 +12,29 @@ import CookieBanner from "@src/components/ui/CookieBanner.astro";
 const locale = getLocale(Astro.url);
 ---
 
-<!doctype html>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
 <html lang={locale}>
   <head>
     <BaseHead title="Testi18n" description="TestingI18n" image="" />
@@ -34,13 +56,11 @@ const locale = getLocale(Astro.url);
   </head><body class="bg-grey-500 relative p-0 z-0 h-full">
     <CookieBanner />
     <!--Background image -->
-    <div class="dark:bg-grey-500 bg-light fixed w-full h-full -z-50"></div>
+    <div class="dark:bg-grey-500 bg-grey-50 fixed w-full h-full -z-50"></div>
     <img src={bgPic.src} alt="BGPicture" class="mainBG" />
     <Container>
       <Navbar />
     </Container>
-    <div class="mx-5 md:mx-8"></div>
-
     <main id="main" class="w-full flex flex-col">
       <slot />
     </main>

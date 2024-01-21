@@ -1,0 +1,23 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { Button } from "./ui/button.tsx";
+import { Subpage } from "consts.ts";
+const { pathname } = Astro.url;
+---
+
+<div class="flex gap-3 mb-16">
+  {
+    Subpage.map((page) => (
+      <>
+        <HeaderLink href={`${page.href}`}>
+          <Button
+            variant={pathname === page.href ? "default" : "outline"}
+            className="capitalize"
+          >
+            {page.title}
+          </Button>
+        </HeaderLink>
+      </>
+    ))
+  }
+</div>

@@ -1,7 +1,15 @@
 ---
 import { LOCALES, DEFAULT_LOCALE } from "@src/consts";
 import { getLocale, getUrlWithoutLocale } from "astro-i18n-aut";
-
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 const currentLocale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const locales = Object.values(LOCALES);
 
@@ -31,10 +39,11 @@ const urlWithoutLocalePrefix = getUrlWithoutLocale(Astro.url);
       <img src="/pl.svg" alt="en_icon" />
     )
   }
+
   <select
     name="Language"
     aria-label="Change language"
-    class="cursor-pointer uppercase focus-visible:outline-none text-light dark:text-light dark:bg-grey-400 rounded-[0.375rem] border border-grey-200 dark:hover:bg-grey-200"
+    class="cursor-pointer h-10 w-10 items-center text-center uppercase focus-visible:outline-none text-grey-500 dark:text-light dark:bg-grey-400 bg-white rounded-[0.375rem] border border-grey-200 dark:hover:bg-grey-200 hover:bg-grey-50"
     x-data="dropdownData"
     x-on:change="changePage($event)"
   >
@@ -55,8 +64,7 @@ const urlWithoutLocalePrefix = getUrlWithoutLocale(Astro.url);
 <style lang="scss">
   select {
     font-size: 1rem;
-    max-height: 2.5rem;
-    padding: 1rem 1.5rem;
+
     box-sizing: content-box;
     display: flex;
     gap: 0.2em;

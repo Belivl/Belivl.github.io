@@ -3,6 +3,10 @@ import LanguageSelector from "./LanguageSelector.astro";
 import ThemeSelector from "./ThemeSelector.astro";
 import ButtonA from "./ui/ButtonA.astro";
 import Separator from "./ui/Separator.astro";
+import { ModeToggle } from "./ui/ModeToggle";
+import { LangSelect } from "./ui/langSelect";
+import { Button } from "./ui/button";
+import { MessageCircle } from "lucide-react";
 const today: Date = new Date();
 ---
 
@@ -31,7 +35,9 @@ const today: Date = new Date();
       </div>
       <div class="grid grid-flow-col items-center gap-4">
         <a id="msgrLink" href="" target="_blank">
-          <ButtonA size="lg" classes="default icon">
+          <Button variant="outline" size="icon">
+            <MessageCircle className="h-[1.2rem] w-[1.2rem]" />
+            <!-- 
             <span class="sr-only">Follow Belial on Instagram</span>
             <svg
               class="w-5 h-5"
@@ -77,16 +83,19 @@ const today: Date = new Date();
                 id="path11"
                 d="M 400 0 C 174.70023 0 0 165.10022 0 388 C 0 504.59988 47.799687 605.40007 125.59961 675 C 132.0996 680.79999 136.10078 689.00079 136.30078 697.80078 L 138.5 769 A 32 32 0 0 0 183.40039 797.30078 L 262.80078 762.30078 C 269.50077 759.30078 277.09923 758.79922 284.19922 760.69922 C 320.69918 770.69921 359.50004 776.09961 400 776.09961 C 625.29977 776.09961 800 610.99939 800 388.09961 C 800 165.19983 625.29977 0 400 0 z M 625.67578 269.33594 C 638.42577 270.45625 648.70077 285.17462 640.30078 298.59961 L 522.69922 484.90039 A 60 60 0 0 1 435.90039 500.90039 L 342.40039 430.80078 A 24 24 0 0 0 313.5 430.90039 L 187.30078 526.69922 C 170.5008 539.49921 148.50079 519.39998 159.80078 501.5 L 277.30078 315.09961 A 60 60 0 0 1 364.09961 299.09961 L 457.59961 369.19922 A 24 24 0 0 0 486.5 369.09961 L 612.69922 273.30078 C 616.89921 270.10078 621.42579 268.9625 625.67578 269.33594 z "
                 style="fill:#ffffff"></path>
-            </svg>
-          </ButtonA>
+            </svg>-->
+          </Button>
         </a>
         <Separator data-type="vertical" />
-        <ThemeSelector />
+        <ModeToggle client:load />
+        <!-- 
+        <ThemeSelector />-->
         <Separator data-type="vertical" />
         <LanguageSelector
           showFlag={false}
           class="appearance-none cursor-pointer focus-visible:outline-none"
         />
+        <LangSelect client:load />
       </div>
     </div>
   </footer>

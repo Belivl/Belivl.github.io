@@ -14,6 +14,7 @@
 @layer base {
 	* {
 		@apply box-border;
+		@apply border-border;
 	}
 
 	html {
@@ -21,7 +22,7 @@
 	}
 
 	body {
-		@apply m-0 bg-stone-50 p-0 text-stone-800 transition-all duration-300 dark:bg-grey-500 dark:text-grey-50;
+		@apply m-0 bg-stone-50 p-0 text-foreground transition-all duration-300 dark:bg-grey-500 dark:text-grey-50;
 	}
 
 	:root {
@@ -56,35 +57,65 @@
 
 		--radius: 0.5rem;
 
-		--background: 222.2 0% 4.9%;
-		--foreground: 210 40% 98%;
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
 
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
-
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-
-		--border: 217.2 0% 17.5%;
-		--input: 217.2 0% 17.5%;
-
-		--primary: 210 0% 98%;
-		--primary-foreground: 222.2 0% 11.2%;
-
-		--secondary: 217.2 0% 17.5%;
-		--secondary-foreground: 210 0% 98%;
-
-		--accent: 217.2 0% 17.5%;
-		--accent-foreground: ;
-
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 85.7% 97.3%;
-
-		--ring: 217.2 0% 17.5%;
+		--card: 0 0% 100%;
+			--card-foreground: 240 10% 3.9%;
+		
+			--popover: 0 0% 100%;
+			--popover-foreground: 240 10% 3.9%;
+		
+			--primary: 240 5.9% 10%;
+			--primary-foreground: 0 0% 98%;
+		
+			--secondary: 240 4.8% 95.9%;
+			--secondary-foreground: 240 5.9% 10%;
+		
+			--muted: 240 4.8% 95.9%;
+			--muted-foreground: 240 3.8% 46.1%;
+		
+			--accent: 240 4.8% 95.9%;
+			--accent-foreground: 240 5.9% 10%;
+		
+			--destructive: 0 84.2% 60.2%;
+			--destructive-foreground: 0 0% 98%;
+		
+			--border: 240 5.9% 90%;
+			--input: 240 5.9% 90%;
+			--ring: 240 5.9% 10%;
+		
+			--radius: 0.5rem;
 	}
+		.dark {
+			--background: 240 10% 3.9%;
+			--foreground: 0 0% 98%;
+	
+			--card: 240 10% 3.9%;
+			--card-foreground: 0 0% 98%;
+	
+			--popover: 240 10% 3.9%;
+			--popover-foreground: 0 0% 98%;
+	
+			--primary: 0 0% 98%;
+			--primary-foreground: 240 5.9% 10%;
+	
+			--secondary: 240 3.7% 15.9%;
+			--secondary-foreground: 0 0% 98%;
+	
+			--muted: 240 3.7% 15.9%;
+			--muted-foreground: 240 5% 64.9%;
+	
+			--accent: 240 3.7% 15.9%;
+			--accent-foreground: 0 0% 98%;
+	
+			--destructive: 0 62.8% 30.6%;
+			--destructive-foreground: 0 0% 98%;
+	
+			--border: 240 3.7% 15.9%;
+			--input: 240 3.7% 15.9%;
+			--ring: 240 4.9% 83.9%;
+		}
 }
 
 
@@ -99,6 +130,9 @@ body {
 	text-align: left;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	position: relative;
+	z-index: 0;
+	background-color: var(--background);
 }
 
 html{
@@ -153,7 +187,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: rgb(var(--light));
+	/*color: rgb(var(--light));*/
 	line-height: 1.2;
 }
 
@@ -265,12 +299,12 @@ h5 {
  	grid-template-columns: repeat(3, 1fr);
  	column-gap: 16px;
  }
-
+/*
   .masonGrid5 {
   	display: grid;
   	grid-template-columns: repeat(5, 1fr);
   	column-gap: 16px;
-  }
+  }*/
  .grid-item,.grid-item4{
 	border: 1px solid var(--grey-200);
 	margin-bottom: 16px;
@@ -285,4 +319,10 @@ h5 {
   }
   .grid-item:hover img,.grid-item4:hover img{
 	opacity: 80%;
+  }
+  .iframeStyle{
+	border-radius: var(--radius);
+	border: var(--border) 1 solid;
+	background: var(--background);
+	transition: all 250ms ease-in-out;
   }

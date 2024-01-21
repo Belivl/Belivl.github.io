@@ -2,17 +2,105 @@
 language: en
 title: Venom
 pubDate: 2023-09-10 03:25
-cover:  "@assets/graphics/3d/Venom/venomintro.png"
-coverAlt:  "FrontCoverV2"
+cover:  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851622/gfx/project/Venom/venomintro_pxgfbu.png"
+coverAlt:  "venomintro"
 description: Have you ever wondered what the most important items of life are? Well, wonder no more!
 draft: false
 category: Client Work
 type: 3D
-role: 3D | Banner design
+role: 3D | Animation
 client: Venom Esports
 time: 2022.09-11
 credits: none
 highlight: true
 about: Approached by a friend playing in the team, he cosulted with me what he would want to see and gave me the rest to be creatively directed. Color, mascot and displayed team name have been overwatched and controlled. Entire introductory video/animation was set to be in range between 10 - 20 seconds long enough to show the team spirit and short enough to be used in every montage the team would create. There is a red color variant of the intro avaiable for the team to be used as needed but wasnt built with the variant in mind. 
 ---
+import { Image } from 'astro:assets';
+import Headline from "@src/components/Headline.astro";
 
+<div class="flex flex-col gap-9 rounded-md w-full">
+        <Headline Heading="Animation" Subtitle="Video" />
+      <iframe width="1400"
+        height="787" class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200" src="https://www.youtube.com/embed/sfdSUw73QSI?si=Nz91G05QiQWYiQiu" title="Venom Esport Team Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <Headline Heading="Variations" Subtitle="Other" />
+      <div class="flex gap-8 w-full">
+        <Image
+          src="/graphics/3d/Venom/testingphials7yg.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+        <Image
+          src="/graphics/3d/Venom/testingphialssfs.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+      </div>
+      <div class="flex gap-8 w-full">
+        <Image
+          src="/graphics/3d/Venom/Part2fix2.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+        <Image
+          src="/graphics/3d/Venom/IntroFile.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+      </div>
+      <div class="flex gap-8 w-full">
+        <Image
+          src="/graphics/3d/Venom/Enviroment1.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+        <Image
+          src="/graphics/3d/Venom/testingphials5.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+      </div>
+      <div class="flex gap-8 w-full">
+        <Image
+          src="/graphics/3d/Venom/testingphials2.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+        <Image
+          src="/graphics/3d/Venom/testingphials3.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+      </div>
+      <div class="flex gap-8 w-full">
+        <Image
+          src="/graphics/3d/Venom/scene structure2.png"
+          alt="FB_BackgroundV2"
+          width={1400}
+          height={200}
+          class="rounded-xl w-full"
+        />
+      </div>
+      <div class="flex flex-col gap-9 rounded-md w-full">
+        <iframe width="1400"
+        height="787" class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200" src="https://www.youtube.com/embed/kIftEYqm4NQ?si=HVXBwkecmKzOehZ3" title="Venom Esport Team Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="1400"
+        height="787" class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200" src="https://www.youtube.com/embed/TnzErCv8tQM?si=dGCpCQd18_HXmkJD" title="Venom Esport Team Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      
+    </div>

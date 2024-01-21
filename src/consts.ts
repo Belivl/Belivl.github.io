@@ -125,6 +125,29 @@ export const Headlines: Headlines[] = [
 	
 ];
 
+//Subpages gallery
+export const Subpage = [
+	{
+		title: "portfolio",
+		href:"/gallery/portfolio/",
+	},
+	{
+		title: "portraits",
+		href:"/gallery/portraits/",
+	},
+	{
+		title: "cars",
+		href:"/gallery/cars/",
+	},
+	{
+		title: "events",
+		href:"/gallery/events/",
+	},
+	{
+		title: "other",
+		href:"/gallery/other/",
+	},
+];
 
 // i18n
 export const DEFAULT_LOCALE = "en";

@@ -2,16 +2,16 @@
 import ButtonA from "@components/ui/ButtonA.astro";
 import GoldCTA from "@components/ui/GoldCTA.astro";
 import { Image } from "astro:assets";
-import YaoAlbumCover from "@assets/graphics/project/FrontCoverV2.png";
-import Visa2v6 from "@assets/graphics/design/Visa2v6.png";
-import NoiseSilenceV3 from "@assets/graphics/art/NoiseSilenceV3-alt2.jpg";
-import HalloweenParty2 from "@assets/graphics/design/HalloweenParty2.jpg";
-import Lu2 from "@assets/graphics/art/Lu2.png";
-import Book from "@assets/graphics/3d/Book/BookMisc4PS.png";
-
-import DNature from "@assets/graphics/3d/536941.jpg";
-import KaraokeCzwartki from "@assets/graphics/design/KaraokeCzwartki A4.jpg";
-import Ice3D from "@assets/graphics/3d/MartwaNatura2.webp";
+//import YaoAlbumCover from "@assets/graphics/project/FrontCoverV2.png";
+//import Visa2v6 from "@assets/graphics/design/Visa2v6.png";
+//import NoiseSilenceV3 from "@assets/graphics/art/NoiseSilenceV3-alt2.jpg";
+//import HalloweenParty2 from "@assets/graphics/design/HalloweenParty2.jpg";
+//import Lu2 from "@assets/graphics/art/Lu2.png";
+//import Book from "@assets/graphics/3d/Book/BookMisc4PS.png";
+//import DNature from "@assets/graphics/3d/536941.jpg";
+//import KaraokeCzwartki from "@assets/graphics/design/KaraokeCzwartki A4.jpg";
+//import Ice3D from "@assets/graphics/3d/MartwaNatura2.webp";
+import { Button } from "../ui/button";
 const heroImgW = 200;
 ---
 
@@ -42,8 +42,8 @@ const heroImgW = 200;
       <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
         <span class="material-icons">arrow_forward</span>
       </GoldCTA>
-      <a href="/about/"
-        ><ButtonA size="lg" classes="default">Read more</ButtonA></a
+      <a href="/about/">
+        <Button size="lg" variant="default">Read more</Button></a
       >
     </div>
   </div>
@@ -54,19 +54,64 @@ const heroImgW = 200;
       >
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <Image src={YaoAlbumCover} alt="YaoAlbumCover" width={heroImgW} />
-        <Image src={Visa2v6} alt="Visa2v6" width={heroImgW} />
-        <Image src={NoiseSilenceV3} alt="NoiseSilenceV3" width={heroImgW} />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851996/gfx/project/yao/FrontCoverV2_khsqhk.png"
+          alt="YaoAlbumCover"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852452/gfx/project/woody/Visa2v6_otiktu.png"
+          alt="Visa2v6"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg"
+          alt="NoiseSilenceV3"
+          width={heroImgW}
+          height={heroImgW}
+        />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <Image src={HalloweenParty2} alt="HalloweenBanner" width={heroImgW} />
-        <Image src={Lu2} alt="LucianaPencil" width={heroImgW} />
-        <Image src={Book} alt="Book" width={heroImgW} />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852216/gfx/project/buk/HalloweenParty2_kimzd5.jpg"
+          alt="HalloweenBanner"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852681/gfx/art/Lu2_xdyhji.png"
+          alt="LucianaPencil"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851478/gfx/project/book/BookMisc4PS_qguses.jpg"
+          alt="Book"
+          width={heroImgW}
+          height={heroImgW}
+        />
       </div>
       <div class="flex flex-col gap-6 items-center justify-center">
-        <Image src={DNature} alt="3DNature" width={heroImgW} />
-        <Image src={KaraokeCzwartki} alt="KaraokeCzwartki" width={heroImgW} />
-        <Image src={Ice3D} alt="Ice3D" width={heroImgW} />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851833/gfx/3D/536941_yczmie.jpg"
+          alt="3DNature"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852726/gfx/project/buk/KaraokeCzwartki_A4_xcydr2.jpg"
+          alt="KaraokeCzwartki"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851845/gfx/3D/MartwaNatura2_mgqseu.webp"
+          alt="Ice3D"
+          width={heroImgW}
+          height={heroImgW}
+        />
       </div>
     </div>
   </div>
@@ -85,7 +130,12 @@ const heroImgW = 200;
     padding: 0;
   }
   .gradientHERO {
-    background: linear-gradient(90deg, #111114, rgba(1, 1, 1, 0));
+    background: linear-gradient(90deg, var(--grey-50), rgba(1, 1, 1, 0));
+  }
+  @media (prefers-color-scheme: dark) {
+    .gradientHERO {
+      background: linear-gradient(90deg, #111114, rgba(1, 1, 1, 0));
+    }
   }
   .textBaseGold {
     background: linear-gradient(90deg, orange, brown);

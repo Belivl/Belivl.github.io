@@ -1,6 +1,7 @@
 ---
 import Container from "../Container.astro";
 import ButtonA from "../ui/ButtonA.astro";
+import { Button } from "../ui/button";
 ---
 
 <Container className=" my-16">
@@ -15,13 +16,9 @@ import ButtonA from "../ui/ButtonA.astro";
     </div>
 
     <div class="flex gap-2 items-center">
-      <ButtonA size="md" classes="default px-4 font-semibold">
-        Learn more
-      </ButtonA>
+      <Button size="lg" variant="outline">Learn more</Button>
       <a href="/contact/">
-        <ButtonA size="md" classes="primary px-4 font-semibold">
-          Contact
-        </ButtonA>
+        <Button size="lg" variant="default">Contact</Button>
       </a>
     </div>
   </div>

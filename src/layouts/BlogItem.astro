@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Title from "@src/components/blog/BlogHeader.astro";
 import Comments from "@src/components/blog/Comments.astro";
 import Headline from "@src/components/Headline.astro";
+import Container from "@src/components/Container.astro";
 
 type Props = CollectionEntry<"portfolio">["data"];
 
@@ -75,7 +76,10 @@ const {
       </div>
     </div>
     <div class="content">
-      <slot />
+      <Container>
+        <slot />
+      </Container>
+      
     </div>
   </article>
 </Layout>

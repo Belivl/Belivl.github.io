@@ -11,8 +11,10 @@ const msgrLink2 = document.querySelector("#msgrLink2") as HTMLLinkElement;
 const navLinkPort = document.querySelector("#navLinkPort") as HTMLLinkElement;
 const homeIMG = document.querySelector("#homeIMG") as HTMLImageElement;
 
-const btnProfile1 = document.querySelector("#btnProfile1");
-const btnProfile2 = document.querySelector("#btnProfile2");
+const btnProfile1 = document.querySelector("#coin1");
+const btnProfile2 = document.querySelector("#coin2");
+
+
 btnProfile1?.addEventListener('click', function (){
     //btnProfile1.innerHTML = "Ok";
     setCookie("profile","Belial",1)
