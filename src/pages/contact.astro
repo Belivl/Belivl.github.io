@@ -4,22 +4,24 @@ import Container from "@src/components/Container.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import Headline from "@src/components/Headline.astro";
 import GoldCTA from "@src/components/ui/GoldCTA.astro";
-import SocialButton from "@src/components/ui/SocialButton.astro";
+
 import Form from "@src/components/ui/Form.astro";
-import { LINKS } from "@src/consts";
 
 import translations from "@utils/t.ts";
 const t = translations(Astro.url);
+import SocialHub from "@components/partials/socialHub.astro";
+import WorkBadge from "@src/components/ui/WorkBadge.astro";
+import { Button } from "@src/components/ui/button";
 ---
 
-<Layout>
+<Layout title="Belial - Contact Me">
   <Container>
     <div
       class="flex lg:flex-row flex-col gap-16 md:gap-8 justify-between w-full mb-16"
     >
       <div class="w-full lg:mb-12">
         <Headline Heading={t.contact_h1desc} Subtitle={t.contact_h1} />
-        <p class="w-full text-[18px] font-medium text-grey-75">
+        <p class="w-full text-[18px] font-medium text-grey-75 max-char">
           {t.contact_h1text}
           <br />
           <br />
@@ -35,64 +37,33 @@ const t = translations(Astro.url);
             </GoldCTA>
           </div>
           <a id="msgrLink2" href="https://m.me/BelialDesign" target="_blank">
-            <ButtonA size="lg" classes="secondary font-semibold ">
-              Messenger
-            </ButtonA>
+            <Button size="lg" variant="outline">Messenger</Button>
           </a>
         </div>
       </div>
-      <Form />
-    </div>
-  </Container>
+      <div class="relative grid place-content-center justify-start">
+        <svg
+          class="w-64 h-64 fill-grey-50 hover:animate-bounce"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8L12 13L20 8V18ZM12 11L4 6H20L12 11Z"
+            fill=""></path>
+        </svg>
+        <div class="w-fit place-self-center">
+          <WorkBadge workMode="true">Available for work</WorkBadge>
+        </div>
+      </div>
 
-  <Container>
-    <Headline Heading="Social hub" Subtitle="Links" />
-    <!--Social links buttons -->
-    <div class="flex flex-col md:flex-row gap-4 w-full">
       <!-- 
-        {
-          socialData.map((item) => (
-            <SocialButton text={item.name} link={item.path} />
-          ))
-        }-->
-      <SocialButton text={LINKS[0].title} link={LINKS[0].href}>
-        <svg
-          class="w-12 h-12"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="iconLight"
-            d="M8 3C5.239 3 3 5.239 3 8V16C3 18.761 5.239 21 8 21H16C18.761 21 21 18.761 21 16V8C21 5.239 18.761 3 16 3H8ZM18 5C18.552 5 19 5.448 19 6C19 6.552 18.552 7 18 7C17.448 7 17 6.552 17 6C17 5.448 17.448 5 18 5ZM12 7C14.761 7 17 9.239 17 12C17 14.761 14.761 17 12 17C9.239 17 7 14.761 7 12C7 9.239 9.239 7 12 7ZM12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9Z"
-          ></path>
-        </svg>
-      </SocialButton>
-      <SocialButton text={LINKS[1].title} link={LINKS[1].href}>
-        <svg
-          class="w-12 h-12"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="iconLight"
-            d="M21.582 6.186C21.352 5.326 20.674 4.648 19.814 4.418C18.254 4 12 4 12 4C12 4 5.746 4 4.186 4.418C3.326 4.648 2.648 5.326 2.418 6.186C2 7.746 2 12 2 12C2 12 2 16.254 2.418 17.814C2.648 18.674 3.326 19.352 4.186 19.582C5.746 20 12 20 12 20C12 20 18.254 20 19.814 19.582C20.675 19.352 21.352 18.674 21.582 17.814C22 16.254 22 12 22 12C22 12 22 7.746 21.582 6.186ZM10 15.464V8.536L16 12L10 15.464Z"
-          ></path>
-        </svg>
-      </SocialButton>
-      <SocialButton text={LINKS[2].title} link={LINKS[2].href}>
-        <svg
-          class="w-12 h-12"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="iconLight"
-            d="M5 3C3.89844 3 3 3.89844 3 5V19C3 20.1016 3.89844 21 5 21H19C20.1016 21 21 20.1016 21 19V5C21 3.89844 20.1016 3 19 3H5ZM6.40625 7.6875H9C11.3008 7.6875 11.6875 9.10156 11.6875 10C11.6875 11.3008 10.793 11.7109 10.5938 11.8125C10.793 11.9141 11.8125 12.1875 11.8125 13.6875C11.9141 15.4883 10.7891 16.1875 9.1875 16.1875H6.40625V7.6875ZM13.4062 7.6875H17.0938V8.6875H13.4062V7.6875ZM8.09375 9.09375V11.1875H9C9.60156 11.1875 10 10.9883 10 10.1875C10 9.48828 9.69922 9.09375 9 9.09375H8.09375ZM15.5938 9.8125C16.9922 9.8125 18 10.6055 18 12.9062V13.5938H14.5938C14.5938 13.8945 14.6133 15 15.8125 15C16.6133 15 16.9883 14.6055 17.1875 14.4062L17.9062 15.4062C17.8047 15.5078 17.1133 16.3125 15.8125 16.3125C14.3125 16.3125 13.0938 15.5078 13.0938 13.4062V12.9062C13.0938 10.6055 14.293 9.8125 15.5938 9.8125ZM15.4062 11.0938C15.1055 11.0938 14.5 11.207 14.5 12.4062H16.1875C16.1875 12.4062 16.4062 11.0938 15.4062 11.0938ZM8.09375 12.5V14.8125H9.1875C9.78906 14.8125 10.0938 14.3867 10.0938 13.6875C10.1953 12.8867 9.91406 12.5 9.3125 12.5H8.09375Z"
-          ></path>
-        </svg>
-      </SocialButton>
+      <Form />-->
     </div>
   </Container>
+  <SocialHub />
 </Layout>
 <script>
   const copyBtn = document.getElementById("copyBtn");

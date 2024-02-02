@@ -5,11 +5,10 @@ import Headline from "@src/components/Headline.astro";
 import ButtonA from "@src/components/ui/ButtonA.astro";
 import { Headlines } from "@src/consts";
 import { Image } from "astro:assets";
-
-import exlibris from "@assets/graphics/art/exlibrisv1.jpg";
+import { videoPaths3D, imagePaths3D } from "@src/js/imagePaths/3Dpaths.js";
 ---
 
-<Layout title="portfolio">
+<Layout title="Belial - Portfolio 3D">
   <Container>
     <Headline Heading={Headlines[3].heading} Subtitle={Headlines[3].subtitle} />
     <div class="flex gap-3 items-center justify-left w-full">
@@ -24,8 +23,51 @@ import exlibris from "@assets/graphics/art/exlibrisv1.jpg";
       </a>
       <ButtonA size="sm" classes="primary px-4">3D</ButtonA>
     </div>
-    <div class="flex flex-row items-center w-full bg-white rounded-xl mt-16">
-      <Image src={exlibris} alt="exlibris" width={400} />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-16"
+    >
+      <iframe
+        class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+        width="1920"
+        height="778"
+        src={videoPaths3D[0].src}
+        title={videoPaths3D[0].alt}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <!-- 
+      <Image
+        src={imagePaths3D[0].src}
+        alt={imagePaths3D[0].alt}
+        width={600}
+        height={200}
+        class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+      />
+      <Image
+        src={imagePaths3D[1].src}
+        alt={imagePaths3D[1].alt}
+        width={600}
+        height={200}
+        class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+      />
+      <Image
+        src={imagePaths3D[2].src}
+        alt={imagePaths3D[2].alt}
+        width={600}
+        height={200}
+        class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+      />-->
+      {
+        imagePaths3D.map((item) => (
+          <Image
+            src={item.src}
+            alt={item.alt}
+            width={600}
+            height={200}
+            class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+          />
+        ))
+      }
     </div>
   </Container>
 </Layout>

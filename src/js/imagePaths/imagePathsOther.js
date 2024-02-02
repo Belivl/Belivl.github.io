@@ -1,6 +1,80 @@
 const imagePathsOther = 
 [
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851296/photo/other/JEL--2_tqgrhm.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851330/photo/other/JEL08061-Edit-1_k7bxjd.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851297/photo/other/IMG20230706195653_kmrdhu.jpg",
 
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851314/photo/other/JEL02080_dhrcbk.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851284/photo/other/20210704-132_fggrzd.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851298/photo/other/JEL00445_l9tczy.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851299/photo/other/JEL--4_hyvzta.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851310/photo/other/JEL01750-Enhanced_fwoljk.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851344/photo/other/JEL09773-Edit_kpfz6w.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851323/photo/other/JEL-06694_qgrwly.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851290/photo/other/IMG_8867-Edit-1_rzgmzr.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851323/photo/other/JEL-06245-2_vjwmzg.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851277/photo/other/20210428-IMG_8960_bj3poq.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851327/photo/other/JEL-07765_tjkf1t.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851283/photo/other/20210704-109_oxqmxb.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851292/photo/other/IMG_8877-2_uh6e2j.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851282/photo/other/20210704-73_mprujq.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851281/photo/other/20210520-IMG_9651_wel0nl.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851318/photo/other/JEL02669_cxouyn.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851304/photo/other/JEL01206_rrhw5x.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851334/photo/other/JEL08353-Enhanced-NR_vekuso.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851302/photo/other/JEL01038-Edit_gsviqd.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851325/photo/other/JEL-06709_uh6bi0.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851317/photo/other/JEL02554_qeqxaq.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851293/photo/other/IMG_20230801_102747_ncfweo.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851332/photo/other/JEL08158-1_fqjbbg.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851335/photo/other/JEL08884_felzem.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851287/photo/other/IMG_0817-2_zyzmve.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851316/photo/other/JEL02401_rrekuj.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851337/photo/other/JEL08891_cp3qih.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851328/photo/other/JEL-08010_infak9.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851303/photo/other/JEL01174-2_xxcfms.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851285/photo/other/20210704-169_skvimv.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851286/photo/other/IMG_0816-3_vd8qkf.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851306/photo/other/JEL-01386_iq3y9p.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851293/photo/other/IMG_9197-2_i4elrj.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851280/photo/other/20210514-IMG_9477_vf3u9f.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851333/photo/other/JEL08347_eeox2j.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851279/photo/other/20210514-IMG_9476_a4rga3.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851341/photo/other/JEL-9188_nfwwgq.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851339/photo/other/JEL-9171_qstfsr.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851309/photo/other/JEL01514_vf4gpv.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851289/photo/other/IMG_8332-2_sp7abp.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851319/photo/other/JEL04394-3_mcmfat.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851314/photo/other/JEL01831-2_rlsl8s.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851321/photo/other/JEL-5655-2_vnnhxg.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851341/photo/other/JEL09638_yoxyjd.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851294/photo/other/IMG_20230917_155207_x9onfb.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851301/photo/other/JEL-00667-2_q9fjtc.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851311/photo/other/JEL01801-2_t5zsuw.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851306/photo/other/JEL-1466-EDIT4_xv8tb5.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851300/photo/other/JEL00475-2_eyawde.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851308/photo/other/JEL01508-3_bfmz41.jpg",
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851334/photo/other/JEL08160-Edit-1_c9k5xd.jpg",
+
+  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851325/photo/other/JEL-07389_hfxgxo.jpg"
+  
+   /*
  "https://drive.google.com/uc?export=view&id=1SVZdLrYFt3sfwQmcyoSs7svLwXHsJTId",
  "https://drive.google.com/uc?export=view&id=1UkXxmhxV6UZesD00DIR70Eq66Y8pNt-R",
  "https://drive.google.com/uc?export=view&id=1pCDuT3IWqGAGUJEdTmvkctdXJJzbbbBo",
@@ -76,7 +150,7 @@ const imagePathsOther =
   "https://drive.google.com/uc?export=view&id=1gGbZh2kR4lRM5OebMBl67WXzT5xsEnH7",
 
 
-   /*
+
 "/photo/other/JEL--2.jpg",
 "/photo/other/JEL08061-Edit-1.jpg",
 "/photo/other/IMG20230706195653.jpg",

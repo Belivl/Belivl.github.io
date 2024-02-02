@@ -1,6 +1,44 @@
 const imagePathsPortrait =
 [
-    
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851196/photo/portrait/JEL03276_ivhb2x.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851192/photo/portrait/JEL-234_vrx9ob.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851194/photo/portrait/JEL01312_lb74aq.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851184/photo/portrait/JEL09558-Enhanced-NR_zuppo7.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851195/photo/portrait/JEL02394-Enhanced-NR_zdnivs.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851187/photo/portrait/JEL09583-Enhanced-NR-Edit_xozmkw.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851192/photo/portrait/JEL00592-Edit_d8t40y.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/20210704-215_fmxju0.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851183/photo/portrait/JEL-06291_grg3tz.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851187/photo/portrait/20210514-IMG_9506-2_gfcm0n.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851194/photo/portrait/JEL00769-Edit_luvtvl.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851192/photo/portrait/JEL-339_ow2m9b.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851195/photo/portrait/JEL04207_bbsns9.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851196/photo/portrait/JEL04375_dhcuzo.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851187/photo/portrait/20210704-14_i0gbju.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851190/photo/portrait/IMG_8598-2_yefz9k.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851189/photo/portrait/20210704-214_ild4yu.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851193/photo/portrait/JEL01957_fn38q5.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851195/photo/portrait/JEL02921_cp4vyv.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851184/photo/portrait/JEL09634-Enhanced-NR-Edit_i2hyar.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851185/photo/portrait/JEL-09570-2_fcnjz5.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/JEL00291-Edit_pv1tly.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851184/photo/portrait/JEL-07129_mki6g8.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851184/photo/portrait/JEL09391-Enhanced-NR_g64l3z.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851194/photo/portrait/JEL00245-Edit_ypiydx.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/IMG_8409-Edit-2-1_zwqif1.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851183/photo/portrait/JEL-6364-2_rzxsob.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851182/photo/portrait/JEL05854-2_ykwlmt.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851182/photo/portrait/JEL05756-2_r7hfai.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851188/photo/portrait/006-Edit-1_qbrvgt.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/JEL00512-Edit_e76dw7.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851193/photo/portrait/JEL01691-2_umnrgy.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851182/photo/portrait/JEL05683-2_m8er9b.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851182/photo/portrait/JEL05953-2_l8499z.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/JEL00151_mpmuua.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851187/photo/portrait/20210625-70_beqdke.jpg",
+"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851194/photo/portrait/JEL01462_gytcub.jpg"
+
+    /** 
 "https://drive.google.com/uc?export=view&id=1SA_myw5We-J9QDGLMjAyQlnxnL2YK64T",
 "https://drive.google.com/uc?export=view&id=1I2igr6mG2epK6Nfb5bJqgzMI1s9DxkN2",
 "https://drive.google.com/uc?export=view&id=1_EYEY_6BzFlUmcpGlvFvby1XGGrMT3YG",
@@ -40,7 +78,7 @@ const imagePathsPortrait =
 "https://drive.google.com/uc?export=view&id=1vvOMnzn8KlBN0VDrBljzjLmbF2O_0m3d",
 
 
-/** 
+
 "/photo/portrait/JEL03276.jpg",
 "/photo/portrait/JEL-234.jpg",
 "/photo/portrait/JEL01312.jpg",

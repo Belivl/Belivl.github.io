@@ -1,12 +1,12 @@
 ---
-import Container from "../Container.astro";
-import ButtonA from "../ui/ButtonA.astro";
-import { Button } from "../ui/button";
+import Container from "@components/Container.astro";
+import { Button } from "@components/ui/button";
+import GoldCTA from "../ui/GoldCTA.astro";
 ---
 
 <Container className=" my-16">
   <div
-    class="dark:bg-grey-400 bg-light flex flex-col md:flex-row justify-start md:justify-between items-start md:items-end px-9 pb-9 pt-32 rounded-[16px] border-grey-200 border w-full mx-0 gap-6 md:gap-0"
+    class="dark:bg-grey-500 transition-all duration-200 ease-in-out hover:dark:border-grey-100 bg-light flex flex-col md:flex-row justify-start md:justify-between items-start md:items-end px-9 pb-9 pt-32 rounded-[16px] border-grey-200 border w-full mx-0 gap-6 md:gap-0"
   >
     <div class="flex flex-col gap-4">
       <h3 class="H2">Creative Solutions for Your Projects</h3>
@@ -16,10 +16,9 @@ import { Button } from "../ui/button";
     </div>
 
     <div class="flex gap-2 items-center">
-      <Button size="lg" variant="outline">Learn more</Button>
-      <a href="/contact/">
-        <Button size="lg" variant="default">Contact</Button>
-      </a>
+      <!-- 
+      <Button size="lg" variant="outline">Learn more</Button>-->
+      <GoldCTA link="/contact/" size="md" text="Contact" />
     </div>
   </div>
 </Container>

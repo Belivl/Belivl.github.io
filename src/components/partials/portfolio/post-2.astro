@@ -1,0 +1,78 @@
+---
+//Sleepless Thoughts
+import { Image } from "astro:assets";
+import Headline from "@components/Headline.astro";
+
+const videoPath = [
+  //Videos
+  {
+    src: "https://www.youtube.com/embed/OiafdPtXwAA?si=B8NWZA0U25n2ms10",
+    alt: "Hi im ya0 - Swappin (prod. beatsbybeau) (Official Video)",
+  },
+  {
+    src: "https://www.youtube.com/watch?v=WYQtbnCnQYM?si=B8NWZA0U25n2ms10",
+    alt: "Hi im ya0 - She aint religious (Prod.Manic One) [Official video]",
+  },
+];
+const imagePath = [
+  //Images
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852010/gfx/project/yao/BGV1_aus61w.png",
+    alt: "BGV1",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852006/gfx/project/yao/ProfilePicV2pro_dxujgb.png",
+    alt: "ProfilePicV2pro",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852017/gfx/project/yao/BackgroundVideo_vmiybk.png",
+    alt: "BackgroundVideo",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852022/gfx/project/yao/FB_BackgroundV2_ved3ng.png",
+    alt: "FB_BackgroundV2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852000/gfx/project/yao/YT_BackgroundV2_i4e9vv.png",
+    alt: "YT_BackgroundV2",
+  },
+];
+---
+
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <Headline Heading="Montage" Subtitle="Video" />
+  <div class="grid grid-cols-1 gap-8">
+    <iframe
+      width="1400"
+      height="787"
+      class="w-full rounded-xl overflow-clip"
+      src={videoPath[0].src}
+      title={videoPath[0].alt}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <iframe
+      width="1400"
+      height="787"
+      class="w-full rounded-xl overflow-clip"
+      src={videoPath[1].src}
+      title={videoPath[1].alt}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <Headline Heading="Graphics" Subtitle="Variants" />
+  <div class="grid grid-cols-1 gap-8 w-full justify-start items-start">
+    {
+      imagePath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>
+</div>

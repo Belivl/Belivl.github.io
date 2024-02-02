@@ -6,6 +6,9 @@ import Title from "@src/components/blog/BlogHeader.astro";
 import Comments from "@src/components/blog/Comments.astro";
 import Headline from "@src/components/Headline.astro";
 import Container from "@src/components/Container.astro";
+import Separator from "@src/components/ui/Separator.astro";
+import { NAME1 } from "@src/consts";
+import ProjectNav from "@src/components/ui/ProjectNav.astro";
 
 type Props = CollectionEntry<"portfolio">["data"];
 
@@ -25,61 +28,70 @@ const {
 } = Astro.props as Props;
 ---
 
-<Layout title={title} description={description}>
-  <article
-    class="pt-16 flex flex-col gap-16 py-24 mx-auto max-w-screen-xl w-full"
-  >
-    <div class="w-full flex flex-col gap-5 py-12">
-      <h2 class="capitalize">{title}</h2>
-      <a href={`/portfolio/${type}`}>
-        <h3 class="H5 text-grey-75 uppercase">{type}</h3></a
-      >
-    </div>
+<Layout title={`${NAME1} - ${title}`} description={description}>
+  <Container>
+    <article
+      class="pt-8 flex flex-col gap-16 py-24 mx-auto max-w-screen-xl w-full"
+    >
+      <div class="w-full flex flex-col gap-5 pb-12">
+        <h2 class="capitalize">{title}</h2>
+        <a href={`/portfolio/${type}/`}>
+          <h3 class="H5 text-grey-75 uppercase">{type}</h3></a
+        >
+      </div>
 
-    <div class="w-full">
-      {
-        cover && (
-          <HeroImage
-            class="w-full block rounded-xl shadow-md  contain"
-            width={1920}
-            height={1080}
-            src={cover}
-            alt={coverAlt}
-          />
-        )
-      }
-    </div>
-    <div class="prose mx-auto max-w-screen-xl w-full space-y-4 px-4">
-      <div class="flex gap-16 w-full">
-        <div class="flex flex-col gap-2">
-          <h5 class="H5 uppercase">Role</h5>
-          <span class="uppercase">{role}</span>
+      <div class="w-full">
+        {
+          cover && (
+            <HeroImage
+              class="w-full  rounded-xl shadow-md  contain border border-grey-300 bg-grey-400 grid place-items-center"
+              width={1920}
+              height={1080}
+              src={cover}
+              alt={coverAlt}
+            />
+          )
+        }
+      </div>
+      <div
+        class="prose mx-auto max-w-screen-xl w-full space-y-4 px-4 gap-16 flex flex-col lg:flex-row items-start justify-between"
+      >
+        <div class="flex gap-32 w-full">
+          <div class="flex flex-col gap-4">
+            <h3 class="H3">About</h3>
+            <p class="max-char">{about}</p>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <h5 class="H5 uppercase">Client</h5>
-          <span class="uppercase">{client}</span>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h5 class="H5 uppercase">Time</h5>
-          <span class="uppercase">{time}</span>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h5 class="H5 uppercase">Credits</h5>
-          <span class="uppercase">{credits}</span>
+        <div
+          class="flex gap-2 w-full h-12 items-center lg:items-start justify-between lg:justify-end space-x-4"
+        >
+          <div class="flex flex-col gap-2">
+            <h5 class="H5 uppercase">Role</h5>
+            <span class="uppercase">{role}</span>
+          </div>
+          <Separator data-type="vertical" />
+          <div class="flex flex-col gap-2">
+            <h5 class="H5 uppercase">Client</h5>
+            <span class="uppercase">{client}</span>
+          </div>
+          <Separator data-type="vertical" />
+          <div class="flex flex-col gap-2">
+            <h5 class="H5 uppercase">Time</h5>
+            <span class="uppercase">{time}</span>
+          </div>
+          <Separator data-type="vertical" />
+          <div class="flex flex-col gap-2">
+            <h5 class="H5 uppercase">Credits</h5>
+            <span class="uppercase">{credits}</span>
+          </div>
         </div>
       </div>
-      <div class="flex gap-32">
-        <div class="flex flex-col gap-4">
-          <h3 class="H3">About</h3>
-          <p class="max-w-screen-md">{about}</p>
-        </div>
+      <div class="content">
+        <Container>
+          <slot />
+        </Container>
+        <ProjectNav />
       </div>
-    </div>
-    <div class="content">
-      <Container>
-        <slot />
-      </Container>
-      
-    </div>
-  </article>
+    </article>
+  </Container>
 </Layout>

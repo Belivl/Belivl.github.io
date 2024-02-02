@@ -13,61 +13,10 @@ client: undisclosed
 time: 2020.09-11
 credits: none
 highlight: true
-about: Lorem ipsum.
+about: A notable alcohol brand, sought an engaging animation to complement a text display program, inviting users into a captivating virtual book experience. The animation focused on the opening, closing, and flipping through one or multiple pages, seamlessly integrating with textual content to convey the brand's narrative. 
 ---
-import { Image } from 'astro:assets';
-import Headline from "@src/components/Headline.astro";
+import Post from "@src/components/partials/portfolio/post-3.astro";
 
- <div class="flex flex-col gap-9 rounded-md w-full">
-      <Image
-        src="/graphics/project/book/BookMisc4PS.jpg"
-        alt="BookMisc4PS"
-        width={1400}
-        height={200}
-        class="rounded-xl"
-      />
-      <Image
-        src="/graphics/project/book/BookMisc4PSflat.jpg"
-        alt="FB_BackgroundV2"
-        width={1400}
-        height={200}
-        class="rounded-xl"
-      />
-      <Headline Heading="Variations" Subtitle="Other" />
-      <div class="flex gap-8 w-full">
-        <Image
-          src="/graphics/project/book/BookMisc3PS.jpg"
-          alt="FB_BackgroundV2"
-          width={1400}
-          height={200}
-          class="rounded-xl w-full"
-        />
-        <Image
-          src="/graphics/project/book/BookMisc3PSflat.jpg"
-          alt="FB_BackgroundV2"
-          width={1400}
-          height={200}
-          class="rounded-xl w-full"
-        />
-      </div>
-      <div class="flex gap-8 w-full">
-        <Image
-          src="/graphics/project/book/BookMisc2PS.jpg"
-          alt="FB_BackgroundV2"
-          width={1400}
-          height={200}
-          class="rounded-xl w-full"
-        />
-        <Image
-          src="/graphics/project/book/BookMisc2PSflat.jpg"
-          alt="FB_BackgroundV2"
-          width={1400}
-          height={200}
-          class="rounded-xl w-full"
-        />
-      </div>
-      <Headline Heading="Animation" Subtitle="Video" />
-      <iframe width="1400"
-        height="787" class="w-full rounded-xl overflow-clip" src="https://www.youtube.com/embed/BDAp2I-NMhs" title="Book Animation Preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+<Post/>
+
 

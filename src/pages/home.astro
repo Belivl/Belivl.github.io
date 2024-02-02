@@ -10,43 +10,9 @@ import { Image } from "astro:assets";
 import Headline from "@src/components/Headline.astro";
 ---
 
-<Layout>
+<Layout title="Belial - Home">
   <Container>
     <HeroSection />
-
-    <div class="flex flex-col gap-9 rounded-md w-full">
-      <Image
-        src="/graphics/3d/Venom/venomintro.png"
-        alt="FB_BackgroundV2"
-        width={1400}
-        height={200}
-        class="rounded-xl"
-      />
-      <iframe
-        class="w-full h-[720px] rounded-xl hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
-        src="https://www.youtube.com/embed/sfdSUw73QSI?si=Nz91G05QiQWYiQiu"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-      <Headline Heading="Variations" Subtitle="Other" />
-      <div class="flex gap-8 w-full">
-        <Image
-          src="/graphics/project/buk/DzienKobiet A4 .jpg"
-          alt="FB_BackgroundV2"
-          width={1400}
-          height={200}
-          class="rounded-xl h-[45vh]"
-        />
-        <Image
-          src="/graphics/project/buk/BannerFBcropped_0001_DzienKobiet.jpg"
-          alt="FB_BackgroundV2"
-          width={2806}
-          height={1471}
-          class="rounded-xl h-[45vh]"
-        />
-      </div>
-    </div>
     <HighlightPosts />
     <Banner />
   </Container>

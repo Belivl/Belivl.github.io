@@ -55,6 +55,15 @@ module.exports = {
 					'900': '#6a3e19',
 					'950': '#3e210a',
 				},
+				wood: {
+					'red': '#FF3C3C',
+					'green': '#23BE1C',
+					'white': '#FDF7F2',
+					'light': '#F3D8BF',
+					'cream': '#E9BE95',
+					'brown': '#BB8E65',
+					'dark': '#602626',
+				},
 				/** Override here your primary colors */
 				primary: {
 					50: "#fef1f7",

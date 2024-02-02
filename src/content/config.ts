@@ -9,7 +9,7 @@ const portfolio = defineCollection({
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
-			cover: image(),
+			cover: z.string().optional(),
 			coverAlt: z.string(),
 			draft: z.boolean(),
 			highlight: z.boolean(),

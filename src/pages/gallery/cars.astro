@@ -1,15 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ModalGallery from "@src/components/ui/ModalGallery.astro";
-import ButtonA from "@components/ui/ButtonA.astro";
 import Container from "@src/components/Container.astro";
 import Headline from "@src/components/Headline.astro";
-import { Headlines } from "@src/consts";
+import { Headlines, NAME2 } from "@src/consts";
 import GalleryTab from "@src/components/GalleryTab.astro";
 let pageName = "Cars";
 ---
 
-<Layout title={pageName}>
+<Layout title={`${NAME2} - ${pageName}`}>
   <!--Modal -->
   <ModalGallery data="Cars" />
   <Container>

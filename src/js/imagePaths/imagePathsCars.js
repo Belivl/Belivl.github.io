@@ -1,7 +1,5 @@
 const imagePathsCars = 
 [
-
- 
 "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705768708/photo/cars/IMG20230716175424_octpg4.jpg",
 "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705768707/photo/cars/JEL-08250-2_xf0uui.jpg",
 "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705768707/photo/cars/JEL-05623-2_phlopt.jpg",

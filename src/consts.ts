@@ -45,27 +45,36 @@ export const PAGES: Page[] = [
 type Link = {
 	title: string;
 	href: string;
-	icon?: HTMLImageElement;
+	icon: string;
 	children?: Link[];
 	
 };
 
 export const LINKS: Link[] = [
 	{
-		title: "Instagram",
+		title: "Instagram /Photo",
+		href: "https://www.instagram.com/jelinski_official/",
+		icon:"./assets/icons/instagram.svg",
+	},
+	{
+		title: "Instagram /Art",
 		href: "https://www.instagram.com/belialdesign/",
+		icon:"./assets/icons/instagram.svg",
 	},
 	{
 		title: "Youtube",
 		href: "https://www.youtube.com/@BelialDesign/videos",
+		icon:"",
 	},
 	{
 		title: "Behance",
 		href: "https://www.behance.net/michajeliski1",
+		icon:"",
 	},
 	{
-		title: "Instagram",
-		href: "https://www.instagram.com/jelinski_official/",
+		title: "LinkedIn",
+		href: "https://www.linkedin.com/in/michal-jelinski1/",
+		icon:"",
 	},
 ];
 

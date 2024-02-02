@@ -1,0 +1,474 @@
+---
+import { Image } from "astro:assets";
+import Separator from "@src/components/ui/Separator.astro";
+import translations from "@utils/t.ts";
+import { Button } from "@components/ui/button";
+import profile from "@assets/profile.jpg";
+import ExperienceTab from "@components/ExperienceTab.astro";
+const t = translations(Astro.url);
+---
+
+<div class="flex flex-col gap-4 mt-16">
+  <!--FastTony -->
+  <div class="expBTN">
+    <button
+      class="accordion flex items-center justify-between bg-grey-500 border border-grey-200 gap-8 md:gap-4 pl-4 py-3 md:pl-8 pr-5 md:py-4 rounded-lg"
+      ><div
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-5 w-full"
+      >
+        <span class="font-bold shrink-0">{t.about_uiux}</span>
+        <span
+          class="font-medium shrink-0 text-[12px] md:text-[1rem] text-grey-100"
+          >@FastTony</span
+        >
+        <Separator data-type="horizontal" class="hidden md:flex" />
+        <span class="font-semibold shrink-0 text-[1rem] hidden md:block"
+          >08.2021 - 08.2023</span
+        >
+      </div>
+
+      <span class="material-icons shrink-0">keyboard_arrow_down</span>
+    </button>
+    <div class="panel border border-grey-200 p-4 md:p-8">
+      <div class="bar3 flex-col md:flex-row">
+        <div class="flex flex-col gap-8 p-0 w-2/3">
+          <div class="flex justify-start items-center gap-9">
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">place</span>
+              <span class="text-[14px] font-bold">{t.about_rumia}</span>
+            </div>
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">language</span>
+              <span class="text-[14px] font-bold">
+                <a href="https://fasttony.com/" target="_blank"
+                  ><Button variant="link" size="sm">fasttony.com</Button></a
+                ></span
+              >
+            </div>
+            <div class="flex justify-start items-center gap-2 md:hidden">
+              <span class="material-symbols-outlined"> calendar_today</span>
+              <span class="font-semibold shrink-0 text-[14px]"
+                >09.2019 - 05.2020</span
+              >
+            </div>
+          </div>
+          <p class="font-normal w-full text-[0.85rem] break-words max-char">
+            {t.about_uiuxDesc}
+            <br />
+            <br />
+            {t.about_uiuxDesc2}
+            <br />
+            <br />
+            {t.about_uiuxDesc3}
+            <h5 class="font-semibold text-[16px]">Projects:</h5>
+            <div class="flex gap-2 h-8 items-center">
+              <a href="https://fasttony.com/smart/"
+                ><Button variant="link" size="sm">Smart</Button></a
+              >
+              <Separator data-type="vertical" />
+              <a href="https://fasttony.com/callapp/"
+                ><Button variant="link" size="sm">Callapp</Button></a
+              ><Separator data-type="vertical" />
+              <a href="https://fasttony.com/callme/"
+                ><Button variant="link" size="sm">CallMe</Button></a
+              >
+            </div>
+          </p>
+          <div class="flex justify-start items-center gap-2">
+            <div class="pill">
+              <span class="pillTech text-[12px]">Figma</span>
+            </div>
+            <div class="pill">
+              <span class="pillTech text-[12px]">Laravel</span>
+            </div>
+            <div class="pill">
+              <span class="pillTech text-[12px]">Android</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative rounded-md">
+          <div
+            class="gradientHERO absolute h-full z-20 inset-0 hidden md:block"
+          >
+          </div>
+          <Image
+            src={profile}
+            alt="logo_fasttony"
+            width={220}
+            height={220}
+            class="rounded-md border border-grey-200 w-[120px] md:w-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="flex items-center justify-between bg-grey-500 border border-grey-200 gap-8 md:gap-4 pl-4 py-3 md:pl-8 pr-5 md:py-4 rounded-lg"
+  >
+    <div
+      class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-5 w-full"
+    >
+      <span class="font-bold shrink-0">{t.about_graphic}</span>
+      <span
+        class="font-medium shrink-0 text-[12px] md:text-[1rem] text-grey-100"
+        >@Bukszpryt Pub&Club</span
+      >
+      <Separator data-type="horizontal" class="hidden md:flex" />
+      <span class="font-semibold shrink-0 text-[1rem] hidden md:block"
+        >09.2019 - 05.2020</span
+      >
+    </div>
+    <span class="material-icons shrink-0">keyboard_arrow_down</span>
+  </button>
+  <div class="panel2 border border-grey-200 p-4 md:p-8">
+    <div class="bar3 flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row gap-8 p-0 justify-between">
+        <div
+          class="flex flex-col justify-start md:justify-between items-start gap-5"
+        >
+          <div
+            class="flex justify-start items-start md:items-center gap-3 md:gap-9 flex-col md:flex-row"
+          >
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">place</span>
+              <span class="text-[14px] font-bold">Gdynia, Poland</span>
+            </div>
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">language</span>
+              <span class="text-[14px] font-bold"
+                ><a href="https://facebook.com/Bukszpryt/" target="_blank"
+                  ><Button variant="link" size="sm">
+                    facebook.com/Bukszpryt
+                  </Button>
+                </a></span
+              >
+            </div>
+            <div class="flex justify-start items-center gap-2 md:hidden">
+              <span class="material-symbols-outlined"> calendar_today</span>
+              <span class="font-semibold shrink-0 text-[14px]"
+                >09.2019 - 05.2020</span
+              >
+            </div>
+          </div>
+
+          <p class="font-normal w-full text-[0.85rem] break-words max-char">
+            {t.about_bukDesc}
+          </p>
+          <div class="flex justify-start items-center gap-2">
+            <div class="pill">
+              <span class="pillTech text-[12px]">Photoshop</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative rounded-md">
+          <div
+            class="gradientHERO absolute h-full z-20 inset-0 hidden md:block"
+          >
+          </div>
+          <Image
+            src={profile}
+            alt="logo_bukszpryt"
+            width={220}
+            height={220}
+            class="rounded-md border border-grey-200 w-[120px] md:w-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Bukszpryt-->
+  <div class="expBTN">
+    <button
+      class="accordion gap-4 md:gap-16 items-center flex-row justify-between w-full"
+      ><div class="flex gap-6 shrink-0 w-full flex-col md:flex-row">
+        <span class="font-bold shrink-0">{t.about_graphic}</span>
+        <span class="font-medium shrink-0 text-[12px] md:text-[1rem]"
+          >@Bukszpryt Pub&Club</span
+        >
+        <Separator data-type="horizontal" class="w-full" />
+        <span class="font-semibold shrink-0">09.2019 - 05.2020</span>
+      </div>
+
+      <span class="material-icons shrink-0">keyboard_arrow_down</span></button
+    >
+    <div class="panel">
+      <div class="bar2 flex-col md:flex-row">
+        <div class="flex flex-col gap-8 p-0">
+          <div
+            class="flex justify-start items-start md:items-center gap-3 md:gap-9 flex-col md:flex-row"
+          >
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">place</span>
+              <span class="text-[14px] font-bold">Gdynia, Poland</span>
+            </div>
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">language</span>
+              <span class="text-[14px] font-bold"
+                ><a href="https://facebook.com/Bukszpryt/" target="_blank"
+                  ><Button variant="link" size="sm">
+                    facebook.com/Bukszpryt
+                  </Button>
+                </a></span
+              >
+            </div>
+          </div>
+          <p class="font-normal w-full text-[0.85rem]">
+            {t.about_bukDesc}
+          </p>
+          <div class="flex justify-start items-center gap-2">
+            <div class="pill">
+              <span class="pillTech text-[12px]">Photoshop</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-full relative rounded-md">
+          <div
+            class="gradientHERO absolute h-full z-20 inset-0 hidden md:block"
+          >
+          </div>
+          <Image
+            src={profile}
+            alt="ProfilePicture"
+            width={520}
+            height={520}
+            class="rounded-md border border-grey-200 w-1/2 md:w-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--UMG
+  <div class="expBTN">
+    <button class="accordion gap-4 md:gap-16 flex-col md:flex-row"
+      ><div
+        class="flex items-center gap-6 shrink-0 justify-between md:justify-center w-full md:w-auto"
+      >
+        <span class="font-bold shrink-0">{t.about_graphic}</span>
+        <span class="font-medium shrink-0">@UMG</span>
+      </div>
+      <Separator data-type="horizontal" />
+      <div
+        class="flex items-center gap-9 shrink-0 justify-between md:justify-center w-full md:w-auto"
+      >
+        <span class="font-semibold shrink-0">09.2019 - 05.2020</span>
+        <span class="material-icons shrink-0">keyboard_arrow_down</span>
+      </div></button
+    >
+    <div class="panel">
+      <div class="bar2">
+        <div class="flex flex-col gap-8 p-0">
+          <div class="flex justify-start items-center gap-9">
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">place</span>
+              <span class="text-[14px] font-bold">Gdynia, Poland</span>
+            </div>
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">language</span>
+              <span class="text-[14px] font-bold"
+                ><a href="https://umg.edu.pl/" target="_blank"
+                  ><Button variant="link" size="sm">umg.edu.pl</Button>
+                </a></span
+              >
+            </div>
+          </div>
+          <p class="font-normal w-3/5">
+            {t.about_umgDesc}
+          </p>
+          <div class="flex justify-start items-center gap-2">
+            <div class="pill">
+              <span class="pillTech text-[12px]">Photoshop</span>
+            </div>
+            <div class="pill">
+              <span class="pillTech text-[12px]">Illustrator</span>
+            </div>
+          </div>
+        </div>
+        <img src="" alt="ProfilePicture" width={120} height={120} />
+      </div>
+    </div>
+  </div> -->
+  <!--Focus Hotel 
+  <div class="expBTN">
+    <button class="accordion gap-4 md:gap-16 flex-col md:flex-row"
+      ><div
+        class="flex items-center gap-6 shrink-0 justify-between md:justify-center w-full md:w-auto"
+      >
+        <span class="font-bold shrink-0">{t.about_kitchen}</span>
+        <span class="font-medium shrink-0">@Focus Hotels</span>
+      </div>
+      <Separator data-type="horizontal" />
+      <div
+        class="flex items-center gap-9 shrink-0 justify-between md:justify-center w-full md:w-auto"
+      >
+        <span class="font-semibold shrink-0">08.2019 - 12.2019</span>
+        <span class="material-icons shrink-0">keyboard_arrow_down</span>
+      </div></button
+    >
+    <div class="panel">
+      <div class="bar2">
+        <div class="flex flex-col gap-8 p-0">
+          <div class="flex justify-start items-center gap-9">
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">place</span>
+              <span class="text-[14px] font-bold">Sopot, Poland</span>
+            </div>
+            <div class="flex justify-start items-center gap-2">
+              <span class="material-icons">language</span>
+              <span class="text-[14px] font-bold"
+                ><a
+                  href="https://focushotels.pl/focus-hotel-premium-sopot/"
+                  target="_blank"
+                  ><Button variant="link" size="sm">
+                    focushotels.pl/focus-hotel-premium-sopot
+                  </Button>
+                </a></span
+              >
+            </div>
+          </div>
+          <p class="font-normal w-3/5">
+            {t.about_kitchenDesc}
+          </p>
+          <div class="flex justify-start items-center gap-2">
+            <div class="pill">
+              <span class="pillTech text-[12px]">Precision</span>
+            </div>
+            <div class="pill">
+              <span class="pillTech text-[12px]">Cleanliness</span>
+            </div>
+            <div class="pill">
+              <span class="pillTech text-[12px]">Teamwork</span>
+            </div>
+          </div>
+        </div>
+        <img src="" alt="ProfilePicture" width={120} height={120} />
+      </div>
+    </div>
+  </div>-->
+
+  <script>
+    var acc1 = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc1.length; i++) {
+      acc1[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+  <style lang="scss">
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+      display: flex;
+      background: var(--grey-500);
+      color: var(--light);
+      cursor: pointer;
+      padding: 16px 16px 16px 36px;
+      width: 100%;
+      border: 1px solid var(--grey-200);
+      border-radius: 8px;
+      outline: none;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 756px) {
+      .accordion {
+        padding: 8px 8px 8px 16px;
+      }
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active,
+    .accordion:hover {
+      background: var(--grey-300);
+      border: 1px solid var(--grey-100);
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+      background: var(--grey-400);
+      max-height: 0;
+      overflow: auto;
+      transition: max-height 0.2s ease-out;
+      border-radius: 8px;
+    }
+    .panel2 {
+      background: var(--grey-400);
+      overflow: auto;
+      transition: max-height 0.2s ease-out;
+      border-radius: 8px;
+    }
+
+    .expBTN {
+      display: flex;
+      flex-direction: column;
+      color: var(--light);
+      width: 100%;
+      gap: 12px;
+      opacity: 1;
+      transition:
+        opacity 2s ease-out,
+        display 2s ease-out;
+      transition-timing-function: ease-out;
+
+      &:hover > .bar {
+        background: var(--grey-400);
+        border: 1px solid var(--grey-100);
+      }
+    }
+    .bar2 {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 64px;
+      padding: 36px;
+      border: 1px solid var(--grey-200);
+      border-radius: 8px;
+      background: var(--grey-400);
+      opacity: 1;
+      transition:
+        opacity 1s ease-out,
+        display 1s ease-out;
+      transition-timing-function: ease-out;
+    }
+    .bar3 {
+      opacity: 1;
+      transition:
+        opacity 1s ease-out,
+        display 1s ease-out;
+      transition-timing-function: ease-out;
+    }
+    .pill {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 6px 16px;
+      gap: 8px;
+      background: var(--grey-300);
+      border-radius: 50px;
+      flex: none;
+      flex-grow: 0;
+      order: 0;
+    }
+
+    .pillTech {
+      color: var(--grey-75);
+      letter-spacing: 0.2px;
+      font-weight: 500;
+      flex: none;
+      flex-grow: 0;
+      order: 0;
+    }
+    .gradientHERO {
+      background: linear-gradient(90deg, var(--grey-400), rgba(1, 1, 1, 0));
+    }
+  </style>
+</div>

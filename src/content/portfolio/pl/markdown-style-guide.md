@@ -1,16 +1,19 @@
 ---
+language: en
 title: Markdown Style Guide
-description: Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
-pubDate: Jul 01 2022
-cover: "@assets/images/blog/blog-placeholder-1.jpg"
-coverAlt: blog-placeholder-2
+pubDate: 2020-09-10 03:25
+cover:  "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706306464/gfx/project/woody/gfx/visa-front_qtf48s.png"
+coverAlt:  "FrontCoverV2"
+description: Have you ever wondered what the most important items of life are? Well, wonder no more!
 draft: true
-highlight: true
-role: ok
-client: ok
-time: ok
-credits: ok
-about: ok
+category: Personal Work
+type: design
+role: Album cover | Banner design
+client: Hi I’m Ya0
+time: 2022.09-11
+credits: none
+highlight: false
+about: Woody FoodTruck is a small business started by a passionate group of friends that wanted to share their love for Italian food with others. Woody's built-in, wood-fired pizza oven is what makes them stand out from other businesses alike. They can handcraft the pizza in a way traditional Italians do. Thanks to the mobility of a food truck, they can serve their specialty wherever they please. You can taste their mouth-watering, fire-baked pizza at many food events and conventions.
 ---
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 

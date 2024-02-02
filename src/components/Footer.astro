@@ -1,7 +1,5 @@
 ---
 import LanguageSelector from "./LanguageSelector.astro";
-import ThemeSelector from "./ThemeSelector.astro";
-import ButtonA from "./ui/ButtonA.astro";
 import Separator from "./ui/Separator.astro";
 import { ModeToggle } from "./ui/ModeToggle";
 import { LangSelect } from "./ui/langSelect";
@@ -22,9 +20,9 @@ const today: Date = new Date();
       <div class="font-medium flex items-center gap-4">
         <div>
           &copy; {today.getFullYear()}
-          <span id="footerName"></span>. All rights reserved.
+          <span id="footerName">Belial</span>. All rights reserved.
         </div>
-        <a href="https://astro.build"
+        <a href="https://astro.build" target="_blank" title="Check out Astro!"
           ><img
             src="https://astro.badg.es/v2/built-with-astro/tiny.svg"
             alt="Built with Astro"

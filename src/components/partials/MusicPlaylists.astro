@@ -1,0 +1,219 @@
+---
+import { Image } from "astro:assets";
+import Headline from "../Headline.astro";
+import { Button } from "../ui/button";
+import Youtube from "@src/assets/icons/youtube.svg";
+const playlist = [
+  {
+    id: 0,
+    title: "Music",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5Y68SQzfL48NQVaf9o8Ew5a&si=3Xz4D_9wjVHSOFup",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "PL Rap",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5Zp4QqYVrk2uI-DbbOPu2xp&si=fuHiZNGuCJv6EFOE",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Indie",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5b0y3i4VHXOebhKI4boH9V4&si=PB7u3hkh-t2IOpZT",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Rock",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5bBJ2HdptokOt_rhZDJt4LP&si=sh02LbCkMacgaPlT",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Electro",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5Zab4yZIs8vjlGxxMtdj7n0&si=fOaK-pX12NSgA9JA",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "House",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5ZdoZi5UBBNZmNKZTDu1yOH&si=Ri3BYnEaleirb176",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "International Rap",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5ZAmeURtf2B5onc7Kkny1P6&si=pyeHnm6NsUD2kp6T",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Trap",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5Zu6YOL_HNJqEf1ibg6Xh0k&si=Og1NPyqpsY48B1Om",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "D&B",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5Zp8R0Eobcu0Xx4HaEoQyiU&si=sqQ6BGZGbGj9jaqV",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Dubstep",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5a8U_KJn253imVdgGd1BV10&si=UkjGlk6JiBtRbRCI",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Rap",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5bntSETieU77S1b42qkuwAZ&si=hQifltR706Q9xX-P",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Shadow",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5a4fs8sIoHT6DugTtg2VvMJ&si=DuEOpFYBHyENd5Cd",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+  {
+    id: 0,
+    title: "Big Room",
+    src: "Youtube",
+    link: "https://youtube.com/playlist?list=PLrrdqmv-Sk5aRFl9t6eSBunkZRm9wtia0&si=rfaApFBoB3gu903t",
+    image:
+      "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceEP",
+  },
+];
+---
+
+<div class="mb-24">
+  <div
+    class="flex flex-col lg:flex-row gap-1 lg:gap-16 items-start lg:items-center"
+  >
+    <div class="flex flex-col mb-24">
+      <Headline Heading="Music playlists" Subtitle="what i listen to" />
+      <div class="flex flex-col gap-9 max-char">
+        <p>
+          Having an extensive spectrum of music likeability i decided to compose
+          custom playlists of music i like listening. They have been named after
+          genres, the main MUSIC is where everything else is. Feel welcome to
+          suggest some of your bangers for me to add there.
+        </p>
+        <Button variant="outline" className="w-fit" size="lg" id="viewPlay">
+          View playlists <span class="material-icons">arrow_forward</span>
+        </Button>
+      </div>
+    </div>
+    <div
+      class="playlists flex flex-row gap-6 overflow-clip relative"
+      id="playlistFeature1"
+    >
+      <div
+        class="w-full h-full absolute bg-gradient-to-r from-transparent to-grey-500"
+      >
+      </div>
+      {
+        playlist.slice(0, 3).map((item) => (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <div class="flex flex-col gap-2 border border-grey-200 hover:border-grey-100 bg-grey-500 hover:bg-grey-400 rounded-xl w-fit p-3 hover:-translate-y-2 transition-all duration-200 ease-in-out">
+              <div class="flex flex-row justify-between gap-3 items-center flex-wrap w-fit max-w-[150px]">
+                <img src={Youtube.src} alt="yt" class="w-5 h-5 fill-white" />
+                <span class="uppercase font-semibold">{item.title}</span>
+              </div>
+              <Image
+                src={item.image}
+                alt="1"
+                width={100}
+                height={100}
+                class="rounded-md border border-grey-200 w-full min-w-[100px]"
+              />
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    id="playlistGrid"
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 flex-wrap"
+  >
+    {
+      playlist.map((item) => (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={item.title}
+        >
+          <div class="flex flex-col gap-2 border border-grey-200 hover:border-grey-100 bg-grey-500 hover:bg-grey-400 rounded-xl w-full p-3 hover:-translate-y-2 transition-all duration-200 ease-in-out">
+            <div class="flex flex-row justify-between gap-3 items-center max-w-[350px]">
+              <span class="uppercase font-semibold truncate">{item.title}</span>
+              <img src={Youtube.src} alt="yt" class="w-5 h-5 fill-white" />
+            </div>
+            <Image
+              src={item.image}
+              alt="1"
+              width={100}
+              height={100}
+              class="rounded-md border border-grey-200 w-full "
+            />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const playlistGrid = document.querySelector(
+    "#playlistGrid"
+  ) as HTMLDivElement;
+  const playlistFeature1 = document.querySelector(
+    "#playlistFeature1"
+  ) as HTMLDivElement;
+  playlistGrid.classList.toggle("hidden");
+  const moreButton = document.querySelector("#viewPlay") as HTMLButtonElement;
+  moreButton.addEventListener("click", myFunction);
+  function myFunction() {
+    playlistGrid.classList.toggle("hidden");
+    playlistFeature1.classList.toggle("hidden");
+  }
+</script>

@@ -16,7 +16,7 @@ export function ModeToggle() {
 
   React.useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
-    setThemeState(isDarkMode ? "dark" : "theme-light")
+    setThemeState(isDarkMode ? "dark" : "dark")
   }, [])
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export function ModeToggle() {
       theme === "dark" ||
       (theme === "system" &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    document.documentElement.classList[isDark ? "add" : "add"]("dark")
   }, [theme])
 
   return (

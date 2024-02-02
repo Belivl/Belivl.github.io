@@ -49,6 +49,16 @@
 		--col-primary-100: #FFF8EB;
 		--col-primary-50: #FFFBF5;
 
+
+		/*woody palette*/
+			--wood-red: #FF3C3C;
+			--wood-green: #23BE1C;
+			--wood-white: #FDF7F2;
+			--wood-light: #F3D8BF;
+			--wood-cream: #E9BE95;
+			--wood-brown: #BB8E65;
+			--wood-dark: #602626;
+
 		--fontfam-primary: 'Work Sans', sans-serif;
 		--fontfam-secondary: 'Open Sans', sans-serif;
 		--fontfam-accent: 'Grobe Deutschmeister', sans-serif;
@@ -325,4 +335,13 @@ h5 {
 	border: var(--border) 1 solid;
 	background: var(--background);
 	transition: all 250ms ease-in-out;
+  }
+
+  .max-char{
+	max-width: 75ch;
+  }
+  @media (max-width: 756px) {
+	.max-char {
+			max-width: 50ch;
+		}
   }

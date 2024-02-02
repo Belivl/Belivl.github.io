@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import Headline from "@components/Headline.astro";
+
+import ProjectNav from "@src/components/ui/ProjectNav.astro";
+
+const imagePath = [
+  //Images
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357267/gfx/design/RIkoHD/Icon_Rikohd_v2_aqbci0.png",
+    alt: "Icon_Rikohd_v2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357269/gfx/design/RIkoHD/Icon_Rikohd_v2offline_rghgup.png",
+    alt: "Icon_Rikohd_v2offline",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357293/gfx/design/RIkoHD/fb_banner_rikohdv2_ulbsp3.png",
+    alt: "fb_banner_rikohdv2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357306/gfx/design/RIkoHD/Youtube_Banner_Rikohdv2-min_qjgnyb.png",
+    alt: "Youtube_Banner_Rikohdv2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357312/gfx/design/RIkoHD/Twitch_Banner_Rikohdv2_ic58un.png",
+    alt: "Twitch_Banner_Rikohdv2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357309/gfx/design/RIkoHD/Preview_Banners_RikoHD_v2-min_rxcej4.png",
+    alt: "Preview_Banners_RikoHD_v2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357426/gfx/design/RIkoHD/Youtube_Banner_Rikohdv3-min_gsallq.png",
+    alt: "Youtube_Banner_Rikohdv3",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706357433/gfx/design/RIkoHD/Youtube_Banner_Rikohd-min_h4pje3.png",
+    alt: "Youtube_Banner_Rikohd",
+  },
+];
+---
+
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <Headline Heading="Design" Subtitle="Final" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    <Image
+      src={imagePath[0].src}
+      alt={imagePath[0].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[1].src}
+      alt={imagePath[1].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[2].src}
+      alt={imagePath[2].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[3].src}
+      alt={imagePath[3].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[4].src}
+      alt={imagePath[4].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[5].src}
+      alt={imagePath[5].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+  </div>
+
+  <Headline Heading="Variations" Subtitle="Other" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    <Image
+      src={imagePath[6].src}
+      alt={imagePath[6].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src={imagePath[7].src}
+      alt={imagePath[7].alt}
+      width={600}
+      height={200}
+      class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+  </div>
+  <!-- 
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    {
+      imagePath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>-->
+</div>

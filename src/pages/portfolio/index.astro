@@ -33,8 +33,9 @@ const posts = (
   });
 ---
 
-<Layout title="portfolio">
-  <div class="container2 w-full mx-8" id="rectangleContainer"></div>
+<Layout title="Belial - Portfolio">
+  <!-- 
+  <div class="container2 w-full mx-8" id="rectangleContainer"></div>-->
   <Container>
     <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
     <div class="flex gap-3 items-center justify-left w-full">
@@ -70,9 +71,11 @@ const posts = (
       {
         posts.map((post: any, index: number) => (
           <li
-            class={`${index === 0 ? "col-span-2 mb-4 w-full text-center" : ""}`}
+            class={`${
+              index === 0 ? "col-span-2 mb-4 w-full text-center" : ""
+            } hover:-translate-y-2 transition-all duration-200 ease-in-out`}
           >
-            <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+            <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
               <a
                 href={post.href}
                 class="w-[720px] h-[180px] dark:bg-grey-200 bg-grey-50"
@@ -141,6 +144,7 @@ const posts = (
     text-align: center;
   }
 </style>
+<!-- 
 <script>
   interface Rectangle {
     className: string;
@@ -190,3 +194,4 @@ const posts = (
 
   document.addEventListener("DOMContentLoaded", initialize);
 </script>
+-->

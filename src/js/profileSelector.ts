@@ -9,7 +9,9 @@ const headerName = document.querySelector("#headerName") as HTMLDivElement;
 const msgrLink = document.querySelector("#msgrLink") as HTMLLinkElement;
 const msgrLink2 = document.querySelector("#msgrLink2") as HTMLLinkElement;
 const navLinkPort = document.querySelector("#navLinkPort") as HTMLLinkElement;
+const navLinkPortHome = document.querySelector("#navLinkPortHome") as HTMLLinkElement;
 const homeIMG = document.querySelector("#homeIMG") as HTMLImageElement;
+const belialBanner = document.querySelector("#aboutBelial") as HTMLDivElement;
 
 const btnProfile1 = document.querySelector("#coin1");
 const btnProfile2 = document.querySelector("#coin2");
@@ -37,19 +39,21 @@ function setProfile(currentProfile){
                 msgrLink2.href = "https://m.me/BelialDesign";
             }
             msgrLink.href = "https://m.me/BelialDesign";
-            
+            navLinkPortHome.href = "/home/";
             homeIMG.src = "/logo.png";
             navLinkPort.href = "";
             navLinkPort.href = "/portfolio/";
+            belialBanner.classList.remove("hidden");
         }else {
             if(msgrLink2){
                 msgrLink2.href = "https://m.me/michaljelinskiofficial";
             }
             msgrLink.href = "https://m.me/michaljelinskiofficial";
-            
+            navLinkPortHome.href = "/home2/";
             homeIMG.src = "/profile.jpg";
             navLinkPort.href = "";
              navLinkPort.href = "/gallery/portfolio/";
+             belialBanner.classList.add("hidden");
         }
 }
 
@@ -66,9 +70,13 @@ function checkCookie() {
       if (currentProfile != "" && currentProfile != null) {
         //alert("Set your " + okCookies);
       }
+    } 
+    if(!currentProfile){
+        setProfile("Michal");
     }
   }
   document.addEventListener("DOMContentLoaded", (event) => {
+    setProfile("Belial");
     checkCookie();
   });
 

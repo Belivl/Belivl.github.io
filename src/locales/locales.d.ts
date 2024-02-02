@@ -20,7 +20,10 @@ declare interface Locales {
     about_sopot: string;
     about_kitchenDesc:string;
     about_uiuxDesc: string;
+    about_uiuxDesc2: string;
+    about_uiuxDesc3: string;
     about_umgDesc: string;
+    about_bukDesc: string;
 
     contact_h1: string;
     contact_h1desc: string;

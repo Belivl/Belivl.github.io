@@ -5,13 +5,12 @@ import HeroSection from "@src/components/partials/HeroSectionMJ.astro";
 import Banner from "@src/components/partials/Banner.astro";
 import translations from "@utils/t.ts";
 import ModalGallery from "@src/components/ui/ModalGallery.astro";
-import ButtonA from "@src/components/ui/ButtonA.astro";
-import { Icon } from "astro-icon/components";
 import Headline from "@src/components/Headline.astro";
+import { Button } from "@src/components/ui/button";
 const t = translations(Astro.url);
 ---
 
-<Layout>
+<Layout title="Michal Jelinski - Home">
   <!--Modal -->
   <ModalGallery data="Portfolio" />
   <Container>
@@ -28,7 +27,7 @@ const t = translations(Astro.url);
         </div>
         <div class="absolute bottom-24 right-0 left-0 z-50 flex justify-center">
           <a href="/gallery/portfolio/">
-            <ButtonA size="lg" classes="primary">View more</ButtonA>
+            <Button size="lg">View more</Button>
           </a>
         </div>
 

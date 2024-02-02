@@ -1,53 +1,42 @@
 ---
-import ButtonA from "@components/ui/ButtonA.astro";
+import { Button } from "@components/ui/button";
 import GoldCTA from "@components/ui/GoldCTA.astro";
+import WorkBadge from "@components/ui/WorkBadge.astro";
+
 import { Image } from "astro:assets";
-//import YaoAlbumCover from "@assets/graphics/project/FrontCoverV2.png";
-//import Visa2v6 from "@assets/graphics/design/Visa2v6.png";
-//import NoiseSilenceV3 from "@assets/graphics/art/NoiseSilenceV3-alt2.jpg";
-//import HalloweenParty2 from "@assets/graphics/design/HalloweenParty2.jpg";
-//import Lu2 from "@assets/graphics/art/Lu2.png";
-//import Book from "@assets/graphics/3d/Book/BookMisc4PS.png";
-//import DNature from "@assets/graphics/3d/536941.jpg";
-//import KaraokeCzwartki from "@assets/graphics/design/KaraokeCzwartki A4.jpg";
-//import Ice3D from "@assets/graphics/3d/MartwaNatura2.webp";
-import { Button } from "../ui/button";
+
 const heroImgW = 200;
 ---
 
 <section
-  class="flex gap-24 justify-between items-center py-32 relative rounded-2xl overflow-clip"
+  class="flex gap-24 container justify-between items-center py-32 relative rounded-2xl overflow-clip border border-grey-300 bg-grey-500"
 >
-  <div class="flex flex-col gap-12 justify-start items-start">
-    <!-- 
-      <div
-        class="flex gap-2 items-center bg-grey-500 border border-gray-300 rounded-full px-4 py-2"
-      >
-        <div class="w-4 h-4 rounded-full bg-red-600"></div>
-        <div class="text-red-600 text-[12px] font-semibold uppercase pr-2">
-          Unavailable for work
-        </div>
-      </div>-->
-    <h1 class="H1 text-[24px] md:text-[49px] uppercase w-full md:w-auto">
-      Hi! I’m Belial <br />an <span class="textBaseGold uppercase"
-        >artist <span class="material-icons"> color_lens</span></span
-      > at heart and soul,<br />
-      <span class="textBaseGold"
-        >designer <span class="material-symbols-outlined h-20">
-          photo_camera
-        </span></span
-      > by craft.
-    </h1>
-    <div class="flex gap-4 items-center">
-      <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
-        <span class="material-icons">arrow_forward</span>
-      </GoldCTA>
-      <a href="/about/">
-        <Button size="lg" variant="default">Read more</Button></a
-      >
+  <div
+    class="flex flex-col gap-10 justify-start z-10 items-start ml-0 md:ml-16"
+  >
+    <WorkBadge workMode="true">Available for work</WorkBadge>
+    <div class="flex flex-col gap-9">
+      <h1 class="H1 text-[24px] md:text-[49px] uppercase w-full md:w-auto">
+        Hi! I’m Belial <br />an <span class="textBaseGold uppercase"
+          >artist <span class="material-icons"> color_lens</span></span
+        > at heart and soul,<br />
+        <span class="textBaseGold"
+          >designer <span class="material-symbols-outlined h-2">
+            photo_camera
+          </span></span
+        > by craft.
+      </h1>
+      <div class="flex gap-4 items-center">
+        <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
+          <span class="material-icons">arrow_forward</span>
+        </GoldCTA>
+        <a href="/about/">
+          <Button size="lg" variant="outline">Read more</Button></a
+        >
+      </div>
     </div>
   </div>
-  <div class="absolute right-0 top-0 bottom-0 -z-10 w-full overflow-clip">
+  <div class="absolute right-0 top-0 bottom-0 z-0 w-full overflow-clip">
     <div class="gridPhotoHERO absolute right-0 bottom-0 top-0 -translate-y-1/4">
       <div
         class="gradientHERO absolute w-full h-full z-20 inset-0 translate-y-1/4"
@@ -130,11 +119,15 @@ const heroImgW = 200;
     padding: 0;
   }
   .gradientHERO {
-    background: linear-gradient(90deg, var(--grey-50), rgba(1, 1, 1, 0));
+    background: linear-gradient(90deg, var(--grey-50), rgba(17, 17, 20, 0));
   }
   @media (prefers-color-scheme: dark) {
     .gradientHERO {
-      background: linear-gradient(90deg, #111114, rgba(1, 1, 1, 0));
+      background: linear-gradient(
+        90deg,
+        var(--grey-500),
+        rgba(17, 17, 20, 0.8)
+      );
     }
   }
   .textBaseGold {

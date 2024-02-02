@@ -1,15 +1,7 @@
 ---
 import { LOCALES, DEFAULT_LOCALE } from "@src/consts";
 import { getLocale, getUrlWithoutLocale } from "astro-i18n-aut";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+
 const currentLocale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const locales = Object.values(LOCALES);
 
@@ -32,13 +24,14 @@ const urlWithoutLocalePrefix = getUrlWithoutLocale(Astro.url);
 </script>
 
 <div class="flex gap-2 items-center">
+  <!-- 
   {
     "en" === currentLocale ? (
       <img src="/en.svg" alt="en_icon" />
     ) : (
       <img src="/pl.svg" alt="en_icon" />
     )
-  }
+  }-->
 
   <select
     name="Language"

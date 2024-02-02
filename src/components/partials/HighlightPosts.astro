@@ -1,13 +1,12 @@
 ---
-import ButtonA from "@src/components/ui/ButtonA.astro";
-import HeroImage from "../blog/HeroImage.astro";
+import HeroImage from "@components/blog/HeroImage.astro";
 import { DEFAULT_LOCALE } from "@src/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
 import Headline from "@src/components/Headline.astro";
 import Container from "@src/components/Container.astro";
-import { Button } from "../ui/button";
+import { Button } from "@components/ui/button";
 
 const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
@@ -52,18 +51,20 @@ const posts = (
     {
       posts.map((post: any, index: number) => (
         <li
-          class={`${index === 0 ? "col-span-2 mb-4 w-full text-center" : ""}`}
+          class={`${
+            index === 0 ? "col-span-2 mb-4 w-full text-center" : ""
+          } hover:-translate-y-2 transition-all duration-200 ease-in-out`}
         >
-          <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:border-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+          <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
             <a
               href={post.href}
               class="w-[720px] h-[180px] dark:bg-grey-200 bg-grey-50"
             >
-              <div class="absolute top-0 left-0 right-0 -z-20 h-[180px] bg-grey-200">
+              <div class="absolute top-0 left-0 right-0 -z-10 h-[180px] bg-grey-200">
                 <HeroImage
                   class={`${
                     index === 0 ? "w-full" : ""
-                  } mb-2 rounded-lg hover:shadow-md cover`}
+                  } mb-2 rounded-lg hover:shadow-md cover bg-center`}
                   src={post.data.cover}
                   alt={post.data.coverAlt}
                   width={720}

@@ -6,10 +6,72 @@ import ButtonA from "@src/components/ui/ButtonA.astro";
 import { Headlines } from "@src/consts";
 import { Image } from "astro:assets";
 
-import exlibris from "@assets/graphics/art/exlibrisv1.jpg";
+const imagePath = [
+  //Images
+  {
+    id: 0,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851892/gfx/art/SatyraInsta1_o7iqdt.png",
+    alt: "SatyraInsta1",
+  },
+  {
+    id: 1,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851897/gfx/art/SatyraInsta2_zjktcp.png",
+    alt: "SatyraInsta2",
+  },
+  {
+    id: 2,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851901/gfx/art/SatyraInsta3_u5ekib.png",
+    alt: "SatyraInsta3",
+  },
+  {
+    id: 3,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706814908/gfx/art/SkullVinci_2_xgjr3m.jpg",
+    alt: "SkullVinci",
+  },
+  {
+    id: 4,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706814911/gfx/art/ManVinci_2_jxqcsd.jpg",
+    alt: "ManVinci",
+  },
+  {
+    id: 5,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706814905/gfx/art/WatchVinci_2_ahmiir.jpg",
+    alt: "WatchVinci",
+  },
+  {
+    id: 6,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706814878/gfx/art/noise-alt1_zseguy.jpg",
+    alt: "noise-alt1",
+  },
+  {
+    id: 7,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg",
+    alt: "NoiseSilenceV3",
+  },
+  {
+    id: 8,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706814882/gfx/art/silenceV2-alt1_aghi4q.jpg",
+    alt: "silenceV2",
+  },
+  {
+    id: 9,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706815777/gfx/art/1_s7vr2s.png",
+    alt: "az1",
+  },
+  {
+    id: 10,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706815777/gfx/art/2_pb2jt1.png",
+    alt: "az2",
+  },
+  {
+    id: 11,
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706815777/gfx/art/3_rjcdr9.png",
+    alt: "az3",
+  },
+];
 ---
 
-<Layout title="portfolio">
+<Layout title="Belial - Portfolio Art">
   <Container>
     <Headline Heading={Headlines[2].heading} Subtitle={Headlines[2].subtitle} />
     <div class="flex gap-3 items-center justify-left w-full">
@@ -26,8 +88,132 @@ import exlibris from "@assets/graphics/art/exlibrisv1.jpg";
         <ButtonA size="sm" classes="default px-4">3D</ButtonA>
       </a>
     </div>
-    <div class="flex flex-row items-center w-full bg-white rounded-xl mt-16">
-      <Image src={exlibris} alt="exlibris" width={400} />
+    <div class="flex flex-col items-center w-full gap-9 rounded-xl mt-16">
+      <div
+        class="grid grid-cols-3 border border-grey-300 bg-grey-400 w-full rounded-xl overflow-clip"
+      >
+        <Image
+          src={imagePath[0].src}
+          alt={imagePath[0].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[1].src}
+          alt={imagePath[1].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[2].src}
+          alt={imagePath[2].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+      </div>
+      <div
+        class="grid grid-cols-3 border border-grey-300 bg-grey-400 w-full rounded-xl overflow-clip"
+      >
+        <Image
+          src={imagePath[3].src}
+          alt={imagePath[3].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[4].src}
+          alt={imagePath[4].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[5].src}
+          alt={imagePath[5].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+      </div>
+      <div
+        class="grid grid-cols-3 border gap-1 border-grey-300 bg-grey-400 w-full rounded-xl overflow-clip"
+      >
+        <Image
+          src={imagePath[6].src}
+          alt={imagePath[6].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[7].src}
+          alt={imagePath[7].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[8].src}
+          alt={imagePath[8].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+      </div>
+      <div
+        class="grid grid-cols-3 border border-grey-300 bg-grey-400 w-full rounded-xl overflow-clip"
+      >
+        <Image
+          src={imagePath[9].src}
+          alt={imagePath[9].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[10].src}
+          alt={imagePath[10].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+        <Image
+          src={imagePath[11].src}
+          alt={imagePath[11].alt}
+          width={400}
+          height={200}
+          class="w-full bg-grey-400 grid place-items-center"
+          format="webp"
+          quality="low"
+        />
+      </div>
+      <!--<Image src={exlibris} alt="exlibris" width={400} /> -->
     </div>
   </Container>
 </Layout>
