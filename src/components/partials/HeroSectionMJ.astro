@@ -6,13 +6,21 @@ import { Button } from "../../components/ui/button";
 ---
 
 <section
-  class="flex gap-24 justify-between items-center container py-32 relative rounded-2xl overflow-clip border border-grey-300"
+  class="flex gap-24 justify-between items-center p-3 md:py-32 relative rounded-2xl overflow-clip border border-grey-300"
 >
-  <div class="flex flex-col gap-16 justify-start items-start ml-0 md:ml-16">
+  <div
+    class="flex flex-col gap-8 md:gap-16 justify-start items-start ml-0 md:ml-16 w-full"
+  >
     <div class="flex flex-col gap-8 items-start">
-      <WorkBadge workMode="true">Available for work</WorkBadge>
-      <div class="flex flex-col gap-1 items-start">
-        <h1 class="H1 uppercase leading-loose" style="line-height: 120%;">
+      <div class="w-full hidden md:flex">
+        <WorkBadge workMode="true" class="w-full">Available for work</WorkBadge>
+      </div>
+
+      <div class="flex flex-col gap-4 items-start">
+        <h1
+          class="text-[26px] md:text-[49px] uppercase leading-loose"
+          style="line-height: 120%;"
+        >
           Hi there! I'm Michal Jelinski
           <br />a passionate <span class="textBaseGold uppercase"
             ><span class="material-icons mx-2">
@@ -21,7 +29,7 @@ import { Button } from "../../components/ui/button";
           >
         </h1>
         <span
-          class="text-[20px] text-grey-100 uppercase leading-tight"
+          class="text-[14px] md:text-[20px] text-grey-100 uppercase leading-tight"
           style="line-height: 130%; font-weight: 500;"
         >
           pouring my heart and soul <br /> into each frame.
@@ -40,16 +48,25 @@ import { Button } from "../../components/ui/button";
         </span></span
       > by craft.
     </h1>-->
-    <div class="flex gap-4 items-center">
-      <GoldCTA link="/gallery/portfolio/" size="lg" text="View portfolio">
+    <div class="flex flex-col md:flex-row gap-4 items-center w-full">
+      <GoldCTA
+        link="/gallery/portfolio/"
+        size="lg"
+        text="View portfolio"
+        class="w-full md:w-fit"
+      >
         <span class="material-icons">arrow_forward</span>
       </GoldCTA>
-      <a href="/contact/">
-        <Button size="lg" variant="outline">Contact</Button></a
+      <a href="/contact/" class="w-full md:w-fit">
+        <Button size="lg" variant="outline" className="w-full md:w-fit">
+          Contact
+        </Button></a
       >
     </div>
   </div>
-  <div class="absolute right-0 top-0 bottom-0 -z-10 w-full overflow-clip">
+  <div
+    class="hidden md:block absolute right-0 top-0 bottom-0 -z-10 w-full overflow-clip"
+  >
     <div class="gridPhotoHERO absolute right-0 bottom-0 top-0 -translate-y-1/4">
       <div
         class="gradientHERO absolute w-full h-full z-20 inset-0 translate-y-1/4"
