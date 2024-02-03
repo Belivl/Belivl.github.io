@@ -1,5 +1,5 @@
 // profileSelector.js
-import { getCookie,setCookie } from "./utils";
+import { getCookie,setCookie } from "./utils.js";
 type Profile = 'Belial' | 'Michal'; // Add more profiles as needed
 
 
