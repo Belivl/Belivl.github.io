@@ -1,14 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import HeroImage from "@components/blog/HeroImage.astro";
-import Layout from "@layouts/Layout.astro";
-import Title from "@src/components/blog/BlogHeader.astro";
-import Comments from "@src/components/blog/Comments.astro";
-import Headline from "@src/components/Headline.astro";
-import Container from "@src/components/Container.astro";
-import Separator from "@src/components/ui/Separator.astro";
-import { NAME1 } from "@src/consts";
-import ProjectNav from "@src/components/ui/ProjectNav.astro";
+import HeroImage from "../components/blog/HeroImage.astro";
+import Layout from "./Layout.astro";
+//import Title from "@src/components/blog/BlogHeader.astro";
+//import Comments from "@src/components/blog/Comments.astro";
+//import Headline from "@src/components/Headline.astro";
+import Container from "../components/Container.astro";
+import Separator from "../components/ui/Separator.astro";
+import { NAME1 } from "../consts.ts";
+import ProjectNav from "../components/ui/ProjectNav.astro";
 
 type Props = CollectionEntry<"portfolio">["data"];
 

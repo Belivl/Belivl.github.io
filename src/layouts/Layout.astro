@@ -1,13 +1,13 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Navbar from "@components/Navbar.astro";
-import Footer from "@components/Footer.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import { getLocale } from "astro-i18n-aut";
 import { ViewTransitions } from "astro:transitions";
 
-import bgPic from "@assets/FilmGrainS5.jpg";
-import Container from "@src/components/Container.astro";
-import CookieBanner from "@src/components/ui/CookieBanner.astro";
+import bgPic from "../assets/FilmGrainS5.jpg";
+import Container from "../components/Container.astro";
+//import CookieBanner from "../components/ui/CookieBanner.astro";
 
 const { title, description } = Astro.props;
 
