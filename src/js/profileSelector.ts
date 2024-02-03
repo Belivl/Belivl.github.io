@@ -76,6 +76,7 @@ function checkCookie() {
     }
   }
   document.addEventListener("DOMContentLoaded", (event) => {
+    alert("Working");
     setProfile("Belial");
     checkCookie();
   });
