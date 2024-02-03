@@ -85,7 +85,18 @@ const locale = getLocale(Astro.url);
         height: 100%;
       }
     </style>
-
+    <script>
+      import { getCookie } from "../js/utils";
+      const navLinkPortHome = document.querySelector(
+        "#navLinkPortHome"
+      ) as HTMLLinkElement;
+      let currentProfile = getCookie("profile");
+      if (currentProfile === "Belial") {
+        navLinkPortHome.href = "/home/";
+      } else {
+        navLinkPortHome.href = "/home2/";
+      }
+    </script>
     <!-- <script src="js/themeChange"></script>
     <script
       type="module"

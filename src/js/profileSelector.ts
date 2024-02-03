@@ -9,7 +9,7 @@ const headerName = document.querySelector("#headerName") as HTMLDivElement;
 const msgrLink = document.querySelector("#msgrLink") as HTMLLinkElement;
 const msgrLink2 = document.querySelector("#msgrLink2") as HTMLLinkElement;
 const navLinkPort = document.querySelector("#navLinkPort") as HTMLLinkElement;
-const navLinkPortHome = document.querySelector("#navLinkPortHome") as HTMLLinkElement;
+
 const homeIMG = document.querySelector("#homeIMG") as HTMLImageElement;
 const belialBanner = document.querySelector("#aboutBelial") as HTMLDivElement;
 
@@ -39,29 +39,53 @@ function setProfile(currentProfile){
                 msgrLink2.href = "https://m.me/BelialDesign";
             }
             msgrLink.href = "https://m.me/BelialDesign";
-            navLinkPortHome.href = "/home/";
-            homeIMG.src = "/images/logo.png";
-            navLinkPort.href = "";
-            navLinkPort.href = "/portfolio/";
-            belialBanner.classList.remove("hidden");
+            //navLinkPortHome.href = "/home/";
+            if(homeIMG){
+                homeIMG.src = "/images/logo.png";
+            }
+             if(navLinkPort){
+                 navLinkPort.href = "";
+                navLinkPort.href = "/portfolio/";
+            }
+            if (headerName) {
+                headerName.innerHTML = currentProfile;
+            }   
+           
+            //belialBanner.classList.remove("hidden");
+            
         }else {
             if(msgrLink2){
                 msgrLink2.href = "https://m.me/michaljelinskiofficial";
             }
             msgrLink.href = "https://m.me/michaljelinskiofficial";
-            navLinkPortHome.href = "/home2/";
-            homeIMG.src = "/images/profile.jpg";
-            navLinkPort.href = "";
-             navLinkPort.href = "/gallery/portfolio/";
-             belialBanner.classList.add("hidden");
+            //navLinkPortHome.href = "/home2/";
+            if (homeIMG) {
+                homeIMG.src = "/images/profile.jpg";
+            }
+            if (navLinkPort) {
+                navLinkPort.href = "";
+                navLinkPort.href = "/gallery/portfolio/";
+            }
+            if (headerName) {
+                 headerName.innerHTML = currentProfile;
+            }
+            
+            
+             //belialBanner.classList.add("hidden");
+            
         }
 }
 
 function checkCookie() {
     let currentProfile = getCookie("profile");
     if (currentProfile != "") {
-        footerName.innerHTML = currentProfile;
-        headerName.innerHTML = currentProfile;
+        if (footerName) {
+            footerName.innerHTML = currentProfile;
+        }
+        if (headerName) {
+            headerName.innerHTML = currentProfile;
+        }
+        
         
         setProfile(currentProfile);
       //alert("Welcome again " + okCookies);
@@ -72,11 +96,11 @@ function checkCookie() {
       }
     } 
     if(!currentProfile){
-        setProfile("Michal");
+        setProfile("Belial");
     }
   }
   document.addEventListener("DOMContentLoaded", (event) => {
-    alert("Working");
+    //alert("Working");
     setProfile("Belial");
     checkCookie();
   });
