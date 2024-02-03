@@ -1,6 +1,6 @@
 ---
-import HeaderLink from "@components/Link.astro";
-import { localizePath } from "@utils/t.ts";
+import HeaderLink from "./Link.astro";
+import { localizePath } from ".././utils/t.ts";
 import { SITE_TITLE, PAGES } from "@src/consts";
 
 import ButtonA from "@components/ui/ButtonA.astro";
@@ -54,7 +54,7 @@ transition:persist
         classes="ghost icon px-4 font-semibold overflow-clip border border-grey-400"
         tabindex={-1}><img src="/profile.jpg" alt="profile" class="w-12 h-12 p-1"></ButtonA> -->
 		<ButtonA size="lg" classes="ghost icon px-4 font-semibold " tabindex={-1}>
-			<img id="homeIMG" src="/profile.jpg" alt="profile_icon" class="w-10 h-10 rounded-sm">
+			<img id="homeIMG" src="/images/profile.jpg" alt="profile_icon" class="w-10 h-10 rounded-sm text-[10px]">
 			<!-- 
       <svg
         class="w-6 h-6"

@@ -1,18 +1,14 @@
 ---
-import Container from "@src/components/Container.astro";
-import ChoiceLayout from "@src/layouts/ChoiceLayout.astro";
+import Container from "./../components/Container.astro";
+import ChoiceLayout from "./../layouts/ChoiceLayout.astro";
 
-import translations from "@utils/t.ts";
+import translations from "./../utils/t.ts";
 const t = translations(Astro.url);
 
-import Coin2 from "@components/ui/Coin2.astro";
+import Coin2 from "./../components/ui/Coin2.astro";
 
-import logo from "@assets/logo.png";
-import profile from "@assets/profile.jpg";
-
-import { NAME1, NAME2 } from "@src/consts";
-import ButtonA from "@src/components/ui/ButtonA.astro";
-import { DialogDemo } from "@src/components/ModalGalleryShad.tsx";
+import { NAME1, NAME2 } from "./../consts";
+import { DialogDemo } from "./../components/ModalGalleryShad.tsx";
 ---
 
 <ChoiceLayout>
@@ -50,7 +46,7 @@ import { DialogDemo } from "@src/components/ModalGalleryShad.tsx";
         class="profileBelial h-[180px] sm:h-auto scale-[50%] sm:scale-75 md:scale-100 hover:scale-80 md:hover:scale-105 transition ease-out"
       >
         <Coin2>
-          <img src={logo.src} alt="Front" class="w-full md:w-[300px]" />
+          <img src="images/logo.png" alt="Front" class="w-full md:w-[300px]" />
         </Coin2>
       </div>
       <div
@@ -83,7 +79,7 @@ import { DialogDemo } from "@src/components/ModalGalleryShad.tsx";
         class="profileMichal h-[180px] sm:h-auto scale-[50%] sm:scale-75 md:scale-100 hover:scale-80 md:hover:scale-105 transition ease-out"
       >
         <Coin2>
-          <img src={profile.src} alt="Front" class="w-[300px]" />
+          <img src="images/profile.jpg" alt="Front" class="w-[300px]" />
         </Coin2>
       </div>
       <div

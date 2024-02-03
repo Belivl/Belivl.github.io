@@ -1,14 +1,13 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import ModalGallery from "@src/components/ui/ModalGallery.astro";
-import ButtonA from "@components/ui/ButtonA.astro";
-import Container from "@src/components/Container.astro";
-import Headline from "@src/components/Headline.astro";
-import { Headlines, NAME2 } from "@src/consts";
-let pageName = "Events";
-import imagePathsEvents from "@src/js/imagePaths/imagePathsEvents";
+import Layout from "../../layouts/Layout.astro";
+import ModalGallery from "../../components/ui/ModalGallery.astro";
+import Container from "../../components/Container.astro";
+import Headline from "../../components/Headline.astro";
+import { Headlines, NAME2 } from "../../consts";
+import imagePathsEvents from "../../js/imagePaths/imagePathsEvents";
 import { Image } from "astro:assets";
-import GalleryTab from "@src/components/GalleryTab.astro";
+import GalleryTab from "../../components/GalleryTab.astro";
+let pageName = "Events";
 ---
 
 <Layout title={`${NAME2} - ${pageName}`}>

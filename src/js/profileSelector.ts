@@ -40,7 +40,7 @@ function setProfile(currentProfile){
             }
             msgrLink.href = "https://m.me/BelialDesign";
             navLinkPortHome.href = "/home/";
-            homeIMG.src = "/logo.png";
+            homeIMG.src = "/images/logo.png";
             navLinkPort.href = "";
             navLinkPort.href = "/portfolio/";
             belialBanner.classList.remove("hidden");
@@ -50,7 +50,7 @@ function setProfile(currentProfile){
             }
             msgrLink.href = "https://m.me/michaljelinskiofficial";
             navLinkPortHome.href = "/home2/";
-            homeIMG.src = "/profile.jpg";
+            homeIMG.src = "/images/profile.jpg";
             navLinkPort.href = "";
              navLinkPort.href = "/gallery/portfolio/";
              belialBanner.classList.add("hidden");
