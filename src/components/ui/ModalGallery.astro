@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import ButtonA from "./ButtonA.astro";
 import type { HTMLAttributes } from "astro/types";
+import { Button } from "./button";
 
 interface Props extends HTMLAttributes<"dialog"> {
   data?: "All" | "Other" | "Portrait" | "Cars" | "Events" | "Portfolio";
@@ -10,11 +11,11 @@ const { data } = Astro.props;
 ---
 
 <dialog
-  class="modal shadow-2xl rounded-2xl overflow-auto mx-16 bg-grey-500 px-3 border border-grey-300 fixed"
+  class="modal shadow-2xl rounded-2xl overflow-clip mx-4 md:mx-16 bg-grey-500 px-3 border border-grey-300 fixed"
   id="modal"
   data-photoarray={data}
 >
-  <div class="grid-container relative">
+  <div class="grid-container relative overflow-clip py-3">
     <!--Close Button -->
     <div class="bg-grey-500 right-20 p-3 z-10 fixed rounded-2xl">
       <ButtonA
@@ -26,15 +27,24 @@ const { data } = Astro.props;
       </ButtonA>
     </div>
     <!--StripClose -->
-    <div class="flex items-center justify-center gap-2 w-full relative">
+    <div
+      class="grid grid-flow-col gap-5 w-full mb-2 overflow-clip pt-4 px-1 pb-2"
+    >
+      {
+        [...Array(40)].map((e, i) => (
+          <div class="w-5 h-7 bg-grey-300 rounded-[4px]" />
+        ))
+      }
+    </div><!-- 
+    <div class="hidden items-center justify-center gap-2 w-full relative">
       <div class="stripUp">
-        {[...Array(40)].map((e, i) => <div class="cutout" />)}
+        {[...Array(40)].map((e, i) => <div class="cutout " />)}
       </div>
-    </div>
+    </div>-->
     <!--StripMain -->
-    <div class="gridContainerStrip gap-9 h-[80vh]">
+    <div class="gridContainerStrip gap-9 h-[80vh] max-w-100 md:w-fit">
       <button
-        class="prev bg-grey-500 grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
+        class="prev bg-grey-500 hidden md:grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-1 lg:p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
       >
         <span class="material-symbols-outlined text-[4rem] text-white"
           >keyboard_arrow_left</span
@@ -45,7 +55,7 @@ const { data } = Astro.props;
         <img
           src=""
           alt="alt"
-          class="lightboxImgPrev prev rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
+          class="hidden md:block lightboxImgPrev prev rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
         />
         <img
           src=""
@@ -55,43 +65,52 @@ const { data } = Astro.props;
         <img
           src=""
           alt="alt"
-          class="lightboxImgNext next rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
+          class="hidden md:block lightboxImgNext next rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
         />
       </div>
 
       <button
-        class="next bg-grey-500 grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
+        class="next bg-grey-500 hidden md:grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-1 lg:p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
       >
         <span class="material-symbols-outlined text-[4rem] text-white"
           >keyboard_arrow_right</span
         >
       </button>
     </div>
+    <div
+      class="grid grid-flow-col gap-5 w-full mt-2 overflow-clip pt-2 px-1 pb-4"
+    >
+      {
+        [...Array(40)].map((e, i) => (
+          <div class="w-5 h-7 bg-grey-300 rounded-[4px]" />
+        ))
+      }
+    </div>
     <!--StripIndex -->
-    <div class="flex items-center justify-center gap-2 w-full relative">
+    <div class="hidden items-center justify-center gap-2 w-full relative">
       <div class="stripUp rotate-180">
         <!--<div class="container2 w-full mx-8" id="rectangleContainer"></div>
          -->
         {[...Array(40)].map((e, i) => <div class="cutout" />)}
       </div>
-      <div
-        class="button-container flex gap-3 justify-center absolute bg-grey-500"
-      >
-        <a class="prev">
-          <ButtonA size="md" classes="default icon px-4">
-            <span class="material-symbols-outlined">keyboard_arrow_left</span>
-          </ButtonA>
-        </a>
-        <ButtonA size="md" classes="default px-4">
-          <span class="indicatorDisp"></span> / <span class="indicatorDisp2"
-          ></span>
-        </ButtonA>
-        <a class="next">
-          <ButtonA size="md" classes="default icon px-4">
-            <span class="material-symbols-outlined">keyboard_arrow_right</span>
-          </ButtonA>
-        </a>
-      </div>
+    </div>
+    <div
+      class="button-container flex gap-3 justify-center absolute bottom-4 left-0 right-0 text-white"
+    >
+      <a class="prev">
+        <Button variant="outline" size="icon">
+          <span class="material-symbols-outlined">keyboard_arrow_left</span>
+        </Button>
+      </a>
+      <Button variant="outline">
+        <span class="indicatorDisp text-white"></span> / <span
+          class="indicatorDisp2 text-white"></span>
+      </Button>
+      <a class="next">
+        <Button variant="outline" size="icon">
+          <span class="material-symbols-outlined">keyboard_arrow_right</span>
+        </Button>
+      </a>
     </div>
   </div>
 </dialog>
@@ -303,7 +322,7 @@ const { data } = Astro.props;
     text-align: center;
   }
 </style>
-
+<!-- 
 <script>
   interface Rectangle {
     className: string;
@@ -353,3 +372,4 @@ const { data } = Astro.props;
 
   document.addEventListener("DOMContentLoaded", initialize);
 </script>
+-->

@@ -7,13 +7,13 @@ let accentWork = workMode ? green : red;
 
 {
   workMode ? (
-    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3 flex gap-3 items-center">
+    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3  gap-3 items-center w-full md:w-fit flex">
       <div class="dot animate-pulse" />
       <span class="textGlow">Available for work</span>
       <div class="bgGlow" />
     </div>
   ) : (
-    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3 flex gap-3 items-center">
+    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3 flex gap-3 items-center w-full md:w-fit">
       <div class="dot animate-pulse" />
       <span class="textGlow">Unavailable for work</span>
       <div class="bgGlow" />
