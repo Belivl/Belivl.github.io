@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import ButtonA from "@src/components/ui/ButtonA.astro";
+import ButtonA from "../components/ui/ButtonA.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"dialog"> {
@@ -124,7 +124,7 @@ const { data } = Astro.props;
   let cloudLink =
     '"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705412489/photo/event/"';
   console.log(cloudLink);
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     var openBTNS = document.querySelectorAll(".grid-item");
     var prevBTNS = document.querySelectorAll(".prev");
