@@ -1,0 +1,71 @@
+---
+//Bukszpryt Pub&Club
+import { Image } from "astro:assets";
+import Headline from "../../../components/Headline.astro";
+import { bukPath } from "../../../js/imagePaths/projectPaths.js";
+---
+
+<!-- 
+<script>
+  function setMaxHeight() {
+    const container: HTMLElement | null =
+      document.querySelector("#imageContainer");
+    const images: NodeListOf<HTMLImageElement> =
+      document.querySelectorAll(".image1");
+
+    if (container) {
+      const totalGap: number = (images.length - 1) * 64; // Total gap between images
+      const availableHeight: number = container.clientHeight - totalGap;
+
+      images.forEach((image) => {
+        const aspectRatio = image.width / image.height;
+        const newHeight = Math.min(availableHeight, 500); // Set the desired common height
+        const newWidth = newHeight * aspectRatio;
+        image.style.height = `${newHeight}px`;
+        image.style.width = `${newWidth}px`;
+      });
+    }
+  }
+
+  window.addEventListener("load", setMaxHeight);
+  window.addEventListener("resize", setMaxHeight);
+</script>
+-->
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <!-- 
+  <div
+    id="imageContainer2"
+    class="flex justify-start items-start gap-4 w-full bg-green-900"
+  >
+    <Image
+      src={imagePath[1].src}
+      alt={imagePath[1].alt}
+      width={600}
+      height={200}
+      class="image1 rounded-xl h-auto border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+    <Image
+      src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705855190/gfx/project/buk/DzienKobiet_A4_orhfnh.jpg"
+      alt={imagePath[1].alt}
+      width={600}
+      height={200}
+      class="image1 rounded-xl h-auto border border-grey-300 bg-grey-400 grid place-items-center"
+    />
+  </div>-->
+  <Headline Heading="Banners" Subtitle="Variants" />
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full justify-start items-start"
+  >
+    {
+      bukPath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>
+</div>

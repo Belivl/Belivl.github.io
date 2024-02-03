@@ -1,6 +1,44 @@
 {
-	"home_description": "Ciao, Esploratore dello Spazio! Benvenuto a bordo del kit di partenza ufficiale del blog Astro, il tuo punto di partenza perfetto per un sito web, blog o portfolio personalizzato. Il file astro.config.mjs è già preconfigurato con un po' di magia Astro, quindi sei tutto pronto per iniziare a personalizzarlo con tecnologie come Tailwind, React o Vue come preferisci. Per iniziare il tuo viaggio, potresti considerare di modificare la homepage, che puoi trovare nel file src/pages/index.astro. L'intestazione del sito si trova nel file src/components/Header.astro, e puoi imprimere la tua identità nel piè di pagina navigando verso il file src/components/Footer.astro. Abbiamo anche incluso alcuni post di blog di esempio situati nella cartella src/pages/blog/ per la tua consultazione. Per dare ai tuoi post di blog un layout unico, dirigiti verso il file src/layouts/BlogPost.astro. Se mai incontri un intoppo, la documentazione di Astro e il nostro canale Discord sono le tue risorse principali per la risoluzione dei problemi. E se sei in vena di qualcosa di un po' più elegante, dai un'occhiata all'astro-blog-template di Maxi Ferreira..</p>",
-	"about_description": "Presso [Nome della Tua Azienda], ci impegniamo a fornire eccellenza in ogni aspetto del nostro business. Fondati nel 20XX, ci specializziamo in [Tuo Settore di Competenza]. Il nostro team di professionisti dedicati lavora instancabilmente per garantire che i nostri clienti ricevano solo il miglior servizio. Crediamo nell'innovazione, nell'integrità e nell'eccellente servizio clienti come i pilastri che sostengono la nostra azienda. Grazie per aver preso il tempo di conoscerci. Non vediamo l'ora di servirvi.",
-	"blog_description": "At [Your Company Name], we are committed to delivering excellence in every aspect of our business. Founded in 20XX, we specialize in [Your Area of Expertise]. Our team of dedicated professionals works tirelessly to ensure that our clients receive only the best service. We believe in innovation, integrity, and outstanding customer service as the pillars that uphold our company. Thank you for taking the time to get to know us. We look forward to serving you."
-
+    "home_description": "Hey there, Space Explorer!",
+	"about_description": "At [Your Company Name], we are committed to delivering excellence in every aspect of our business. Founded in 20XX, we specialize in [Your Area of Expertise]. Our team of dedicated professionals works tirelessly to ensure that our clients receive only the best service. We believe in innovation, integrity, and outstanding customer service as the pillars that uphold our company. Thank you for taking the time to get to know us. We look forward to serving you.",
+	"blog_description": "At [Your Company Name], we are committed to delivering excellence in every aspect of our business. Founded in 20XX, we specialize in [Your Area of Expertise]. Our team of dedicated professionals works tirelessly to ensure that our clients receive only the best service. We believe in innovation, integrity, and outstanding customer service as the pillars that uphold our company. Thank you for taking the time to get to know us. We look forward to serving you.",
+	
+    "index_choice": "Wejdz",
+    "index_choiceDesc": "You can always switch in the nav",
+    "index_art": "Art",
+    "index_photo": "Fotografia",
+    "index_video": "Wideografia",
+	
+    "about_h1": "O mnie",
+    "about_h2": "Praca",
+    "about_h2desc": "Doświadczenie",
+    "about_uiux": "Projektant UI/UX",
+    "about_graphic": "Projektant graficzny",
+    "about_kitchen": "Pomoc kuchenna",
+    "about_gdynia": "Gdynia, Polska",
+    "about_rumia": "Rumia, Polska",
+    "about_sopot": "Sopot, Polska",
+    "about_kitchenDesc":"Played a crucial role in the daily operations of Focus Restaurant, handling a diverse range of tasks including food preparation, washing, and maintaining a high standard of cleanliness. Responsively executed orders from the chef, demonstrating adaptability and efficiency in a fast-paced kitchen environment. Collaborated seamlessly with the kitchen team to ensure smooth workflow and timely delivery of dishes to meet customer expectations. Maintained a focus on hygiene and sanitation, contributing to the restaurant\"s commitment to delivering quality and safe culinary experiences.",
+    "about_uiuxDesc": "In my role, I\"ve been immersed in a spectrum of design projects spanning mobile and web applications. I\"ve been instrumental in the entire process - from conceptualization to implementation, creating and refining templates that seamlessly translate into functional websites. Specifically, I undertook a pivotal role in enhancing user interfaces and revamping the user experience for two key company offerings: the mobile app, \"Call App,\" and the primary service tool, \"FastTony Smart.\" ",
+    "about_uiuxDesc2": "Noteworthy accomplishments include the strategic decision to rewrite the home website, adopting the Laravel framework and refining its aesthetic appeal through the use of TailwindCSS and SCSS. This overhaul not only ensured a more robust and scalable website but also contributed to an elevated visual identity in line with current design trends.",
+    "about_uiuxDesc3": "In addition to my hands-on involvement in these projects, I\"ve also taken on a supervisory role, guiding and collaborating with a group of students during their practice hours. This experience has not only allowed me to contribute to their professional development but has also reinforced my ability to lead and mentor in a collaborative work environment.",
+    "about_umgDesc": "Spearheaded the design and creation of a commemorative logo for UMG\"s prestigious 100th-anniversary event, capturing the essence of a century of excellence. Crafted a visually impactful and symbolic logo that seamlessly blended tradition with a modern touch, garnering positive feedback from the school community. Produced a dynamic and memorable short animation to be showcased during the anniversary event, adding a captivating visual element to the celebration. Demonstrated creativity and innovation in translating the school\"s rich history into a compelling visual narrative through both the logo and animation.",
+    "about_bukDesc": "Orchestrated the conceptualization and design of visually striking banners for a variety of student events hosted at Bukszpryt, gaining prominence on the club\"s social media platforms and prominently displayed within school halls. Contributed to the vibrant and engaging atmosphere of student events by creating eye-catching banners that effectively communicated event themes and information. Successfully collaborated with the Bukszpryt team to ensure the seamless integration of visual elements into the club\"s social media presence, enhancing online engagement and event promotion. Demonstrated a keen understanding of design principles and effective communication, translating event objectives into compelling visual narratives through the banners.",
+    
+    "contact_h1": "Kontakt",
+    "contact_h1desc": "Porozmawiajmy!/Skontaktuj się",
+    "contact_h1text": "Napisz do mnie e-mail, jeśli chcesz współpracować ze mną w ramach zlecenia projektowego. Podaj nazwę swojej firmy, za którą chcesz otrzymać prowizję lub jako osoba indywidualna. Jeśli jest to proste pytanie, użyj komunikatora lub WhatsApp za najszybszą odpowiedź.",
+    "contact_h1text2": "Skontaktuj się ze mną, jeśli masz projekt, pomysł, sugestię lub tylko pogadać :D",
+    
+    "form_firstName": "Imie",
+    "form_placeholder_firstName": "Wprowadź swoje imie",
+    "form_lastName": "Nazwisko",
+    "form_placeholder_lastName": "Wprowadź swoje nazwisko",
+    "form_placeholder_email": "Wprowadź swój email",
+    "form_message": "Wiadomosc",
+    "form_placeholder_message": "Wprowadź swoja wiadomosc",
+    "form_chooseField": "Choose a field:",
+    "form_submit": "Wyslij",
+    "form_title": "Skontaktuj sie",
+    "form_desc": "Wypełnij poniższy formularz, a ja skontaktuję się z Tobą tak szybko, jak to możliwe."
 }

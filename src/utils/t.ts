@@ -3,10 +3,10 @@
  */
 
 import { getLocale } from "astro-i18n-aut";
-import { DEFAULT_LOCALE, LOCALES } from "@src/consts";
+import { DEFAULT_LOCALE, LOCALES } from "../consts.ts";
 
-import pl from "@locales/pl.json";
-import en from "@locales/en.json";
+import pl from "../locales/pl.json";
+import en from "../locales/en.json";
 
 const handler = {
 	get(target: any, prop: any, receiver: any) {

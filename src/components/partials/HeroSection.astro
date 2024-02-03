@@ -1,0 +1,153 @@
+---
+import { Button } from "../../components/ui/button";
+import GoldCTA from "../../components/ui/GoldCTA.astro";
+import WorkBadge from "../../components/ui/WorkBadge.astro";
+
+import { Image } from "astro:assets";
+
+const heroImgW = 200;
+---
+
+<section
+  class="flex gap-24 container justify-between items-center py-32 relative rounded-2xl overflow-clip border border-grey-300 bg-grey-500"
+>
+  <div
+    class="flex flex-col gap-10 justify-start z-10 items-start ml-0 md:ml-16"
+  >
+    <WorkBadge workMode="true">Available for work</WorkBadge>
+    <div class="flex flex-col gap-9">
+      <h1 class="H1 text-[24px] md:text-[49px] uppercase w-full md:w-auto">
+        Hi! I’m Belial <br />an <span class="textBaseGold uppercase"
+          >artist <span class="material-icons"> color_lens</span></span
+        > at heart and soul,<br />
+        <span class="textBaseGold"
+          >designer <span class="material-symbols-outlined h-2">
+            photo_camera
+          </span></span
+        > by craft.
+      </h1>
+      <div class="flex gap-4 items-center">
+        <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
+          <span class="material-icons">arrow_forward</span>
+        </GoldCTA>
+        <a href="/about/">
+          <Button size="lg" variant="outline">Read more</Button></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="absolute right-0 top-0 bottom-0 z-0 w-full overflow-clip">
+    <div class="gridPhotoHERO absolute right-0 bottom-0 top-0 -translate-y-1/4">
+      <div
+        class="gradientHERO absolute w-full h-full z-20 inset-0 translate-y-1/4"
+      >
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851996/gfx/project/yao/FrontCoverV2_khsqhk.png"
+          alt="YaoAlbumCover"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852452/gfx/project/woody/Visa2v6_otiktu.png"
+          alt="Visa2v6"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851889/gfx/art/NoiseSilenceV3-alt2_x0jld1.jpg"
+          alt="NoiseSilenceV3"
+          width={heroImgW}
+          height={heroImgW}
+        />
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852216/gfx/project/buk/HalloweenParty2_kimzd5.jpg"
+          alt="HalloweenBanner"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852681/gfx/art/Lu2_xdyhji.png"
+          alt="LucianaPencil"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851478/gfx/project/book/BookMisc4PS_qguses.jpg"
+          alt="Book"
+          width={heroImgW}
+          height={heroImgW}
+        />
+      </div>
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851833/gfx/3D/536941_yczmie.jpg"
+          alt="3DNature"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705852726/gfx/project/buk/KaraokeCzwartki_A4_xcydr2.jpg"
+          alt="KaraokeCzwartki"
+          width={heroImgW}
+          height={heroImgW}
+        />
+        <Image
+          src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851845/gfx/3D/MartwaNatura2_mgqseu.webp"
+          alt="Ice3D"
+          width={heroImgW}
+          height={heroImgW}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .gridPhotoHERO {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    width: 50%;
+  }
+  .gridPhotoHERO img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .gradientHERO {
+    background: linear-gradient(90deg, var(--grey-50), rgba(17, 17, 20, 0));
+  }
+  @media (prefers-color-scheme: dark) {
+    .gradientHERO {
+      background: linear-gradient(
+        90deg,
+        var(--grey-500),
+        rgba(17, 17, 20, 0.8)
+      );
+    }
+  }
+  .textBaseGold {
+    background: linear-gradient(90deg, orange, brown);
+    background-size: 400% 400%;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: GoldWeave 5s ease infinite;
+    animation: GoldWeave 5s ease infinite;
+  }
+
+  @keyframes GoldWeave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

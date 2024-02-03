@@ -1,0 +1,257 @@
+---
+import { Image } from "astro:assets";
+import ButtonA from "../components/ui/ButtonA.astro";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"dialog"> {
+  data?: "All" | "Other" | "Portrait" | "Cars" | "Events" | "Portfolio";
+}
+const { data } = Astro.props;
+---
+
+<dialog
+  class="modal shadow-2xl rounded-2xl overflow-auto mx-16 bg-grey-500 px-3 border border-grey-300 fixed"
+  id="modal"
+  data-photoarray={data}
+>
+  <div class="grid-container w-full relative">
+    <!--Close Button -->
+    <div class="bg-grey-500 right-20 p-3 z-10 fixed rounded-2xl">
+      <ButtonA
+        size="md"
+        classes="default icon px-4 bg-gray-400 modal__btn modal__close close-modal "
+        aria-label="Close gallery"
+      >
+        <span class="material-symbols-outlined">close</span>
+      </ButtonA>
+    </div>
+    <!--StripClose -->
+    <div class="flex items-center justify-center gap-2 w-full relative">
+      <div class="stripUp">
+        {[...Array(40)].map((e, i) => <div class="cutout" />)}
+      </div>
+    </div>
+    <!--StripMain -->
+    <div class="gridContainerStrip gap-9 w-full">
+      <button
+        class="prev bg-grey-500 grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
+      >
+        <span class="material-symbols-outlined text-[4rem] text-white"
+          >keyboard_arrow_left</span
+        >
+      </button>
+
+      <div class="w-full flex justify-center">
+        <img src="/photo/006-Edit-1.jpg" alt="Test1" width="120px" />
+        <!--
+        <img
+          src=""
+          alt="alt"
+          class="lightboxImg rounded-lg overflow-hidden border border-grey-300 max-h-[75vh] object-contain"
+        />-->
+      </div>
+
+      <button
+        class="next bg-grey-500 grid place-items-center transition-all duration-200 rounded-lg overflow-hidden p-9 border border-grey-300 hover:bg-grey-300 opacity-25 hover:opacity-80"
+      >
+        <span class="material-symbols-outlined text-[4rem] text-white"
+          >keyboard_arrow_right</span
+        >
+      </button>
+    </div>
+    <!--StripIndex -->
+    <div class="flex items-center justify-center gap-2 w-full relative">
+      <div class="stripUp rotate-180">
+        {[...Array(40)].map((e, i) => <div class="cutout" />)}
+      </div>
+      <div
+        class="button-container flex gap-3 justify-center absolute bg-grey-500"
+      >
+        <a class="prev">
+          <ButtonA size="md" classes="default icon px-4">
+            <span class="material-symbols-outlined">keyboard_arrow_left</span>
+          </ButtonA>
+        </a>
+        <ButtonA size="md" classes="default px-4">
+          <span class="indicatorDisp"></span> / <span class="indicatorDisp2"
+          ></span>
+        </ButtonA>
+        <a class="next">
+          <ButtonA size="md" classes="default icon px-4">
+            <span class="material-symbols-outlined">keyboard_arrow_right</span>
+          </ButtonA>
+        </a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const modal1 = document.querySelector("#modal") as HTMLDialogElement | null;
+  const closeModalBTN = document.querySelector(".close-modal");
+  const indexDisplay = document.querySelector(".indicatorDisp");
+  const indexDisplay2 = document.querySelector(".indicatorDisp2");
+
+  //const gallery = document.getElementById("gallery2");
+  //const totalImages2 = gallery.childElementCount;
+  let totalImages: number = 0;
+  const lightboxImg = document.querySelector(
+    ".lightboxImg"
+  ) as HTMLImageElement | null;
+  let ArrayPhoto: string[] = [];
+  import imagePathsPortrait from "js/imagePaths/imagePathsPortrait.js";
+  import imagePathsOther from "js/imagePaths/imagePathsOther.js";
+  import imagePathsCars from "js/imagePaths/imagePathsCars";
+  import imagePathsEvents from "js/imagePaths/imagePathsEvents.js";
+  import imagePathsPortfolio from "js/imagePaths/imagePathsPortfolio.js";
+  //Make it so i can input the name of the photo gallery array and switch, outside the component
+  let photos1: any = modal1?.dataset.photoarray;
+
+  //console.log(photos1);
+  let currentImageIndex: number = 1;
+
+  //src link string
+
+  /**
+   * prev.addEventListener("click", changeImage(-1));
+  next.addEventListener("click", changeImage(1));
+   
+
+  openModalBTNS.forEach((btn) => {
+    btn.addEventListener("click", openLightbox);
+  });
+*/
+  let cloudLink =
+    '"https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705412489/photo/event/"';
+  console.log(cloudLink);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var openBTNS = document.querySelectorAll(".grid-item");
+    var prevBTNS = document.querySelectorAll(".prev");
+    var nextBTNS = document.querySelectorAll(".next");
+    openBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        //console.log("Index = " + index);
+        let btnID: number = Number(button.id);
+        openLightbox(btnID);
+      });
+    });
+    prevBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        changeImage(-1);
+      });
+    });
+    nextBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        changeImage(1);
+      });
+    });
+
+    switch (photos1) {
+      case "All":
+        ArrayPhoto = imagePathsPortrait.concat(
+          imagePathsOther,
+          imagePathsCars,
+          imagePathsEvents
+        );
+        break;
+      case "Portfolio":
+        ArrayPhoto = imagePathsPortfolio;
+        break;
+      case "Portrait":
+        ArrayPhoto = imagePathsPortrait;
+        break;
+      case "Other":
+        ArrayPhoto = imagePathsOther;
+        break;
+      case "Cars":
+        ArrayPhoto = imagePathsCars;
+        break;
+      case "Events":
+        ArrayPhoto = imagePathsEvents;
+        break;
+
+      default:
+        break;
+    }
+    totalImages = ArrayPhoto.length;
+    //console.log(totalImages);
+    if (indexDisplay2 !== null) {
+      indexDisplay2.innerHTML = totalImages.toString();
+    }
+  });
+
+  if (closeModalBTN !== null) {
+    closeModalBTN.addEventListener("click", () => {
+      modal1?.close();
+    });
+  }
+
+  function openLightbox(index) {
+    //console.log(index);
+    currentImageIndex = index;
+    if (indexDisplay !== null) {
+      indexDisplay.innerHTML = (currentImageIndex + 1).toString();
+    }
+    updateLightbox();
+    modal1?.showModal();
+  }
+
+  function changeImage(n) {
+    currentImageIndex += n;
+    console.log("currentImageIndex = " + currentImageIndex);
+    //console.log("totalImages = " + totalImages);
+    if (currentImageIndex === totalImages) {
+      currentImageIndex = 1;
+      console.log("currentImageIndex >= totalImages " + currentImageIndex);
+    } else if (currentImageIndex < 1) {
+      currentImageIndex = totalImages;
+    }
+    updateLightbox();
+    if (indexDisplay !== null) {
+      indexDisplay.innerHTML = (currentImageIndex + 1).toString();
+    }
+  }
+  function updateLightbox() {
+    if (lightboxImg !== null) {
+      let currSrc = cloudLink.concat(ArrayPhoto[currentImageIndex]);
+      lightboxImg.src = currSrc;
+    }
+  }
+  /**
+ * 
+
+  // Dynamically create the gallery
+  const gallery = document.querySelector(".galleryM");
+  for (let i = 1; i <= 6; i++) {
+    var imageSrc = "{image1.src}";
+    const img = document.createElement("img");
+    img.src = imageSrc;
+    img.setAttribute("onclick", `openLightbox(${i - 1})`);
+    gallery.appendChild(img);
+  } */
+</script>
+
+<style lang="scss">
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+  }
+  .gridContainerStrip {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . .";
+    width: 100%;
+  }
+  .modal::backdrop {
+    background: rgba(17, 17, 20, 0.8);
+  }
+</style>

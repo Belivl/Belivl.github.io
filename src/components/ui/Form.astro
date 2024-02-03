@@ -1,0 +1,113 @@
+---
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
+import ButtonA from "./ButtonA.astro";
+---
+
+<div class="dark w-full">
+  <div
+    class="rounded-xl border border-grey-200 bg-grey-500 text-white overflow-clip"
+    data-v0-t="card"
+  >
+    <div class="flex flex-col space-y-1.5 p-6">
+      <h3 class="text-2xl font-semibold leading-none tracking-tight">
+        {t.form_title}
+      </h3>
+      <p class="text-sm text-muted-foreground">
+        {t.form_desc}
+      </p>
+    </div>
+    <div class="p-6">
+      <form
+        action="mailtto:mich.jelin1@gmail.com"
+        class="space-y-4"
+        method="post"
+        id="form1"
+        autocomplete="on"
+        accept-charset="utf-8"
+      >
+        <div class="grid grid-flow-row md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-grey-50"
+              for="first-name"
+            >
+              {t.form_firstName}
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-grey-100 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-grey-300 text-white"
+              id="first-name"
+              placeholder={t.form_placeholder_firstName}
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-grey-50"
+              for="last-name"
+            >
+              {t.form_lastName}
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-grey-100 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-grey-300 text-white"
+              id="last-name"
+              placeholder={t.form_placeholder_lastName}
+            />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-grey-50"
+            for="email"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            class="flex h-10 w-full rounded-md border border-grey-100 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-grey-300 text-white"
+            id="email"
+            required
+            placeholder={t.form_placeholder_email}
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-grey-50"
+            for="message"
+          >
+            {t.form_message}
+          </label>
+          <textarea
+            class="flex w-full rounded-md border border-grey-100 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px] bg-grey-300 text-white"
+            id="message"
+            required
+            maxlength="250"
+            placeholder={t.form_placeholder_message}></textarea>
+        </div>
+        <div class="space-y-2">
+          <label for="field">{t.form_chooseField}</label>
+          <select
+            id="field"
+            name="field"
+            class="text-white p-3 border border-grey-200 bg-grey-400 hover:bg-grey-300 rounded-md"
+          >
+            <option value="photography">Photography</option>
+            <option value="videography">Videography</option>
+            <option value="design">Design</option>
+            <option value="3D">3D</option>
+            <option value="art">Art</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="items-center p-6 flex justify-start md:justify-end bg-grey-500">
+      <ButtonA
+        classes="primary font-semibold "
+        size="md"
+        type="submit"
+        form="form1"
+      >
+        {t.form_submit}
+      </ButtonA>
+    </div>
+  </div>
+</div>

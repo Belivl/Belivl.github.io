@@ -2,17 +2,38 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": "src",
+    "baseUrl": "/home/belial/GitHub/Belivl.github.io/vigorous-virgo/src",
+    "allowJs": true,
     "paths": {
-			"@src/*": ["*"],
-			"@lib/*": ["lib/*"],
-			"@components/*": ["components/*"],
-			"@layouts/*": ["layouts/*"],
-			"@styles/*": ["styles/*"],
-			"@utils/*": ["utils/*"],
-			"@pages/*": ["pages/*"],
-			"@assets/*": ["assets/*"],
-			"@locales/*": ["locales/*"]
-		}
+      "@src/*": [
+        "*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@locales/*": [
+        "locales/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

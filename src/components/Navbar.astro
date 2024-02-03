@@ -1,14 +1,34 @@
 ---
-import HeaderLink from "@components/Link.astro";
-import LanguageSelector from "@components/LanguageSelector.astro";
-import { localizePath } from "@utils/t.ts";
-import ThemeSelector from "@components/ThemeSelector.astro";
-import { SITE_TITLE, PAGES } from "@src/consts";
+import HeaderLink from "./Link.astro";
+import { localizePath } from ".././utils/t.ts";
+import { SITE_TITLE, PAGES } from "../consts.ts";
+
+import ButtonA from "../components/ui/ButtonA.astro";
+import GoldCTA from "../components/ui/GoldCTA.astro";
+import type { AstroCookies } from "astro";
 
 const url = Astro.url;
+
+
+/*
+let linkName:string = "";
+if (Astro.cookies.has("profile")) {
+  let profile = Astro.cookies.get("profile") ; 
+	
+  if(profile = "Belial"){
+	linkName = "/portfolio/";
+  }else{
+	
+	linkName = "/gallery/portfolio/";
+  };
+  
+}
+*/
+
 ---
 
 <header
+transition:persist
 	x-data={`{
 				open: window.innerWidth < 768 ? false : true,
 				windowWidth: window.innerWidth,
@@ -24,13 +44,39 @@ const url = Astro.url;
 				}
 			}`}
 	x-init="init()"
-	class="flex flex-col max-w-screen-xl lg:py-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 z-10 md:pt-2 relative">
-	<div class="p-4 flex flex-row items-center justify-between">
-		<a	href={localizePath("/", url)}
+	class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row  p-3 z-10 m-6 relative transition-all border border-grey-50 hover:border-grey-100 dark:border-grey-300 dark:hover:border-grey-200  bg-white dark:bg-grey-500 rounded-xl shadow-md">
+	<div class="flex items-center justify-between gap-5">
+		<div class="flex gap-3 items-center">
+			<a	href={localizePath("/", url)}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
-			{SITE_TITLE}
+			<!--
+			<ButtonA size="lg"
+        classes="ghost icon px-4 font-semibold overflow-clip border border-grey-400"
+        tabindex={-1}><img src="/profile.jpg" alt="profile" class="w-12 h-12 p-1"></ButtonA> -->
+		<ButtonA size="lg" classes="ghost icon px-4 font-semibold " tabindex={-1}>
+			<img id="homeIMG" src="/images/profile.jpg" alt="profile_icon" class="w-10 h-10 rounded-sm text-[10px]">
+			<!-- 
+      <svg
+        class="w-6 h-6"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="white"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.5094 0L3 4.75519C4.35849 4.75519 5.26417 5.6604 5.26415 7.01887V9.28349L7.98113 10.642L17.9434 5.66085V2.71745L12.5094 0ZM9.79245 3.16981L13.4151 4.98113V7.01887L9.79245 8.83019V3.16981ZM15.6792 8.60377L5.26415 13.8113V20.8302L3.45283 21.7358L3.90566 22.4151L5.26415 21.7358L9.79245 24L14.3208 21.7358C16.6485 20.572 20.2075 18.4289 20.2075 15.6226C20.2075 12.1204 18.62 10.1157 15.6792 8.60377ZM11.9934 11.3522C15.6678 13.7591 15.5287 18.1126 13.4151 21.283L9.79245 19.4717V12.4524L11.9934 11.3522Z"
+        ></path>
+      </svg>-->
+    </ButtonA>
 		</a>
-		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
+		
+		<div class="logoName uppercase font-bold hidden md:block headerName" id="headerName">Michal Jelinski</div>
+		
+		</div>
+		
+		
+		<button class="md:hidden dark:text-gray-500 text-black w-10 h-10 relative focus:outline-none" @click="open = !open">
 			<span class="sr-only">Open main menu</span>
 			<div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
 				<span
@@ -60,8 +106,8 @@ const url = Astro.url;
 		x-transition:leave="transition ease-in duration-200"
 		x-transition:leave-start="opacity-100 transform scale-100"
 		x-transition:leave-end="opacity-0 transform scale-90"
-		class="md:mt-0 md:items-center px-4 flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-center md:flex-row hidden">
-		<div class="flex flex-col flex-grow text-center gap-2 md:justify-center md:items-center md:flex md:flex-row md:mx-auto">
+		class="md:mt-0 md:items-center  flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-end md:flex-row hidden">
+		<div class="flex flex-col flex-grow text-center gap-2 md:justify-end md:items-center md:flex md:flex-row md:mx-auto">
 			{
 				PAGES.map((item) =>
 					item.children && item.children.length ? (
@@ -89,27 +135,61 @@ const url = Astro.url;
 								x-transition:leave-start="transform opacity-100 scale-100"
 								x-transition:leave-end="transform opacity-0 scale-95"
 								class="absolute mt-2 bg-white right-0 w-full origin-top-right rounded-md md:w-48 outline-2 border border-gray-300">
-								<div class="px-2 py-2 rounded-md shadow dark:bg-gray-800">
+								<div class="px-2 py-2 rounded-md shadow dark:bg-gray-800 bg-white ">
 									{ item.children.map((subitem) =>
+										
 										<HeaderLink href={item.href}>
 											{item.title}
 										</HeaderLink>
+										
 									)}
+									
 								</div>
 							</div>
 						</div>
 					) : (
+						<div></div>
+						/*
 						<HeaderLink href={item.href}>
 							{item.title}
-						</HeaderLink>
+						</HeaderLink>*/
 					)
 				)
 			}
+			
+			<div class="flex flex-row">
+				<HeaderLink id="navLinkPortHome" href={PAGES[0].href}>
+							{PAGES[0].title}
+						</HeaderLink>
+						
+							<HeaderLink id="navLinkPort" href="">
+							{PAGES[1].title}
+						</HeaderLink> 
+						<!-- 
+						<a id="navLinkPort" href="/gallery/portfolio/">
+							<ButtonA  size="md" classes="ghost px-4 font-semibold " tabindex={-1}>
+    						{PAGES[1].title}
+  						</ButtonA>
+						</a>-->
+						  
+						<HeaderLink href={PAGES[3].href}>
+							{PAGES[3].title}
+						</HeaderLink>
+			</div>
+			<GoldCTA link="/contact/" size="md" text="Contact"/>
+
 		</div>
-		<ThemeSelector />
-		<LanguageSelector
-			showFlag={false}
-			class="appearance-none cursor-pointer pl-3 pr-2 py-1.5 rounded-md dark:bg-stone-950 dark:text-white focus-visible:outline-none"
-		/>
 	</nav>
 </header>
+
+<style lang="scss">
+	header{
+		width: 100%;
+	}
+	.logoName {
+    font-family: var(--fontfam-primary);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 100%;
+  }
+</style>

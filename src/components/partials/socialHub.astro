@@ -1,0 +1,47 @@
+---
+import { LINKS } from "../../consts.ts";
+import Container from "../Container.astro";
+import Headline from "../Headline.astro";
+import SocialButton from "../ui/SocialButton.astro";
+
+import Instagram from "../../assets/icons/instagram.svg";
+import Youtube from "../../assets/icons/youtube.svg";
+import Behance from "../../assets/icons/behance.svg";
+import LinkedIn from "../../assets/icons/linkedin.svg";
+---
+
+<Container>
+  <Headline Heading="Social hub" Subtitle="Links" />
+  <!--Social links buttons -->
+  <div class="grid grid-cols-3 gap-4 w-full">
+    <!-- 
+        {
+          socialData.map((item) => (
+            <SocialButton text={item.name} link={item.path} />
+          ))
+        }-->
+    <SocialButton text={LINKS[0].title} link={LINKS[0].href}>
+      <img
+        src={Instagram.src}
+        alt={LINKS[0].href}
+        class="w-12 h-12 fill-white"
+      />
+    </SocialButton>
+    <SocialButton text={LINKS[1].title} link={LINKS[1].href}>
+      <img
+        src={Instagram.src}
+        alt={LINKS[1].href}
+        class="w-12 h-12 fill-white"
+      />
+    </SocialButton>
+    <SocialButton text={LINKS[2].title} link={LINKS[2].href}>
+      <img src={Youtube.src} alt={LINKS[2].href} class="w-12 h-12 fill-white" />
+    </SocialButton>
+    <SocialButton text={LINKS[3].title} link={LINKS[3].href}>
+      <img src={Behance.src} alt={LINKS[2].href} class="w-12 h-12 fill-white" />
+    </SocialButton>
+    <SocialButton text={LINKS[4].title} link={LINKS[4].href}>
+      <img src={LinkedIn.src} alt="1" class="w-12 h-12 fill-white" />
+    </SocialButton>
+  </div>
+</Container>

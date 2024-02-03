@@ -1,0 +1,94 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { getLocale } from "astro-i18n-aut";
+import { ViewTransitions } from "astro:transitions";
+import bgPic from "../assets/FilmGrainS5.jpg";
+//import CookieBanner from "@src/components/ui/CookieBanner.astro";
+const locale = getLocale(Astro.url);
+---
+
+<script is:inline>
+  document.documentElement.classList.add("dark");
+</script>
+<!--
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+ -->
+<html lang={locale} class="dark">
+  <head>
+    <BaseHead
+      title="Portfolio Choice"
+      description="Enter desired portfolio site"
+      image=""
+    />
+    <ViewTransitions />
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H8G97ZVN7G");
+    </script></head
+  >
+-->
+    <!-- Google tag (gtag.js) -->
+  </head>
+  <body class="bg-grey-500">
+    <!--
+    <CookieBanner /> -->
+    <!--Background image -->
+    <div class="bgColor bg-light dark:bg-grey-500 fixed w-full h-full -z-50">
+    </div>
+    <img src={bgPic.src} alt="X" class="mainBG" />
+    <div>
+      <main
+        id="main"
+        class="w-full flex flex-col items-center justify-center p-4 h-full"
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <style lang="scss">
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        display: grid;
+        margin-inline: auto;
+      }
+    </style>
+    <script src="./../js/profileSelector.ts"></script>
+    <!-- <script type="module" is:inline src="src/js/choiceNavigate.js"></script>
+   
+    <script type="module" is:inline src="src/js/profile.js"></script>-->
+  </body>
+</html>

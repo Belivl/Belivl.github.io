@@ -1,0 +1,68 @@
+---
+const { workMode = "true" } = Astro.props;
+const green = "#66BA58";
+const red = "#D62938";
+let accentWork = workMode ? green : red;
+---
+
+{
+  workMode ? (
+    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3 flex gap-3 items-center">
+      <div class="dot animate-pulse" />
+      <span class="textGlow">Available for work</span>
+      <div class="bgGlow" />
+    </div>
+  ) : (
+    <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3 flex gap-3 items-center">
+      <div class="dot animate-pulse" />
+      <span class="textGlow">Unavailable for work</span>
+      <div class="bgGlow" />
+    </div>
+  )
+}
+
+<style lang="scss" define:vars={{ accentWork }}>
+  .workBadge {
+    padding: 8px 12px;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+    overflow: clip;
+  }
+  .textGlow {
+    z-index: 1;
+    font-size: 14px;
+    color: var(--accentWork);
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: var(--accentWork);
+    fill: radial-gradient(
+        50% 50% at 50% 50%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      var(--accentWork);
+
+    background-blend-mode: soft-light, normal;
+    filter: drop-shadow(0px 0px 3px rgba(168, 210, 161, 0.25));
+  }
+
+  .bgGlow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: radial-gradient(
+      circle at left,
+      var(--accentWork) 0,
+      var(--grey-500) 100%
+    );
+    z-index: 0;
+    margin: auto;
+    left: 0;
+    background-blend-mode: soft-light;
+    opacity: 10%;
+  }
+</style>

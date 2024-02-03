@@ -1,5 +1,5 @@
 ---
-import { LOCALES, DEFAULT_LOCALE } from "@src/consts";
+import { LOCALES, DEFAULT_LOCALE } from "../consts.ts";
 import { getLocale, getUrlWithoutLocale } from "astro-i18n-aut";
 
 const currentLocale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
@@ -23,20 +23,56 @@ const urlWithoutLocalePrefix = getUrlWithoutLocale(Astro.url);
   });
 </script>
 
-<select
-  aria-label="Change language"
-  class="cursor-pointer focus-visible:outline-none dark:bg-stone-800 dark:text-stone-50"
-  x-data="dropdownData"
-  x-on:change="changePage($event)"
->
+<div class="flex gap-2 items-center">
+  <!-- 
   {
-    locales.map((locale) => (
-      <option
-        value={`/${locale}${urlWithoutLocalePrefix}`}
-        selected={locale === currentLocale}
-      >
-        {locale}
-      </option>
-    ))
+    "en" === currentLocale ? (
+      <img src="/en.svg" alt="en_icon" />
+    ) : (
+      <img src="/pl.svg" alt="en_icon" />
+    )
+  }-->
+
+  <select
+    name="Language"
+    aria-label="Change language"
+    class="cursor-pointer h-10 w-10 items-center text-center uppercase focus-visible:outline-none text-grey-500 dark:text-light dark:bg-grey-400 bg-white rounded-[0.375rem] border border-grey-200 dark:hover:bg-grey-200 hover:bg-grey-50"
+    x-data="dropdownData"
+    x-on:change="changePage($event)"
+  >
+    {
+      locales.map((locale) => (
+        <option
+          value={`/${locale}${urlWithoutLocalePrefix}`}
+          selected={locale === currentLocale}
+          class="uppercase"
+        >
+          {locale}
+        </option>
+      ))
+    }
+  </select>
+</div>
+
+<style lang="scss">
+  select {
+    font-size: 1rem;
+
+    box-sizing: content-box;
+    display: flex;
+    gap: 0.2em;
+    align-items: center;
+    justify-items: center;
+    border-radius: 0.375rem;
+    line-height: 100%;
+    font-weight: 600;
+    transition: all;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    appearance: none;
+    border: 1px solid var(--grey-200);
+    &:hover {
+      background-color: var(--grey-200);
+    }
   }
-</select>
+</style>

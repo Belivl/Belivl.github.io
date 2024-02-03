@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+
+import ringIndentsGrad from "../../assets/GoldCTA/RingIndentsGradient.png";
+import ringIndentsLow from "../../assets/GoldCTA/RingIndentsLow.png";
+
+const logoAlt = "The Belial Logo";
+const profileAlt = "MJ profile picture";
+---
+
+<div class="w-64 h-64">
+  <div class="relative">
+    <div class="absolute left-0">
+      <button class="goldCTA w-64 h-64 rounded-full">
+        <div
+          class="z-[7] bg-black rounded-full items-center w-48 h-48 justify-center"
+        >
+          <p class="pCTALarge rounded-full relative overflow-hidden">
+            <slot />
+          </p>
+        </div>
+        <div class="baseGold"></div>
+        <Image src={ringIndentsLow} width={300} alt={logoAlt} class="indents" />
+        <Image
+          src={ringIndentsGrad}
+          width={300}
+          alt={logoAlt}
+          class="indentsGrad w-64 h-64"
+        />
+        <div class="aniso1"></div>
+        <div class="aniso2"></div>
+        <div class="softGold"></div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .goldCTA {
+    color: var(--grey-500);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    //box-shadow: 0px 5px 10px 1px rgba(25, 25, 24, 0.8)
+    border: 2px solid var(--col-primary-900);
+    isolation: isolate;
+    overflow: hidden;
+    &:hover {
+      border: 2px solid var(--col-primary-700);
+    }
+    &:hover > .aniso1 {
+      transform: rotate(-25deg);
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+    }
+    &:hover > .aniso2 {
+      transform: rotate(-75deg);
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+    }
+  }
+  @keyframes goldRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .baseGold {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: var(--col-primary-300);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+  }
+  .indents {
+    position: absolute;
+    width: 292px;
+    height: 292px;
+    left: calc(50% - 292px / 2);
+    top: calc(50% - 292px / 2);
+    border-radius: 500px;
+    opacity: 0.3;
+  }
+  .indentsGrad {
+    position: absolute;
+    left: calc(50% - 256px / 2);
+    top: calc(50% - 256px / 2);
+    opacity: 0.8;
+    border-radius: 500px;
+    mix-blend-mode: soft-light;
+    opacity: 0.8;
+  }
+  .aniso1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 300px / 2);
+    top: calc(50% - 300px / 2);
+    mix-blend-mode: multiply;
+    border-radius: 500px;
+    opacity: 0.4;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #000000 0deg,
+      #000000 56.25deg,
+      #ffffff 88.12deg,
+      #000000 101.25deg,
+      #000000 146.25deg,
+      #ffffff 159.38deg,
+      #000000 170.63deg,
+      #000000 234.38deg,
+      #ffffff 268.13deg,
+      #000000 296.25deg,
+      #000000 360deg
+    );
+    transition: transform 0.3s;
+    transition-timing-function: ease-out;
+    animation: goldRotate 15s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+  }
+  .aniso2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 300px / 2);
+    top: calc(50% - 300px / 2);
+    mix-blend-mode: multiply;
+    border-radius: 500px;
+    border: 0;
+    opacity: 0.2;
+    transform: rotate(-120deg);
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #000000 0deg,
+      #000000 56.25deg,
+      #ffffff 88.12deg,
+      #000000 101.25deg,
+      #000000 146.25deg,
+      #ffffff 159.38deg,
+      #000000 170.63deg,
+      #000000 234.38deg,
+      #ffffff 268.13deg,
+      #000000 296.25deg,
+      #000000 360deg
+    );
+    transition: transform 0.3s;
+    transition-timing-function: ease-out;
+    animation: goldRotate 12s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+  }
+  .softGold {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: var(--col-primary-600);
+    mix-blend-mode: soft-light;
+  }
+</style>

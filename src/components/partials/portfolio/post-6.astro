@@ -1,0 +1,974 @@
+---
+//Woody FoodTruck
+import { Image } from "astro:assets";
+import Headline from "../../../components/Headline.astro";
+import { woodyPath } from "../../../js/imagePaths/projectPaths.js";
+---
+
+<div
+  class="BannerWTF bg-wood-dark flex items-center p-16 rounded-3xl w-full gap-9"
+>
+  <div
+    class="flex flex-col justify-center items-center p-0 gap-5 grow hover:scale-105 transition-all ease-in-out hover:translate-y-2"
+  >
+    <h3>FIRE</h3>
+    <Image
+      class="w-auto h-[80px]"
+      width={200}
+      height={200}
+      src={woodyPath[0].src}
+      alt={woodyPath[0].alt}
+    />
+  </div>
+  <div
+    class="flex flex-col justify-center items-center p-0 gap-5 grow hover:scale-105 transition-all ease-in-out hover:translate-y-2"
+  >
+    <h3>PIZZA</h3>
+    <Image
+      class="w-auto h-[80px]"
+      width={200}
+      height={200}
+      src={woodyPath[1].src}
+      alt={woodyPath[1].alt}
+    />
+  </div>
+  <div
+    class="flex flex-col justify-center items-center p-0 gap-5 grow hover:scale-105 transition-all ease-in-out hover:translate-y-2"
+  >
+    <h3>WOOD</h3>
+    <Image
+      class="w-auto h-[80px]"
+      width={200}
+      height={200}
+      src={woodyPath[2].src}
+      alt={woodyPath[2].alt}
+    />
+  </div>
+</div>
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >LOGO ELEMENTS</span
+  >
+</div>
+<div class="flex flex-col flex-wrap">
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <div class="flex justify-center items-center gap-12">
+      <Image
+        class="w-auto h-[80px] hover:scale-110 transition-all ease-in-out hover:rotate-[-15deg]"
+        width={200}
+        height={200}
+        src={woodyPath[3].src}
+        alt={woodyPath[3].alt}
+      />
+      <Image
+        class="w-auto h-[120px] hover:scale-110 transition-all ease-in-out"
+        width={200}
+        height={200}
+        src={woodyPath[4].src}
+        alt={woodyPath[4].alt}
+      />
+      <Image
+        class="w-auto h-[80px] hover:scale-110 transition-all ease-in-out hover:rotate-[15deg]"
+        width={200}
+        height={200}
+        src={woodyPath[5].src}
+        alt={woodyPath[5].alt}
+      />
+    </div>
+    <h4 class="text-center">ingredients referring to Italian flag colors</h4>
+  </div>
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <Image
+      class="imgWFT-elements w-[360px] h-auto hover:animate-spin transition-all ease-in-out duration-500"
+      width={200}
+      height={200}
+      src={woodyPath[6].src}
+      alt={woodyPath[6].alt}
+    />
+    <h4 class="text-center">
+      the pizza is a resemblance of a natural, organic tree trunk, with which
+      the oven is heatedand the edge is similar to a pizzas crust; bottom half
+      also looks just like oven’s dome/chamber
+    </h4>
+  </div>
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <Image
+      class="imgWFT-elements w-[360px] h-auto hover:scale-110 hover:rotate-12 transition-all ease-in-out"
+      width={200}
+      height={200}
+      src={woodyPath[7].src}
+      alt={woodyPath[7].alt}
+    />
+    <h4 class="text-center">
+      wooden plank is what make this pizza special, core value of the business
+      that differentiate them
+    </h4>
+  </div>
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <Image
+      class="imgWFT-elements w-[360px] h-auto hover:animate-bounce transition-all ease-in-out"
+      width={200}
+      height={200}
+      src={woodyPath[8].src}
+      alt={woodyPath[8].alt}
+    />
+    <h4 class="text-center">
+      food truck named after the technique of pizza making process
+    </h4>
+  </div>
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <Image
+      class="imgWFT-elements w-[360px] h-auto hover:animate-pulse transition-all ease-in-out"
+      width={200}
+      height={200}
+      src={woodyPath[9].src}
+      alt={woodyPath[9].alt}
+    />
+    <h4 class="text-center">fire flames inspired by kashubian patterns</h4>
+  </div>
+  <div
+    class="ingridientContainer flex flex-col justify-center items-center gap-12 flex-1 px-16 py-24"
+  >
+    <Image
+      class="imgWFT-elements w-[360px] h-auto hover:scale-110 hover:-translate-y-4 transition-all ease-in-out"
+      width={200}
+      height={200}
+      src={woodyPath[10].src}
+      alt={woodyPath[10].alt}
+    />
+    <h4 class="text-center">
+      brick fundaments of an oven, refers to trucks visuals,<br /> shaped like an
+      open chamber to envelop the fire
+    </h4>
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >INGRIDIENTS</span
+  >
+</div>
+<div class="grid grid-cols-3 gap-12 justify-between mb-16 w-full">
+  <div class="flex flex-col items-center max-w-[260px] place-self-start gap-12">
+    <Image
+      class="w-auto h-[80px] scale-y-150 -scale-x-150 transition-all ease-in-out duration-500 hover:rotate-[-15deg] hover:translate-y-[320px]"
+      width={200}
+      height={200}
+      src={woodyPath[5].src}
+      alt={woodyPath[5].alt}
+    />
+    <div
+      class="max-w-[260px] H5 font-medium text-center uppercase text-wood-cream"
+    >
+      olive, spinach, arugula, basil
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-center place-self-center max-w-[260px] gap-12"
+  >
+    <Image
+      class="w-auto h-[80px] scale-[200%] transition-all ease-in-out duration-500 hover:rotate-[-15deg] hover:translate-y-[320px]"
+      width={200}
+      height={200}
+      src={woodyPath[4].src}
+      alt={woodyPath[4].alt}
+    />
+    <div class="H5 font-medium text-center uppercase text-wood-cream">
+      champignons, mozzarella
+    </div>
+  </div>
+  <div class="flex flex-col items-center max-w-[260px] place-self-end gap-12">
+    <Image
+      class="w-auto h-[80px] scale-y-150 -scale-x-150 transition-all ease-in-out duration-500 hover:rotate-[-15deg] hover:translate-y-[320px]"
+      width={200}
+      height={200}
+      src={woodyPath[3].src}
+      alt={woodyPath[3].alt}
+    />
+    <div class="H5 font-medium text-center uppercase text-wood-cream">
+      sauce, tomatoes, salami
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-3 w-full justify-center overflow-clip rounded-2xl">
+  <div class="w-full flex flex-col justify-start">
+    <div class="box w-[260px] h-[600px] bg-wood-green rounded-t-2xl"></div>
+    <svg height="600" width="600" class="fill-wood-green">
+      <polygon points="0,0 0,600 410,600 260,0  " style="fill-rule:nonzero;"
+      ></polygon>
+    </svg>
+    <div class="box w-full h-[600px] bg-wood-green"></div>
+  </div>
+  <div class="w-full flex flex-col justify-start items-center">
+    <div class="box w-[260px] h-[600px] bg-wood-white rounded-t-2xl"></div>
+    <svg height="600" width="600" class="fill-wood-white">
+      <polygon points="170,0 95,600 505,600 430,0  " style="fill-rule:nonzero;"
+      ></polygon>
+    </svg>
+    <div class="box w-full h-[600px] bg-wood-white"></div>
+  </div>
+  <div class="w-full flex flex-col justify-end items-end">
+    <div class="box w-[260px] h-[600px] bg-wood-red rounded-t-2xl"></div>
+    <svg height="600" width="600" class="fill-wood-red -scale-x-100">
+      <polygon points="0,0 0,600 410,600 260,0  " style="fill-rule:nonzero;"
+      ></polygon>
+    </svg>
+    <div class="box w-full h-[600px] bg-wood-red"></div>
+  </div>
+</div>
+<div class="H3 uppercase flex justify-center mt-16 text-wood-cream">
+  Italian flag
+</div>
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream">FIRE</span>
+</div>
+
+<div
+  class="BannerWTF bg-wood-cream grid grid-rows-2 grid-cols-4 gap-9 rounded-3xl p-16"
+>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[11].src}
+      alt={woodyPath[11].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">cherry</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[12].src}
+      alt={woodyPath[12].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">bud</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[13].src}
+      alt={woodyPath[13].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">star</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[14].src}
+      alt={woodyPath[14].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">thistle leaf</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[15].src}
+      alt={woodyPath[15].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">tulip</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[16].src}
+      alt={woodyPath[16].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">palmetto</span>
+  </div>
+  <div class="flex flex-col gap-1 items-center justify-center">
+    <Image
+      class="w-full h-auto"
+      width={200}
+      height={200}
+      src={woodyPath[17].src}
+      alt={woodyPath[17].alt}
+    />
+    <span class="text-wood-dark text-[20px] italic">tulip</span>
+  </div>
+</div>
+<div
+  class="BannerWTF bg-wood-cream grid grid-flow-col items-center gap-12 rounded-3xl p-16 my-16"
+>
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[18].src}
+    alt={woodyPath[18].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[19].src}
+    alt={woodyPath[19].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[20].src}
+    alt={woodyPath[20].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[21].src}
+    alt={woodyPath[21].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[22].src}
+    alt={woodyPath[22].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[23].src}
+    alt={woodyPath[23].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[24].src}
+    alt={woodyPath[24].alt}
+  />
+  <Image
+    class="w-full h-auto"
+    width={200}
+    height={200}
+    src={woodyPath[25].src}
+    alt={woodyPath[25].alt}
+  />
+</div>
+<div class="BannerWTF bg-wood-dark rounded-3xl p-16">
+  <div class="flex flex-col justify-center items-center p-0 gap-5 grow">
+    <div
+      class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch"
+    >
+      <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+        >CUSTOM MADE FONT</span
+      >
+    </div>
+    <Image
+      width={800}
+      height={200}
+      src={woodyPath[26].src}
+      alt={woodyPath[26].alt}
+    />
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >USED FONTS</span
+  >
+</div>
+<div class="fontContainer flex flex-col gap-12">
+  <div class="fontWrapper flex flex-row gap-6 w-full justify-between">
+    <span class="corbelNormal text-4xl text-wood-cream uppercase">CORBEL</span>
+    <div class="flex flex-col items-end gap-3">
+      <p class="corbelNormal text-4xl text-wood-cream uppercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+      <p class="corbelNormal text-4xl text-wood-cream lowercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+    </div>
+  </div>
+  <div class="fontWrapper flex flex-row gap-6 w-full justify-between">
+    <span class="corbelNormal text-4xl text-wood-cream italic uppercase"
+      >CORBEL Italic</span
+    >
+    <div class="flex flex-col items-end gap-3">
+      <p class="corbelNormal text-4xl text-wood-cream italic uppercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+      <p class="corbelNormal text-4xl text-wood-cream italic lowercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+    </div>
+  </div>
+  <div class="fontWrapper flex flex-row gap-6 w-full justify-between">
+    <span class="corbelNormal text-4xl text-wood-cream font-bold uppercase"
+      >CORBEL Bold</span
+    >
+    <div class="flex flex-col items-end gap-3">
+      <p class="corbelNormal text-4xl text-wood-cream font-bold uppercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+      <p class="corbelNormal text-4xl text-wood-cream font-bold lowercase">
+        ABCDEFGHIJKLMNOPRSTUWXYZ
+      </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >COLOR PALETTE</span
+  >
+</div>
+<div
+  class="colorPalette font-semibold flex p-0 self-stretch rounded-3xl overflow-hidden h-[820px]"
+>
+  <div
+    class="colorStripe flex flex-col justify-end items-center px-9 py-24 grow bg-wood-dark"
+  >
+    #602626
+  </div>
+  <div
+    class="colorStripe flex flex-col justify-end items-center px-9 py-24 grow bg-wood-brown"
+  >
+    #BB8E65
+  </div>
+  <div
+    class="colorStripe text-wood-dark flex flex-col justify-end items-center px-9 py-24 grow bg-wood-cream"
+  >
+    #E9BE95
+  </div>
+  <div
+    class="colorStripe text-wood-dark flex flex-col justify-end items-center px-9 py-24 grow bg-wood-light"
+  >
+    #F3D8BF
+  </div>
+  <div
+    class="colorStripe text-wood-dark flex flex-col justify-end items-center px-9 py-24 grow bg-wood-white"
+  >
+    #FDF7F2
+  </div>
+  <div
+    class="colorStripe flex flex-col justify-end items-center px-9 py-24 grow bg-wood-red"
+  >
+    #FF3C3C
+  </div>
+  <div
+    class="colorStripe flex flex-col justify-end items-center px-9 py-24 grow bg-wood-green"
+  >
+    #23BE1C
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream">SKETCHES</span>
+</div>
+<div
+  class="sketchContain flex flex-col items-center justify-center p-0 overflow-hidden rounded-3xl w-full bg-wood-cream"
+>
+  <Image
+    class="w-full h-auto"
+    width={800}
+    height={200}
+    src={woodyPath[27].src}
+    alt={woodyPath[27].alt}
+  />
+  <div
+    class="grid md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-9"
+  >
+    <Image
+      class="w-full h-auto"
+      width={800}
+      height={200}
+      src={woodyPath[28].src}
+      alt={woodyPath[28].alt}
+    />
+    <Image
+      width={800}
+      height={200}
+      src={woodyPath[29].src}
+      alt={woodyPath[29].alt}
+    />
+    <Image
+      width={800}
+      height={200}
+      src={woodyPath[30].src}
+      alt={woodyPath[30].alt}
+    />
+    <Image
+      width={800}
+      height={200}
+      src={woodyPath[31].src}
+      alt={woodyPath[31].alt}
+    />
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream">LOGOTYPE</span>
+</div>
+<div class="BannerWTF bg-wood-cream grid grid-flow-col gap-9 rounded-3xl p-16">
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[33].src}
+    alt={woodyPath[33].alt}
+  />
+
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[34].src}
+    alt={woodyPath[34].alt}
+  />
+
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[35].src}
+    alt={woodyPath[35].alt}
+  />
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[36].src}
+    alt={woodyPath[36].alt}
+  />
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[37].src}
+    alt={woodyPath[37].alt}
+  />
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[38].src}
+    alt={woodyPath[38].alt}
+  />
+
+  <Image
+    class="w-full h-auto hover:animate-bounce transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[39].src}
+    alt={woodyPath[39].alt}
+  />
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream">PLANK</span>
+</div>
+<div class="BannerWTF bg-wood-cream grid grid-flow-col gap-9 rounded-3xl p-16">
+  <Image
+    class="w-auto h-[80px] hover:rotate-[15deg] transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[40].src}
+    alt={woodyPath[40].alt}
+  />
+  <Image
+    class="w-auto h-[80px] hover:rotate-[15deg] transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[41].src}
+    alt={woodyPath[41].alt}
+  />
+  <Image
+    class="w-auto h-[80px] hover:rotate-[15deg] transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[42].src}
+    alt={woodyPath[42].alt}
+  />
+  <Image
+    class="w-auto h-[80px] hover:rotate-[15deg] transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[43].src}
+    alt={woodyPath[43].alt}
+  />
+</div>
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >LOGO VARIANTS</span
+  >
+</div>
+<div class="BannerWTF bg-wood-cream grid grid-cols-3 gap-24 p-12 rounded-3xl">
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[44].src}
+    alt={woodyPath[44].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[45].src}
+    alt={woodyPath[45].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[46].src}
+    alt={woodyPath[46].alt}
+  />
+
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[48].src}
+    alt={woodyPath[48].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[49].src}
+    alt={woodyPath[49].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[50].src}
+    alt={woodyPath[50].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[51].src}
+    alt={woodyPath[51].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[52].src}
+    alt={woodyPath[52].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[53].src}
+    alt={woodyPath[53].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[54].src}
+    alt={woodyPath[54].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[55].src}
+    alt={woodyPath[55].alt}
+  />
+  <Image
+    class="w-full h-auto hover:scale-110 transition-all duration-200 ease-in-out"
+    width={800}
+    height={200}
+    src={woodyPath[56].src}
+    alt={woodyPath[56].alt}
+  />
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >BUSINESS CARD</span
+  >
+</div>
+<div
+  class="sketchContain flex flex-col items-center justify-center p-0 overflow-hidden rounded-3xl w-full bg-wood-cream"
+>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[57].src}
+      alt={woodyPath[57].alt}
+    />
+
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={600}
+      src={woodyPath[58].src}
+      alt={woodyPath[58].alt}
+    />
+  </div>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[59].src}
+      alt={woodyPath[59].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[60].src}
+      alt={woodyPath[60].alt}
+    />
+  </div>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[61].src}
+      alt={woodyPath[61].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[62].src}
+      alt={woodyPath[62].alt}
+    />
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >FLYER DESIGN</span
+  >
+</div>
+<div
+  class="sketchContain flex flex-col items-center justify-center p-0 overflow-hidden rounded-3xl w-full bg-wood-cream"
+>
+  <Image
+    class="w-full h-auto bg-cover"
+    width={800}
+    height={200}
+    src={woodyPath[63].src}
+    alt={woodyPath[63].alt}
+  />
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[64].src}
+      alt={woodyPath[64].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[65].src}
+      alt={woodyPath[65].alt}
+    />
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >FOOD TRUCK</span
+  >
+</div>
+<div
+  class="sketchContain flex flex-col items-center justify-center p-0 overflow-hidden rounded-3xl w-full bg-wood-cream"
+>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[66].src}
+      alt={woodyPath[66].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[67].src}
+      alt={woodyPath[67].alt}
+    />
+  </div>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[68].src}
+      alt={woodyPath[68].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[69].src}
+      alt={woodyPath[69].alt}
+    />
+  </div>
+</div>
+
+<div
+  class="headingWoody flex flex-col justify-center items-center gap-4 self-stretch px-16 py-[200px]"
+>
+  <span class="spanHWoody font-bold text-[49px] text-wood-cream"
+    >PIZZA QUATTRO FORMAGGI</span
+  >
+</div>
+<div
+  class="sketchContain flex flex-col items-center justify-center p-0 overflow-hidden rounded-3xl w-full bg-wood-cream"
+>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[70].src}
+      alt={woodyPath[70].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[71].src}
+      alt={woodyPath[71].alt}
+    />
+  </div>
+  <div class="rowIMGWTF flex">
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[72].src}
+      alt={woodyPath[72].alt}
+    />
+    <Image
+      class="w-full h-auto bg-cover"
+      width={800}
+      height={200}
+      src={woodyPath[73].src}
+      alt={woodyPath[73].alt}
+    />
+  </div>
+</div>
+
+<div class="BannerWTF bg-wood-dark rounded-3xl p-16 py-36 my-16 relative">
+  <div class="flex flex-col justify-center items-center p-0 gap-12 grow">
+    <div
+      class="headingWoody flex flex-col justify-center items-center gap-8 self-stretch"
+    >
+      <span class="spanHWoody font-bold text-[49px] text-wood-white"
+        >HAVE A PIZZASTIC DAY</span
+      >
+    </div>
+    <Image
+      class="max-w-[320px] hover:animate-bounce"
+      width={800}
+      height={200}
+      src={woodyPath[74].src}
+      alt={woodyPath[74].alt}
+    />
+  </div>
+  <div class="absolute left-0 right-0 top-0 bottom-0 m-16">
+    <Image
+      class="max-w-[100px] opacity-10 rotate-45 absolute right-0 animate-pulse"
+      width={800}
+      height={200}
+      src={woodyPath[75].src}
+      alt={woodyPath[75].alt}
+    />
+    <Image
+      class="max-w-[100px] opacity-10 -rotate-45 absolute left-0 animate-pulse"
+      width={800}
+      height={200}
+      src={woodyPath[1].src}
+      alt={woodyPath[1].alt}
+    />
+    <Image
+      class="max-w-[100px] opacity-10 rotate-[135deg] absolute bottom-0 right-0 animate-pulse"
+      width={800}
+      height={200}
+      src={woodyPath[1].src}
+      alt={woodyPath[1].alt}
+    />
+    <Image
+      class="max-w-[100px] opacity-10 -rotate-[135deg] absolute bottom-0 animate-pulse"
+      width={800}
+      height={200}
+      src={woodyPath[75].src}
+      alt={woodyPath[75].alt}
+    />
+  </div>
+</div>
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    <!-- 
+    {
+      woodyPath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }-->
+  </div>
+</div>
+
+<style lang="scss"></style>

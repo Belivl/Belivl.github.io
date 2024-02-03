@@ -3,18 +3,345 @@
  */
 
 /* The integration's default injected base.css file */
+
+@import url('https://fonts.cdnfonts.com/css/grobe-deutschmeister');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-	@apply box-border;
+
+@layer base {
+	* {
+		@apply box-border;
+		@apply border-border;
+	}
+
+	html {
+		scrollbar-gutter: stable;
+	}
+
+	body {
+		@apply m-0 bg-stone-50 p-0 text-foreground transition-all duration-300 dark:bg-grey-500 dark:text-grey-50;
+	}
+
+	:root {
+		--grey-500: #111114;
+		--grey-400: #141417;
+		--grey-300: #1C1C21;
+		--grey-200: #434347;
+		--grey-150: #5B5B61;
+		--grey-100: #7B7B7E;
+		--grey-75: #A2A2A4;
+		--grey-60: #C8C8C8;
+		--grey-50: #E8E8E9;
+		--light: #F2F0EC;
+		--white: #F2F2F1;
+
+		--col-primary-900: #7D6230;
+		--col-primary-800: #9E7A38;
+		--col-primary-700: #C69841;
+		--col-primary-600: #D9AB56;
+		--col-primary-500: #EDC477;
+		--col-primary-400: #F6D392;
+		--col-primary-300: #FBE5BB;
+		--col-primary-200: #FEF0D7;
+		--col-primary-100: #FFF8EB;
+		--col-primary-50: #FFFBF5;
+
+
+		/*woody palette*/
+			--wood-red: #FF3C3C;
+			--wood-green: #23BE1C;
+			--wood-white: #FDF7F2;
+			--wood-light: #F3D8BF;
+			--wood-cream: #E9BE95;
+			--wood-brown: #BB8E65;
+			--wood-dark: #602626;
+
+		--fontfam-primary: 'Work Sans', sans-serif;
+		--fontfam-secondary: 'Open Sans', sans-serif;
+		--fontfam-accent: 'Grobe Deutschmeister', sans-serif;
+
+		--fontfam-woody: 'Corbel', sans-serif;
+
+		--radius: 0.5rem;
+
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+
+		--card: 0 0% 100%;
+			--card-foreground: 240 10% 3.9%;
+		
+			--popover: 0 0% 100%;
+			--popover-foreground: 240 10% 3.9%;
+		
+			--primary: 240 5.9% 10%;
+			--primary-foreground: 0 0% 98%;
+		
+			--secondary: 240 4.8% 95.9%;
+			--secondary-foreground: 240 5.9% 10%;
+		
+			--muted: 240 4.8% 95.9%;
+			--muted-foreground: 240 3.8% 46.1%;
+		
+			--accent: 240 4.8% 95.9%;
+			--accent-foreground: 240 5.9% 10%;
+		
+			--destructive: 0 84.2% 60.2%;
+			--destructive-foreground: 0 0% 98%;
+		
+			--border: 240 5.9% 90%;
+			--input: 240 5.9% 90%;
+			--ring: 240 5.9% 10%;
+		
+			--radius: 0.5rem;
+	}
+		.dark {
+			--background: 240 10% 3.9%;
+			--foreground: 0 0% 98%;
+	
+			--card: 240 10% 3.9%;
+			--card-foreground: 0 0% 98%;
+	
+			--popover: 240 10% 3.9%;
+			--popover-foreground: 0 0% 98%;
+	
+			--primary: 0 0% 98%;
+			--primary-foreground: 240 5.9% 10%;
+	
+			--secondary: 240 3.7% 15.9%;
+			--secondary-foreground: 0 0% 98%;
+	
+			--muted: 240 3.7% 15.9%;
+			--muted-foreground: 240 5% 64.9%;
+	
+			--accent: 240 3.7% 15.9%;
+			--accent-foreground: 0 0% 98%;
+	
+			--destructive: 0 62.8% 30.6%;
+			--destructive-foreground: 0 0% 98%;
+	
+			--border: 240 3.7% 15.9%;
+			--input: 240 3.7% 15.9%;
+			--ring: 240 4.9% 83.9%;
+		}
 }
 
-html {
-	scrollbar-gutter: stable;
+
+*,
+*::before *::after {
+	box-sizing: border-box;
 }
 
 body {
-	@apply m-0 bg-stone-50 p-0 text-stone-800 transition-all duration-300 dark:bg-stone-800 dark:text-stone-50;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	position: relative;
+	z-index: 0;
+	background-color: var(--background);
 }
+
+html{
+	font-family: var(--fontfam-primary), sans-serif;
+}
+
+.H1 {
+	font-family: var(--fontfam-primary);
+	font-weight: 700;
+	font-size: 49px;
+	line-height: 100%;
+}
+
+.H2 {
+	font-family: var(--fontfam-primary);
+	font-weight: 700;
+	font-size: 39px;
+	line-height: 100%;
+}
+
+.H3 {
+	font-family: var(--fontfam-primary);
+	font-weight: 600;
+	font-size: 31px;
+	line-height: 100%;
+}
+
+.H4 {
+	font-family: var(--fontfam-primary);
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 100%;
+}
+
+.H5 {
+	font-family: var(--fontfam-primary);
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 100%;
+}
+
+.H6 {
+	font-family: var(--fontfam-primary);
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	/*color: rgb(var(--light));*/
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 3.052em;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 2.441em;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.953em;
+}
+
+h4 {
+	font-size: 1.563em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+.display1 {
+	font-family: var(--fontfam-primary);
+	font-weight: 900;
+	font-size: 76px;
+	line-height: 100%;
+}
+
+.display2 {
+	font-family: var(--fontfam-primary);
+	font-size: 61px;
+	line-height: 100%;
+	color: var(--accent);
+}
+
+.herodisplay2 {
+	font-family: var(--fontfam-primary);
+	font-weight: 700;
+	font-size: 61px;
+	line-height: 100%;
+	color: var(--white);
+	text-transform: uppercase;
+	width: 990px;
+}
+
+.grobe1{
+	font-family: 'Grobe Deutschmeister', sans-serif;
+}
+
+.grobe1,
+.grobe2,
+.grobe3 {
+	font-family: var(--fontfam-accent);
+}
+
+@keyframes rotateStar {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.starAnim {
+	animation: 40s infinite linear rotateStar;
+}
+
+.mainBG {
+	position: fixed;
+	mix-blend-mode: overlay;
+	background-image: contain;
+	width: 100%;
+	height: 100vh;
+	z-index: -2;
+	left: 0;
+	top: 0;
+}
+
+.iconLight {
+	fill: var(--light);
+}
+
+ .stripUp {
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding: 24px 8px 12px;
+ 	gap: 24px;
+ 	background: #111114;
+ 	width: 100%;
+ }
+
+ .cutout {
+ 	width: 20px;
+ 	height: 28px;
+ 	background: #1c1c21;
+ 	border-radius: 4px;
+ }
+
+ .masonGrid3, .masonColGrid4 {
+ 	display: grid;
+ 	grid-template-columns: repeat(3, 1fr);
+ 	column-gap: 16px;
+ }
+/*
+  .masonGrid5 {
+  	display: grid;
+  	grid-template-columns: repeat(5, 1fr);
+  	column-gap: 16px;
+  }*/
+ .grid-item,.grid-item4{
+	border: 1px solid var(--grey-200);
+	margin-bottom: 16px;
+	border-radius: 8px;
+	overflow: clip;
+	transition: all 250ms ease-in-out;
+ }
+  .grid-item:hover, .grid-item4:hover {
+	border: 1px solid var(--grey-100);
+	background: var(--grey-400);
+	transition: all 250ms ease-in-out;
+  }
+  .grid-item:hover img,.grid-item4:hover img{
+	opacity: 80%;
+  }
+  .iframeStyle{
+	border-radius: var(--radius);
+	border: var(--border) 1 solid;
+	background: var(--background);
+	transition: all 250ms ease-in-out;
+  }
+
+  .max-char{
+	max-width: 75ch;
+  }
+  @media (max-width: 756px) {
+	.max-char {
+			max-width: 50ch;
+		}
+  }

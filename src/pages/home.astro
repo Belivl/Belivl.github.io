@@ -1,0 +1,17 @@
+---
+import Layout from "./../layouts/Layout.astro";
+import Container from "./../components/Container.astro";
+import HeroSection from "./../components/partials/HeroSection.astro";
+import HighlightPosts from "./../components/partials/HighlightPosts.astro";
+import Banner from "./../components/partials/Banner.astro";
+import translations from "./../utils/t.ts";
+const t = translations(Astro.url);
+---
+
+<Layout title="Belial - Home">
+  <Container>
+    <HeroSection />
+    <HighlightPosts />
+    <Banner />
+  </Container>
+</Layout>

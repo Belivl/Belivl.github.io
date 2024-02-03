@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import Headline from "../../../components/Headline.astro";
+const videoPath = [
+  //Videos
+  {
+    src: "https://www.youtube.com/embed/bGi3_TnjfeY",
+    alt: "ExonNation Esport Team - Official Intro",
+  },
+  {
+    src: "https://www.youtube.com/embed/ETHVBRdolGA",
+    alt: "ExonNation - NoFloorWindow R&D",
+  },
+  {
+    src: "https://www.youtube.com/embed/gs2d1bUQGuM",
+    alt: "ExonNation - Red R&D",
+  },
+];
+const imagePath = [
+  //Images
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851478/gfx/project/book/BookMisc4PS_qguses.jpg",
+    alt: "BookMisc4PS",
+  },
+];
+---
+
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <Headline Heading="Animation" Subtitle="Video" />
+  <iframe
+    width="1920"
+    height="778"
+    class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+    src={videoPath[0].src}
+    title={videoPath[0].alt}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+
+  <Headline Heading="Variations" Subtitle="Other" />
+  <iframe
+    width="1920"
+    height="778"
+    class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+    src={videoPath[1].src}
+    title={videoPath[1].alt}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+  <iframe
+    width="1920"
+    height="778"
+    class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+    src={videoPath[2].src}
+    title={videoPath[2].alt}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+  <!-- 
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    {
+      imagePath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>-->
+</div>

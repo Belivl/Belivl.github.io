@@ -1,0 +1,76 @@
+---
+import Layout from "./../layouts/Layout.astro";
+import Container from "./../components/Container.astro";
+import Headline from "./../components/Headline.astro";
+import GoldCTA from "./../components/ui/GoldCTA.astro";
+import Form from "./../components/ui/Form.astro";
+
+import translations from "./../utils/t.ts";
+const t = translations(Astro.url);
+import SocialHub from "./../components/partials/socialHub.astro";
+import WorkBadge from "./../components/ui/WorkBadge.astro";
+import { Button } from "./../components/ui/button";
+---
+
+<Layout title="Belial - Contact Me">
+  <Container>
+    <div
+      class="flex lg:flex-row flex-col gap-16 md:gap-8 justify-between w-full mb-16"
+    >
+      <div class="w-full lg:mb-12">
+        <Headline Heading={t.contact_h1desc} Subtitle={t.contact_h1} />
+        <p class="w-full text-[18px] font-medium text-grey-75 max-char">
+          {t.contact_h1text}
+          <br />
+          <br />
+          {t.contact_h1text2}
+        </p>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:items-center md:justify-start mt-12"
+        >
+          <div id="copyBtn">
+            <!--<ToastWithTitle client:load />-->
+            <GoldCTA text="copy email" size="lg" link="#">
+              <span class="material-symbols-outlined"> mail</span>
+            </GoldCTA>
+          </div>
+          <a id="msgrLink2" href="https://m.me/BelialDesign" target="_blank">
+            <Button size="lg" variant="outline">Messenger</Button>
+          </a>
+        </div>
+      </div>
+      <div class="relative grid place-content-center justify-start">
+        <svg
+          class="w-64 h-64 fill-grey-50 hover:animate-bounce"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8L12 13L20 8V18ZM12 11L4 6H20L12 11Z"
+            fill=""></path>
+        </svg>
+        <div class="w-fit place-self-center">
+          <WorkBadge workMode="true">Available for work</WorkBadge>
+        </div>
+      </div>
+
+      <!-- 
+      <Form />-->
+    </div>
+  </Container>
+  <SocialHub />
+</Layout>
+<script>
+  const copyBtn = document.getElementById("copyBtn");
+  copyBtn?.addEventListener("click", copytoClip);
+
+  function copytoClip() {
+    console.log("Test");
+    const copyText = "mich.jelin1@gmail.com";
+    navigator.clipboard.writeText(copyText);
+    alert("Copied the email address to clipboard :D");
+  }
+</script>

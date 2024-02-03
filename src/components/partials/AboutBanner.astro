@@ -1,0 +1,35 @@
+---
+import Star1 from "../../assets/Star1.svg";
+import logo from "../../assets/logo.png";
+import Coin2 from "../../components/ui/Coin2.astro";
+---
+
+<section class="px-0 py-24 relative">
+  <div class="container flex flex-col gap-12 justify-center items-center">
+    <span class="text-[64px] grobe1">Belial</span>
+    <div class="flex flex-col gap-12 justify-center items-center">
+      <div class="text-center text-[39px] font-sans relative font-bold">
+        "without a master, symbolizes independence, self-sufficiency, and
+        personal accomplishment"
+        <span
+          class="uppercase text-[#F2F0EC] opacity-5 font-bold text-[200px] absolute top-4 left-0 right-0 -translate-y-[35%] grobe1"
+          >Belial</span
+        >
+      </div>
+      <div class="font-medium">The Satanic Bible (The Book of Belial)</div>
+    </div>
+  </div>
+  <div class="container mx-auto">
+    <div class="w-full flex justify-center items-center relative scale-50">
+      <div
+        id="star"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <img id="star1" src={Star1.src} alt="Star" class="starAnim" />
+      </div>
+      <Coin2>
+        <img src={logo.src} alt="Front" class="w-[300px]" />
+      </Coin2>
+    </div>
+  </div>
+</section>

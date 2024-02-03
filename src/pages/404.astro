@@ -1,11 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "./../layouts/Layout.astro";
+import { Button } from "./../components/ui/button";
 import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
 
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
 ---
 
-<Layout title="404 | Astro starter">
+<Layout title="Belial - 404">
   <section class="flex h-full items-center p-16">
     <div
       class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
@@ -24,7 +25,8 @@ const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
         <a
           rel="noopener noreferrer"
           href={localeUrlPrefix || "/"}
-          class="btn ml-4">Back to homepage</a
+          class="btn ml-4 animate-pulse"
+          ><Button variant="default" size="lg">Back to homepage</Button></a
         >
       </div>
     </div>

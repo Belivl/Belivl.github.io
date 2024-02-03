@@ -1,0 +1,207 @@
+---
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"button"> {
+  size?: "sm" | "md" | "lg";
+  text?;
+  link?;
+}
+
+const { text = "Default Title", link, size = "md" } = Astro.props;
+import { Image } from "astro:assets";
+import ringIndentsGrad from "../../assets/GoldCTA/RingIndentsGradient.png";
+import ringIndentsLow from "../../assets/GoldCTA/RingIndentsLow.png";
+const logoAlt = "The Belial Logo";
+---
+
+<a href={link}>
+  <button
+    class="goldCTA w-full sm:w-auto text-center justify-center"
+    data-size={size}
+  >
+    <div class="flex gap-2 z-[7] justify-center items-center">
+      <p class="pCTALarge">{text}</p>
+      <slot />
+    </div>
+    <div class="baseGold"></div>
+    <Image
+      src={ringIndentsLow}
+      width={300}
+      height={300}
+      alt={logoAlt}
+      class="indents object-cover"
+    />
+    <Image
+      src={ringIndentsGrad}
+      width={300}
+      height={300}
+      alt={logoAlt}
+      class="indentsGrad object-cover"
+    />
+    <div class="aniso1"></div>
+    <div class="aniso2"></div>
+    <div class="softGold"></div>
+  </button>
+</a>
+<style lang="scss">
+  //CTA Gold button
+
+  .pCTALarge {
+    font-weight: 800;
+    line-height: 21px;
+    text-transform: uppercase;
+    &:hover {
+      color: var(--gray-300);
+    }
+  }
+  .goldCTA {
+    color: var(--grey-500);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    //box-shadow: 0px 5px 10px 1px rgba(25, 25, 24, 0.8)
+    border-radius: 8px;
+    border: 2px solid var(--col-primary-900);
+    isolation: isolate;
+    overflow: hidden;
+    //border: 5px solid
+    //border-image-source: linear-gradient(180deg, $primary-900 1.05%, $primary-300 100%)
+    &:hover {
+      border: 2px solid var(--col-primary-700);
+      color: var(--grey-300);
+    }
+    &:hover > .aniso1 {
+      transform: rotate(-25deg);
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+    }
+    &:hover > .aniso2 {
+      transform: rotate(-75deg);
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+    }
+
+    .baseGold {
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      top: 0%;
+      bottom: 0%;
+      background: var(--col-primary-300);
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      z-index: 0;
+    }
+    .indents {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: 50%;
+      top: 50%;
+      border-radius: 500px;
+      opacity: 0.2;
+      transform: translate(-50%, -50%);
+    }
+    .indentsGrad {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: 50%;
+      top: 50%;
+      opacity: 0.5;
+      border-radius: 500px;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: soft-light;
+    }
+    .aniso1 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: calc(50% - 300px / 2);
+      top: calc(50% - 300px / 2);
+      mix-blend-mode: multiply;
+      border-radius: 500px;
+      opacity: 0.4;
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #000000 0deg,
+        #000000 56.25deg,
+        #ffffff 88.12deg,
+        #000000 101.25deg,
+        #000000 146.25deg,
+        #ffffff 159.38deg,
+        #000000 170.63deg,
+        #000000 234.38deg,
+        #ffffff 268.13deg,
+        #000000 296.25deg,
+        #000000 360deg
+      );
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+      animation: goldRotate 12s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+    }
+    .aniso2 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: calc(50% - 300px / 2);
+      top: calc(50% - 300px / 2);
+      mix-blend-mode: multiply;
+      border-radius: 500px;
+      border: 0;
+      opacity: 0.2;
+      transform: rotate(-120deg);
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #000000 0deg,
+        #000000 56.25deg,
+        #ffffff 88.12deg,
+        #000000 101.25deg,
+        #000000 146.25deg,
+        #ffffff 159.38deg,
+        #000000 170.63deg,
+        #000000 234.38deg,
+        #ffffff 268.13deg,
+        #000000 296.25deg,
+        #000000 360deg
+      );
+      transition: transform 0.3s;
+      transition-timing-function: ease-out;
+      animation: goldRotate 16s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+    }
+    .softGold {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      background: var(--col-primary-600);
+      mix-blend-mode: soft-light;
+    }
+  }
+  [data-size="sm"] {
+    font-size: 0.8rem;
+    height: 2.25rem;
+    padding: 12px 16px;
+  }
+  [data-size="md"] {
+    font-size: 1rem;
+    height: 2.5rem;
+    padding: 12px 24px;
+  }
+  [data-size="lg"] {
+    font-size: 1.2rem;
+    height: 2.75rem;
+    padding: 12px 24px;
+  }
+  @keyframes goldRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

@@ -1,0 +1,109 @@
+---
+//Venom
+import { Image } from "astro:assets";
+import Headline from "../../../components/Headline.astro";
+const videoPath = [
+  //Videos
+  {
+    src: "https://www.youtube.com/embed/sfdSUw73QSI?si=Nz91G05QiQWYiQiu",
+    alt: "Venom Esport Team Intro",
+  },
+  {
+    src: "https://www.youtube.com/embed/kIftEYqm4NQ?si=HVXBwkecmKzOehZ3",
+    alt: "Venom Esport Team Intro alt",
+  },
+  {
+    src: "https://www.youtube.com/embed/TnzErCv8tQM?si=dGCpCQd18_HXmkJD",
+    alt: "Venom Esport Team Intro alt 2",
+  },
+];
+const imagePath = [
+  //Images
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851652/gfx/project/Venom/testingphialssfs_zf4e7c.png",
+    alt: "testingphials",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851632/gfx/project/Venom/testingphials2_ydrlzh.png",
+    alt: "testingphials2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851645/gfx/project/Venom/testingphials3_vbpbnd.png",
+    alt: "testingphials3",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851619/gfx/project/Venom/testingphials5_wzfoza.png",
+    alt: "testingphials5",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851639/gfx/project/Venom/testingphials6_mfrkxy.png",
+    alt: "testingphials6",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851628/gfx/project/Venom/testingphials7yg_kfbjbv.png",
+    alt: "testingphials7",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851635/gfx/project/Venom/Enviroment1_uarw8l.png",
+    alt: "Enviroment1",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851625/gfx/project/Venom/scene_structure2_bke4ju.png",
+    alt: "scene_structure2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851647/gfx/project/Venom/IntroFile_-_Codpy_2_s06kni.png",
+    alt: "IntroFile",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851641/gfx/project/Venom/Part2fix2_kvqjkv.png",
+    alt: "Part2fix2",
+  },
+];
+---
+
+<div class="flex flex-col gap-9 rounded-md w-full">
+  <iframe
+    width="1400"
+    height="787"
+    class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+    src={videoPath[0].src}
+    title={videoPath[0].alt}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+  <Headline Heading="Variations" Subtitle="Other" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    {
+      imagePath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={600}
+          height={200}
+          class="rounded-xl w-full border border-grey-300 bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>
+  <div class="flex flex-col gap-9 rounded-md w-full">
+    <iframe
+      width="1400"
+      height="787"
+      class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+      src={videoPath[1].src}
+      title={videoPath[1].alt}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <iframe
+      width="1400"
+      height="787"
+      class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+      src={videoPath[2].src}
+      title={videoPath[2].alt}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</div>

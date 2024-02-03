@@ -1,22 +1,109 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Navbar from "@components/Navbar.astro";
-import Footer from "@components/Footer.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import { getLocale } from "astro-i18n-aut";
+import { ViewTransitions } from "astro:transitions";
+
+import bgPic from "../assets/FilmGrainS5.jpg";
+import Container from "../components/Container.astro";
+//import CookieBanner from "../components/ui/CookieBanner.astro";
+
+const { title, description } = Astro.props;
+
 const locale = getLocale(Astro.url);
 ---
 
-<html lang={locale}>
-  <head>
-    <BaseHead title="Testi18n" description="TestingI18n" image="" />
-    {/* Comment the line below if you want to remove client side routing */}
-  </head>
+<script is:inline>
+  document.documentElement.classList.add("dark");
+</script>
+<!-- 
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "dark";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "add"]("dark");
 
-  <body>
-    <Navbar />
-    <main>
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "dark");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>-->
+<html lang={locale} class="dark">
+  <head>
+    <BaseHead title={title} description={description} image="" />
+    <ViewTransitions
+    /><!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H8G97ZVN7G");
+    </script></head
+  >
+
+   Google tag (gtag.js) -->
+  </head><body class="bg-grey-500 relative p-0 z-0 h-full">
+    <!-- 
+    <CookieBanner />-->
+    <!--Background image -->
+    <div class="dark:bg-grey-500 bg-grey-50 fixed w-full h-full -z-[50]"></div>
+    <img src={bgPic.src} alt="BGPicture" class="mainBG -z-[100]" />
+    <Container>
+      <Navbar />
+    </Container>
+    <main id="main" class="w-full flex flex-col">
       <slot />
     </main>
     <Footer />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+      }
+      main {
+        padding: 24px;
+        margin: auto;
+        height: 100%;
+      }
+    </style>
+    <script>
+      import { getCookie } from "../js/utils";
+      const navLinkPortHome = document.querySelector(
+        "#navLinkPortHome"
+      ) as HTMLLinkElement;
+      let currentProfile = getCookie("profile");
+      if (currentProfile === "Belial") {
+        navLinkPortHome.href = "/home/";
+      } else {
+        navLinkPortHome.href = "/home2/";
+      }
+    </script>
+    <!-- <script src="js/themeChange"></script>
+    <script
+      type="module"
+      is:inline
+      src="/vigorous-virgo/src/js/choiceNavigate.js"></script>-->
   </body>
 </html>
