@@ -5,14 +5,13 @@ import Headline from "@src/components/Headline.astro";
 import translations from "@utils/t.ts";
 import AboutBanner from "@src/components/partials/AboutBanner.astro";
 import Banner from "@src/components/partials/Banner.astro";
-import ExperienceTabs from "@src/components/partials/ExperienceTabs.astro";
 import AboutMJ from "@src/components/partials/AboutMJ.astro";
 import MusicPlaylists from "@src/components/partials/MusicPlaylists.astro";
 import ExperienceTab from "@src/components/ExperienceTab.astro";
 const t = translations(Astro.url);
 ---
 
-<Layout title="Belial - About Me" description="Lorem ipsum dolor sit amet">
+<Layout>
   <Container>
     <AboutMJ />
     <div id="aboutBelial">
