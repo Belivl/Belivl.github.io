@@ -1,8 +1,9 @@
 ---
 import LanguageSelector from "./LanguageSelector.astro";
+import ThemeSelector from "./ThemeSelector.astro";
 import Separator from "./ui/Separator.astro";
-import { ModeToggle } from "./ui/ModeToggle";
-import { LangSelect } from "./ui/langSelect";
+//import { ModeToggle } from "./ui/ModeToggle";
+//import { LangSelect } from "./ui/langSelect";
 import { Button } from "./ui/button";
 import { MessageCircle } from "lucide-react";
 const today: Date = new Date();
@@ -85,15 +86,17 @@ const today: Date = new Date();
           </Button>
         </a>
         <Separator data-type="vertical" />
-        <ModeToggle client:load />
         <!-- 
-        <ThemeSelector />-->
+        <ModeToggle client:load />-->
+
+        <ThemeSelector />
         <Separator data-type="vertical" />
         <LanguageSelector
           showFlag={false}
           class="appearance-none cursor-pointer focus-visible:outline-none"
         />
-        <LangSelect client:load />
+        <!-- 
+        <LangSelect client:load />-->
       </div>
     </div>
   </footer>
