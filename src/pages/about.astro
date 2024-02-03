@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from "@src/layouts/Layout.astro";
 import Container from "@src/components/Container.astro";
 import Headline from "@src/components/Headline.astro";
 import translations from "@utils/t.ts";
@@ -11,7 +11,7 @@ import ExperienceTab from "@src/components/ExperienceTab.astro";
 const t = translations(Astro.url);
 ---
 
-<Layout>
+<Layout title="Belial - About Me">
   <Container>
     <AboutMJ />
     <div id="aboutBelial">
@@ -19,9 +19,6 @@ const t = translations(Astro.url);
     </div>
     <MusicPlaylists />
     <Headline Heading={t.about_h2desc} Subtitle={t.about_h2} />
-    <!-- 
-    <ExperienceTabs />
--->
     <ExperienceTab />
     <Banner />
   </Container>
