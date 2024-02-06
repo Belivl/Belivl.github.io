@@ -12,7 +12,11 @@ switch (logo) {
 }
 ---
 
-<a class="socialWrapper" href={link} target="_blank">
+<a
+  class="socialWrapper hover:-translate-y-2 transition-all duration-200 ease-in-out"
+  href={link}
+  target="_blank"
+>
   <div class="flex gap-4 justify-center items-center">
     <slot />
     <h4 class="H4">{text}</h4>
@@ -46,9 +50,6 @@ switch (logo) {
     background: var(--grey-500);
     border: 1px solid var(--grey-200);
     border-radius: 8px;
-    transition:
-      background 0.3s,
-      border 0.3s;
     transition-timing-function: ease-out;
     &:hover {
       background: var(--grey-300);

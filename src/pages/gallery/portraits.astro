@@ -5,6 +5,8 @@ import Container from "../../components/Container.astro";
 import Headline from "../../components/Headline.astro";
 import { Headlines, NAME2 } from "../../consts";
 import GalleryTab from "../../components/GalleryTab.astro";
+import { Image } from "astro:assets";
+import imagePathsPortrait from "../../js/imagePaths/imagePathsPortrait.js";
 let pageName = "Portraits";
 ---
 
@@ -14,29 +16,34 @@ let pageName = "Portraits";
   <Container>
     <Headline Heading={Headlines[5].heading} Subtitle={Headlines[5].subtitle} />
     <GalleryTab />
+    <div class="gap-9" style="
+  columns: 3 300px;
+  column-gap: 1rem;">
+      {
+        imagePathsPortrait.map((image, i) => (
+          <button class="grid-item mb-4" id={i.toString()}>
+            <Image
+              class="rounded-md  image-item4 grid place-content-center"
+              src={image}
+              alt={image}
+              width={400}
+              height={200}
+              format="webp"
+              quality="low"
+            />
+          </button>
+        ))
+      }
+    </div>
     <!-- 
-    <div class="flex gap-3 mb-16">
-      <a href="/gallery/portfolio/">
-        <ButtonA size="sm" classes="default px-4">Portfolio</ButtonA>
-      </a>
-      <ButtonA size="sm" classes="primary px-4">Portraits</ButtonA>
-      <a href="/gallery/cars/">
-        <ButtonA size="sm" classes="default px-4">Cars</ButtonA>
-      </a>
-      <a href="/gallery/events/">
-        <ButtonA size="sm" classes="default px-4">Events</ButtonA>
-      </a>
-      <a href="/gallery/other/">
-        <ButtonA size="sm" classes="default px-4">Other</ButtonA>
-      </a>
-    </div>-->
     <div class="masonGrid3 w-full">
       <div class="masonCol"></div>
       <div class="masonCol"></div>
       <div class="masonCol"></div>
-    </div>
+    </div>-->
   </Container>
 </Layout>
+<!-- 
 <script>
   import { createGrid } from "../../js/gridGallery.js";
   import imagePathsPortrait from "../../js/imagePaths/imagePathsPortrait.js";
@@ -44,4 +51,4 @@ let pageName = "Portraits";
   imagePathsPortrait.forEach((path, i) => {
     createGrid(path, i);
   });
-</script>
+</script>-->

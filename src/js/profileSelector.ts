@@ -3,6 +3,12 @@ import { getCookie,setCookie } from "./utils.js";
 type Profile = 'Belial' | 'Michal'; // Add more profiles as needed
 
 
+const title1 = document.querySelector("#title1") as HTMLDivElement;
+const coinDesc1 = document.querySelector("#coinDesc1") as HTMLDivElement;
+const coinDesc2 = document.querySelector("#coinDesc2") as HTMLDivElement;
+const coin1 = document.querySelector("#coinDIV1") as HTMLDivElement;
+const coin2 = document.querySelector("#coinDIV2") as HTMLDivElement;
+const star = document.querySelector("#star1") as HTMLDivElement;
 
 const footerName = document.querySelector("#footerName") as HTMLSpanElement;
 const headerName = document.querySelector("#headerName") as HTMLDivElement;
@@ -11,7 +17,7 @@ const msgrLink2 = document.querySelector("#msgrLink2") as HTMLLinkElement;
 const navLinkPort = document.querySelector("#navLinkPort") as HTMLLinkElement;
 
 const homeIMG = document.querySelector("#homeIMG") as HTMLImageElement;
-const belialBanner = document.querySelector("#aboutBelial") as HTMLDivElement;
+//const belialBanner = document.querySelector("#aboutBelial") as HTMLDivElement;
 
 const btnProfile1 = document.querySelector("#coin1");
 const btnProfile2 = document.querySelector("#coin2");
@@ -19,18 +25,29 @@ const btnProfile2 = document.querySelector("#coin2");
 
 btnProfile1?.addEventListener('click', function (){
     //btnProfile1.innerHTML = "Ok";
-    setCookie("profile","Belial",1)
+    setCookie("profile","Belial",30)
+    loadingAnim();
+    coin2.classList.add("hidden");
     setInterval(() => {
       location.replace("/home/");
     }, 1000);
 })
 btnProfile2?.addEventListener('click', function (){
     //btnProfile2.innerHTML = "Ok";
-     setCookie("profile","Michal Jelinski",1)
+     setCookie("profile","Michal Jelinski",30)
+     loadingAnim();
+     coin1.classList.add("hidden");
      setInterval(() => {
       location.replace("/home2/");
     }, 1000);
 })
+
+function loadingAnim(){
+    title1.classList.add("hidden");
+    coinDesc1.classList.add("hidden");
+    coinDesc2.classList.add("hidden");
+    star.classList.remove("hidden");
+}
 
 
 function setProfile(currentProfile){

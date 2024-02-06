@@ -35,9 +35,15 @@ const {
     >
       <div class="w-full flex flex-col gap-5 pb-12">
         <h2 class="capitalize">{title}</h2>
-        <a href={`/portfolio/${type}/`}>
-          <h3 class="H5 text-grey-75 uppercase">{type}</h3></a
-        >
+        <div class="flex gap-3 h-5 items-center">
+          <a href={`/portfolio/`}>
+            <h3 class="H5 text-grey-75 uppercase">Projects</h3></a
+          >
+          <Separator data-type="vertical" />
+          <a href={`/portfolio/${type}/`}>
+            <h3 class="H5 text-grey-75 uppercase">{type}</h3></a
+          >
+        </div>
       </div>
 
       <div class="w-full">

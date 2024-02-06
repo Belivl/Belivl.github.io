@@ -13,9 +13,12 @@ import ringIndentsLow from "../../assets/GoldCTA/RingIndentsLow.png";
 const logoAlt = "The Belial Logo";
 ---
 
-<a href={link} class="w-full md:w-fit">
+<a
+  href={link}
+  class="goldCTAlink w-full md:w-fit hover:-translate-y-1 transition-all duration-200 ease-in-out"
+>
   <button
-    class="goldCTA w-full md:w-fit text-center justify-center"
+    class="goldCTA w-full md:w-fit text-center justify-center overflow-clip"
     data-size={size}
   >
     <div class="flex gap-2 z-[7] justify-center items-center">
@@ -81,7 +84,18 @@ const logoAlt = "The Belial Logo";
       transition: transform 0.3s;
       transition-timing-function: ease-out;
     }
-
+    .goldCTAlink {
+      &:hover > .aniso1 {
+        transform: rotate(-25deg);
+        transition: transform 0.3s;
+        transition-timing-function: ease-out;
+      }
+      &:hover > .aniso2 {
+        transform: rotate(-75deg);
+        transition: transform 0.3s;
+        transition-timing-function: ease-out;
+      }
+    }
     .baseGold {
       position: absolute;
       left: 0%;

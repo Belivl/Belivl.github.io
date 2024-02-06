@@ -41,6 +41,7 @@ export const PAGES: Page[] = [
 	},
 
 ];
+
 // Links
 type Link = {
 	title: string;
@@ -156,6 +157,26 @@ export const Subpage = [
 		title: "other",
 		href:"/gallery/other/",
 	},
+];
+//Subpages portfolio
+export const Subpage2 = [
+	{
+		title: "projects",
+		href:"/portfolio/",
+	},
+	{
+		title: "design",
+		href:"/portfolio/design/",
+	},
+	{
+		title: "art",
+		href:"/portfolio/art/",
+	},
+	{
+		title: "3D",
+		href:"/portfolio/3D/",
+	},
+	
 ];
 
 // i18n

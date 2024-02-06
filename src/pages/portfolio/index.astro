@@ -6,10 +6,15 @@ import type { CollectionEntry } from "astro:content";
 import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
 import Container from "../../components/Container.astro";
 import HeroImage from "../../components/blog/HeroImage.astro";
-import ButtonA from "../../components/ui/ButtonA.astro";
+
 import Headline from "../../components/Headline.astro";
 import { Headlines } from "../../consts";
 import { Button } from "../../components/ui/button";
+import PortfolioTab from "../../components/PortfolioTab.astro";
+
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
+
 const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
 
@@ -38,19 +43,9 @@ const posts = (
   <div class="container2 w-full mx-8" id="rectangleContainer"></div>-->
   <Container>
     <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
-    <div class="flex gap-3 items-center justify-left w-full">
-      <ButtonA size="sm" classes="primary px-4">Projects</ButtonA>
-      <a href="/portfolio/design/">
-        <ButtonA size="sm" classes="default px-4">Design</ButtonA>
-      </a>
-      <a href="/portfolio/art/">
-        <ButtonA size="sm" classes="default px-4">Art</ButtonA>
-      </a>
-      <a href="/portfolio/3D/">
-        <ButtonA size="sm" classes="default px-4">3D</ButtonA>
-      </a>
-    </div>
-  </Container><!--
+    <PortfolioTab />
+  </Container>
+  <!--
   <section class="mx-auto container px-0 flex flex-col gap-16">
     
     <Pagination
@@ -72,7 +67,9 @@ const posts = (
         posts.map((post: any, index: number) => (
           <li
             class={`${
-              index === 0 ? "col-span-2 mb-4 w-full text-center" : ""
+              index === 0
+                ? "col-span-1 md:col-span-2 mb-4 w-full text-center"
+                : ""
             } hover:-translate-y-2 transition-all duration-200 ease-in-out`}
           >
             <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
@@ -109,7 +106,7 @@ const posts = (
                 </div>
                 <a href={post.href}>
                   <Button size="sm" variant="secondary">
-                    View
+                    {t.view_button}
                   </Button>
                 </a>
               </div>

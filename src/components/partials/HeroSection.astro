@@ -6,32 +6,39 @@ import WorkBadge from "../../components/ui/WorkBadge.astro";
 import { Image } from "astro:assets";
 
 const heroImgW = 200;
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
 ---
 
 <section
-  class="flex gap-24 container justify-between items-center py-32 relative rounded-2xl overflow-clip border border-grey-300 bg-grey-500"
+  class="flex gap-24 justify-between items-center p-6 md:py-32 relative rounded-2xl overflow-clip border border-grey-300 bg-grey-500"
 >
   <div
-    class="flex flex-col gap-10 justify-start z-10 items-start ml-0 md:ml-16"
+    class="flex flex-col gap-8 md:gap-16 justify-start z-10 items-start ml-0 md:ml-16 w-full"
   >
-    <WorkBadge workMode="true">Available for work</WorkBadge>
-    <div class="flex flex-col gap-9">
-      <h1 class="H1 text-[24px] md:text-[49px] uppercase w-full md:w-auto">
-        Hi! I’m Belial <br />an <span class="textBaseGold uppercase"
-          >artist <span class="material-icons"> color_lens</span></span
-        > at heart and soul,<br />
-        <span class="textBaseGold"
-          >designer <span class="material-symbols-outlined h-2">
-            photo_camera
-          </span></span
-        > by craft.
+    <div class="w-full hidden md:flex">
+      <WorkBadge workMode class="w-full" />
+    </div>
+    <div class="flex flex-col gap-8 items-start">
+      <h1
+        class="text-[26px] md:text-[49px] uppercase leading-loose"
+        style="line-height: 120%;"
+      >
+        {t.home2_H1}
       </h1>
-      <div class="flex gap-4 items-center">
-        <GoldCTA link="/portfolio/" size="lg" text="View portfolio">
+      <div class="flex flex-col md:flex-row gap-4 items-center w-full">
+        <GoldCTA
+          link="/portfolio/"
+          size="lg"
+          text={t.cta_button}
+          class="w-full md:w-fit"
+        >
           <span class="material-icons">arrow_forward</span>
         </GoldCTA>
-        <a href="/about/">
-          <Button size="lg" variant="outline">Read more</Button></a
+        <a href="/contact/" class="w-full md:w-fit">
+          <Button size="lg" variant="outline" className="w-full md:w-fit">
+            {t.contact_button}
+          </Button></a
         >
       </div>
     </div>

@@ -151,6 +151,82 @@ const { data } = Astro.props;
   let nextImg: number = 0;
   let currentImageIndex: number = 0;
 
+  if (document.readyState !== "loading") {
+    console.log("document is already ready, just execute code here");
+    addListeners();
+  } else {
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("document was not ready, place code here");
+      addListeners();
+    });
+  }
+
+  function addListeners() {
+    var openBTNS = document.querySelectorAll(".grid-item");
+    var openBTNS4 = document.querySelectorAll(".grid-item4");
+    var prevBTNS = document.querySelectorAll(".prev");
+    var nextBTNS = document.querySelectorAll(".next");
+    openBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        //console.log("Index = " + index);
+        let btnID: number = Number(button.id);
+        openLightbox(btnID);
+      });
+    });
+    openBTNS4.forEach(function (button) {
+      button.addEventListener("click", function () {
+        //console.log("Index = " + index);
+        let btnID: number = Number(button.id);
+        openLightbox(btnID);
+      });
+    });
+    prevBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        changeImage(-1);
+      });
+    });
+    nextBTNS.forEach(function (button) {
+      button.addEventListener("click", function () {
+        changeImage(1);
+      });
+    });
+
+    switch (photos1) {
+      case "All":
+        ArrayPhoto = imagePathsPortrait.concat(
+          imagePathsOther,
+          imagePathsCars,
+          imagePathsEvents
+        );
+        break;
+      case "Portfolio":
+        ArrayPhoto = imagePathsPortfolio;
+        break;
+      case "Portrait":
+        ArrayPhoto = imagePathsPortrait;
+        break;
+      case "Other":
+        ArrayPhoto = imagePathsOther;
+        break;
+      case "Cars":
+        ArrayPhoto = imagePathsCars;
+        break;
+      case "Events":
+        ArrayPhoto = imagePathsEvents;
+        break;
+
+      default:
+        break;
+    }
+    totalImages = ArrayPhoto.length;
+    //total
+    //console.log("totalImages: " + totalImages);
+
+    if (indexDisplay2 !== null) {
+      indexDisplay2.innerHTML = totalImages.toString();
+    }
+  }
+  /*
   document.addEventListener("DOMContentLoaded", function () {
     var openBTNS = document.querySelectorAll(".grid-item");
     var openBTNS4 = document.querySelectorAll(".grid-item4");
@@ -215,7 +291,7 @@ const { data } = Astro.props;
     if (indexDisplay2 !== null) {
       indexDisplay2.innerHTML = totalImages.toString();
     }
-  });
+  });*/
 
   if (closeModalBTN !== null) {
     closeModalBTN.addEventListener("click", () => {

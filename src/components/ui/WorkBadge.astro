@@ -1,15 +1,17 @@
 ---
-const { workMode = "true" } = Astro.props;
+const { workMode } = Astro.props;
 const green = "#66BA58";
 const red = "#D62938";
 let accentWork = workMode ? green : red;
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
 ---
 
 {
   workMode ? (
     <div class="workBadge H6 bg-grey-400  border border-grey-300 rounded-md p-3  gap-3 items-center w-full md:w-fit flex">
       <div class="dot animate-pulse" />
-      <span class="textGlow">Available for work</span>
+      <span class="textGlow">{t.available_work}</span>
       <div class="bgGlow" />
     </div>
   ) : (

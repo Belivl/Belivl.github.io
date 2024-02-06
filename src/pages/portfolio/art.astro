@@ -2,10 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/Container.astro";
 import Headline from "../../components/Headline.astro";
-import ButtonA from "../../components/ui/ButtonA.astro";
 import { Headlines } from "../../consts";
 import { Image } from "astro:assets";
-
+import PortfolioTab from "../../components/PortfolioTab.astro";
 const imagePath = [
   //Images
   {
@@ -74,20 +73,7 @@ const imagePath = [
 <Layout title="Belial - Portfolio Art">
   <Container>
     <Headline Heading={Headlines[2].heading} Subtitle={Headlines[2].subtitle} />
-    <div class="flex gap-3 items-center justify-left w-full">
-      <a href="/portfolio/">
-        <ButtonA size="sm" classes="default px-4">Projects</ButtonA>
-      </a>
-      <a href="/portfolio/design/">
-        <ButtonA size="sm" classes="default px-4">Design</ButtonA>
-      </a>
-      <a href="/portfolio/art/">
-        <ButtonA size="sm" classes="primary px-4">Art</ButtonA>
-      </a>
-      <a href="/portfolio/3D/">
-        <ButtonA size="sm" classes="default px-4">3D</ButtonA>
-      </a>
-    </div>
+    <PortfolioTab />
     <div class="flex flex-col items-center w-full gap-9 rounded-xl mt-16">
       <div
         class="grid grid-cols-3 border border-grey-300 bg-grey-400 w-full rounded-xl overflow-clip"

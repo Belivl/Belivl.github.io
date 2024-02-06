@@ -8,6 +8,9 @@ import Headline from "../../components/Headline.astro";
 import Container from "../../components/Container.astro";
 import { Button } from "../../components/ui/button";
 
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
+
 const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
 
@@ -45,14 +48,14 @@ const posts = (
 
 <Container className="py-16">
   <Headline Heading="Highlights" Subtitle="Portfolio" />
-  <ul
-    class="m-0 grid list-none grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 p-0"
-  >
+  <ul class="grid list-none grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
     {
       posts.map((post: any, index: number) => (
         <li
           class={`${
-            index === 0 ? "col-span-2 mb-4 w-full text-center" : ""
+            index === 0
+              ? "col-span-1 md:col-span-2 mb-4 w-full text-center"
+              : ""
           } hover:-translate-y-2 transition-all duration-200 ease-in-out`}
         >
           <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
@@ -89,7 +92,7 @@ const posts = (
               </div>
               <a href={post.href}>
                 <Button size="sm" variant="secondary">
-                  View
+                  {t.view_button}
                 </Button>
               </a>
             </div>
