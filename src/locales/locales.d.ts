@@ -1,3 +1,4 @@
+/*
 declare interface Locales {
 	home_description: string;
 	about_description: string;
@@ -8,6 +9,11 @@ declare interface Locales {
     index_art: string;
     index_photo:string;
     index_video: string;
+
+    home1_H1:string;
+    home1_sub: string;
+
+    home2_H1:string;
 
 	about_h1: string;
     about_h2: string; 
@@ -41,4 +47,7 @@ declare interface Locales {
     form_submit: string;
     form_title: string;
     form_desc: string;
-}
+
+    available_work: string;
+    unavailable_work: string;
+}*/

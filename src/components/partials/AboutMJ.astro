@@ -2,33 +2,20 @@
 import Headline from "../../components/Headline.astro";
 import profile from "../../assets/profile.jpg";
 import { Image } from "astro:assets";
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
 ---
 
-<Headline Heading="About Me" Subtitle="Bio" />
+<Headline Heading={t.about_heading} Subtitle={t.about_sub} />
 <div
   class="flex md:flex-row flex-col w-full gap-9 justify-between items-start mb-24"
 >
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 flex-wrap">
     <p class="max-char">
-      As a multifaceted creative, I blend my expertise in graphic design, 3D
-      modeling, and UI design with a passion for photography and filmography.
-      Delving into freelancing in 2015, I embarked on a journey marked by
-      exploration and innovation. Though my academic stint at a WSB university
-      lasted three years before I opted to pursue my own path, it equipped me
-      with foundational knowledge. My keen eye for aesthetics drives me to craft
-      visually captivating experiences across various mediums. Beyond my primary
-      disciplines, I dabble in web development, enriching my skill set and
-      pushing the boundaries of digital artistry in my free time.
+      {t.about_p}
     </p>
     <p class="max-char">
-      Fueled by a diverse palette of influences, I infuse my creative endeavors
-      with the pulsating rhythms and eclectic melodies of dubstep, drum & bass,
-      pop, rock, and rap. Music isn't just a background soundtrack for me—it's a
-      driving force, inspiring my designs and cinematography with its energy and
-      emotion. Whether I'm sculpting 3D landscapes, crafting intuitive UI
-      interfaces, or capturing the perfect shot through my lens, the synergy
-      between my passion for design and love for music shapes every project I
-      undertake.
+      {t.about_p2}
     </p>
   </div>
 

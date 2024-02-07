@@ -30,12 +30,14 @@ import { Button } from "./../components/ui/button";
         >
           <div id="copyBtn">
             <!--<ToastWithTitle client:load />-->
-            <GoldCTA text="copy email" size="lg" link="#">
+            <GoldCTA text={t.copymail_button} size="lg" link="#">
               <span class="material-symbols-outlined"> mail</span>
             </GoldCTA>
           </div>
           <a id="msgrLink2" href="https://m.me/BelialDesign" target="_blank">
-            <Button size="lg" variant="outline">Messenger</Button>
+            <Button size="lg" variant="outline" className="w-full md:w-fit">
+              Messenger
+            </Button>
           </a>
         </div>
       </div>
@@ -53,7 +55,7 @@ import { Button } from "./../components/ui/button";
             fill=""></path>
         </svg>
         <div class="w-fit place-self-center">
-          <WorkBadge workMode="true">Available for work</WorkBadge>
+          <WorkBadge workMode />
         </div>
       </div>
 

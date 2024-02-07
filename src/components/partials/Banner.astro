@@ -1,6 +1,8 @@
 ---
 import Container from "../../components/Container.astro";
 import GoldCTA from "../ui/GoldCTA.astro";
+import translations from "../../utils/t.ts";
+const t = translations(Astro.url);
 ---
 
 <Container className=" my-16">
@@ -8,16 +10,16 @@ import GoldCTA from "../ui/GoldCTA.astro";
     class="dark:bg-grey-500 transition-all duration-200 ease-in-out hover:dark:border-grey-100 bg-light flex flex-col md:flex-row justify-start md:justify-between items-start md:items-end px-9 pb-9 pt-32 rounded-[16px] border-grey-200 border w-full mx-0 gap-6 md:gap-0"
   >
     <div class="flex flex-col gap-4">
-      <h3 class="H2">Creative Solutions for Your Projects</h3>
+      <h3 class="H2">{t.banner_Title}</h3>
       <h5 class="H5 text-grey-75 font-medium">
-        Contact me today for a consultation or project inquiry
+        {t.banner_Sub}
       </h5>
     </div>
 
     <div class="flex gap-2 items-center">
       <!-- 
       <Button size="lg" variant="outline">Learn more</Button>-->
-      <GoldCTA link="/contact/" size="md" text="Contact" />
+      <GoldCTA link="/contact/" size="md" text={t.contact_button} />
     </div>
   </div>
 </Container>

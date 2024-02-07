@@ -16,22 +16,26 @@ let pageName = "Events";
   <Container>
     <Headline Heading={Headlines[7].heading} Subtitle={Headlines[7].subtitle} />
     <GalleryTab />
-    <!--
-    <div class="flex gap-3 mb-16">
-      <a href="/gallery/portfolio/">
-        <ButtonA size="sm" classes="default px-4">Portfolio</ButtonA>
-      </a>
-      <a href="/gallery/portraits/">
-        <ButtonA size="sm" classes="default px-4">Portraits</ButtonA>
-      </a>
-      <a href="/gallery/cars/">
-        <ButtonA size="sm" classes="default px-4">Cars</ButtonA>
-      </a>
-      <ButtonA size="sm" classes="primary px-4">Events</ButtonA>
-      <a href="/gallery/other/">
-        <ButtonA size="sm" classes="default px-4">Other</ButtonA>
-      </a>
-    </div> -->
+    <div class="gap-9" style="
+  columns: 3 300px;
+  column-gap: 1rem;">
+      {
+        imagePathsEvents.map((image, i) => (
+          <button class="grid-item mb-4" id={i.toString()}>
+            <Image
+              class="rounded-md  image-item4 grid place-content-center"
+              src={image}
+              alt={image}
+              width={400}
+              height={200}
+              format="webp"
+              quality="low"
+            />
+          </button>
+        ))
+      }
+    </div>
+    <!-- 
     <div class="masonColGrid4">
       <div class="masonCol2"></div>
       <div class="masonCol2"></div>
@@ -53,10 +57,10 @@ let pageName = "Events";
       <div class="masonCol"></div>
       <div class="masonCol"></div>
       <div class="masonCol"></div>
-    </div>
+    </div>-->
   </Container>
 </Layout>
-
+<!--
 <script>
   const masonGrid4 = document.querySelector(".masonColGrid4");
   let currentColumn4 = 0;
@@ -77,8 +81,8 @@ let pageName = "Events";
   imagePathsEvents.forEach((path, i) => {
     createGrid(path, i);
   });*/
-</script>
-
+</script> -->
+<!--
 <script>
   function extractImageId(link) {
     var pattern = /\/d\/(.*?)\/view/;
@@ -108,4 +112,4 @@ let pageName = "Events";
 
     //console.log(constructNewLink(imageId));
   });
-</script>
+</script>-->

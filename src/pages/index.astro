@@ -1,5 +1,5 @@
 ---
-import Container from "./../components/Container.astro";
+//import Container from "./../components/Container.astro";
 import ChoiceLayout from "./../layouts/ChoiceLayout.astro";
 
 import translations from "./../utils/t.ts";
@@ -20,7 +20,7 @@ import { NAME1, NAME2 } from "./../consts";
   </div>-->
   <div
     id="title1"
-    class="flex flex-col gap-4 justify-center items-center py-8 mb-24"
+    class="flex flex-col gap-4 justify-center items-center md:py-8 md:mb-24"
   >
     <h1 class="H2">{t.index_choice}</h1>
     <h2 class="H6 text-grey-75 uppercase text-center">
@@ -28,7 +28,7 @@ import { NAME1, NAME2 } from "./../consts";
     </h2>
   </div>
   <div
-    class="container flex flex-col md:flex-row justify-center gap-4 md:gap-16 relative"
+    class="container flex flex-col md:flex-row justify-center items-start sm:gap-4 md:gap-16 relative"
   >
     <div
       id="star"
@@ -98,25 +98,6 @@ import { NAME1, NAME2 } from "./../consts";
       </div>
     </div>
   </div>
-  <Container class="pt-16 hidden">
-    <!-- Profile Selection -->
-    <div class="flex gap-3">
-      <button
-        id="profileButton1"
-        class="p-2 bg-gray-800 rounded-md profile-button"
-        data-profile="Belial">Belial</button
-      >
-      <button
-        id="profileButton2"
-        class="p-2 bg-gray-800 rounded-md profile-button"
-        data-profile="Michal">Michal</button
-      >
-    </div>
-    <div>
-      <span id="socialLink"></span>
-    </div>
-    <!--<span set:html={t.home_description} /> -->
-  </Container>
 </ChoiceLayout>
 <!--
 <script>

@@ -4,11 +4,16 @@
 	"blog_description": "At [Your Company Name], we are committed to delivering excellence in every aspect of our business. Founded in 20XX, we specialize in [Your Area of Expertise]. Our team of dedicated professionals works tirelessly to ensure that our clients receive only the best service. We believe in innovation, integrity, and outstanding customer service as the pillars that uphold our company. Thank you for taking the time to get to know us. We look forward to serving you.",
 	
     "index_choice": "Wejdz",
-    "index_choiceDesc": "You can always switch in the nav",
+    "index_choiceDesc": "Zawsze możesz przełączyć w nawigacji",
     "index_art": "Art",
     "index_photo": "Fotografia",
     "index_video": "Wideografia",
 	
+    "home1_H1": "Cześć! Jestem Michał Jeliński i jestem fotografem z zamiłowania",
+    "home1_sub": "wkładając serce i duszę w każdą klatkę.",
+
+    "home2_H1": "Cześć! Jestem Belial, artysta sercem i duszą, projektantem z rzemiosła.",
+
     "about_h1": "O mnie",
     "about_h2": "Praca",
     "about_h2desc": "Doświadczenie",
@@ -40,5 +45,27 @@
     "form_chooseField": "Choose a field:",
     "form_submit": "Wyslij",
     "form_title": "Skontaktuj sie",
-    "form_desc": "Wypełnij poniższy formularz, a ja skontaktuję się z Tobą tak szybko, jak to możliwe."
+    "form_desc": "Wypełnij poniższy formularz, a ja skontaktuję się z Tobą tak szybko, jak to możliwe.",
+
+    "available_work": "Dostępny do pracy",
+    "unavailable_work": "Nie dostępny do pracy",
+
+    "banner_Title": "Kreatywne rozwiązania dla Twoich projektów",
+    "banner_Sub": "Skontaktuj się ze mną już dziś, aby uzyskać konsultację lub zapytanie dotyczące projektu",
+
+    "about_p": "Jako twórca o wielu płaszczyznach łączę swoją wiedzę z zakresu projektowania graficznego, modelowania 3D i projektowania interfejsów użytkownika z pasją do fotografii i filmografii. Zagłębiając się w freelancing w 2015 roku, wyruszyłem w podróż naznaczoną eksploracją i innowacjami. Choć mój pobyt akademicki w Wyższej Szkole Bankowej trwał trzy lata, zanim zdecydowałem się podążać własną ścieżką, dostarczył mi on podstawowej wiedzy. Moje bystre wyczucie estetyki motywuje mnie do tworzenia urzekających wizualnie wrażeń za pomocą różnych mediów. Poza moimi podstawowymi dyscyplinami zajmuję się tworzeniem stron internetowych, wzbogacając swój zestaw umiejętności i w wolnym czasie przesuwając granice artyzmu cyfrowego.",
+    "about_p2": "Napędzany różnorodną paletą wpływów, swoje twórcze wysiłki wypełniam pulsującymi rytmami i eklektycznymi melodiami dubstepu, Drum & Bass, Popu, Rocka i Rapu. Muzyka nie jest dla mnie tylko ścieżką dźwiękową w tle – jest siłą napędową, inspirującą moje projekty i zdjęcia swoją energią i emocjami. Niezależnie od tego, czy rzeźbię krajobrazy 3D, tworzę intuicyjne interfejsy użytkownika, czy też rejestruję idealne ujęcie moim obiektywem, synergia pomiędzy moją pasją do projektowania i miłością do muzyki kształtuje każdy projekt, którego się podejmuję.",
+    "about_heading": "O mnie",
+    "about_sub": "Bio",
+
+    "music_p": "Mając szerokie spektrum sympatii muzycznych, zdecydowałem się skomponować własne playlisty z muzyką, której lubię słuchać. Zostały nazwane według gatunków, główna MUZYKA jest tam, gdzie jest wszystko inne. Zapraszam do zasugerowania mi kilku swoich bangerów, które mógłbym tam dodać.",
+    "music_heading": "Playlisty muzyczne",
+    "music_sub": "czego słucham",
+
+    "cta_button": "Wyświetl portfolio",
+    "contact_button": "Kontakt",
+    "viewmore_button": "Zobacz więcej",
+    "copymail_button": "Skopiuj email",
+    "viewPlaylist_button": "Wyświetl playlisty",
+    "view_button": "Wyswietl"
 }

@@ -9,6 +9,11 @@
     "index_photo": "Photography",
     "index_video": "Videography",
 
+    "home1_H1": " Hi there! I'm Michal Jelinski a passionate photographer",
+    "home1_sub": "pouring my heart and soul into each frame.",
+
+    "home2_H1": "Hi! I’m Belial an artist at heart and soul, designer by craft.",
+
     "about_h1": "About me",
     "about_h2": "Work",
     "about_h2desc": "Experience",
@@ -40,5 +45,27 @@
     "form_chooseField": "Choose a field:",
     "form_submit": "Submit",
     "form_title": "Contact Me",
-    "form_desc": "Fill out the form below and I'll get back to you as soon as possible."
+    "form_desc": "Fill out the form below and I'll get back to you as soon as possible.",
+
+    "available_work": "Available for work",
+    "unavailable_work": "Nie dostępny do pracy",
+
+    "banner_Title": "Creative Solutions for Your Projects",
+    "banner_Sub": "Contact me today for a consultation or project inquiry",
+
+    "about_p": "As a multifaceted creative, I blend my expertise in graphic design, 3D modeling, and UI design with a passion for photography and filmography. Delving into freelancing in 2015, I embarked on a journey marked by exploration and innovation. Though my academic stint at a WSB university lasted three years before I opted to pursue my own path, it equipped me with foundational knowledge. My keen eye for aesthetics drives me to craft visually captivating experiences across various mediums. Beyond my primary disciplines, I dabble in web development, enriching my skill set and pushing the boundaries of digital artistry in my free time.",
+    "about_p2": "Fueled by a diverse palette of influences, I infuse my creative endeavors with the pulsating rhythms and eclectic melodies of dubstep, drum & bass, pop, rock, and rap. Music isn't just a background soundtrack for me—it's a driving force, inspiring my designs and cinematography with its energy and emotion. Whether I'm sculpting 3D landscapes, crafting intuitive UI interfaces, or capturing the perfect shot through my lens, the synergy between my passion for design and love for music shapes every project I undertake.",
+    "about_heading": "About Me",
+    "about_sub": "Bio",
+
+    "music_p": "Having an extensive spectrum of music likeability i decided to compose custom playlists of music i like listening. They have been named after genres, the main MUSIC is where everything else is. Feel welcome to suggest some of your bangers for me to add there.",
+    "music_heading": "Music playlists",
+    "music_sub": "what i listen to",
+
+    "cta_button": "View portolio",
+    "contact_button": "Contact",
+    "viewmore_button": "View more",
+    "copymail_button": "Copy email",
+    "viewPlaylist_button": "View playlists",
+    "view_button": "View"
 }

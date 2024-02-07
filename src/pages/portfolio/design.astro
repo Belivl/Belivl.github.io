@@ -2,35 +2,26 @@
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/Container.astro";
 import Headline from "../../components/Headline.astro";
-import ButtonA from "../../components/ui/ButtonA.astro";
 import { Headlines } from "../../consts";
+import PortfolioTab from "../../components/PortfolioTab.astro";
 ---
 
 <Layout title="Belial - Portfolio Design">
   <Container>
     <Headline Heading={Headlines[1].heading} Subtitle={Headlines[1].subtitle} />
-    <div class="flex gap-3 items-center justify-left w-full">
-      <a href="/portfolio/">
-        <ButtonA size="sm" classes="default px-4">Projects</ButtonA>
-      </a>
-      <ButtonA size="sm" classes="primary px-4">Design</ButtonA>
-      <a href="/portfolio/art/">
-        <ButtonA size="sm" classes="default px-4">Art</ButtonA>
-      </a>
-      <a href="/portfolio/3D/">
-        <ButtonA size="sm" classes="default px-4">3D</ButtonA>
-      </a>
-    </div>
+    <PortfolioTab />
+    <!-- 
     <div
       id="outputDriveDesign"
       class="flex flex-row justify-center items-center w-full bg-white rounded-xl mt-16 overflow-hidden"
     >
-    </div><div class="grid place-content-center py-24">
+    </div>-->
+    <div class="grid place-content-center py-24">
       <span class="text-red-600 H3">WIP</span>
     </div>
   </Container>
 </Layout>
-
+<!-- 
 <script>
   var outputDriveDesign = document.querySelector(
     "#outputDriveDesign"
@@ -67,4 +58,4 @@ import { Headlines } from "../../consts";
     img.style.width = "100%";
     outputDriveDesign.appendChild(img);
   });
-</script>
+</script>-->

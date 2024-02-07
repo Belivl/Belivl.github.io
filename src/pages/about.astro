@@ -14,12 +14,13 @@ const t = translations(Astro.url);
 <Layout title="Belial - About Me">
   <Container>
     <AboutMJ />
-    <div id="aboutBelial">
+    <div id="aboutBelial" class="hidden">
       <AboutBanner />
     </div>
-    <MusicPlaylists />
+
     <Headline Heading={t.about_h2desc} Subtitle={t.about_h2} />
     <ExperienceTab />
+    <MusicPlaylists />
     <Banner />
   </Container>
 </Layout>
