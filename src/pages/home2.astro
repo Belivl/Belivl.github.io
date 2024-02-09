@@ -7,8 +7,8 @@ import translations from "./../utils/t.ts";
 import ModalGallery from "./../components/ui/ModalGallery.astro";
 import Headline from "./../components/Headline.astro";
 import { Button } from "./../components/ui/button";
-import NavbarMJ from "@src/components/NavbarMJ.astro";
-import FooterMJ from "../components/FooterMJ.astro";
+import NavbarMJ from "./../components/NavbarMJ.astro";
+import FooterMJ from "./../components/FooterMJ.astro";
 const t = translations(Astro.url);
 ---
 
@@ -41,7 +41,7 @@ const t = translations(Astro.url);
     <FooterMJ />
   </Container>
 </Layout>
-<script></script>
+
 <script>
   import { createImageElement } from "./../js/gridGallery.js";
   import imagePathsPortfolio from "./../js/imagePaths/imagePathsPortfolio.js";
