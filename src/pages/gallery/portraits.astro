@@ -7,6 +7,8 @@ import { Headlines, NAME2 } from "../../consts";
 import GalleryTab from "../../components/GalleryTab.astro";
 import { Image } from "astro:assets";
 import imagePathsPortrait from "../../js/imagePaths/imagePathsPortrait.js";
+import NavbarMJ from "../../components/NavbarMJ.astro";
+import FooterMJ from "../../components/FooterMJ.astro";
 let pageName = "Portraits";
 ---
 
@@ -14,6 +16,7 @@ let pageName = "Portraits";
   <!--Modal -->
   <ModalGallery data="Portrait" />
   <Container>
+    <NavbarMJ />
     <Headline Heading={Headlines[5].heading} Subtitle={Headlines[5].subtitle} />
     <GalleryTab />
     <div class="gap-9" style="
@@ -41,6 +44,7 @@ let pageName = "Portraits";
       <div class="masonCol"></div>
       <div class="masonCol"></div>
     </div>-->
+    <FooterMJ />
   </Container>
 </Layout>
 <!-- 

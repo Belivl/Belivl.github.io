@@ -6,10 +6,13 @@ import { Headlines } from "../../consts";
 import { Image } from "astro:assets";
 import { videoPaths3D, imagePaths3D } from "../../js/imagePaths/3Dpaths.js";
 import PortfolioTab from "../../components/PortfolioTab.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <Layout title="Belial - Portfolio 3D">
   <Container>
+    <Navbar />
     <Headline Heading={Headlines[3].heading} Subtitle={Headlines[3].subtitle} />
     <PortfolioTab />
     <div
@@ -58,5 +61,6 @@ import PortfolioTab from "../../components/PortfolioTab.astro";
         ))
       }
     </div>
+    <Footer />
   </Container>
 </Layout>

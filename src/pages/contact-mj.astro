@@ -1,22 +1,22 @@
 ---
-import Layout from "./../layouts/Layout.astro";
-import Container from "./../components/Container.astro";
-import Headline from "./../components/Headline.astro";
-import GoldCTA from "./../components/ui/GoldCTA.astro";
-//import Form from "./../components/ui/Form.astro";
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Headline from "../components/Headline.astro";
+import GoldCTA from "../components/ui/GoldCTA.astro";
+//import Form from "../components/ui/Form.astro";
 
-import translations from "./../utils/t.ts";
+import translations from "../utils/t";
 const t = translations(Astro.url);
-import SocialHub from "./../components/partials/socialHub.astro";
-import WorkBadge from "./../components/ui/WorkBadge.astro";
-import { Button } from "./../components/ui/button";
-import Navbar from "./../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import SocialHub from "../components/partials/socialHub.astro";
+import WorkBadge from "../components/ui/WorkBadge.astro";
+import { Button } from "../components/ui/button";
+import NavbarMJ from "../components/NavbarMJ.astro";
+import FooterMJ from "../components/FooterMJ.astro";
 ---
 
 <Layout title="Belial - Contact Me">
   <Container>
-    <Navbar />
+    <NavbarMJ />
     <div
       class="flex lg:flex-row flex-col gap-16 md:gap-8 justify-between w-full mb-16"
     >
@@ -37,7 +37,7 @@ import Footer from "../components/Footer.astro";
               <span class="material-symbols-outlined"> mail</span>
             </GoldCTA>
           </div>
-          <a id="msgrLink2" href="https://m.me/BelialDesign" target="_blank">
+          <a href="https://m.me/michaljelinskiofficial" target="_blank">
             <Button size="lg" variant="outline" className="w-full md:w-fit">
               Messenger
             </Button>
@@ -66,7 +66,7 @@ import Footer from "../components/Footer.astro";
       <Form />-->
     </div>
     <SocialHub />
-    <Footer />
+    <FooterMJ />
   </Container>
 </Layout>
 <script>

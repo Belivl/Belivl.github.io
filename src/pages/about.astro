@@ -3,24 +3,24 @@ import Layout from "./../layouts/Layout.astro";
 import Container from "./../components/Container.astro";
 import Headline from "./../components/Headline.astro";
 import translations from "./../utils/t.ts";
-import AboutBanner from "./../components/partials/AboutBanner.astro";
+//import AboutBanner from "./../components/partials/AboutBanner.astro";
 import Banner from "./../components/partials/Banner.astro";
 import AboutMJ from "./../components/partials/AboutMJ.astro";
 import MusicPlaylists from "./../components/partials/MusicPlaylists.astro";
 import ExperienceTab from "./../components/ExperienceTab.astro";
+import Navbar from "./../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 const t = translations(Astro.url);
 ---
 
 <Layout title="Belial - About Me">
   <Container>
+    <Navbar />
     <AboutMJ />
-    <div id="aboutBelial" class="hidden">
-      <AboutBanner />
-    </div>
-
     <Headline Heading={t.about_h2desc} Subtitle={t.about_h2} />
     <ExperienceTab />
     <MusicPlaylists />
     <Banner />
+    <Footer />
   </Container>
 </Layout>

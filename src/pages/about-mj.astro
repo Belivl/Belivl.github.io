@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Headline from "../components/Headline.astro";
+import translations from "../utils/t";
+//import AboutBanner from "./../components/partials/AboutBanner.astro";
+import BannerMJ from "../components/partials/BannerMJ.astro";
+import AboutMJ from "../components/partials/AboutMJ.astro";
+import MusicPlaylists from "../components/partials/MusicPlaylists.astro";
+import ExperienceTab from "../components/ExperienceTab.astro";
+import NavbarMJ from "../components/NavbarMJ.astro";
+import FooterMJ from "../components/FooterMJ.astro";
+const t = translations(Astro.url);
+---
+
+<Layout title="Belial - About Me">
+  <Container>
+    <NavbarMJ />
+    <AboutMJ />
+    <Headline Heading={t.about_h2desc} Subtitle={t.about_h2} />
+    <ExperienceTab />
+    <MusicPlaylists />
+    <BannerMJ />
+    <FooterMJ />
+  </Container>
+</Layout>

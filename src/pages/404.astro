@@ -2,33 +2,39 @@
 import Layout from "./../layouts/Layout.astro";
 import { Button } from "./../components/ui/button";
 import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
-
+import Footer from "./../components/Footer.astro";
+import Container from "./../components/Container.astro";
+import Navbar from "./../components/Navbar.astro";
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
 ---
 
 <Layout title="Belial - 404">
-  <section class="flex h-full items-center p-16">
-    <div
-      class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
-    >
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 text-9xl font-bold">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">
-          Sorry, we couldn't find this page.
-        </p>
-        <p class="text-muted mb-8 mt-4 text-lg dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
-        <a
-          rel="noopener noreferrer"
-          href={localeUrlPrefix || "/"}
-          class="btn ml-4 animate-pulse"
-          ><Button variant="default" size="lg">Back to homepage</Button></a
-        >
+  <Container>
+    <Navbar />
+    <section class="flex h-full items-center p-16">
+      <div
+        class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
+      >
+        <div class="max-w-md text-center">
+          <h2 class="mb-8 text-9xl font-bold">
+            <span class="sr-only">Error</span>
+            <span class="text-primary">404</span>
+          </h2>
+          <p class="text-3xl font-semibold md:text-3xl">
+            Sorry, we couldn't find this page.
+          </p>
+          <p class="text-muted mb-8 mt-4 text-lg dark:text-slate-400">
+            But dont worry, you can find plenty of other things on our homepage.
+          </p>
+          <a
+            rel="noopener noreferrer"
+            href={localeUrlPrefix || "/"}
+            class="btn ml-4 animate-pulse"
+            ><Button variant="default" size="lg">Back to homepage</Button></a
+          >
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <Footer />
+  </Container>
 </Layout>

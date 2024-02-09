@@ -5,13 +5,17 @@ import HeroSection from "./../components/partials/HeroSection.astro";
 import HighlightPosts from "./../components/partials/HighlightPosts.astro";
 import Banner from "./../components/partials/Banner.astro";
 import translations from "./../utils/t.ts";
+import Navbar from "./../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 const t = translations(Astro.url);
 ---
 
 <Layout title="Belial - Home">
   <Container>
+    <Navbar />
     <HeroSection />
     <HighlightPosts />
     <Banner />
+    <Footer />
   </Container>
 </Layout>

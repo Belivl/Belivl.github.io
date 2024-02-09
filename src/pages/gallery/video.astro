@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ModalGallery from "../../components/ui/ModalGallery.astro";
+import Container from "../../components/Container.astro";
+import Headline from "../../components/Headline.astro";
+import { Headlines, NAME2 } from "../../consts";
+import GalleryTab from "../../components/GalleryTab.astro";
+import NavbarMJ from "../../components/NavbarMJ.astro";
+import FooterMJ from "../../components/FooterMJ.astro";
+const videoPath = [
+  //Videos
+  {
+    src: "https://www.youtube.com/embed/OiafdPtXwAA?si=B8NWZA0U25n2ms10",
+    alt: "Hi im ya0 - Swappin (prod. beatsbybeau) (Official Video)",
+  },
+  {
+    src: "https://www.youtube.com/watch?v=WYQtbnCnQYM?si=B8NWZA0U25n2ms10",
+    alt: "Hi im ya0 - She aint religious (Prod.Manic One) [Official video]",
+  },
+];
+let pageName = "Video";
+---
+
+<Layout title={`${NAME2} - ${pageName}`}>
+  <!--Modal -->
+  <ModalGallery data="Cars" />
+  <Container>
+    <NavbarMJ />
+    <Headline Heading={Headlines[6].heading} Subtitle={Headlines[6].subtitle} />
+    <GalleryTab />
+    <div class="grid grid-cols-1 gap-8">
+      <iframe
+        width="1400"
+        height="787"
+        class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+        src={videoPath[0].src}
+        title={videoPath[0].alt}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <iframe
+        width="1400"
+        height="787"
+        class="w-full rounded-xl overflow-clip hover:bg-primary/90 hover:border-grey-100 border border-grey-200"
+        src={videoPath[1].src}
+        title={videoPath[1].alt}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <FooterMJ />
+  </Container>
+</Layout>

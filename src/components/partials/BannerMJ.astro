@@ -1,7 +1,7 @@
 ---
-import Container from "../../components/Container.astro";
+import Container from "../Container.astro";
 import GoldCTA from "../ui/GoldCTA.astro";
-import translations from "../../utils/t.ts";
+import translations from "../../utils/t";
 const t = translations(Astro.url);
 ---
 
@@ -22,7 +22,7 @@ const t = translations(Astro.url);
     <div class="flex gap-2 items-center">
       <!-- 
       <Button size="lg" variant="outline">Learn more</Button>-->
-      <GoldCTA link="/contact/" size="md" text={t.contact_button} />
+      <GoldCTA link="/contact-mj/" size="md" text={t.contact_button} />
     </div>
   </div>
 </Container>

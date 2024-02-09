@@ -1,0 +1,132 @@
+---
+import HeaderLink from "./Link.astro";
+import { localizePath } from "../utils/t";
+import { SITE_TITLE, PAGESMJ } from "../consts";
+
+import ButtonA from "./ui/ButtonA.astro";
+import GoldCTA from "./ui/GoldCTA.astro";
+import Container from "./Container.astro";
+
+const url = Astro.url;
+---
+
+<header
+  transition:persist
+  x-data={`{
+				open: window.innerWidth < 768 ? false : true,
+				windowWidth: window.innerWidth,
+				init() {
+					this.$watch('windowWidth', value => {
+						this.open = value < 768 ? false : true;
+					});
+					window.addEventListener('resize', () => {
+						this.$nextTick(() => {
+							this.windowWidth = window.innerWidth;
+						});
+					});
+				}
+			}`}
+  x-init="init()"
+  class="relative flex flex-col md:flex-row w-full md:items-center md:justify-between z-10 transition-all border border-grey-50 hover:border-grey-100 dark:border-grey-300 dark:hover:border-grey-200 bg-white dark:bg-grey-500 rounded-xl shadow-md p-3 my-6"
+>
+  <div class="flex items-center justify-between gap-5">
+    <div class="flex gap-3 items-center">
+      <a
+        href={localizePath("/", url)}
+        class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline"
+      >
+        <ButtonA
+          size="lg"
+          classes="ghost icon px-4 font-semibold "
+          tabindex={-1}
+        >
+          <img
+            src="/images/profile.jpg"
+            alt="profile_icon"
+            class="w-10 h-10 rounded-sm text-[10px]"
+          />
+        </ButtonA>
+      </a>
+
+      <div class="logoName uppercase font-bold hidden md:block headerName">
+        Michal Jelinski
+      </div>
+    </div>
+
+    <button
+      class="md:hidden dark:text-gray-500 text-black w-10 h-10 relative focus:outline-none"
+      @click="open = !open"
+    >
+      <span class="sr-only">Open main menu</span>
+      <div
+        class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <span
+          aria-hidden="true"
+          class="block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out"
+          :class="{'rotate-45': open,' -translate-y-1.5': !open }"
+        >
+        </span>
+        <span
+          aria-hidden="true"
+          class="block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out"
+          :class="{'opacity-0': open } "
+        >
+        </span>
+        <span
+          aria-hidden="true"
+          class="block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out"
+          :class="{'-rotate-45': open, ' translate-y-1.5': !open}"
+        >
+        </span>
+      </div>
+    </button>
+  </div>
+  <nav
+    :class="{'flex': open, 'hidden': !open}"
+    x-show="open"
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0 transform scale-90"
+    x-transition:enter-end="opacity-100 transform scale-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 transform scale-100"
+    x-transition:leave-end="opacity-0 transform scale-90"
+    class="md:mt-0 md:items-center flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-end md:flex-row hidden"
+  >
+    <div
+      class="flex flex-col flex-grow text-center gap-2 md:justify-end md:items-center md:flex md:flex-row md:mx-auto"
+    >
+      <div class="flex md:flex-row flex-col gap-6 md:gap-0 mb-6 md:mb-0">
+        <HeaderLink id="navLinkPortHome" href={PAGESMJ[0].href}>
+          {PAGESMJ[0].title}
+        </HeaderLink>
+
+        <!-- 
+						<a id="navLinkPort" href="/gallery/portfolio/">
+							<ButtonA  size="md" classes="ghost px-4 font-semibold " tabindex={-1}>
+    						{PAGES[1].title}
+  						</ButtonA>
+						</a>-->
+        <HeaderLink href={PAGESMJ[1].href}>
+          {PAGESMJ[1].title}
+        </HeaderLink>
+        <HeaderLink href={PAGESMJ[2].href}>
+          {PAGESMJ[2].title}
+        </HeaderLink>
+      </div>
+      <GoldCTA link="/contact-mj/" size="md" text="Contact" />
+    </div>
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    width: 100%;
+  }
+  .logoName {
+    font-family: var(--fontfam-primary);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 100%;
+  }
+</style>

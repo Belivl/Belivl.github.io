@@ -27,7 +27,7 @@ if (Astro.cookies.has("profile")) {
 */
 
 ---
-<Container>
+
 <header
 transition:persist
 	x-data={`{
@@ -45,17 +45,17 @@ transition:persist
 				}
 			}`}
 	x-init="init()"
-	class="relative flex flex-col md:flex-row w-full md:items-center md:justify-between z-10 mx-3 md:mx-0   transition-all border border-grey-50 hover:border-grey-100 dark:border-grey-300 dark:hover:border-grey-200  bg-white dark:bg-grey-500 rounded-xl shadow-md   p-3  mt-6 ">
+	class="relative flex flex-col md:flex-row w-full md:items-center md:justify-between z-10    transition-all border border-grey-50 hover:border-grey-100 dark:border-grey-300 dark:hover:border-grey-200  bg-white dark:bg-grey-500 rounded-xl shadow-md   p-3  my-6 ">
 	<div class="flex items-center justify-between gap-5">
 		<div class="flex gap-3 items-center">
 			<a	href={localizePath("/", url)}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
 		<ButtonA size="lg" classes="ghost icon px-4 font-semibold " tabindex={-1}>
-			<img id="homeIMG" src="/images/profile.jpg" alt="profile_icon" class="w-10 h-10 rounded-sm text-[10px]">
+			<img  src="/images/logo.png" alt="profile_icon" class="w-10 h-10 rounded-sm text-[10px]">
     </ButtonA>
 		</a>
 		
-		<div class="logoName uppercase font-bold hidden md:block headerName" id="headerName">Michal Jelinski</div>
+		<div class="logoName uppercase font-bold hidden md:block headerName" >Belial</div>
 		
 		</div>
 		
@@ -146,7 +146,7 @@ transition:persist
 							{PAGES[0].title}
 						</HeaderLink>
 						
-							<HeaderLink id="navLinkPort" href="">
+							<HeaderLink id="navLinkPort" href={PAGES[1].href}>
 							{PAGES[1].title}
 						</HeaderLink> 
 						<!-- 
@@ -165,7 +165,7 @@ transition:persist
 		</div>
 	</nav>
 </header>
-</Container>
+
 <style lang="scss">
 	header{
 		width: 100%;
