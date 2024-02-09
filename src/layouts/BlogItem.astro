@@ -9,6 +9,8 @@ import Container from "../components/Container.astro";
 import Separator from "../components/ui/Separator.astro";
 import { NAME1 } from "../consts.ts";
 import ProjectNav from "../components/ui/ProjectNav.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 type Props = CollectionEntry<"portfolio">["data"];
 
@@ -30,6 +32,7 @@ const {
 
 <Layout title={`${NAME1} - ${title}`} description={description}>
   <Container>
+    <Navbar />
     <article
       class="pt-8 flex flex-col gap-16 py-24 mx-auto max-w-screen-xl w-full"
     >
@@ -55,6 +58,7 @@ const {
               height={1080}
               src={cover}
               alt={coverAlt}
+              transition:persist
             />
           )
         }
@@ -99,5 +103,6 @@ const {
         <ProjectNav />
       </div>
     </article>
+    <Footer />
   </Container>
 </Layout>

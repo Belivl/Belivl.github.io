@@ -11,7 +11,8 @@ import Headline from "../../components/Headline.astro";
 import { Headlines } from "../../consts";
 import { Button } from "../../components/ui/button";
 import PortfolioTab from "../../components/PortfolioTab.astro";
-
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
 import translations from "../../utils/t.ts";
 const t = translations(Astro.url);
 
@@ -42,6 +43,7 @@ const posts = (
   <!-- 
   <div class="container2 w-full mx-8" id="rectangleContainer"></div>-->
   <Container>
+    <Navbar />
     <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
     <PortfolioTab />
   </Container>
@@ -115,6 +117,7 @@ const posts = (
         ))
       }
     </ul>
+    <Footer />
   </Container>
 </Layout>
 <style lang="scss">

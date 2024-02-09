@@ -7,6 +7,9 @@ import { Headlines, NAME2 } from "../../consts";
 import imagePathsPortfolio from "../../js/imagePaths/imagePathsPortfolio.js";
 import { Image } from "astro:assets";
 import GalleryTab from "../../components/GalleryTab.astro";
+import NavbarMJ from "../../components/NavbarMJ.astro";
+import FooterMJ from "../../components/FooterMJ.astro";
+import { Button } from "@src/components/ui/button";
 let pageName = "Portfolio";
 ---
 
@@ -14,8 +17,13 @@ let pageName = "Portfolio";
   <!--Modal -->
   <ModalGallery data="Portfolio" />
   <Container>
+    <NavbarMJ />
     <Headline Heading={Headlines[4].heading} Subtitle={Headlines[4].subtitle} />
     <GalleryTab />
+    <div class="H5 text-red-800 mb-8 flex gap-4 items-center justify-start">
+      <Button variant="outline" size="icon" id="reloadBTN">R</Button>
+      Reload the page if images dont show up / you cant click to view
+    </div>
     <div class="gap-9" style="
   columns: 3 300px;
   column-gap: 1rem;">
@@ -41,6 +49,7 @@ let pageName = "Portfolio";
       <div id="masonCol2" class="masonCol"></div>
       <div id="masonCol3" class="masonCol"></div>
     </div>-->
+    <FooterMJ />
   </Container><!-- 
   <section class="mx-auto container px-0 flex flex-col gap-16 py-8">
     
@@ -57,6 +66,13 @@ let pageName = "Portfolio";
       lastUrl={`/${firstPath}/${page.lastPage}`}
     /> -->
 </Layout>
+
+<script>
+  const reloadBTN = document.querySelector("#reloadBTN") as HTMLButtonElement;
+  reloadBTN.addEventListener("click", () => {
+    location.reload();
+  });
+</script>
 
 <!-- 
 <script>

@@ -66,6 +66,18 @@ const locale = getLocale(Astro.url);
     <div class="bgColor bg-light dark:bg-grey-500 fixed w-full h-full -z-50">
     </div>
     <img src={bgPic.src} alt="X" class="mainBG" />
+    <img
+      src="/FlameSide.svg"
+      alt="Y"
+      class="mainBG2 fixed top-1/2 -translate-y-1/2 left-0 scale-50 md:scale-100 origin-left"
+      style="z-index: -10;"
+    />
+    <img
+      src="/FlameSide.svg"
+      alt="Y"
+      class="mainBG2 fixed top-1/2 -translate-y-1/2 right-0 rotate-180 scale-50 md:scale-100 origin-left translate-x-[100%]"
+      style="z-index: -10;"
+    />
     <div>
       <main
         id="main"
@@ -86,7 +98,8 @@ const locale = getLocale(Astro.url);
         margin-inline: auto;
       }
     </style>
-    <script src="./../js/profileSelector.ts"></script>
+    <!-- 
+    <script src="./../js/profileSelector.ts"></script>-->
     <!-- <script type="module" is:inline src="src/js/choiceNavigate.js"></script>
    
     <script type="module" is:inline src="src/js/profile.js"></script>-->

@@ -42,6 +42,24 @@ export const PAGES: Page[] = [
 
 ];
 
+
+
+export const PAGESMJ = [
+	{
+		title: "Home",
+		href: "/home2/",
+	},
+	{
+		title: "Gallery",
+		href: "/gallery/portfolio/",
+	},
+	{
+		title: "About",
+		href: "/about-mj/",
+	},
+
+];
+
 // Links
 type Link = {
 	title: string;
@@ -156,6 +174,10 @@ export const Subpage = [
 	{
 		title: "other",
 		href:"/gallery/other/",
+	},
+	{
+		title: "video",
+		href:"/gallery/video/",
 	},
 ];
 //Subpages portfolio

@@ -5,6 +5,8 @@ import Headline from "../../components/Headline.astro";
 import { Headlines } from "../../consts";
 import { Image } from "astro:assets";
 import PortfolioTab from "../../components/PortfolioTab.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
 const imagePath = [
   //Images
   {
@@ -72,6 +74,7 @@ const imagePath = [
 
 <Layout title="Belial - Portfolio Art">
   <Container>
+    <Navbar />
     <Headline Heading={Headlines[2].heading} Subtitle={Headlines[2].subtitle} />
     <PortfolioTab />
     <div class="flex flex-col items-center w-full gap-9 rounded-xl mt-16">
@@ -201,5 +204,6 @@ const imagePath = [
       </div>
       <!--<Image src={exlibris} alt="exlibris" width={400} /> -->
     </div>
+    <Footer />
   </Container>
 </Layout>

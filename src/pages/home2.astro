@@ -2,11 +2,13 @@
 import Layout from "./../layouts/Layout.astro";
 import Container from "./../components/Container.astro";
 import HeroSection from "./../components/partials/HeroSectionMJ.astro";
-import Banner from "./../components/partials/Banner.astro";
+import BannerMJ from "./../components/partials/BannerMJ.astro";
 import translations from "./../utils/t.ts";
 import ModalGallery from "./../components/ui/ModalGallery.astro";
 import Headline from "./../components/Headline.astro";
 import { Button } from "./../components/ui/button";
+import NavbarMJ from "@src/components/NavbarMJ.astro";
+import FooterMJ from "../components/FooterMJ.astro";
 const t = translations(Astro.url);
 ---
 
@@ -14,6 +16,7 @@ const t = translations(Astro.url);
   <!--Modal -->
   <ModalGallery data="Portfolio" />
   <Container>
+    <NavbarMJ />
     <HeroSection />
     <section class="mt-16">
       <Headline Heading="Featured" Subtitle="Work" />
@@ -34,7 +37,8 @@ const t = translations(Astro.url);
         <div class="gradientHERO absolute w-full h-full z-20 inset-0"></div>
       </div>
     </section>
-    <Banner />
+    <BannerMJ />
+    <FooterMJ />
   </Container>
 </Layout>
 <script></script>
