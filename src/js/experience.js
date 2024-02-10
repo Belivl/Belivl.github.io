@@ -53,7 +53,7 @@ const experienceTabs =
         jobTime: "08.2019 - 12.2019",
         aboutWork: "Played a crucial role in the daily operations of Focus Restaurant, handling a diverse range of tasks including food preparation, washing, and maintaining a high standard of cleanliness. Responsively executed orders from the chef, demonstrating adaptability and efficiency in a fast-paced kitchen environment. Collaborated seamlessly with the kitchen team to ensure smooth workflow and timely delivery of dishes to meet customer expectations. Maintained a focus on hygiene and sanitation, contributing to the restaurant\'s commitment to delivering quality and safe culinary experiences.",
         workLink: "https://focushotels.pl/focus-hotel-premium-sopot/",
-        workLinkAlt: "focushotels.pl/focus-hotel-premium-sopot",
+        workLinkAlt: "focushotels.pl",
         workPlace: "Sopot, Poland",
         workLogo: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1706911572/gfx/logos/logo_focus_o2pdhi.jpg",
         workLogoAlt:"logo_FocusHotel",
