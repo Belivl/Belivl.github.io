@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import { getLocale } from "astro-i18n-aut";
 import { ViewTransitions } from "astro:transitions";
 import bgPic from "../assets/FilmGrainS5.jpg";
-//import CookieBanner from "@src/components/ui/CookieBanner.astro";
+import CookieBanner from "../components/ui/CookieBanner.astro";
 const locale = getLocale(Astro.url);
 ---
 
@@ -60,8 +60,7 @@ const locale = getLocale(Astro.url);
     <!-- Google tag (gtag.js) -->
   </head>
   <body class="bg-grey-500">
-    <!--
-    <CookieBanner /> -->
+    <CookieBanner />
     <!--Background image -->
     <div class="bgColor bg-light dark:bg-grey-500 fixed w-full h-full -z-50">
     </div>

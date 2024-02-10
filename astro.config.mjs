@@ -15,8 +15,8 @@ const locales = LOCALES;
 // https://astro.build/config
 export default defineConfig({
   site: "https://belial-jelinski.vercel.app",
-  output: "server",
-  adapter: vercel(),
+  output: "static",
+  //adapter: vercel(),
   trailingSlash: "always",
     image: {
     remotePatterns: [{ protocol: "https" }],

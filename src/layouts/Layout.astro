@@ -7,7 +7,7 @@ import { ViewTransitions } from "astro:transitions";
 
 import bgPic from "../assets/FilmGrainS5.jpg";
 import Container from "../components/Container.astro";
-//import CookieBanner from "../components/ui/CookieBanner.astro";
+import CookieBanner from "../components/ui/CookieBanner.astro";
 
 const { title, description } = Astro.props;
 
@@ -60,8 +60,8 @@ const locale = getLocale(Astro.url);
 
    Google tag (gtag.js) -->
   </head><body class="bg-grey-500 relative p-0 z-0 h-full">
-    <!-- //body style="visibility: hidden;"
-    <CookieBanner />-->
+    <!-- //body style="visibility: hidden;"-->
+    <CookieBanner />
     <!--Background image -->
     <div class="dark:bg-grey-500 bg-grey-50 fixed w-full h-full -z-[50]"></div>
     <img src={bgPic.src} alt="BGPicture" class="mainBG -z-[100]" />
