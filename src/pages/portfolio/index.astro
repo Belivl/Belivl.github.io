@@ -5,16 +5,17 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
 import Container from "../../components/Container.astro";
-import HeroImage from "../../components/blog/HeroImage.astro";
-
+import ProjectCard from "../../components/ProjectCard.astro";
+//import HeroImage from "../../components/blog/HeroImage.astro";
+//import { Button } from "../../components/ui/button";
 import Headline from "../../components/Headline.astro";
 import { Headlines } from "../../consts";
-import { Button } from "../../components/ui/button";
+
 import PortfolioTab from "../../components/PortfolioTab.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import translations from "../../utils/t.ts";
-const t = translations(Astro.url);
+//import translations from "../../utils/t.ts";
+//const t = translations(Astro.url);
 
 const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
 const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
@@ -40,8 +41,6 @@ const posts = (
 ---
 
 <Layout title="Belial - Portfolio">
-  <!-- 
-  <div class="container2 w-full mx-8" id="rectangleContainer"></div>-->
   <Container>
     <Navbar />
     <Headline Heading={Headlines[0].heading} Subtitle={Headlines[0].subtitle} />
@@ -74,124 +73,16 @@ const posts = (
                 : ""
             } hover:-translate-y-2 transition-all duration-200 ease-in-out`}
           >
-            <article class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
-              <a
-                href={post.href}
-                class="w-[720px] h-[180px] dark:bg-grey-200 bg-grey-50"
-              >
-                <div class="absolute top-0 left-0 right-0 -z-20 h-[240px] bg-grey-200">
-                  <HeroImage
-                    class={`${
-                      index === 0 ? "w-full" : ""
-                    } mb-2 rounded-lg hover:shadow-md cover`}
-                    src={post.data.cover}
-                    alt={post.data.coverAlt}
-                    width={720}
-                    height={180}
-                  />
-                </div>
-                <div class="w-[720px] h-[180px] bg-none" />
-              </a>
-              <div class="cardContent flex justify-between items-end p-5  bg-light dark:bg-grey-500  border-t-[1px] border-grey-100 dark:border-grey-200">
-                <div class="flex flex-col gap-2">
-                  <a href={post.href}>
-                    <h3 class="H5 text-black dark:text-white text-xl font-semibold leading-none tracking-tight">
-                      {post.data.title}
-                    </h3>
-                  </a>
-                  <a
-                    href={`/portfolio/${post.data.type}/`}
-                    class="font-semibold uppercase text-sm text-muted-foreground  text-left"
-                  >
-                    {post.data.type}
-                  </a>
-                </div>
-                <a href={post.href}>
-                  <Button size="sm" variant="secondary">
-                    {t.view_button}
-                  </Button>
-                </a>
-              </div>
-            </article>
+            <ProjectCard {...post.data} href={post.href} />
           </li>
         ))
       }
-    </ul>
-    <Footer />
+    </ul><Footer />
   </Container>
 </Layout>
+
 <style lang="scss">
   img {
     border-radius: 0%;
   }
-  .container2 {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: rebeccapurple;
-    height: 100px;
-    display: flex;
-    gap: 12px;
-    justify-items: center;
-    align-items: center;
-  }
-  .rectangle {
-    background-color: yellowgreen;
-    height: 100px;
-    width: 50px;
-    background: yellowgreen;
-    text-align: center;
-  }
 </style>
-<!-- 
-<script>
-  interface Rectangle {
-    className: string;
-  }
-  function createRectangles(containerWidth: number): void {
-    const container = document.querySelector("#rectangleContainer");
-    if (!container) return;
-    //container.innerHTML = "";
-    const rect = document.createElement("div");
-    rect.classList.add("rectangle");
-    container.appendChild(rect);
-
-    //container.innerHTML = ""; // Clear existing content
-    //const rectangleWidth = (containerWidth - 12) / 3;
-    const rectangleWidth: number = 50;
-    const rectangleCount = Math.floor(containerWidth / (rectangleWidth + 12));
-    console.log("rectangleCount:" + rectangleCount);
-    for (let i = 0; i < rectangleCount; i++) {
-      //const rectangle: Rectangle = { className: "rectangle" };
-
-      const rectangleElement = document.createElement("div");
-      rectangleElement.textContent = (i + 1).toString();
-      //rectangleElement.className = rectangle.className;
-      //rectangleElement.classList.add("rectangle");
-      rectangleElement.style.width = "50px";
-      rectangleElement.style.height = "100px";
-      rectangleElement.style.backgroundColor = "red";
-      //console.log(rectangleElement);
-      //rectangleElement.style.width = `${rectangleWidth}px`; // Set the width dynamically
-      container.appendChild(rectangleElement);
-    }
-  }
-
-  function handleResize(): void {
-    const containerWidth =
-      document.getElementById("rectangleContainer")?.offsetWidth || 0;
-    createRectangles(containerWidth);
-    //alert(containerWidth);
-  }
-
-  function initialize(): void {
-    handleResize(); // Initial creation
-
-    // Update on window resize
-    window.addEventListener("resize", handleResize);
-  }
-
-  document.addEventListener("DOMContentLoaded", initialize);
-</script>
--->

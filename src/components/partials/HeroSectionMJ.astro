@@ -5,17 +5,18 @@ import { Image } from "astro:assets";
 import { Button } from "../../components/ui/button";
 import translations from "../../utils/t.ts";
 const t = translations(Astro.url);
+const heroImgW = 200;
 ---
 
 <section
   class="flex gap-24 justify-between items-center p-6 md:py-32 relative rounded-2xl overflow-clip border border-grey-300"
 >
   <div
-    class="flex flex-col gap-8 md:gap-16 justify-start items-start ml-0 md:ml-16 w-full"
+    class="flex flex-col gap-8 md:gap-16 justify-start items-start ml-0 md:ml-16 w-full mt-24 md:mt-0"
   >
     <div class="flex flex-col gap-8 items-start">
-      <div class="w-full hidden md:flex">
-        <WorkBadge workMode class="w-full" />
+      <div class="flex">
+        <WorkBadge workMode />
       </div>
 
       <div class="flex flex-col gap-4 items-start">
@@ -62,59 +63,61 @@ const t = translations(Astro.url);
     </div>
   </div>
   <div
-    class="hidden md:block absolute right-0 top-0 bottom-0 -z-10 w-full overflow-clip"
+    class="absolute left-0 md:left-auto right-0 top-0 bottom-auto md:bottom-0 -z-10 w-[200%] h-[200%] md:w-full"
   >
-    <div class="gridPhotoHERO absolute right-0 bottom-0 top-0 -translate-y-1/4">
+    <div
+      class="gridPhotoHERO absolute left-0 md:left-auto right-0 bottom-0 top-0 -translate-y-[35%] md:-translate-y-1/4"
+    >
       <div
-        class="gradientHERO absolute w-full h-full z-20 inset-0 translate-y-1/4"
+        class="gradientHERO gap-2 md:gap-6 absolute w-full h-full z-20 inset-0 md:translate-y-1/4"
       >
       </div>
-      <div class="flex flex-col gap-6 items-center justify-center">
+      <div class="flex flex-col gap-2 md:gap-6 items-center justify-center">
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851192/photo/portrait/JEL-339_ow2m9b.jpg"
           alt="JEL-339"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851182/photo/portrait/JEL05953-2_l8499z.jpg"
           alt="JEL05953-2"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
       </div>
-      <div class="flex flex-col gap-6 items-center justify-center">
+      <div class="flex flex-col gap-2 md:gap-6 items-center justify-center">
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851191/photo/portrait/JEL00291-Edit_pv1tly.jpg"
           alt="JEL00291"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851333/photo/other/JEL08347_eeox2j.jpg"
           alt="JEL08347"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705851192/photo/portrait/JEL00592-Edit_d8t40y.jpg"
           alt="JEL00592"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
       </div>
-      <div class="flex flex-col gap-6 items-center justify-center">
+      <div class="flex flex-col gap-2 md:gap-6 items-center justify-center">
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705768708/photo/cars/JEL-08296_tvkapl.jpg"
           alt="JEL-08296"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
         <Image
           src="https://res.cloudinary.com/dcmfq9hg5/image/upload/v1705412489/photo/event/JEL-03921_dsuck3.jpg"
           alt="JEL-03921"
-          width={200}
-          height={100}
+          width={heroImgW}
+          height={heroImgW}
         />
       </div>
     </div>
@@ -128,17 +131,31 @@ const t = translations(Astro.url);
   .gridPhotoHERO {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
     width: 50%;
+    gap: 8px;
   }
+  .gradientHERO {
+    background: linear-gradient(180deg, rgba(17, 17, 20, 0.9), var(--grey-500));
+  }
+  @media only screen and (min-width: 768px) {
+    .gridPhotoHERO {
+      gap: 24px;
+    }
+    .gradientHERO {
+      background: linear-gradient(
+        90deg,
+        var(--grey-500),
+        rgba(17, 17, 20, 0.8)
+      );
+    }
+  }
+
   .gridPhotoHERO img {
     width: 100%;
     margin: 0;
     padding: 0;
   }
-  .gradientHERO {
-    background: linear-gradient(90deg, var(--grey-500), rgba(17, 17, 20, 0.8));
-  }
+
   .textBaseGold {
     background: linear-gradient(90deg, orange, brown);
     background-size: 400% 400%;
