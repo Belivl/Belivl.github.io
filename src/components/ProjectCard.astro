@@ -1,0 +1,44 @@
+---
+import { Button } from "./ui/button";
+//import type { CollectionEntry } from "astro:content";
+//type Props = CollectionEntry<"portfolio">["data"];
+const { href, title, type, cover } = Astro.props;
+import translations from "../utils/t.ts";
+const t = translations(Astro.url);
+---
+
+<article
+  class="card border-grey-100 dark:border-grey-200 relative border rounded-xl overflow-hidden ring-offset-background hover:dark:border-grey-100 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+>
+  <a href={href} class="w-[720px] h-[180px] dark:bg-grey-200 bg-grey-50">
+    <div
+      class="w-full h-[180px] bg-slate-900 bg-no-repeat bg-center bg-[image:var(--image-url)] bg-cover"
+      style={`--image-url: url(${cover});  `}
+    >
+    </div>
+  </a>
+  <div
+    class="cardContent flex justify-between items-end p-5 bg-light dark:bg-grey-500 border-t-[1px] border-grey-100 dark:border-grey-200"
+  >
+    <div class="flex flex-col gap-2">
+      <a href={href}>
+        <h3
+          class="H5 text-black dark:text-white text-xl font-semibold leading-none tracking-tight"
+        >
+          {title}
+        </h3>
+      </a>
+      <a
+        href={`/portfolio/${type}/`}
+        class="font-semibold uppercase text-sm text-muted-foreground text-left"
+      >
+        {type}
+      </a>
+    </div>
+    <a href={href}>
+      <Button size="sm" variant="secondary">
+        {t.view_button}
+      </Button>
+    </a>
+  </div>
+</article>
