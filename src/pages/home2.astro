@@ -10,6 +10,8 @@ import { Button } from "./../components/ui/button";
 import NavbarMJ from "./../components/NavbarMJ.astro";
 import FooterMJ from "./../components/FooterMJ.astro";
 const t = translations(Astro.url);
+import { Image } from "astro:assets";
+import imagePathsPortfolio from "../js/imagePaths/imagePathsPortfolio.js";
 ---
 
 <Layout title="Michal Jelinski - Home">
@@ -21,13 +23,29 @@ const t = translations(Astro.url);
     <section class="mt-16">
       <Headline Heading="Featured" Subtitle="Work" />
       <div class="relative max-h-[1080px] overflow-clip w-full">
+        <div class="gap-2 sm:gap-4 sm:columns-3 lg:columns-5 columns-2">
+          {
+            imagePathsPortfolio.map((image, i) => (
+              <Image
+                class="rounded-md  grid place-content-center mb-2 sm:mb-4 border border-grey-200"
+                src={image}
+                alt={image}
+                width={400}
+                height={200}
+                format="webp"
+                quality="medium"
+              />
+            ))
+          }
+        </div>
+        <!-- 
         <div class="masonGrid5 w-full">
           <div id="masonCol1" class="masonCol"></div>
           <div id="masonCol2" class="masonCol"></div>
           <div id="masonCol3" class="masonCol"></div>
           <div id="masonCol4" class="masonCol"></div>
           <div id="masonCol5" class="masonCol"></div>
-        </div>
+        </div>-->
         <div class="absolute bottom-24 right-0 left-0 z-50 flex justify-center">
           <a href="/gallery/portfolio/">
             <Button size="lg">{t.viewmore_button}</Button>
@@ -41,7 +59,7 @@ const t = translations(Astro.url);
     <FooterMJ />
   </Container>
 </Layout>
-
+<!-- 
 <script>
   import { createImageElement } from "./../js/gridGallery.js";
   import imagePathsPortfolio from "./../js/imagePaths/imagePathsPortfolio.js";
@@ -100,6 +118,8 @@ const t = translations(Astro.url);
   // Update the grid on window resize
   window.addEventListener("resize", updateGrid);
 </script>
+-->
+
 <style>
   .masonGrdi5 {
     display: grid;

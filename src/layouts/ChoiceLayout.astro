@@ -44,19 +44,20 @@ const locale = getLocale(Astro.url);
       image=""
     />
     <ViewTransitions />
-    <!-- 
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"
-    ></script><script>
+    ></script>
+    <script>
+      declare const window: any;
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      function gtag(p0?: string, p1?: string) {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-H8G97ZVN7G");
-    </script></head
-  >
--->
+    </script>
+
     <!-- Google tag (gtag.js) -->
   </head>
   <body class="bg-grey-500">
