@@ -32,7 +32,7 @@ let pageName = "Events";
               width={400}
               height={200}
               format="webp"
-              quality="low"
+              quality="medium"
             />
           </button>
         ))
@@ -86,34 +86,3 @@ let pageName = "Events";
     createGrid(path, i);
   });*/
 </script> -->
-<!--
-<script>
-  function extractImageId(link) {
-    var pattern = /\/d\/(.*?)\/view/;
-    var match = link.match(pattern);
-    if (match) {
-      return match[1];
-    } else {
-      return null;
-    }
-  }
-
-  function constructNewLink(imageId) {
-    return `https://drive.google.com/uc?export=view&id=${imageId}`;
-  }
-
-  var links = [
-    "https://drive.google.com/file/d/1SA_myw5We-J9QDGLMjAyQlnxnL2YK64T/view?usp=sharing",
-    "https://drive.google.com/file/d/1UaVdl5EPmQl_EwxFfrsj_LwD-f2qk8DF/view?usp=sharing",
-    "https://drive.google.com/file/d/1B7cvzf2EVgYQ7g16Zyld1sTGRyRwnKKw/view?usp=sharing",
-    "https://drive.google.com/file/d/18d9C9rmRNCykh1iiovRAd6bcZzVwNbb3/view?usp=sharing",
-    "https://drive.google.com/file/d/1E1E9KQuKIcgM4eIyC8ya-eEn9nMHeNzu/view?usp=sharing",
-    "https://drive.google.com/file/d/17MbpNpi9xSVMzTCRJA8giOTEKFHe_flF/view?usp=sharing",
-  ];
-
-  var convertedLinks = links.map(function (link) {
-    var imageId = extractImageId(link);
-
-    //console.log(constructNewLink(imageId));
-  });
-</script>-->

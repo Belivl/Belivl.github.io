@@ -44,21 +44,21 @@ const locale = getLocale(Astro.url);
 <html lang={locale} class="dark">
   <head>
     <BaseHead title={title} description={description} image="" />
-    <ViewTransitions
-    /><!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"
-    ></script><script>
+    <ViewTransitions /><script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H8G97ZVN7G"></script>
+    <script>
+      declare const window: any;
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      function gtag(p0?: string, p1?: string) {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-H8G97ZVN7G");
-    </script></head
-  >
+    </script>
 
-   Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
   </head><body class="bg-grey-500 relative p-0 z-0 h-full">
     <!-- //body style="visibility: hidden;"-->
     <CookieBanner />
