@@ -1,0 +1,120 @@
+
+
+
+
+
+
+
+.btnPlace1 {
+    width: 100%;
+    display: grid;
+    gap: 8px;
+    background-color: gray;
+    color: black;
+    place-items: center;
+    border-radius: 4px;
+    padding-bottom: 16px;
+}
+
+
+ .card {
+     width: 250px;
+     height: 350px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     display: inline-flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     background-color: white;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+     position: relative;
+ }
+
+ .card:hover {
+     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+ }
+
+ .deck {
+     background-color: grey;
+     display: grid;
+     gap: 36px;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+ }
+
+ .deck .card {
+     width: 100%;
+     /* Adjust card width */
+     color: black;
+ }
+
+/* basic coin
+ .coin {
+     width: 4rem;
+     height: 4rem;
+     border-radius: 100%;
+     background-color: blanchedalmond;
+     position: relative;
+     transition: all 150ms ease-in-out;
+
+     &:hover {
+         scale: 1.2;
+         box-shadow: 0px 10px 30px black;
+     }
+ }
+
+ .coin::after {
+     content: "S";
+     position: absolute;
+     z-index: 10;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-weight: 800;
+     color: black;
+ }
+*/
+ .card-back {
+     background-color: grey;
+ }
+
+ .card-placed {
+     width: 8rem;
+     height: 12rem;
+     place-content: center;
+     display: grid;
+     color: black;
+     font-weight: bold;
+     font-size: 2rem;
+     border-radius: 0.5rem;
+     transition: all 100ms ease-in-out;
+
+     
+ }
+ .card-placed:hover {
+    scale: 1.1;
+    box-shadow: 0px 10px 30px black;
+}
+
+ #pile,
+ #deck3 {
+     border: 2px solid #000;
+     padding: 10px;
+     width: 150px;
+     margin: 10px;
+     display: inline-block;
+ }
+
+ .card3 {
+     border: 1px solid #000;
+     background-color: #ccc;
+     padding: 5px;
+     margin: 5px;
+     cursor: pointer;
+ }
+
+ .card3.dragging {
+     opacity: 0.5;
+ }

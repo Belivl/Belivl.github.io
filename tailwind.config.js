@@ -130,4 +130,5 @@ module.exports = {
 		},
 	],
   plugins: [require("tailwindcss-animate")],
+  'tailwindcss/nesting': {},
 }
