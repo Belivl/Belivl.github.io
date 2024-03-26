@@ -1,0 +1,55 @@
+---
+//Belial
+import { Image } from "astro:assets";
+const imagePath = [
+  //Images
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487067/gfx/design/UIUX/Frame1_dc9kzx.png",
+    alt: "Frame1",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487069/gfx/design/UIUX/Frame2_pjfjed.png",
+    alt: "Frame2",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487071/gfx/design/UIUX/Frame3_ddboyt.png",
+    alt: "Frame3",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487073/gfx/design/UIUX/Frame4_vftonp.png",
+    alt: "Frame4",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487077/gfx/design/UIUX/Frame5_f7xonu.png",
+    alt: "Frame5",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487079/gfx/design/UIUX/Frame6_e3pa7r.png",
+    alt: "Frame6",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487081/gfx/design/UIUX/Frame7_rdxrjg.png",
+    alt: "Frame7",
+  },
+  {
+    src: "https://res.cloudinary.com/dcmfq9hg5/image/upload/v1711487085/gfx/design/UIUX/Frame8_aaf48o.png",
+    alt: "Frame8",
+  },
+];
+---
+
+<div class="flex flex-col gap-0 rounded-3xl w-full overflow-clip">
+  <div class="grid grid-cols-1 w-full">
+    {
+      imagePath.map((item) => (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={1400}
+          height={700}
+          class=" w-full  bg-grey-400 grid place-items-center"
+        />
+      ))
+    }
+  </div>
+</div>
