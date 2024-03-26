@@ -4,6 +4,7 @@
     "strictNullChecks": true,
     "baseUrl": "/home/belial/GitHub/Belivl.github.io/vigorous-virgo/src",
     "allowJs": true,
+    "removeComments": true,
     "paths": {
       "@src/*": [
         "*"

@@ -1,3 +1,10 @@
+import { hueMap, getHueValue, generateColor, colorCard1 } from "./dragonsGame/color";
+import type { Card } from "./dragonsGame/color";
+import {gameStartBtn, deckContainer,shuffledDeckContainer, stack1Container, stack2Container, player1Deck, player2Deck,playerTurnSpan, cardStack  } from "./dragonsGame/interfaceAssign";
+import { coins1, coins2, win1, win2, winning1, winning2,countCardsBtn, countCards1, countCards2 } from "./dragonsGame/interfaceAssign";
+
+
+
 interface Player {
         deck: number[];
         cards: number[];
@@ -6,36 +13,9 @@ interface Player {
       interface CardElement extends HTMLDivElement {
         value: number;
       }
+      
 
-      // Define Card type
-      type Card = -2 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
-      // Mapping of card values to hue values
-      const hueMap: { [key in Card]: number } = {
-        "-2": 0, // Red
-        "0": 30, // Yellow
-        "1": 60, // Green
-        "2": 90, // Cyan
-        "3": 120, // Blue
-        "4": 150, // Purple
-        "5": 180, // Pink
-        "6": 210, // Reddish Pink
-        "7": 240, // Orange
-        "8": 270, // Yellow (same as 0)
-      };
-
-      // Function to get the hue value for a card
-      function getHueValue(card: Card): number {
-        return hueMap[card];
-      }
-      // Function to generate HSL color string based on hue value
-      function generateColor(
-        hue: number,
-        saturation: number = 80,
-        lightness: number = 60
-      ): string {
-        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-      }
       // Function to generate a deck of cards
       function generateDeck(): Card[] {
         let deck: Card[] = [];
@@ -59,27 +39,16 @@ interface Player {
         }
       }
       // Generate the deck
-      let deck: Card[] = generateDeck();
+      //let deck: Card[] = generateDeck();
 
       // Display the deck in HTML
-      const deckContainer: HTMLElement | null =
-        document.getElementById("deck-container");
-      if (deckContainer) {
-        deck.forEach((card) => {
-          const cardDiv: HTMLDivElement = document.createElement("div");
-          cardDiv.classList.add("card1");
-          cardDiv.textContent = card.toString();
-          deckContainer.appendChild(cardDiv);
-        });
-      }
+      
+      
       // Shuffle the deck
-      shuffleDeck(deck);
-      // Display the shuffled deck in HTML
-      const shuffledDeckContainer = document.querySelector(
-        "#shuffled-cont"
-      ) as HTMLDivElement;
+      //shuffleDeck(deck);
+      
 
-      shuffledDeckContainer.style.backgroundColor = "blue";
+      //shuffledDeckContainer.style.backgroundColor = "blue";
 
       /** 
       deck.forEach((card) => {
@@ -89,12 +58,7 @@ interface Player {
         shuffledDeckContainer.appendChild(cardDiv);
       });*/
 
-      const stack1Container = document.querySelector(
-        "#cardStackOpen1"
-      ) as HTMLDivElement;
-      const stack2Container = document.querySelector(
-        "#cardStackOpen2"
-      ) as HTMLDivElement;
+      
 
       // Function to pop 2 cards from the top of the stack and put them into two different stacks
       function popCards(stack: Card[], stack1: Card[], stack2: Card[]): void {
@@ -108,10 +72,10 @@ interface Player {
         }
       }
 
-      let stack1: Card[] = [];
-      let stack2: Card[] = [];
+      //let stack1: Card[] = [];
+      //let stack2: Card[] = [];
       //Distribute the cards to the 2 open stacks
-      popCards(deck, stack1, stack2);
+      //popCards(deck, stack1, stack2);
 
       /**
        * for testing
@@ -138,7 +102,7 @@ interface Player {
         var stack1Value = stack1Container.innerHTML;
         var stack2Value = stack2Container.innerHTML;
 
-        const hueValue: number = getHueValue(stack1Value);
+        const hueValue: number = getHueValue( stack1Value );
         const color: string = generateColor(hueValue);
         stack1Container.style.backgroundColor = color;
 
@@ -146,20 +110,16 @@ interface Player {
         const color2: string = generateColor(hueValue2);
         stack2Container.style.backgroundColor = color2;
       }
-      colorCardInStack();
-      const player1Deck = document.querySelector(
-        "#player1Deck"
-      ) as HTMLDivElement;
-      const player2Deck = document.querySelector(
-        "#player2Deck"
-      ) as HTMLDivElement;
-      let player1Array = deck.splice(-6);
-      let player2Array = deck.splice(-6);
+      //colorCardInStack();
+      
+      //let player1Array = deck.splice(-6);
+      //let player2Array = deck.splice(-6);
 
       //console.log(player1Array);
       //console.log(player2Array);
-      player1Deck.innerHTML = "";
-      player2Deck.innerHTML = "";
+      //player1Deck.innerHTML = "";
+      //player2Deck.innerHTML = "";
+      /** 
       player1Array.forEach((card) => {
         const cardDiv: HTMLDivElement = document.createElement("div");
         //cardDiv.classList.add("card-placed");
@@ -193,16 +153,10 @@ interface Player {
         cardDiv.textContent = card.toString();
         cardDiv.style.backgroundColor = colorCard1(card); // Apply background color
         player2Deck.appendChild(cardDiv);
-      });
+      });*/
 
-      function colorCard1(card) {
-        const hueValue: number = getHueValue(card);
-        const color: string = generateColor(hueValue);
-        return color;
-      }
-      const playerTurnSpan = document.querySelector(
-        "#playerTurn"
-      ) as HTMLSpanElement;
+     
+      
 
       var playerTurn = 1;
       function updateTurn() {
@@ -214,43 +168,31 @@ interface Player {
       }
       updateTurn();
 
-      const cardStack = document.getElementById("cardStack") as CardElement;
-
-      cardStack.innerText = "Stack";
-      let deckCopy = [...deck];
-      cardStack.addEventListener("click", function () {
+      //let deckCopy = [...deck];
+      /** 
+      if(cardStack){
+        cardStack.innerText = "Stack";
+        cardStack.addEventListener("click", function () {
         let currentCard = deck[deck.length - 1];
         deck.pop();
-        cardStack.innerText = currentCard.toString();
-        cardStack.style.backgroundColor = colorCard1(currentCard);
+        if(cardStack){
+          cardStack.innerText = currentCard.toString();
+          cardStack.style.backgroundColor = colorCard1(currentCard);
+        }
         console.log(deck.length);
         if (deck.length == 0) {
           alert("Game over");
           deck = [...deckCopy];
         }
       });
-
-
+      }*/
       
-
-
-
-
-
-
-
 
       //sim winning
 
       let player1Coins = 0;
       let player2Coins = 0;
-      const win1 = document.getElementById("win1") as HTMLDivElement;
-      const win2 = document.getElementById("win2") as HTMLDivElement;
-      const winning1 = document.getElementById("winning1") as HTMLSpanElement;
-      const winning2 = document.getElementById("winning2") as HTMLSpanElement;
-
-      const coinPilePlayer1 = document.getElementById("coin-pile-player1") as HTMLDivElement;
-      const coinPilePlayer2 = document.getElementById("coin-pile-player2") as HTMLDivElement;
+      
 
   
 
@@ -259,8 +201,7 @@ interface Player {
 
     var nextCoinIndex1 = 0;
     var nextCoinIndex2 = 0;
-      var coins1  = coinPilePlayer1.children;
-      var coins2  = coinPilePlayer2.children;
+      
 
       // Function to reveal the next hidden coin
     // Function to reveal the next hidden coin
@@ -313,3 +254,145 @@ interface Player {
       // 6. display the two stacks
       // 7. display player turn
       //
+      
+
+      //Count points from deck
+      //
+      //console.log(player1Array.length);
+      function countPoints(array){
+        let count = 0;
+        let nrCols = array.length / 2;
+        //console.log(nrCols); array.length has to be equal to divide into columns 
+        for (let i = 0; i < nrCols; i++) {
+          if (array[i] === array[i+nrCols]) {
+              array[i] = 0;
+              array[i+nrCols] = 0;
+          }
+        }
+        for (let num of array) {
+          count += num;
+        }
+        //console.log(count);
+        return count;
+      }
+      
+     
+
+      function whoWinCoin(playerArr1, playerArr2){
+        let player1Score = countPoints(playerArr1);
+        let player2Score = countPoints(playerArr2);
+        if(player1Score > player2Score){
+            alert("Player 1 win");
+        }
+        if(player1Score == player2Score){
+            alert("Draw!");
+        }
+        if(player1Score < player2Score){
+            alert("Player 2 win");
+        }
+      }
+      //whoWinCoin(player1Array,player2Array);
+      let playerStarting = 1;
+      function radomizePlayerStart(numberOfPlayers){
+        return (Math.floor(Math.random() * numberOfPlayers) + 1);
+      }
+      function gameStart(){
+        let deck: Card[] = generateDeck();
+        let stack1: Card[] = [];
+        let stack2: Card[] = [];
+        //Shuffle the deck
+        shuffleDeck(deck);
+        //Distribute the cards to the 2 open stacks
+        popCards(deck, stack1, stack2);
+        //Distribute the cards to the 2 player decks
+        let player1Array = deck.splice(-6);
+        let player2Array = deck.splice(-6);
+        //Create a copy of the deck to be used when all cards from the stack are removed (actually get them from the two open stacks)
+        let deckCopy = [...deck];
+        //Clear previous player decks
+        player1Deck.innerHTML = "";
+        player2Deck.innerHTML = "";
+        //Display player decks
+        player1Array.forEach((card) => {
+          const cardDiv: HTMLDivElement = document.createElement("div");
+          //cardDiv.classList.add("card-placed");
+          //cardDiv.classList.add("card-down");
+          cardDiv.style.width = "8rem";
+          cardDiv.style.height = "12rem";
+          cardDiv.style.color = "black";
+          cardDiv.style.borderRadius = "8px";
+          cardDiv.style.display = "grid";
+          cardDiv.style.placeItems = "center";
+          cardDiv.style.fontSize = "24px";
+          cardDiv.style.fontWeight = "700";
+          cardDiv.textContent = card.toString();
+          const hueValue: number = getHueValue(card);
+          const color: string = generateColor(hueValue);
+          cardDiv.style.backgroundColor = color; // Apply background color
+          player1Deck.appendChild(cardDiv);
+        });
+        player2Array.forEach((card) => {
+          const cardDiv: HTMLDivElement = document.createElement("div");
+          cardDiv.classList.add("card-placed");
+          cardDiv.classList.add("card-down");
+          cardDiv.style.width = "8rem";
+          cardDiv.style.height = "12rem";
+          cardDiv.style.color = "black";
+          cardDiv.style.borderRadius = "8px";
+          cardDiv.style.display = "grid";
+          cardDiv.style.placeItems = "center";
+          cardDiv.style.fontSize = "24px";
+          cardDiv.style.fontWeight = "700";
+          cardDiv.textContent = card.toString();
+          cardDiv.style.backgroundColor = colorCard1(card); // Apply background color
+          player2Deck.appendChild(cardDiv);
+        });
+
+        //Info only count points from deck
+         countCardsBtn.addEventListener("click", function(){
+          countCards1.innerText = countPoints(player1Array).toString();
+          countCards2.innerText = countPoints(player2Array).toString();
+        });
+
+        //Color two open stacks (probably update every turn or card draw)
+        colorCardInStack();
+        //Color and turn card from stack
+        if(cardStack){
+        cardStack.innerText = "Stack";
+        cardStack.addEventListener("click", function () {
+        let currentCard = deck[deck.length - 1];
+        deck.pop();
+        if(cardStack){
+          cardStack.innerText = currentCard.toString();
+          cardStack.style.backgroundColor = colorCard1(currentCard);
+        }
+        console.log("Cards left in Stack:"+deck.length);
+        if (deck.length == 0) {
+          alert("Game over");
+          //deck = [...deckCopy]; get cards from the two open stacks but not the top one, shuffle and place into the stack
+        }
+      });
+      }
+      let roundCounter = 1;
+      let gameRunning = true;
+      // Define the number of players
+      const numberOfPlayers = 2;
+      
+      
+      /** 
+      while (gameRunning) {
+        console.log("Round: " + roundCounter);
+        playerStarting = radomizePlayerStart(numberOfPlayers);
+        console.log("Player starting: " + playerStarting);
+      }*/
+      }
+      //Start new game
+      gameStartBtn.addEventListener("click", gameStart)
+
+      function playRound(){
+        //Update turn
+        updateTurn();
+        
+        
+
+      }
