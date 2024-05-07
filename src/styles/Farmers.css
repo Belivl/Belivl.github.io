@@ -1,0 +1,69 @@
+:root {
+  --dice-width: 16px;
+  --dice-scale: 4;
+  --animal-icon: 48px;
+}
+
+.dice {
+  width: calc(var(--dice-width) * var(--dice-scale));
+  height: calc(var(--dice-width) * var(--dice-scale));
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  border-radius: 15%;
+  position: relative;
+  scale: 1;
+  transition: all 0.2s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+}
+.dice1 {
+  background-color: hsl(122, 72%, 29%);
+}
+.dice2 {
+  background-color: hsl(0, 72%, 29%);
+}
+
+.dice:hover {
+  cursor: pointer;
+  scale: 1.05;
+  transition: all 0.2s;
+  rotate: 2deg;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+}
+.dice1:hover {
+  background: hsl(122, 72%, 25%);
+}
+.dice2:hover {
+  background: hsl(0, 72%, 25%);
+}
+
+.dice::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15%;
+  border: solid 2px hsl(0, 0%, 80%);
+  mix-blend-mode: soft-light;
+  background-image: linear-gradient(-45deg, white 0%, hsl(0, 0%, 50%) 100%);
+}
+
+.dice img {
+  width: 70%;
+  height: 70%;
+}
+.animalIcon {
+  scale: 1;
+  transition: all 0.2s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+
+  width: var(--animal-icon);
+  height: var(--animal-icon);
+}
+.animalIcon:hover {
+  cursor: pointer;
+  scale: 1.05;
+  transition: all 0.2s;
+  rotate: 2deg;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+}

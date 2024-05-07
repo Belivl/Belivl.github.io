@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/Container.astro";
+import Game from "../../components/farmers/Game.jsx";
+---
+
+<Layout title="Super Farmers - Game">
+  <Container>
+    <div class="dice2">
+      <div class="face front"></div>
+    </div>
+    <Game client:load />
+  </Container>
+</Layout>
