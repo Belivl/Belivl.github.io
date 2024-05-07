@@ -1,6 +1,11 @@
 
 
-
+.gameBoard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 250px;
+    width: 100%;
+    height: 100%;
+}
 
 
 
@@ -8,12 +13,17 @@
 .btnPlace1 {
     width: 100%;
     display: grid;
-    gap: 8px;
-    background-color: gray;
+
+    background-color: var(--grey-100);
     color: black;
     place-items: center;
     border-radius: 4px;
-    padding-bottom: 16px;
+    padding:  0.5rem 1rem;
+    place-items: center;
+    place-content: center;
+}
+.btnPlace1:hover{
+    background-color: var(--grey-200);
 }
 
 
@@ -94,7 +104,7 @@
      
  }
  .card-placed:hover {
-    scale: 1.1;
+    scale: 1.05;
     box-shadow: 0px 10px 30px black;
 }
 
@@ -109,4 +119,93 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
+}
+
+
+.cardDeck{
+    perspective: 1000px;
+}
+
+.cardContainer{
+position: relative;
+    width: 200px;
+    height: 260px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 350ms  ease-in-out;
+}
+.cardFront{
+    background: crimson;
+}
+.cardBack {
+    background: slateblue;
+    transform: rotateY(180deg);
+}
+
+.cardContainer.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+.card__face{
+    position: absolute;
+        width: 100%;
+        height: 100%;
+        line-height: 260px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        backface-visibility: hidden;
+}
+
+
+.flip-card-Test {
+    background-color: transparent;
+    width: 120px;
+    height: 200px;
+    perspective: 1000px;
+    box-shadow: 0px 4px 5px var(--grey-400);
+}
+.flip-card-inner-Test {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s;
+    transform-style: preserve-3d;
+    border-radius: 8px;
+}
+.flip-card-Test:hover .flip-card-inner-Test {
+    transform: scale(1.1);
+    box-shadow: 0px 12px 30px var(--grey-400);
+}
+.flip-card-front-Test,
+.flip-card-back-Test {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    color: var(--white);
+    border: var(--grey-200) 1px solid;
+    border-radius: 8px;
+    background: linear-gradient(0deg, var(--grey-300), var(--grey-400));
+}
+
+.flip-card-back-Test {
+    transform: rotateY(180deg);
+    transition: transform 0.3s;
+}
+
+/* Apply flip transformation when card is flipped */
+.flip-card-Test.flipped .flip-card-inner-Test {
+    transform: rotateY(180deg);
+    transition: transform 0.3s;
+    
+}
+.flipped:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s;
 }

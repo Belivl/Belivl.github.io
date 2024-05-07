@@ -1,0 +1,139 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import bgPic from "../assets/FilmGrainS5.jpg";
+import { getLocale } from "astro-i18n-aut";
+const locale = getLocale(Astro.url);
+import Coin from "../components/dragons/CoinDragon.astro";
+import "../styles/dragons.css";
+import GoldCTA from "@src/components/ui/GoldCTA.astro";
+import Card from "@src/components/dragons/Card.astro";
+
+//import App from "../js/dragonsGame/App.jsx";
+---
+
+<html lang={locale} class="dark">
+  <head>
+    <BaseHead
+      title="Portfolio Choice"
+      description="Enter desired portfolio site"
+      image=""
+    />
+    <ViewTransitions />
+  </head>
+  <body class="bg-grey-500 relative">
+    <!--Background image -->
+    <div class="bgColor bg-light dark:bg-grey-500 fixed w-full h-full -z-50">
+    </div>
+    <canvas id="canvas" class="absolute w-full h-[100vh]"></canvas>
+    <img src={bgPic.src} alt="X" class="mainBG" />
+
+    <img
+      src="/FlameSide.svg"
+      alt="Y"
+      class="mainBG2 fixed top-1/2 -translate-y-1/2 left-0 scale-50 md:scale-100 origin-left"
+      style="z-index: -10;"
+    />
+    <img
+      src="/FlameSide.svg"
+      alt="Y"
+      class="mainBG2 fixed top-1/2 -translate-y-1/2 right-0 rotate-180 scale-50 md:scale-100 origin-left translate-x-[100%]"
+      style="z-index: -10;"
+    />
+    <!-- <div id="root" class="w-full p-4 h-[100vh]"><App client:load /></div> -->
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const particles = [];
+
+      // Define the maximum spawn radius
+      const maxSpawnRadius = 1000;
+
+      // Set canvas resolution based on device pixel ratio
+      const dpi = window.devicePixelRatio;
+      canvas.width = window.innerWidth * dpi;
+      canvas.height = window.innerHeight * dpi;
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+      ctx.scale(dpi, dpi);
+
+      // Draw the spawn radius boundary filled with red
+      ctx.beginPath();
+      ctx.arc(
+        canvas.width / 2,
+        canvas.height / 2,
+        maxSpawnRadius,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = "rgba(255, 0, 0, 0.3)"; // Red color with reduced alpha value for visualization
+      ctx.fill();
+
+      function Particle() {
+        const radius = Math.random() * maxSpawnRadius; // Random radius within a circle
+        const angle = Math.random() * Math.PI * 2; // Random angle in radians
+        this.x = canvas.width / 2 + radius * Math.cos(angle); // Calculate x-coordinate
+        this.y = canvas.height / 2 + radius * Math.sin(angle); // Calculate y-coordinate
+        this.vx = Math.random() * 4 - 3;
+        this.vy = Math.random() * -6 - 3; // Adjusted vertical velocity range
+        this.wind = Math.random() * 2 - 3; // Random wind blowing to the left or right
+        this.gravity = 0.01;
+        this.alpha = 1;
+        this.color = `rgba(255, ${Math.floor(Math.random() * 100)}, 0, ${this.alpha})`;
+      }
+
+      Particle.prototype.draw = function () {
+        ctx.beginPath();
+        const hue = (60 * (1 - this.alpha)) % 360; // Calculate hue based on alpha, transitioning from yellow to red
+        const brightness = Math.min(0.5, 1.5 - this.alpha); // Adjusted brightness based on alpha, shining brighter as alpha decreases
+        const bloomSize = 5 * (1 - this.alpha); // Adjusted bloom size based on alpha
+        const bloomOpacity = Math.min(1, 2 * (1 - this.alpha)); // Adjusted bloom opacity based on alpha
+        ctx.fillStyle = `hsla(${hue}, 100%, 50%, ${brightness * bloomOpacity})`; // Adjusted color with hue, brightness, and bloom opacity
+        ctx.arc(this.x, this.y, 1 + bloomSize, 0, Math.PI * 2); // Adjusted particle radius with bloom effect
+        ctx.fill();
+      };
+
+      Particle.prototype.update = function () {
+        this.prevX = this.x; // Store previous x-coordinate
+        this.prevY = this.y; // Store previous y-coordinate
+        this.x += this.vx + this.wind; // Add wind velocity to horizontal movement
+        this.y += this.vy;
+        this.vy += this.gravity;
+        this.alpha -= 0.01 / 3; // Adjusted alpha decrease rate for faster motion blur effect
+      };
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].draw();
+          particles[i].update();
+          if (particles[i].alpha <= 0) {
+            particles.splice(i, 1);
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+
+      function createParticles() {
+        const particle = new Particle();
+        particles.push(particle);
+      }
+
+      setInterval(createParticles, 10);
+
+      loop();
+    </script>
+  </body>
+</html>

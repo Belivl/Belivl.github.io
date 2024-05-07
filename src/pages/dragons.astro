@@ -8,6 +8,7 @@ const locale = getLocale(Astro.url);
 import Coin from "../components/dragons/CoinDragon.astro";
 import "../styles/dragons.css";
 import GoldCTA from "@src/components/ui/GoldCTA.astro";
+import Card from "@src/components/dragons/Card.astro";
 ---
 
 <html lang={locale} class="dark">
@@ -37,11 +38,324 @@ import GoldCTA from "@src/components/ui/GoldCTA.astro";
       style="z-index: -10;"
     />
     <div>
-      <main
-        id="main"
-        class="w-full flex flex-col items-center justify-center p-4 h-full"
-      >
+      <main id="main" class="w-full p-4 h-[100vh]">
+        <div class="gameBoard">
+          <div class="border border-red-500 flex flex-col gap-8">
+            <div
+              id="gameStartBtn"
+              class="cursor-pointer max-w-[50%] grid place-items-center bg-orange-300 text-orange-900 p-3 rounded-xl hover:bg-orange-400"
+            >
+              <h2 class="text-[1.5rem]">New Game</h2>
+            </div>
+            <div>
+              Info
+              <div
+                id="logGameBtn"
+                class="cursor-pointer bg-grey-400 border border-grey-200 rounded-md px-3 py-2 w-fit hover:bg-grey-300"
+              >
+                Log
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <div class="flex flex-col gap-3 border border-green-500 w-full">
+                <div>Cards: <span id="cardPileCount">1</span></div>
+                <div id="cardStack" class="card-placed card-back">Stack</div>
+                <div
+                  id="revealPileBtn"
+                  class="cursor-pointer bg-grey-400 border border-grey-200 rounded-md px-3 py-2 w-fit hover:bg-grey-300"
+                >
+                  Reveal
+                </div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div id="cardStackOpen1" class="card-placed bg-goldTips2-500">
+                  1
+                </div>
+                <div>Cards: <span id="cardStackCount1"></span></div>
+              </div>
+
+              <div class="flex flex-col gap-3">
+                <div id="cardStackOpen2" class="card-placed bg-goldTips2-100">
+                  2
+                </div>
+                <div>Cards: <span id="cardStackCount2"></span></div>
+              </div>
+            </div>
+
+            <div class="grid bg-blue-700 gap-3 w-full">
+              <!--Deck creation works -->
+              <div class="flex-col gap-1 hidden">
+                <h2>Deck</h2>
+                <div id="deck-container" class="flex gap-3 flex-wrap"></div>
+              </div>
+              <div class="flex-col gap-1 hidden">
+                <h2>Shuffled Deck</h2>
+                <div
+                  id="shuffled-cont"
+                  class="flex gap-3 flex-wrap bg-red-300 text-black"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border border-green-500">
+            <div class="grid grid-rows-2 gap-16 items-center justify-center">
+              <div
+                id="player2Deck"
+                class="grid gap-3 grid-cols-3 grid-rows-2 border border-red-400"
+              >
+                <Card color="0" value="1" spanClass="spanValue2" />
+                <Card color="60" value="2" />
+                <Card color="120" value="3" />
+                <Card color="180" value="4" />
+                <Card color="240" value="5" />
+                <Card color="300" value="6" />
+              </div>
+
+              <div
+                id="player1Deck"
+                class="grid gap-3 grid-cols-3 grid-rows-2 border border-red-400 h-full"
+              >
+                <Card color="0" value="1" spanClass="spanValue1" />
+                <div class="card-placed card-back">2</div>
+                <div class="card-placed card-back">3</div>
+                <div class="card-placed card-back">4</div>
+                <div class="card-placed card-back">5</div>
+                <div class="card-placed card-back">6</div>
+              </div>
+            </div>
+          </div>
+          <div class="border border-blue-500 flex flex-col justify-between">
+            <div class="coinHold1">1</div>
+            <div class="flex flex-col gap-3">
+              <span>Temp</span>
+              <div id="tempStack" class="card-placed card-back"></div>
+              <div class="w-full flex flex-col gap-3">
+                <div>Take</div>
+                <div
+                  id="cardStackTemp"
+                  class="grid grid-cols-3 grid-rows-2 gap-2 w-full"
+                >
+                  <div class="btnPlace1">1</div>
+                  <div class="btnPlace1">2</div>
+                  <div class="btnPlace1">3</div>
+                  <div class="btnPlace1">4</div>
+                  <div class="btnPlace1">5</div>
+                  <div class="btnPlace1">6</div>
+                </div>
+              </div>
+              <div>Put down</div>
+              <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
+                <div id="btnPlaceStack1" class="btnPlace1 hover:bg-grey-200">
+                  1
+                </div>
+                <div id="btnPlaceStack2" class="btnPlace1 hover:bg-grey-200">
+                  2
+                </div>
+              </div>
+            </div>
+            <div class="coinHold1">2</div>
+          </div>
+        </div>
         <div class="container mx-auto">
+          <!-- 
+          <Coin />
+          <div class="grid gap-9 grid-cols-3 grid-rows-2 w-1/3">
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">6</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(60, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">6</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(60, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">6</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(60, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">6</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(60, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">6</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(60, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-Test">
+              <div class="flip-card-inner-Test">
+                <div class="flip-card-front-Test">
+                  <span
+                    class="right-0 top-0 absolute p-2 text-[1.5rem]"
+                    style="line-height: 100%;">-2</span
+                  >
+                  <img
+                    src="/src/assets/dragon_1.svg"
+                    alt="Stars"
+                    class="w-[70%]"
+                  />
+                  <div
+                    class="w-full h-full absolute rounded-[8px] opacity-20"
+                    style="background-color: hsl(270, 60%, 35%);"
+                  >
+                  </div>
+                </div>
+                <div class="flip-card-back-Test relative">
+                  <img
+                    src="/src/assets/logo.png"
+                    alt="Stars"
+                    class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+                  />
+                  <img
+                    src="/src/assets/Star1.svg"
+                    alt="Stars"
+                    class="w-[80%]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+          <a href="/dragons/turnTest/" class="hidden">TurnTest</a>
           <!--Show results-->
           <div class="hidden">
             <button id="modalDragonsBtn" class="hidden">Open Modal</button>
@@ -72,17 +386,11 @@ import GoldCTA from "@src/components/ui/GoldCTA.astro";
             </div>
           </div>
 
-          <div class="flex flex-row gap-9">
+          <div class="flex flex-row gap-9 hidden">
             <div class="flex flex-col gap-24 w-1/3">
               <div class="flex flex-col gap-9">
                 <div class="mb-12 flex flex-col gap-6">
                   <h1 class="text-[orange] text-[2rem]">Dragons</h1>
-                  <div
-                    id="gameStartBtn"
-                    class="cursor-pointer grid place-items-center bg-orange-300 text-orange-900 p-3 rounded-xl"
-                  >
-                    <h2 class="text-[1.5rem]">New Game</h2>
-                  </div>
                 </div>
 
                 <div class="flex gap-9">
@@ -139,75 +447,6 @@ import GoldCTA from "@src/components/ui/GoldCTA.astro";
                   </div>
                 </div>
               </div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="flex flex-col gap-3">
-                  <div id="cardStack" class="card-placed card-back">Stack</div>
-                  <div>Take</div>
-                  <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
-                    <div class="btnPlace1">1</div>
-                    <div class="btnPlace1">2</div>
-                    <div class="btnPlace1">3</div>
-                    <div class="btnPlace1">4</div>
-                    <div class="btnPlace1">5</div>
-                    <div class="btnPlace1">6</div>
-                  </div>
-                  <div>Put down</div>
-                  <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
-                    <div class="btnPlace1">1</div>
-                    <div class="btnPlace1">2</div>
-                  </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                  <div id="cardStackOpen1" class="card-placed bg-goldTips2-500">
-                    1
-                  </div>
-                  <div class="w-full flex flex-col gap-3">
-                    <div>Take</div>
-                    <div
-                      id="cardStackTake"
-                      class="grid grid-cols-3 grid-rows-2 gap-2 w-full"
-                    >
-                      <div class="btnPlace1">1</div>
-                      <div class="btnPlace1">2</div>
-                      <div class="btnPlace1">3</div>
-                      <div class="btnPlace1">4</div>
-                      <div class="btnPlace1">5</div>
-                      <div class="btnPlace1">6</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                  <div id="cardStackOpen2" class="card-placed bg-goldTips2-100">
-                    2
-                  </div>
-                  <div>Take</div>
-                  <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
-                    <div class="btnPlace1">1</div>
-                    <div class="btnPlace1">2</div>
-                    <div class="btnPlace1">3</div>
-                    <div class="btnPlace1">4</div>
-                    <div class="btnPlace1">5</div>
-                    <div class="btnPlace1">6</div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid bg-blue-700 gap-3 w-full">
-                <!--Deck creation works -->
-                <div class="flex-col gap-1 hidden">
-                  <h2>Deck</h2>
-                  <div id="deck-container" class="flex gap-3 flex-wrap"></div>
-                </div>
-                <div class="flex-col gap-1 hidden">
-                  <h2>Shuffled Deck</h2>
-                  <div
-                    id="shuffled-cont"
-                    class="flex gap-3 flex-wrap bg-red-300 text-black"
-                  >
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="column-main flex flex-col gap-16">
@@ -239,7 +478,8 @@ import GoldCTA from "@src/components/ui/GoldCTA.astro";
                 <Coin />
                 <Coin />
               </div>
-              <div class="coin-pile relative">
+
+              <div class="coin-pile relative hidden">
                 <div class="absolute -top-8 left-0 z-[11]">
                   <Coin />
                 </div>

@@ -1,0 +1,35 @@
+---
+const {
+  value = "0",
+  color = "60",
+  spanClass = "spanValue1",
+  classes,
+  ...rest
+} = Astro.props;
+---
+
+<div class="flip-card-Test">
+  <div class="flip-card-inner-Test">
+    <div class="flip-card-front-Test">
+      <span
+        class={`${spanClass} right-0 top-0 absolute p-2 text-[1.5rem]`}
+        style="line-height: 100%;">{value}</span
+      >
+      <img src="/src/assets/dragon_1.svg" alt="Stars" class="w-[70%]" />
+      <div
+        class="w-full h-full absolute rounded-[8px] opacity-20"
+        style={`background-color: hsl(${color}, 60%, 35%)`}
+        ;
+      >
+      </div>
+    </div>
+    <div class="flip-card-back-Test relative">
+      <img
+        src="/src/assets/logo.png"
+        alt="Stars"
+        class="w-[30%] rounded-full absolute border-[3px] border-[#434347] opacity-50"
+      />
+      <img src="/src/assets/Star1.svg" alt="Stars" class="w-[80%]" />
+    </div>
+  </div>
+</div>

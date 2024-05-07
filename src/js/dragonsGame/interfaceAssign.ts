@@ -24,3 +24,8 @@ export var coins2  = coinPilePlayer2.children as HTMLCollectionOf<HTMLElement>;
 export const countCardsBtn = document.querySelector("#countCardsBtn") as HTMLButtonElement;
 export var countCards1 = document.querySelector("#countCards1") as HTMLSpanElement;
 export var countCards2 = document.querySelector("#countCards2") as HTMLSpanElement;
+
+export const tempStack = document.querySelector("#tempStack") as HTMLDivElement;
+
+export const btnPlaceStack1 = document.querySelector("#btnPlaceStack1") as HTMLDivElement;
+export const btnPlaceStack2 = document.querySelector("#btnPlaceStack2") as HTMLDivElement;

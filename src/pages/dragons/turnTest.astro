@@ -1,0 +1,227 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<style>
+  .card {
+    width: 100px;
+    height: 150px;
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    transition: transform 0.5s;
+    transform-style: preserve-3d; /* Ensures 3D transformations work */
+  }
+  .deck {
+    position: relative;
+  }
+  .player-hand {
+    position: relative;
+    background-color: aquamarine;
+
+    width: 100px;
+    height: 150px;
+  }
+  .flip {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+
+  .flip.flip-back {
+    transform: rotateY(180deg);
+  }
+  .card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #006400; /* Dark green */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    backface-visibility: hidden; /* Hide back face of the card */
+    transform: rotateY(180deg); /* Initially rotated 180 degrees */
+  }
+</style>
+
+<Layout>
+  <div class="grid w-full bg-red-950 grid-cols-3 grid-rows-2">
+    <div id="deck" class="deck bg-red-900 w-full h-[200px]">
+      <!-- Your deck of cards -->
+      <div class="card flip">
+        <div class="card-content">Front</div>
+        <div class="card-back">Back</div>
+      </div>
+      <div class="card flip">
+        <div class="card-content">Front</div>
+        <div class="card-back">Back</div>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <div id="player-hand" class="player-hand">
+      <!-- Player's hand -->
+    </div>
+  </div>
+
+  <!-- 
+  <div id="pile1" class="card">Card 1</div>
+  <div id="pile2" class="card">Card 2</div>
+  <div id="pile3" class="card">Reveal Card</div>
+  <div id="deck" class="card">Deck</div>-->
+</Layout>
+
+<script>
+  // Function to animate the card movement
+  function animateCardMovement(card, startX, startY, endX, endY) {
+    const animationDuration = 1000; // milliseconds
+    const startTime = performance.now();
+
+    function animateStep(currentTime) {
+      const elapsedTime = currentTime - startTime;
+      const progress = elapsedTime / animationDuration;
+
+      // Calculate position along a curve
+      const curveProgress = -4 * progress * (progress - 1); // Quadratic Bezier curve equation
+
+      const x = startX + (endX - startX) * curveProgress;
+      const y = startY - curveProgress * (startY - endY) * 2; // Adjust for the upward arc
+
+      card.style.left = x + "px";
+      card.style.top = y + "px";
+
+      if (progress < 1) {
+        requestAnimationFrame(animateStep);
+      }
+    }
+
+    requestAnimationFrame(animateStep);
+  }
+
+  // Function to move the top card from deck to player's hand with arc animation
+  function moveCardToHand() {
+    const deck = document.getElementById("deck");
+    const topCard = deck.lastElementChild; // Assuming last card is on top
+    const playerHand = document.getElementById("player-hand");
+
+    const deckRect = deck.getBoundingClientRect();
+    const playerHandRect = playerHand.getBoundingClientRect();
+
+    const startX = deckRect.left + deckRect.width / 2;
+    const startY = deckRect.top + deckRect.height / 2;
+
+    const endX = playerHandRect.left + playerHandRect.width / 2;
+    const endY = playerHandRect.top - 100; // Adjust the height for the arc
+
+    animateCardMovement(topCard, startX, startY, endX, endY);
+
+    // After animation, remove the card from the deck and append to player's hand
+    setTimeout(() => {
+      topCard.remove();
+      playerHand.appendChild(topCard);
+    }, 1000); // Wait for the animation duration
+  }
+
+  // Example usage:
+  document.addEventListener("DOMContentLoaded", function () {
+    // Assume some event triggers moving a card to player's hand
+    moveCardToHand();
+  });
+</script>
+
+<!-- 
+<script>
+  type Card = 1 | 2 | 3 | 4 | 5 | 6;
+
+  let deck: Card[] = [];
+  let revealedCard: Card | null = null;
+
+  function initializeDeck(): void {
+    for (let i = 1; i <= 6; i++) {
+      deck.push(i as Card);
+    }
+    shuffle(deck);
+    updateUI();
+  }
+
+  function updateUI(): void {
+    document.getElementById("deck")!.textContent = `Deck: ${deck.join(", ")}`;
+    document.getElementById("pile3")!.textContent = "Reveal Card";
+    document.getElementById("pile3")!.style.backgroundColor = "lightgray";
+  }
+
+  function shuffle(array: Card[]): void {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function addToDeck(pile: number): void {
+    if (revealedCard !== null) {
+      deck.push(revealedCard);
+      revealedCard = null;
+      updateUI();
+    } else {
+      const pileId = `pile${pile}`;
+      const index = deck.indexOf(
+        parseInt(
+          document.getElementById(pileId)!.textContent.split(" ")[1]
+        ) as Card
+      );
+      if (index !== -1) {
+        deck.splice(index, 1);
+        updateUI();
+      }
+    }
+  }
+
+  function revealCard(): void {
+    if (deck.length > 0 && revealedCard === null) {
+      revealedCard = deck.pop()!;
+      document.getElementById("pile3")!.textContent =
+        `Revealed Card: ${revealedCard}`;
+      document.getElementById("pile3")!.style.backgroundColor = "lightgreen";
+      updateUI();
+    }
+  }
+
+  function removeFromDeck(): void {
+    if (revealedCard !== null) {
+      deck.push(revealedCard);
+      revealedCard = null;
+      updateUI();
+    }
+  }
+  // Add event listeners
+  document
+    .getElementById("pile1")!
+    .addEventListener("click", () => addToDeck(1));
+  document
+    .getElementById("pile2")!
+    .addEventListener("click", () => addToDeck(2));
+  document.getElementById("pile3")!.addEventListener("click", revealCard);
+  document.getElementById("deck")!.addEventListener("click", removeFromDeck);
+
+  initializeDeck();
+</script>
+-->

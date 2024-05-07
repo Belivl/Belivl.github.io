@@ -1,15 +1,165 @@
 ---
-
+import { Image } from "astro:assets";
+import ringIndentsGrad from "../../assets/GoldCTA/RingIndentsGradient.png";
+import ringIndentsLow from "../../assets/GoldCTA/RingIndentsLow.png";
+const logoAlt = "The Belial Logo";
 ---
 
 <div class="flip-coin">
   <div class="flip-coin-inner">
-    <div class="flip-coin-front">F</div>
-    <div class="flip-coin-back">B</div>
+    <div
+      class="flip-coin-front relative w-24 h-24 bg-grey-500 isolate rounded-full overflow-clip border-[1px] border-goldTips2-600 hover:border-goldTips2-700 transition-all duration-500 ease-in-out"
+    >
+      <div
+        class="grid place-items-center z-50 centerAbsolute w-[70%] h-[70%] rounded-full overflow-clip"
+      >
+        <svg
+          viewBox="0 0 212 212"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-full"
+        >
+          <path
+            class="fill-grey-500"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M106 212C164.542 212 212 164.542 212 106C212 47.4578 164.542 0 106 0C47.4578 0 0 47.4578 0 106C0 164.542 47.4578 212 106 212ZM72.576 34.5027C72.576 34.5027 105.803 18.7853 142.435 36.2218C182.927 55.4958 196.548 103.69 172.405 156.108C172.384 150.122 173.275 136.968 173.275 136.968C165.228 179.598 106.033 184.6 99.3772 184.6C99.3772 184.6 140.65 179.163 147.862 149.8C147.862 149.8 148.729 158.554 146.777 164.465C149.66 160.065 160.441 141.318 150.436 122.395C150.436 122.395 150.277 126.051 149.129 138.71L145.477 134.48C145.477 134.48 147.427 149.362 134.854 160.087L134.391 153.232C134.391 153.232 130.001 173.283 106.489 179.128L110.567 173.073C102.422 177.003 83.4475 180.25 58.4855 172.739C63.5982 172.367 65.4465 172.232 67.2443 171.856C68.2621 171.643 69.2638 171.353 70.8325 170.898C62.5675 170.028 46.9075 166.33 34.51 148.278H41.035C41.035 148.278 29.652 132.329 28.2025 111.158C26.8767 91.7939 31.8635 66.8597 49.0077 47.939L45.3328 45.0019L61.1146 38.1706L54.045 53.4304L51.7291 50.1175L55.2439 44.459C51.5402 48.1226 50.5384 49.1045 49.6258 50.1633C49.0743 50.8032 48.5553 51.4712 47.4922 52.7762C41.296 60.3835 29.4397 79.6853 34.51 111.738L36.0325 104.56C36.0325 104.56 37.8543 145.473 73.3051 158.305C73.0689 153.924 73.1143 153.645 73.4175 151.78C73.4851 151.365 73.5654 150.871 73.6583 150.235C73.6583 150.235 78.0727 160.256 96.7377 157.261C105.481 155.859 122.758 150.261 120.694 127.615L115.878 135.536C115.881 135.421 115.886 135.308 115.891 135.195C115.899 135.032 115.907 134.87 115.907 134.699C115.907 123.318 112.655 117.325 107.975 114.781C103.906 112.571 92.9601 112.23 90.9365 122.004C88.9181 131.748 97.6877 135.355 97.6877 135.355V128.788C97.6877 128.788 102.424 142.722 112.09 146.973C112.09 146.973 68.44 159.153 46.2376 121.036C46.2376 121.036 51.0592 121.955 56.695 122.83C56.695 122.83 35.5975 98.9053 50.3284 66.7153L53.4325 73.6666C53.4325 73.6666 62.3831 51.2728 88.9181 43.6603C88.9181 43.6603 63.7368 58.7514 70.8291 94.3378L73.5469 82.297C73.5469 82.297 78.2954 101.668 107.564 99.8345C113.428 99.4656 118.796 95.7925 120.536 90.127C123.222 81.3818 116.408 73.1568 111.804 75.1665L108.77 79.7618C108.77 79.7618 98.6464 78.8849 93.5535 86.5461L88.711 82.3875C88.711 82.3875 91.7091 79.5426 93.5535 80.1986C95.3979 80.8546 104.999 74.0703 104.999 74.0703L99.3738 73.4143L97.686 75.6032L96.2626 73.8528L90.933 74.0721C90.933 74.0721 87.6653 74.728 86.2211 78.0114C86.2211 78.0114 83.5467 70.1327 86.2211 65.9741L88.7128 69.9134L94.6201 66.7432C94.6201 66.7432 98.0427 67.942 101.015 63.7852C103.987 59.6283 110.851 58.7775 110.851 58.7775C111.271 58.5528 111.681 58.3694 112.085 58.1885C114.177 57.2526 116.125 56.3808 118.698 50.1853C118.698 50.1853 123.476 55.0817 119.34 60.3348L127.49 58.8853L123.904 65.3164C123.904 65.3164 127.184 65.379 132.603 63.6703C131.875 66.1631 130.483 67.215 129.035 68.3085C128.739 68.5324 128.44 68.7581 128.145 68.9982C128.947 69.4387 129.71 69.815 130.623 70.2658C132.452 71.1684 134.885 72.3693 139.455 74.9803L135.105 75.8503L140.915 80.0646L140.003 83.2053C140.58 84.3189 141.116 85.4986 141.576 86.7671C147.236 79.2677 146.225 65.6226 136.432 54.0968C141.287 55.2313 147.567 57.1732 151.308 60.1903C151.308 60.1903 130.871 26.6501 72.576 34.5027ZM102.906 65.1928L105.26 66.7153L108.243 63.6703L102.906 65.1928Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="whf centerAbsolute" style="z-index: 0;">
+        <div class="baseGold whf"></div>
+      </div>
+      <div class="whf centerAbsolute" style="z-index: 2;">
+        <Image
+          src={ringIndentsLow}
+          width={300}
+          height={300}
+          alt={logoAlt}
+          class="indents whf"
+        />
+      </div>
+      <div
+        class="whf centerAbsolute"
+        style="z-index: 3; opacity: 0.6; mix-blend-mode: soft-light;"
+      >
+        <Image
+          src={ringIndentsGrad}
+          width={300}
+          height={300}
+          alt={logoAlt}
+          class="indentsGrad whf"
+        />
+      </div>
+      <div class="whf centerAbsolute" style="z-index: 4; ">
+        <div class="aniso1 whf"></div>
+      </div>
+      <div class="whf centerAbsolute" style="z-index: 5;">
+        <div class="aniso2 whf"></div>
+      </div>
+      <div
+        class="whf centerAbsolute"
+        style="z-index: 9; mix-blend-mode: soft-light;"
+      >
+        <div class="softGold whf"></div>
+      </div>
+    </div>
   </div>
 </div>
 
 <style lang="scss" is:global>
+  :root {
+    --goldWidth: 300px;
+    --opacity-aniso1: 0.4;
+    --opacity-aniso2: 0.2;
+    --opacity-indents: 0.6;
+    --opacity-indentsGrad: 0.3;
+  }
+  .whf {
+    width: 100%;
+    height: 100%;
+  }
+  .centerAbsolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .goldCTA {
+    color: var(--grey-500);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid var(--col-primary-900);
+    isolation: isolate;
+  }
+  @keyframes goldRotate {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  .baseGold {
+    background: var(--col-primary-300);
+  }
+
+  .indentsGrad {
+    border-radius: 100%;
+  }
+  .aniso1 {
+    mix-blend-mode: multiply;
+    border-radius: 100%;
+    opacity: var(--opacity-aniso1);
+    transform-origin: center;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #000000 0deg,
+      #000000 56.25deg,
+      #ffffff 88.12deg,
+      #000000 101.25deg,
+      #000000 146.25deg,
+      #ffffff 159.38deg,
+      #000000 170.63deg,
+      #000000 234.38deg,
+      #ffffff 268.13deg,
+      #000000 296.25deg,
+      #000000 360deg
+    );
+    transition: transform 0.3s;
+    transition-timing-function: ease-out;
+    animation: goldRotate 15s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+  }
+  .aniso2 {
+    mix-blend-mode: multiply;
+    border-radius: 100%;
+    opacity: var(--opacity-aniso2);
+    transform: rotate(-120deg);
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #000000 0deg,
+      #000000 56.25deg,
+      #ffffff 88.12deg,
+      #000000 101.25deg,
+      #000000 146.25deg,
+      #ffffff 159.38deg,
+      #000000 170.63deg,
+      #000000 234.38deg,
+      #ffffff 268.13deg,
+      #000000 296.25deg,
+      #000000 360deg
+    );
+    transition: transform 0.3s;
+    transition-timing-function: ease-out;
+    animation: goldRotate 12s cubic-bezier(0.8, 0.2, 0.165, 0.8) infinite;
+  }
+  .softGold {
+    background: var(--col-primary-600);
+  }
+
   .flip-coin {
     background-color: transparent;
     width: 4rem;
@@ -25,7 +175,7 @@
     //transition: transform 0.8s;
     border-radius: 100%;
     transform-style: preserve-3d;
-    transition: all 250ms ease-in-out;
+    transition: all 350ms ease-in-out;
     box-shadow: 0px 2px 5px black;
     &:hover {
       scale: 1.2;
