@@ -25,11 +25,11 @@ const t = translations(Astro.url);
       </div>
     </div>
     <div
-      class="playlists hidden md:flex flex-row w-full md:w-fit gap-6 overflow-clip relative flex-wrap"
+      class="playlists hidden md:flex flex-row w-full md:w-fit gap-6 relative flex-wrap"
       id="playlistFeature1"
     >
       <div
-        class="w-full h-full absolute bg-gradient-to-r from-transparent to-grey-500"
+        class="w-full h-full z-10 absolute bg-gradient-to-r from-transparent to-grey-500"
       >
       </div>
       {
@@ -37,16 +37,20 @@ const t = translations(Astro.url);
           <a href={item.link} target="_blank" rel="noopener noreferrer">
             <div class="hidden lg:flex flex-col gap-2 border border-grey-200 hover:border-grey-100 bg-grey-500 hover:bg-grey-400 rounded-xl w-fit p-3 hover:-translate-y-2 transition-all duration-200 ease-in-out">
               <div class="flex flex-row justify-between gap-3 items-center flex-wrap w-fit max-w-[150px]">
-                <img src={Youtube.src} alt="yt" class="w-5 h-5 fill-white" />
+                <img src={Youtube.src} alt="yt" class="w-5 h-5 " />
                 <span class="uppercase font-semibold">{item.title}</span>
               </div>
-              <Image
-                src={item.image}
-                alt="1"
-                width={100}
-                height={100}
-                class="rounded-md border border-grey-200 w-full min-w-[100px]"
-              />
+              <div class="min-w-[100px] min-h-[100px] grid place-content-center relative">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  class="w-[85px] h-[85px]"
+                />
+                <div
+                  class="absolute w-full h-full bg-gradient-to-r from-transparent to-white-500 blur-md"
+                  style="background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);"
+                />
+              </div>
             </div>
           </a>
         ))
@@ -70,13 +74,14 @@ const t = translations(Astro.url);
               <span class="uppercase font-semibold truncate">{item.title}</span>
               <img src={Youtube.src} alt="yt" class="w-5 h-5 fill-white" />
             </div>
-            <Image
-              src={item.image}
-              alt="1"
-              width={100}
-              height={100}
-              class="rounded-md border border-grey-200 w-full "
-            />
+
+            <div class="min-w-[100px] min-h-[100px] grid place-content-center relative">
+              <img src={item.image} alt={item.alt} class="w-[85px] h-[85px]" />
+              <div
+                class="absolute w-full h-full bg-gradient-to-r from-transparent to-white-500 blur-md"
+                style="background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);"
+              />
+            </div>
           </div>
         </a>
       ))
