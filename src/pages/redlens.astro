@@ -1,0 +1,632 @@
+---
+import Layout from "./../layouts/Layout.astro";
+import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
+import Footer from "./../components/Footer.astro";
+import Container from "./../components/Container.astro";
+import Navbar from "./../components/Navbar.astro";
+const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
+import { Button } from "./../components/ui/button";
+---
+
+<Layout title="Belial - 404">
+  <Container>
+    <Navbar />
+    <div class="flex h-full items-center p-16">
+      <div
+        class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
+      >
+        <div class="max-w-[1600px] text-center">
+          <h2 class="mb-8 text-6xl font-bold">
+            <span class="text-primary">RedLens</span>
+          </h2>
+          <!-- <input type="file" id="upload" accept="image/*" /> -->
+          <!-- <img id="sourceImage" src="/images/JEL-07354.png" class="w-[400px]" /> -->
+          <div
+            class="controls grid grid-cols-3 items-start w-full gap-2 place-content-start place-items-start"
+          >
+            <div
+              class="channel-group flex flex-col gap-2 items-start bg-grey-400 border border-grey-200 p-4 rounded-lg"
+            >
+              <h3 class="text-2xl font-semibold">Reds</h3>
+              <div class="control">
+                <label for="red-to-red">Red Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="red-to-red"
+                    min="-200"
+                    max="200"
+                    step="50"
+                    value="100"
+                  />
+                  <input
+                    type="number"
+                    id="red-to-red-number"
+                    min="-200"
+                    max="200"
+                    step="50"
+                    value="100"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="red-to-green">Green Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="red-to-green"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="red-to-green-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="red-to-blue">Blue Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="red-to-blue"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="red-to-blue-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="channel-group flex flex-col gap-2 items-start bg-grey-400 border border-grey-200 p-4 rounded-lg"
+            >
+              <h3 class="text-2xl font-semibold">Greens</h3>
+              <div class="control">
+                <label for="green-to-red">Red Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="green-to-red"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="green-to-red-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="green-to-green">Green Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="green-to-green"
+                    min="-200"
+                    max="200"
+                    value="100"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="green-to-green-number"
+                    min="-200"
+                    max="200"
+                    value="100"
+                    step="50"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="green-to-blue">Blue Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="green-to-blue"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="green-to-blue-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="channel-group flex flex-col gap-2 items-start bg-grey-400 border border-grey-200 p-4 rounded-lg"
+            >
+              <h3 class="text-2xl font-semibold">Blues</h3>
+              <div class="control">
+                <label for="blue-to-red">Red Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="blue-to-red"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="blue-to-red-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="blue-to-green">Green Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="blue-to-green"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="blue-to-green-number"
+                    min="-200"
+                    max="200"
+                    value="0"
+                    step="50"
+                  />
+                </div>
+              </div>
+              <div class="control">
+                <label for="blue-to-blue">Blue Channel: </label>
+                <div class="range">
+                  <input
+                    type="range"
+                    id="blue-to-blue"
+                    min="-200"
+                    max="200"
+                    value="100"
+                    step="50"
+                  />
+                  <input
+                    type="number"
+                    id="blue-to-blue-number"
+                    min="-200"
+                    max="200"
+                    value="100"
+                    step="50"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Hue/Saturation Module -->
+            <div>
+              <div class="control">
+                <label for="hue">Hue: </label>
+                <input type="range" id="hue" min="-100" max="100" value="0" />
+
+                <input
+                  type="number"
+                  id="hue-number"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="control">
+                <label for="saturation">Saturation: </label>
+                <input
+                  type="range"
+                  id="saturation"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+                <input
+                  type="number"
+                  id="saturation-number"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+              </div>
+            </div>
+            <!-- Individual Color Ranges -->
+            <div>
+              <div class="control">
+                <label for="reds-hue">Reds Hue: </label>
+                <input
+                  type="range"
+                  id="reds-hue"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+                <input
+                  type="number"
+                  id="reds-hue-number"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="control">
+                <label for="yellows-hue">Yellows Hue: </label>
+                <input
+                  type="range"
+                  id="yellows-hue"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+                <input
+                  type="number"
+                  id="yellows-hue-number"
+                  min="-100"
+                  max="100"
+                  value="0"
+                />
+              </div>
+            </div>
+
+            <button
+              id="resetInput"
+              class="reset-button bg-red-400 hover:bg-red-500 rounded"
+              >Reset</button
+            >
+            <button
+              id="savePreset"
+              class="save-button rounded bg-green-400 hover:bg-green-500 rounded"
+              >Save Preset</button
+            >
+            <button
+              id="loadPreset"
+              class="load-button rounded bg-grey-400 hover:bg-grey-500 rounded"
+              >Load Preset</button
+            >
+          </div>
+          <canvas id="canvas" class="w-full h-auto"></canvas>
+          <a
+            rel="noopener noreferrer"
+            href={localeUrlPrefix || "/"}
+            class="btn ml-4"
+            ><Button variant="default" size="lg">Back to homepage</Button></a
+          >
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </Container>
+</Layout>
+<script>
+  window.onload = function () {
+    img = new Image();
+    img.src = "/images/JEL-07354.png";
+    img.width = 300;
+    img.height = 300;
+    img.onload = function () {
+      applyCalibrationEffect();
+    };
+    if (img.complete) {
+      applyCalibrationEffect();
+    }
+  };
+
+  document
+    .querySelectorAll('.controls input[type="range"]')
+    .forEach((input) => input.addEventListener("input", syncSliderAndNumber));
+  document
+    .querySelectorAll('.controls input[type="number"]')
+    .forEach((input) => input.addEventListener("input", syncNumberAndSlider));
+
+  let img = null;
+
+  function syncSliderAndNumber(event) {
+    const slider = event.target;
+    const number = document.getElementById(slider.id + "-number");
+    number.value = slider.value;
+    applyCalibrationEffect();
+  }
+
+  function syncNumberAndSlider(event) {
+    const number = event.target;
+    const slider = document.getElementById(number.id.replace("-number", ""));
+    slider.value = number.value;
+    applyCalibrationEffect();
+  }
+
+  function applyCalibrationEffect() {
+    if (!img) return;
+    const hue = parseFloat(document.getElementById("hue").value);
+    const saturation = parseFloat(document.getElementById("saturation").value);
+    const redsHue = parseFloat(document.getElementById("reds-hue").value);
+    const yellowsHue = parseFloat(document.getElementById("yellows-hue").value);
+    // Repeat for other color ranges
+
+    const redToRed =
+      parseFloat(document.getElementById("red-to-red").value) / 100;
+    const greenToRed =
+      parseFloat(document.getElementById("green-to-red").value) / 100;
+    const blueToRed =
+      parseFloat(document.getElementById("blue-to-red").value) / 100;
+    const redToGreen =
+      parseFloat(document.getElementById("red-to-green").value) / 100;
+    const greenToGreen =
+      parseFloat(document.getElementById("green-to-green").value) / 100;
+    const blueToGreen =
+      parseFloat(document.getElementById("blue-to-green").value) / 100;
+    const redToBlue =
+      parseFloat(document.getElementById("red-to-blue").value) / 100;
+    const greenToBlue =
+      parseFloat(document.getElementById("green-to-blue").value) / 100;
+    const blueToBlue =
+      parseFloat(document.getElementById("blue-to-blue").value) / 100;
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = img.width * 12;
+    canvas.height = img.height * 12;
+    ctx.drawImage(img, 0, 0);
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      let r = data[i];
+      let g = data[i + 1];
+      let b = data[i + 2];
+      // Apply hue adjustment to entire image
+      [r, g, b] = adjustHue(r, g, b, hue);
+      // Apply saturation adjustment to entire image
+      [r, g, b] = adjustSaturation(r, g, b, saturation);
+      // Apply color-specific adjustments
+      if (isColorInRange(r, g, b, "reds")) {
+        [r, g, b] = adjustHue(r, g, b, redsHue);
+        // Repeat for other color ranges
+      }
+      if (isColorInRange(r, g, b, "yellows")) {
+        [r, g, b] = adjustHue(r, g, b, yellowsHue);
+        // Repeat for other color ranges
+      }
+      const newR = clamp(r * redToRed + g * greenToRed + b * blueToRed);
+      const newG = clamp(r * redToGreen + g * greenToGreen + b * blueToGreen);
+      const newB = clamp(r * redToBlue + g * greenToBlue + b * blueToBlue);
+
+      data[i] = newR;
+      data[i + 1] = newG;
+      data[i + 2] = newB;
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+  document.querySelector("#resetInput").addEventListener("click", resetSliders);
+  function resetSliders() {
+    document
+      .querySelectorAll('.controls input[type="range"]')
+      .forEach((input) => (input.value = 0));
+    document
+      .querySelectorAll('.controls input[type="number"]')
+      .forEach((input) => (input.value = 0));
+    document.getElementById("green-to-red").value = 0;
+    document.getElementById("blue-to-red").value = 0;
+    document.getElementById("red-to-green").value = 0;
+    document.getElementById("blue-to-green").value = 0;
+    document.getElementById("red-to-blue").value = 0;
+    document.getElementById("green-to-blue").value = 0;
+    applyCalibrationEffect();
+  }
+  function isColorInRange(r, g, b, colorRange) {
+    switch (colorRange) {
+      case "reds":
+        return r > 150 && g < 100 && b < 100;
+      case "yellows":
+        return r > 150 && g > 150 && b < 100;
+      case "greens":
+        return r < 100 && g > 150 && b < 100;
+      case "cyans":
+        return r < 100 && g > 150 && b > 150;
+      case "blues":
+        return r < 100 && g < 100 && b > 150;
+      case "magentas":
+        return r > 150 && g < 100 && b > 150;
+      default:
+        return false;
+    }
+  }
+  function adjustHue(r, g, b, hueAdjustment) {
+    // Convert RGB to HSL
+    let hsl = rgbToHsl(r, g, b);
+    // Adjust hue
+    hsl[0] += hueAdjustment;
+    // Ensure hue stays within [0, 360] range
+    hsl[0] = (hsl[0] + 360) % 360;
+    // Convert HSL back to RGB
+    let [newR, newG, newB] = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    return [newR, newG, newB];
+  }
+  function clamp(value) {
+    return Math.max(0, Math.min(255, value));
+  }
+  function rgbToHsl(r, g, b) {
+    (r /= 255), (g /= 255), (b /= 255);
+    let max = Math.max(r, g, b),
+      min = Math.min(r, g, b);
+    let h,
+      s,
+      l = (max + min) / 2;
+
+    if (max === min) {
+      h = s = 0; // achromatic
+    } else {
+      let d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+      h /= 6;
+    }
+    return [h * 360, s * 100, l * 100];
+  }
+
+  function hslToRgb(h, s, l) {
+    h /= 360;
+    s /= 100;
+    l /= 100;
+    let r, g, b;
+    if (s === 0) {
+      r = g = b = l; // achromatic
+    } else {
+      const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+      };
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return [r * 255, g * 255, b * 255];
+  }
+  function adjustSaturation(r, g, b, saturationAdjustment) {
+    // Convert RGB to HSL
+    let hsl = rgbToHsl(r, g, b);
+    // Adjust saturation
+    hsl[1] += saturationAdjustment;
+    // Ensure saturation stays within [0, 100] range
+    hsl[1] = Math.max(0, Math.min(100, hsl[1]));
+    // Convert HSL back to RGB
+    let [newR, newG, newB] = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    return [newR, newG, newB];
+  }
+
+  document.querySelector("#savePreset").addEventListener("click", savePreset);
+  function savePreset() {
+    const preset = {
+      redToRed: document.getElementById("red-to-red").value,
+      greenToRed: document.getElementById("green-to-red").value,
+      blueToRed: document.getElementById("blue-to-red").value,
+      redToGreen: document.getElementById("red-to-green").value,
+      greenToGreen: document.getElementById("green-to-green").value,
+      blueToGreen: document.getElementById("blue-to-green").value,
+      redToBlue: document.getElementById("red-to-blue").value,
+      greenToBlue: document.getElementById("green-to-blue").value,
+      blueToBlue: document.getElementById("blue-to-blue").value,
+    };
+    localStorage.setItem("preset", JSON.stringify(preset));
+  }
+
+  document.querySelector("#loadPreset").addEventListener("click", loadPreset);
+  function loadPreset() {
+    const preset = JSON.parse(localStorage.getItem("preset"));
+    if (preset) {
+      document.getElementById("red-to-red").value = preset.redToRed;
+      document.getElementById("green-to-red").value = preset.greenToRed;
+      document.getElementById("blue-to-red").value = preset.blueToRed;
+      document.getElementById("red-to-green").value = preset.redToGreen;
+      document.getElementById("green-to-green").value = preset.greenToGreen;
+      document.getElementById("blue-to-green").value = preset.blueToGreen;
+      document.getElementById("red-to-blue").value = preset.redToBlue;
+      document.getElementById("green-to-blue").value = preset.greenToBlue;
+      document.getElementById("blue-to-blue").value = preset.blueToBlue;
+      syncSliderAndNumber(event); // Update number inputs
+      applyCalibrationEffect(); // Apply loaded preset
+    } else {
+      alert("No preset saved.");
+    }
+  }
+</script>
+
+<style>
+  .controls {
+  }
+  .control {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .range {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .control label {
+    flex: 1;
+  }
+  .control input[type="range"] {
+    flex: 2;
+
+    cursor: pointer;
+  }
+  .control input[type="number"] {
+    width: 60px;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    background-color: var(--grey-300);
+    border: 1px solid var(--grey-200);
+    color: whitesmoke;
+  }
+  .reset-button {
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .save-button,
+  .load-button {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
